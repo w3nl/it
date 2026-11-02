@@ -1,0 +1,69 @@
+# Step 4 of the agent workflow (see docs/agent-workflow.md).
+# Claude reviews a pull request against AGENTS.md and leaves inline comments and a summary.
+name: "Agent: review"
+
+on:
+  pull_request:
+    types: [opened, synchronize, ready_for_review, reopened]
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: Pull request number to review
+        required: true
+
+concurrency:
+  group: agent-review-${{ github.event.pull_request.number || inputs.pr_number }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    # Only pull requests from this repository (forks don't get the secrets) and not drafts.
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.pull_request.head.repo.full_name == github.repository && !github.event.pull_request.draft)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
+      id-token: write
+    env:
+      PR: ${{ github.event.pull_request.number || inputs.pr_number }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: refs/pull/${{ env.PR }}/head
+
+      - uses: anthropics/claude-code-action@v1
+        env:
+          GH_TOKEN: ${{ github.token }}
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ github.token }}
+          claude_args: |
+            --max-turns 50
+            --allowedTools "Read,Glob,Grep,Bash(gh pr view:*),Bash(gh pr diff:*),Bash(gh pr comment:*),Bash(gh pr review:*),Bash(gh issue view:*),Bash(git log:*),Bash(git diff:*),mcp__github_inline_comment__create_inline_comment"
+          prompt: |
+            You are the REVIEW agent for "Hello, IT", a point-and-click escape room in this repository.
+            AGENTS.md (loaded as project instructions) describes how the code must be written. Use it as your checklist.
+
+            Review pull request #${{ env.PR }} in ${{ github.repository }}.
+            Read it with: gh pr view ${{ env.PR }} --comments   and   gh pr diff ${{ env.PR }}
+            If it closes an issue, read that issue too, and check the acceptance criteria in the refine agent's plan.
+
+            Look for, in this order:
+            1. Bugs: things that break the game, the saved state, earlier chapters, phones or offline play.
+            2. AGENTS.md rules: unique global JS names, SVG ids and CSS classes; scripts loaded in js/boot.js; CACHE bumped and new files
+               in CORE (sw.js); two hints per puzzle; no window.alert/confirm/prompt; buttons with type="button"; labelled inputs.
+            3. Tests: new behaviour is covered, including a wrong move; no tests skipped or weakened.
+            4. Writing: humour first, British English, the characters' voices, no emoji in the UI.
+            5. Docs: AGENTS.md (solutions table, flags) and the README updated when content changed.
+
+            Post inline comments (mcp__github_inline_comment__create_inline_comment) only for concrete problems, with a suggested fix.
+            Don't comment on style that AGENTS.md doesn't ask for.
+            Then post one summary comment (gh pr comment ${{ env.PR }} --body-file <file>) that starts with
+            "**Review: ✅ looks good**" or "**Review: ❌ changes needed**", followed by a short list of findings and the acceptance criteria you checked.
+            To get fixes made, the owner can reply "@claude please fix the review comments".

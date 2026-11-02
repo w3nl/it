@@ -1,0 +1,57 @@
+# Step 2 of the agent workflow (see docs/agent-workflow.md).
+# When an issue labelled "idea" is opened, Claude investigates it and replies with a plan. No code is changed.
+name: "Agent: refine idea"
+
+on:
+  issues:
+    types: [opened, labeled]
+
+concurrency:
+  group: agent-refine-${{ github.event.issue.number }}
+  cancel-in-progress: true
+
+jobs:
+  refine:
+    if: >-
+      contains(github.event.issue.labels.*.name, 'idea') &&
+      (github.event.action == 'opened' || github.event.label.name == 'idea') &&
+      contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.issue.author_association)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      issues: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: anthropics/claude-code-action@v1
+        env:
+          GH_TOKEN: ${{ github.token }}
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ github.token }}
+          claude_args: |
+            --max-turns 40
+            --allowedTools "Read,Glob,Grep,Bash(gh issue view:*),Bash(gh issue comment:*),Bash(gh issue edit:*),Bash(gh issue list:*),Bash(git log:*)"
+          prompt: |
+            You are the REFINE agent for "Hello, IT", a point-and-click escape room in this repository.
+            AGENTS.md (loaded as project instructions) explains the code, the tone and the puzzle solutions. Follow it.
+
+            Issue #${{ github.event.issue.number }} in ${{ github.repository }} is a new idea.
+            Read it with: gh issue view ${{ github.event.issue.number }} --comments
+
+            Investigate the codebase so your plan is concrete. Do NOT change any files.
+
+            Then post ONE comment on the issue (gh issue comment ${{ github.event.issue.number }} --body-file <file>) with these sections:
+            1. **What I understood**: the idea in two or three sentences.
+            2. **Proposal**: how it works for the player, step by step. For puzzles: the IT concept it teaches, the solution, the wrong moves and the jokes they trigger, and both hints (a nudge, then the answer). Keep the characters' voices and the humour-first tone from AGENTS.md.
+            3. **Where it goes in the code**: the files to add or change, following the checklists in AGENTS.md (sw.js cache, tests, docs…).
+            4. **Acceptance criteria**: a checklist the build and review agents can verify.
+            5. **Test plan**: which Playwright tests to add or change.
+            6. **Open questions**: only things the owner must decide. Suggest a default for each.
+            7. **Size**: small, medium or large.
+            End with: "If this looks right, add the **ready-to-build** label. To change anything, reply with @claude and what you'd like."
+
+            Finally add the label: gh issue edit ${{ github.event.issue.number }} --add-label refined

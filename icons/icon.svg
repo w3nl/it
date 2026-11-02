@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#0d0e0b"/>
+  <g transform="translate(256 256) scale(.86) translate(-256 -248)">
+    <rect x="86" y="96" width="340" height="250" rx="34" fill="#1a1c16" stroke="#34372b" stroke-width="8"/>
+    <rect x="112" y="122" width="288" height="198" rx="18" fill="#06120a"/>
+    <text x="142" y="170" font-family="'IBM Plex Mono', 'DejaVu Sans Mono', monospace" font-size="30" fill="#7dff9a">hello,</text>
+    <text x="138" y="292" font-family="Bricolage Grotesque, 'DejaVu Sans', Arial, sans-serif" font-weight="800" font-size="128" fill="#ede4cc">IT</text>
+    <rect x="276" y="268" width="50" height="22" fill="#f0a53a"/>
+    <rect x="226" y="346" width="60" height="34" fill="#34372b"/>
+    <rect x="176" y="378" width="160" height="16" rx="8" fill="#34372b"/>
+  </g>
+</svg>

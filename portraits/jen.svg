@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><title>Jen</title>
+  <rect width="120" height="120" rx="14" fill="#2a1424"/>
+  <circle cx="60" cy="56" r="50" fill="#ff7eb6" opacity=".12"/>
+  <path d="M30 56 q-6 46 4 64 l52 0 q10-18 4-64 q-4-36-30-36 q-26 0-30 36z" fill="#6b3b1e"/>
+  <path d="M16 120 q4-30 44-32 q40 2 44 32z" fill="#e4572e"/>
+  <rect x="52" y="74" width="16" height="16" fill="#e8bc96"/>
+  <ellipse cx="60" cy="52" rx="23" ry="28" fill="#e8bc96"/>
+  <path d="M36 52 q1-30 24-32 q23 2 24 30 q-10-18-24-18 q-14 0-24 20z" fill="#6b3b1e"/>
+  <circle cx="51" cy="54" r="2.4" fill="#222"/><circle cx="69" cy="54" r="2.4" fill="#222"/>
+  <path d="M47 50 l3 -2M73 50 l-3 -2" stroke="#222" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M52 69 q8 6 16 0" stroke="#b03a3a" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+  <circle cx="38" cy="66" r="2.4" fill="#e8c766"/><circle cx="82" cy="66" r="2.4" fill="#e8c766"/>
+</svg>

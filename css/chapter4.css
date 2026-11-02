@@ -1,0 +1,64 @@
+/* Chapter 4: the lift (Douglas's phone, cables, mirror, Morse). */
+/* ---------- chapter 4: the lift ---------- */
+.dialog.who-roy{border-left-color:#ff8a3d} .dialog.who-roy .who{color:#ff8a3d}
+.phonewrap{display:flex;justify-content:center;padding:4px 18px}
+.phone{position:relative;width:min(290px,78vw);aspect-ratio:9/18.5;background:#111;border-radius:36px;padding:12px;box-shadow:0 0 0 2px #3a3a3a,0 24px 44px -12px #000}
+.pscr{position:relative;width:100%;height:100%;border-radius:26px;overflow:hidden;background:#000;color:#fff;font-family:var(--f-display);display:flex;flex-direction:column}
+.ppow{position:absolute;right:-16px;top:22%;width:16px;height:64px;border:0;padding:0;background:transparent}
+.ppow::before{content:"";position:absolute;left:0;top:0;width:6px;height:100%;border-radius:3px;background:#5a5a5a}
+.ppow:hover::before{background:var(--amber)}
+.ppow-l{position:absolute;right:-58px;top:calc(22% + 22px);font-family:var(--f-mono);font-size:10px;color:var(--muted);letter-spacing:.08em}
+.sbar{display:flex;justify-content:space-between;padding:10px 16px 4px;font-size:12px;font-weight:600;flex:0 0 auto}
+.pbody{flex:1;min-height:0;overflow:auto;padding:8px 14px 14px;display:flex;flex-direction:column;gap:10px}
+.pcenter{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center}
+.ptime{font-size:52px;font-weight:300;letter-spacing:-.02em;line-height:1}
+.pill{background:rgba(255,255,255,.15);border-radius:20px;padding:5px 12px;font-size:12px}
+.pgrid{width:82%;max-width:220px;touch-action:none}
+.pgrid circle{cursor:pointer}
+.pbtns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.pb{font:inherit;font-size:12px;font-weight:600;background:rgba(255,255,255,.16);border:0;color:#fff;border-radius:16px;padding:6px 12px}
+.pb:hover{background:rgba(255,255,255,.28)}
+.pb.go{background:#2f9e44}
+.pmsg{font-size:12px;min-height:1.3em;text-align:center;color:#ffd8a8}
+.apps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px 6px;align-content:start}
+.appi{display:flex;flex-direction:column;align-items:center;gap:4px;background:none;border:0;color:#fff;font-size:10px;padding:0;line-height:1.1;text-align:center}
+.appi i{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;font-style:normal;font-weight:800;font-size:18px;box-shadow:inset 0 -3px 0 rgba(0,0,0,.2)}
+.notif{background:rgba(255,255,255,.92);color:#1d1a22;border-radius:12px;padding:8px 10px;font-size:11px;line-height:1.3}
+.notif b{display:block;font-size:10px;color:#c8262c;letter-spacing:.04em}
+.ptop{display:flex;align-items:center;gap:8px;font-weight:700;font-size:15px}
+.ptop button{background:none;border:0;color:#8fd3ff;font:inherit;font-size:14px;padding:0}
+.prow{background:rgba(255,255,255,.08);border-radius:10px;padding:8px 10px;font-size:12px;display:grid;gap:4px}
+.prow .ph{display:flex;justify-content:space-between;gap:8px;font-weight:700}
+.pbar{height:6px;background:rgba(255,255,255,.15);border-radius:3px;overflow:hidden}
+.pbar i{display:block;height:100%;background:#ff8a3d}
+.perm{display:flex;flex-wrap:wrap;gap:4px}
+.perm span{font-size:10px;background:rgba(255,255,255,.14);border-radius:8px;padding:1px 6px}
+.perm span.warn{background:#c8262c}
+.pin{box-sizing:border-box;font:inherit;font-size:16px;padding:8px 10px;border-radius:8px;border:0;width:100%;background:#fff;color:#1d1a22;letter-spacing:.1em}
+.pprog{height:10px;background:rgba(255,255,255,.18);border-radius:5px;overflow:hidden;width:100%}
+.pprog i{display:block;height:100%;background:#2f9e44;transition:width 2.4s ease-out}
+.pover{position:absolute;inset:0;background:rgba(0,0,0,.75);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:20px;text-align:center;z-index:3}
+.cables{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.cbl{display:grid;gap:6px;background:var(--ink);border:1px solid var(--line);border-radius:6px;padding:12px;text-align:left;font-size:14px}
+.cbl:hover{border-color:var(--amber)}
+.cbl.on{border-color:var(--phosphor)}
+.cbl svg{width:100%;height:48px}
+.cbl small{font-family:var(--f-mono);font-size:11px;color:var(--muted)}
+.mlamp{width:110px;height:110px;margin:10px auto;border-radius:50%;background:#2a2410;box-shadow:inset 0 4px 10px rgba(0,0,0,.6);transition:background .05s,box-shadow .05s}
+.mlamp.on{background:#fff3c4;box-shadow:0 0 40px 10px rgba(255,236,170,.65)}
+.morse{display:grid;grid-template-columns:repeat(auto-fill,minmax(74px,1fr));gap:4px 10px;font-family:var(--f-mono);font-size:13px;margin-top:10px}
+.morse b{color:#1971c2;margin-right:6px}
+.mirrorbox svg{width:100%;height:auto;display:block;border-radius:4px}
+#lift-light.flash{fill:#fffbe6;filter:drop-shadow(0 0 30px #fff3c4)}
+@media (orientation:landscape) and (max-height:520px){
+  .phone{width:auto;height:calc(100svh - 110px);aspect-ratio:18.5/9;border-radius:28px;padding:10px}
+  .pscr{border-radius:20px}
+  .pscr .pcenter{display:grid;grid-template-columns:1fr 1fr;align-content:center;justify-items:center;gap:4px 10px;padding-top:0!important}
+  .pscr .pcenter > *{grid-column:1}
+  .pscr .pcenter .pgrid{grid-column:2;grid-row:1 / span 6;width:auto;height:calc(100svh - 190px);max-height:220px}
+  .ptime{font-size:34px} .sbar{padding:6px 14px 2px}
+  .apps{grid-template-columns:repeat(6,1fr)}
+  .ppow{top:auto;bottom:-16px;right:22%;width:64px;height:16px}
+  .ppow::before{top:auto;bottom:0;width:100%;height:6px}
+  .ppow-l{top:auto;right:calc(22% + 72px);bottom:-18px}
+}

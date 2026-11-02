@@ -1,0 +1,44 @@
+name: Idea
+description: Suggest something for the game. An AI agent will investigate it and reply with a plan.
+title: "Idea: "
+labels: ["idea"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks! After you submit, the **refine agent** reads the game's code and replies with a plan: how it would work, which files change, acceptance criteria and a test plan.
+        Reply with `@claude …` to discuss it. When you're happy, add the **`ready-to-build`** label and the build agent opens a pull request.
+  - type: textarea
+    id: idea
+    attributes:
+      label: What's the idea?
+      description: A new chapter, puzzle, joke, character, sound, fix… Rough is fine.
+      placeholder: "Roy gets stuck in the photocopier room and you have to…"
+    validations:
+      required: true
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where in the game?
+      options:
+        - New chapter
+        - Chapter 1 · The basement
+        - "Chapter 2 · Jen's office"
+        - Chapter 3 · The executive floor
+        - Chapter 4 · The lift
+        - Chapter 5 · Dungeons & Datacenters
+        - Chapter 6 · The yacht
+        - Everywhere / the whole game
+        - Not sure
+    validations:
+      required: true
+  - type: input
+    id: concept
+    attributes:
+      label: IT idea it could teach (optional)
+      placeholder: "e.g. DNS, caching, git merge conflicts, two-factor authentication"
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else? (optional)
+      description: Jokes, references to the show, sketches, links.

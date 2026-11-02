@@ -1,0 +1,18 @@
+/* Shared animations. Loaded last; everything stops under prefers-reduced-motion. */
+/* animations */
+@keyframes blink{50%{opacity:0}}
+@keyframes flick{0%,100%{opacity:1}92%{opacity:1}93%{opacity:.4}95%{opacity:1}97%{opacity:.6}}
+@keyframes flame{0%,100%{transform:scaleY(1) skewX(0)}33%{transform:scaleY(1.12) skewX(3deg)}66%{transform:scaleY(.92) skewX(-3deg)}}
+@keyframes lava{0%,100%{transform:translateY(0)}50%{transform:translateY(-26px)}}
+@keyframes glowp{0%,100%{opacity:.55}50%{opacity:.85}}
+.blink{animation:blink 1.1s steps(2) infinite}
+.flick{animation:flick 6s infinite}
+.flame{transform-box:fill-box;transform-origin:50% 100%;animation:flame .5s ease-in-out infinite}
+.flame.b{animation-duration:.7s;animation-delay:-.2s}
+.lavab{animation:lava 7s ease-in-out infinite}
+.pulse{animation:glowp 2.4s ease-in-out infinite}
+.dead .led{fill:#1c232c!important;animation:none!important}
+/* Motion: devices that ask for reduced motion get none, unless the player chose "Motion on" (html.motion-on).
+   "Motion off" (html.motion-off) stops everything on any device. See applyMotion() in js/core.js. */
+@media (prefers-reduced-motion:reduce){:root:not(.motion-on) *,:root:not(.motion-on) *::before,:root:not(.motion-on) *::after{animation:none!important;transition:none!important}}
+:root.motion-off *,:root.motion-off *::before,:root.motion-off *::after{animation:none!important;transition:none!important}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><title>Answering machine</title>
+  <rect width="120" height="120" rx="14" fill="#2a1010"/>
+  <path d="M30 46 c0-26 60-26 60 0" stroke="#3a3a40" stroke-width="12" fill="none" stroke-linecap="round"/>
+  <rect x="16" y="52" width="88" height="40" rx="6" fill="#26262a"/>
+  <rect x="26" y="62" width="40" height="12" rx="2" fill="#111"/>
+  <circle cx="36" cy="68" r="4" fill="#555"/><circle cx="56" cy="68" r="4" fill="#555"/>
+  <circle cx="88" cy="66" r="6" fill="#ff3b30"/>
+  <g fill="#555"><rect x="26" y="80" width="10" height="5"/><rect x="40" y="80" width="10" height="5"/><rect x="54" y="80" width="10" height="5"/></g>
+</svg>

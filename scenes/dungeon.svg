@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="scene" id="sc-dungeon" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-label="Moss's escape room: Dungeons and Datacenters">
+  <defs>
+    <linearGradient id="dgWall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a4740"/><stop offset="1" stop-color="#2e2c27"/></linearGradient>
+    <pattern id="stones" width="120" height="70" patternUnits="userSpaceOnUse"><path d="M0 0H120M0 35H120M0 0V35M60 35V70" stroke="rgba(0,0,0,.35)" stroke-width="4" fill="none"/><rect x="8" y="6" width="44" height="22" fill="rgba(255,255,255,.03)"/></pattern>
+    <linearGradient id="dgFloor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3024"/><stop offset="1" stop-color="#16120d"/></linearGradient>
+    <radialGradient id="torchG" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffb347" stop-opacity=".45"/><stop offset="1" stop-color="#ffb347" stop-opacity="0"/></radialGradient>
+    <pattern id="bricks" width="40" height="24" patternUnits="userSpaceOnUse"><rect width="40" height="24" fill="#a3402a"/><path d="M0 0H40M0 12H40M0 0V12M20 12V24" stroke="#5e2216" stroke-width="2"/></pattern>
+    <linearGradient id="wood5" x1="0" x2="1"><stop offset="0" stop-color="#7a5434"/><stop offset="1" stop-color="#5a3b22"/></linearGradient>
+    <radialGradient id="vign6" cx=".5" cy=".45" r=".75"><stop offset=".5" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".75"/></radialGradient>
+  </defs>
+  <rect width="1600" height="640" fill="url(#dgWall)"/>
+  <rect width="1600" height="640" fill="url(#stones)"/>
+  <rect width="1600" height="34" fill="#15160f"/><rect y="40" width="1600" height="14" rx="7" fill="#6a5634"/>
+  <path d="M120 54 l14 40 M680 54 l-10 36 M1300 54 l8 30" stroke="#c9b78f" stroke-width="10" opacity=".5"/>
+  <rect y="628" width="1600" height="14" fill="#15130e"/>
+  <rect y="642" width="1600" height="258" fill="url(#dgFloor)"/>
+
+  <!-- torches -->
+  <g><ellipse cx="300" cy="190" rx="110" ry="90" fill="url(#torchG)" class="flick"/><rect x="292" y="196" width="16" height="44" fill="#3a2a1a"/><path class="flame" d="M288 198 q12 -40 12 -40 q14 26 12 40z" fill="#ffb347"/></g>
+  <g><ellipse cx="1260" cy="190" rx="110" ry="90" fill="url(#torchG)" class="flick"/><rect x="1252" y="196" width="16" height="44" fill="#3a2a1a"/><path class="flame b" d="M1248 198 q12 -40 12 -40 q14 26 12 40z" fill="#ffb347"/></g>
+
+  <!-- the Firewall (exit) -->
+  <rect x="58" y="240" width="204" height="402" fill="#120e0a"/>
+  <g id="fw-closed">
+    <rect x="70" y="252" width="180" height="390" fill="url(#bricks)"/>
+    <rect x="86" y="268" width="148" height="38" fill="#f1e3c8" transform="rotate(-2 160 287)"/>
+    <text x="160" y="294" text-anchor="middle" font-family="Caveat, cursive" font-weight="700" font-size="22" fill="#8a1c12" transform="rotate(-2 160 287)">THE FIREWALL</text>
+    <g fill="#ff7a1a"><path class="flame" d="M74 642 q14 -70 28 -90 q4 40 18 46 q6 -34 20 -50 q8 48 4 94z"/><path class="flame b" d="M140 642 q10 -60 26 -84 q4 34 16 40 q8 -30 22 -44 q6 50 0 88z"/><path class="flame" d="M196 642 q8 -50 24 -70 q6 30 16 34 q6 -16 12 -24 q4 34 -4 60z"/></g>
+    <g fill="#ffd166"><path class="flame b" d="M96 642 q8 -36 18 -48 q4 26 10 30 q4 -14 10 -20 q4 22 -2 38z"/><path class="flame" d="M168 642 q8 -36 18 -48 q4 26 10 30 q4 -14 10 -20 q4 22 -2 38z"/></g>
+  </g>
+  <g id="fw-open" style="display:none"><rect x="70" y="252" width="180" height="390" fill="#c99a4f" opacity=".55"/><path d="M70 642 q30 -20 60 0 q30 -20 60 0 q30 -20 60 0" stroke="#ff7a1a" stroke-width="6" fill="none" opacity=".5"/></g>
+  <rect x="272" y="380" width="70" height="92" rx="6" fill="#1a1e21" stroke="#3a4146" stroke-width="2"/>
+  <rect x="280" y="390" width="54" height="40" fill="#031a0a" id="fw-scr"/>
+  <text x="307" y="416" text-anchor="middle" font-family="VT323, monospace" font-size="16" fill="#7dff9a" id="fw-txt">ADMIN</text>
+  <circle cx="307" cy="452" r="6" fill="#ff3b30" id="fw-led" class="blink"/>
+
+  <!-- Game Master poster -->
+  <rect x="380" y="118" width="190" height="118" fill="#1d1630" stroke="#c9a24a" stroke-width="4"/>
+  <text x="475" y="150" text-anchor="middle" font-family="Caveat, cursive" font-weight="700" font-size="22" fill="#e8c766">Moss the Magnificent</text>
+  <text x="475" y="174" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#cfc3f0">GAME MASTER</text>
+  <text x="475" y="202" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#cfc3f0">DUNGEONS &amp;</text>
+  <text x="475" y="218" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#cfc3f0">DATACENTERS</text>
+
+  <!-- potion shelf -->
+  <rect x="370" y="270" width="200" height="250" fill="url(#wood5)"/>
+  <rect x="370" y="360" width="200" height="10" fill="#3a2614"/><rect x="370" y="440" width="200" height="10" fill="#3a2614"/><rect x="370" y="510" width="200" height="10" fill="#3a2614"/>
+  <g id="potions-mini"></g>
+  <rect x="390" y="452" width="160" height="56" fill="#3a2614" stroke="#2a1a0c" stroke-width="3" id="secret-panel"/>
+  <text x="470" y="486" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#a08060" id="secret-txt">DO NOT OPEN</text>
+
+  <!-- cardboard dragon -->
+  <g>
+    <path d="M760 520 q-40 -120 40 -200 l30 70z" fill="#3c8a4a" stroke="#2a5a30" stroke-width="3"/>
+    <path d="M980 300 q60 -40 80 20 q-40 -10 -60 40z" fill="#2f7a3c" stroke="#2a5a30" stroke-width="3"/>
+    <path d="M840 300 l60 -120 l40 110z" fill="#4c9a58" stroke="#2a5a30" stroke-width="3"/>
+    <ellipse cx="880" cy="440" rx="150" ry="110" fill="#3c8a4a" stroke="#2a5a30" stroke-width="4"/>
+    <path d="M840 360 q-10 -110 60 -150 q60 -20 90 30 q20 40 -10 60 q-40 20 -60 0 q-20 30 -20 60z" fill="#46a052" stroke="#2a5a30" stroke-width="4"/>
+    <path d="M990 270 l40 14 l-36 16z" fill="#f1e3c8"/>
+    <circle id="dragon-eye" cx="950" cy="240" r="9" fill="#1a1a1a"/>
+    <path d="M920 210 l10 -26 l12 22z" fill="#2f7a3c"/>
+    <rect x="830" y="440" width="100" height="60" rx="8" fill="#2a2a2a"/>
+    <g fill="#555"><circle cx="850" cy="460" r="3"/><circle cx="866" cy="460" r="3"/><circle cx="882" cy="460" r="3"/><circle cx="898" cy="460" r="3"/><circle cx="914" cy="460" r="3"/><circle cx="850" cy="478" r="3"/><circle cx="866" cy="478" r="3"/><circle cx="882" cy="478" r="3"/><circle cx="898" cy="478" r="3"/><circle cx="914" cy="478" r="3"/></g>
+    <rect x="770" y="380" width="60" height="10" fill="#d9c08a" opacity=".7" transform="rotate(-20 800 385)"/><rect x="960" y="400" width="60" height="10" fill="#d9c08a" opacity=".7" transform="rotate(15 990 405)"/>
+    <text id="dragon-zzz" x="1010" y="200" font-family="Caveat, cursive" font-weight="700" font-size="36" fill="#cfc3f0">z Z z</text>
+  </g>
+
+  <!-- Tower of Hard Drives table -->
+  <rect x="690" y="604" width="330" height="16" fill="#5a3b22"/>
+  <rect x="704" y="620" width="12" height="90" fill="#3a2614"/><rect x="994" y="620" width="12" height="90" fill="#3a2614"/>
+  <g id="hanoi-mini"></g>
+
+  <!-- rune cabinet with the wizard's laptop -->
+  <rect x="1040" y="220" width="180" height="384" fill="url(#wood5)" stroke="#3a2614" stroke-width="4"/>
+  <rect x="1060" y="400" width="140" height="10" fill="#3a2614"/>
+  <rect x="1090" y="336" width="80" height="54" rx="4" fill="#222"/>
+  <rect id="lap5-scr" x="1096" y="342" width="68" height="40" fill="#111"/>
+  <path d="M1080 390 h100 l-8 10 h-84z" fill="#9aa3a8"/>
+  <path d="M1110 410 l20 70 l20 -70z" fill="#3a2614"/>
+  <g id="cab-glass">
+    <rect x="1054" y="234" width="76" height="356" fill="rgba(200,230,255,.18)" stroke="#c9a24a" stroke-width="3"/>
+    <rect x="1130" y="234" width="76" height="356" fill="rgba(200,230,255,.18)" stroke="#c9a24a" stroke-width="3"/>
+    <text x="1130" y="268" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-weight="600" font-size="15" fill="#e8c766">/^[RM]o\w{1,2}$/</text>
+    <g font-family="Caveat, cursive" font-size="20" fill="#e8c766" opacity=".8"><text x="1070" y="560">ᚱ ᛗ ᛟ</text><text x="1150" y="560">ᛇ ᚹ ᛞ</text></g>
+  </g>
+  <!-- regex scroll -->
+  <rect x="1050" y="110" width="160" height="92" fill="#efe2c0" transform="rotate(2 1130 156)"/>
+  <text x="1130" y="140" text-anchor="middle" font-family="Caveat, cursive" font-weight="700" font-size="20" fill="#5a3b22" transform="rotate(2 1130 156)">Regex for Wizards</text>
+  <text x="1130" y="168" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5a3b22" transform="rotate(2 1130 156)">^ [ ] \w { } $</text>
+
+  <!-- Jen -->
+  <g>
+    <path d="M598 340 q-8 120 10 170 l80 0 q16 -60 6 -170z" fill="#5a3218"/>
+    <rect x="618" y="640" width="12" height="110" fill="#e8bc96"/><rect x="650" y="640" width="12" height="110" fill="#e8bc96"/>
+    <path d="M608 756 l24 0 l-4 -12 l-14 2z" fill="#c8262c"/><path d="M644 756 l24 0 l-4 -12 l-14 2z" fill="#c8262c"/>
+    <path d="M600 560 L680 560 L692 650 L588 650 Z" fill="#1a1a22"/>
+    <path d="M598 420 q-24 60 -6 120" stroke="#e8bc96" stroke-width="16" fill="none" stroke-linecap="round"/>
+    <path d="M600 566 L606 420 Q640 402 676 420 L682 566 Z" fill="#e4572e"/>
+    <path d="M676 424 q24 40 10 90" stroke="#e8bc96" stroke-width="16" fill="none" stroke-linecap="round"/>
+    <rect x="676" y="484" width="40" height="52" rx="3" fill="#8a6a3a" transform="rotate(-8 696 510)"/><rect x="682" y="492" width="28" height="36" fill="#fff" transform="rotate(-8 696 510)"/>
+    <rect x="632" y="388" width="18" height="22" fill="#e8bc96"/>
+    <ellipse cx="641" cy="360" rx="28" ry="34" fill="#e8bc96"/>
+    <path d="M610 360 q-4 -48 32 -50 q34 2 30 46 q-8 -30 -32 -30 q-22 2 -30 34z" fill="#6b3b1e"/>
+    <circle cx="631" cy="360" r="2.5" fill="#222"/><circle cx="651" cy="360" r="2.5" fill="#222"/>
+    <path d="M632 378 q9 7 18 0" stroke="#b03a3a" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+  <!-- Roy -->
+  <g transform="translate(800 0)">
+    <rect x="440" y="560" width="32" height="200" fill="#3b5b8a"/><rect x="480" y="560" width="32" height="200" fill="#34507a"/>
+    <ellipse cx="454" cy="762" rx="22" ry="8" fill="#1a1a1a"/><ellipse cx="498" cy="762" rx="22" ry="8" fill="#1a1a1a"/>
+    <path d="M432 420 q-26 70 -10 140" stroke="#2b2b2b" stroke-width="24" fill="none" stroke-linecap="round"/>
+    <path d="M418 580 L430 420 Q476 398 522 420 L534 580 Z" fill="#2b2b2b"/>
+    <g fill="#7dff9a"><rect x="460" y="460" width="8" height="8"/><rect x="484" y="460" width="8" height="8"/><rect x="452" y="468" width="48" height="8"/><rect x="444" y="476" width="64" height="8"/><rect x="452" y="484" width="8" height="8"/><rect x="492" y="484" width="8" height="8"/></g>
+    <path d="M522 420 q26 60 14 130" stroke="#2b2b2b" stroke-width="24" fill="none" stroke-linecap="round"/>
+    <rect x="462" y="390" width="20" height="24" fill="#e8bc96"/>
+    <ellipse cx="472" cy="362" rx="32" ry="38" fill="#e8bc96"/>
+    <path d="M444 378 q28 34 56 0 q-2 22 -28 26 q-26 -4 -28 -26z" fill="#3a2a20" opacity=".55"/>
+    <path d="M438 356 q-6 -34 14 -46 l2 10 l8 -18 l6 12 l10 -16 l6 14 l12 -10 l0 14 q16 8 12 40 q-6 -24 -36 -24 q-28 2 -34 24z" fill="#1f1712"/>
+    <circle cx="462" cy="360" r="2.6" fill="#222"/><circle cx="484" cy="360" r="2.6" fill="#222"/>
+    <path d="M462 388 q10 -6 20 0" stroke="#7a3a2a" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- barrel, walkie-talkie, chest, webcam -->
+  <rect x="1372" y="480" width="70" height="120" rx="14" fill="#6b4a2e"/><path d="M1372 506h70M1372 574h70" stroke="#3a2614" stroke-width="6"/>
+  <rect x="1392" y="436" width="26" height="46" rx="4" fill="#222"/><rect x="1410" y="418" width="5" height="20" fill="#222"/><rect x="1396" y="444" width="18" height="12" fill="#5dff8a" opacity=".6"/>
+  <g id="chest-closed">
+    <rect x="1452" y="610" width="130" height="80" fill="#6b4a2e" stroke="#3a2614" stroke-width="4"/>
+    <path d="M1452 610 q65 -40 130 0z" fill="#7a5434" stroke="#3a2614" stroke-width="4"/>
+    <rect x="1508" y="626" width="18" height="24" fill="#c9a24a"/>
+  </g>
+  <g id="chest-open" style="display:none">
+    <rect x="1452" y="610" width="130" height="80" fill="#6b4a2e" stroke="#3a2614" stroke-width="4"/>
+    <path d="M1452 610 l10 -60 h110 l10 60z" fill="#5a3b22" stroke="#3a2614" stroke-width="4"/>
+    <g fill="#e8c766"><circle cx="1480" cy="612" r="8"/><circle cx="1500" cy="606" r="8"/><circle cx="1524" cy="612" r="8"/></g>
+  </g>
+  <rect x="1520" y="64" width="40" height="26" rx="5" fill="#222"/><circle cx="1540" cy="77" r="7" fill="#444"/><circle cx="1555" cy="70" r="3" fill="#ff3b30" class="blink"/>
+
+  <rect width="1600" height="900" fill="url(#vign6)" pointer-events="none"/>
+
+  <g>
+    <rect class="hit" fill="transparent" data-hs="firewall" data-label="The Firewall" x="58" y="236" width="206" height="406"/>
+    <rect class="hit" fill="transparent" data-hs="fwadmin" data-label="Firewall admin panel" x="268" y="376" width="78" height="100"/>
+    <rect class="hit" fill="transparent" data-hs="gmposter" data-label="Game Master poster" x="376" y="114" width="198" height="126"/>
+    <rect class="hit" fill="transparent" data-hs="potions" data-label="Potion shelf" x="366" y="266" width="208" height="258"/>
+    <rect class="hit" fill="transparent" data-hs="dragon" data-label="Cardboard dragon" x="740" y="180" width="320" height="380"/>
+    <rect class="hit" fill="transparent" data-hs="hanoi" data-label="Tower of Hard Drives" x="690" y="500" width="330" height="124"/>
+    <rect class="hit" fill="transparent" data-hs="scroll" data-label="Regex scroll" x="1046" y="106" width="168" height="100"/>
+    <rect class="hit" fill="transparent" data-hs="cabinet" data-label="Rune cabinet" x="1040" y="220" width="180" height="384"/>
+    <rect class="hit" fill="transparent" data-hs="jen5" data-label="Talk to Jen" x="586" y="306" width="130" height="456"/>
+    <rect class="hit" fill="transparent" data-hs="roy5" data-label="Talk to Roy" x="1210" y="300" width="160" height="470"/>
+    <rect class="hit" fill="transparent" data-hs="walkie" data-label="Walkie-talkie (Moss)" x="1386" y="412" width="40" height="72"/>
+    <rect class="hit" fill="transparent" data-hs="barrel" data-label="Barrel" x="1370" y="486" width="76" height="116"/>
+    <rect class="hit" fill="transparent" data-hs="chest" data-label="Treasure chest" x="1446" y="560" width="142" height="134"/>
+    <rect class="hit" fill="transparent" data-hs="webcam" data-label="Webcam" x="1514" y="58" width="52" height="38"/>
+    <rect class="hit" fill="transparent" data-hs="torch" data-label="Torch" x="270" y="150" width="60" height="96"/>
+  </g>
+</svg>

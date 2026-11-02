@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><title>Fax-o-Matic 3000</title>
+  <rect width="120" height="120" rx="14" fill="#1f2410"/>
+  <rect x="34" y="22" width="52" height="30" fill="#fff"/><path d="M40 30h40M40 38h34M40 46h26" stroke="#bbb" stroke-width="3"/>
+  <rect x="14" y="46" width="92" height="46" rx="8" fill="#d8d0bc"/>
+  <rect x="62" y="56" width="34" height="12" fill="#9fb37a"/>
+  <g fill="#8d8572"><circle cx="28" cy="62" r="4"/><circle cx="40" cy="62" r="4"/><circle cx="52" cy="62" r="4"/><circle cx="28" cy="76" r="4"/><circle cx="40" cy="76" r="4"/><circle cx="52" cy="76" r="4"/></g>
+  <circle cx="94" cy="80" r="4" fill="#3cff6a"/>
+</svg>

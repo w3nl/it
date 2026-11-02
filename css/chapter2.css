@@ -1,0 +1,77 @@
+/* Chapter 2: Jen's office (laptop, slides, SmartLock, shoe rack). */
+/* ---------- chapter 2: Jen's office ---------- */
+.dialog.who-jen{border-left-color:#ff7eb6} .dialog.who-jen .who{color:#ff7eb6}
+.dialog.who-douglas{border-left-color:#c9a24a} .dialog.who-douglas .who{color:#c9a24a}
+@keyframes walk{from{transform:translateX(-80px)}to{transform:translateX(380px)}}
+.walk{animation:walk 9s linear infinite}
+.walk.b{animation-duration:13s;animation-delay:-6s}
+/* legs stride as they go past, the dog trots */
+@keyframes stride{from{transform:rotate(10deg)}to{transform:rotate(-10deg)}}
+@keyframes trot{to{transform:translateY(-3px)}}
+.walk .leg{transform-box:fill-box;transform-origin:50% 0;animation:stride .45s ease-in-out infinite alternate}
+.walk .leg.back{animation-delay:-.45s}
+.walk.b .leg{animation-duration:.6s}
+.walk.b .leg.back{animation-delay:-.6s}
+.walk .dog{transform-box:fill-box;animation:trot .22s ease-in-out infinite alternate}
+.laptop{max-width:760px;margin:0 auto}
+.lscr{position:relative;aspect-ratio:16/10;border:14px solid #222327;border-bottom-width:18px;border-radius:12px 12px 0 0;background:linear-gradient(135deg,#ff9ac6,#8a5cf6);overflow:hidden;color:#1d1a22;font-family:var(--f-display)}
+.lbase{height:16px;background:linear-gradient(#c9ccd1,#8d9096);border-radius:0 0 14px 14px;margin:0 -3%}
+@media (max-width:600px){.lscr{aspect-ratio:auto;min-height:460px}}
+.lscr .app{position:absolute;inset:0;display:flex;flex-direction:column;background:#f6f4f8}
+.bar{display:flex;align-items:center;gap:10px;padding:6px 10px;background:#2a2630;color:#f2eef6;font-size:13px}
+.bar b{font-weight:600;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar button{background:#4a4452;border:0;color:#fff;border-radius:4px;padding:3px 9px;font-size:12px}
+.appbody{flex:1;overflow:auto;padding:14px;min-height:0}
+.lock{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#fff;text-align:center;padding:16px;overflow:auto}
+.avatar{width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,.2);display:grid;place-items:center;border:2px solid rgba(255,255,255,.6)}
+.avatar svg{width:44px;height:44px}
+.lock input,.appbody input{font:inherit;font-size:15px;padding:8px 10px;border-radius:6px;border:2px solid rgba(0,0,0,.15);background:#fff;color:#1d1a22;width:min(260px,100%)}
+.lock .link{background:none;border:0;color:#fff;text-decoration:underline;font-size:13px}
+.lbtn{font:inherit;font-size:13px;font-weight:600;background:#2a2630;color:#fff;border:0;border-radius:6px;padding:8px 14px}
+.lmsg{font-size:13px;min-height:1.3em;max-width:40ch}
+.qs{display:grid;gap:6px;width:min(340px,100%);text-align:left}
+.qs label{font-size:12px;font-weight:600}
+.qs input{width:100%}
+.desk{position:absolute;inset:0 0 30px;padding:16px;display:grid;grid-template-columns:repeat(auto-fill,96px);grid-auto-rows:96px;gap:8px;align-content:start}
+.ico{background:none;border:0;color:#fff;display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px;font-weight:600;text-shadow:0 1px 3px rgba(0,0,0,.5);border-radius:6px;padding:6px 2px}
+.ico:hover{background:rgba(255,255,255,.2)}
+.ico svg{width:44px;height:44px;flex:0 0 auto}
+.taskbar{position:absolute;left:0;right:0;bottom:0;height:30px;background:rgba(42,38,48,.85);color:#fff;font-size:12px;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 10px}
+.slide{background:#fff;aspect-ratio:16/9;max-width:520px;margin:0 auto;border:1px solid #ddd;box-shadow:0 6px 20px -10px rgba(0,0,0,.4);padding:4% 6%;display:flex;flex-direction:column;justify-content:center;gap:6px;font-family:"Comic Sans MS","Comic Neue",var(--f-hand);overflow:hidden}
+.slide h4{margin:0;font-size:clamp(20px,3.6vw,32px);color:#d6336c;line-height:1.1}
+.slide p{margin:0;font-size:clamp(13px,1.8vw,16px)}
+.slide.fixed{font-family:var(--f-display)} .slide.fixed h4{color:#2a2630}
+.slide .wrong{text-decoration:line-through;opacity:.5}
+.slide .right{color:#2b8a3e;font-weight:700}
+.slide .why{font-size:13px;color:#444}
+.opts{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:10px}
+.opts button{font:inherit;font-size:13px;background:#fff;border:1px solid #bbb;border-radius:16px;padding:6px 12px;color:#1d1a22}
+.opts button:hover{border-color:#d6336c;color:#d6336c}
+.snav{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:10px}
+.dots{display:flex;gap:4px;flex-wrap:wrap}
+.dots button{width:28px;height:22px;border-radius:3px;border:1px solid #bbb;background:#fff;font-size:11px;padding:0;color:#333}
+.dots button.ok{background:#b2f2bb;border-color:#2b8a3e}
+.dots button.cur{outline:2px solid #d6336c;outline-offset:1px}
+.notes{background:#fff9db;border:1px dashed #e0c040;padding:8px 10px;font-size:13px;margin:10px auto 0;max-width:520px;color:#1d1a22}
+.notes code{font-family:var(--f-mono);font-weight:600;background:#fff;padding:0 4px}
+.smsg{font-size:13px;text-align:center;min-height:1.3em;margin-top:8px;color:#5a5560}
+.net{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;background:#fff;border:1px solid #ddd;border-radius:6px;padding:10px 12px;margin-bottom:6px;font:inherit;font-size:14px;color:#1d1a22;text-align:left}
+.net:hover{border-color:#8a5cf6}
+.net small{color:#777;white-space:nowrap}
+.net.on{border-color:#2b8a3e;background:#ebfbee}
+.msg{background:#fff;border-radius:10px;padding:8px 12px;margin-bottom:8px;max-width:460px;font-size:14px;box-shadow:0 1px 2px rgba(0,0,0,.15);color:#1d1a22}
+.msg b{display:block;font-size:12px;color:#8a5cf6}
+.msg.new{border:2px solid #d6336c}
+.file{display:block;width:100%;text-align:left;background:#fff;border:1px solid #ddd;border-radius:6px;padding:8px 12px;margin-bottom:6px;font:inherit;font-size:14px;color:#1d1a22}
+.file:hover{border-color:#8a5cf6}
+.progress{height:10px;background:#ddd;border-radius:5px;overflow:hidden;width:100%;max-width:360px;margin:10px auto 0}
+.progress i{display:block;height:100%;width:0;background:#8a5cf6;transition:width 2s linear}
+.slock{background:#14161c;border:1px solid #2f3442;border-radius:12px;padding:20px;max-width:440px;margin:0 auto;display:grid;gap:8px;font-family:var(--f-mono)}
+.slock .scr2{background:#0b1a2e;color:#8fd3ff;border-radius:6px;padding:12px;font-size:13px;line-height:1.5;margin-bottom:6px}
+.slock label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.slock input{font-family:var(--f-mono);font-size:16px;padding:9px 10px;background:#05080c;color:#8fd3ff;border:1px solid #2f3442;border-radius:4px;width:100%}
+.slock .btn{margin-top:6px}
+.shoes{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;background:#3a2b34;padding:14px;border-radius:4px}
+.sbox{border:0;border-radius:3px;padding:14px 10px;min-height:92px;display:flex;flex-direction:column;justify-content:space-between;text-align:left;font-family:var(--f-mono);font-size:11px;box-shadow:inset 0 10px 0 rgba(0,0,0,.12),0 4px 0 rgba(0,0,0,.3)}
+.sbox b{font-family:var(--f-display);font-size:15px;letter-spacing:.06em}
+.sbox:hover{translate:0 -3px}

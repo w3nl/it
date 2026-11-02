@@ -1,0 +1,92 @@
+# Step 5 of the agent workflow (see docs/agent-workflow.md).
+# The full test suite runs in "Play the game" (tests.yml). This agent plays the changed parts like a player would,
+# on desktop and phone sizes, and reports what happened with screenshots.
+name: "Agent: playtest"
+
+on:
+  pull_request:
+    types: [opened, synchronize, ready_for_review, reopened]
+    paths: ["index.html", "css/**", "js/**", "scenes/**", "portraits/**", "sw.js"]
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: Pull request number to playtest
+        required: true
+
+concurrency:
+  group: agent-playtest-${{ github.event.pull_request.number || inputs.pr_number }}
+  cancel-in-progress: true
+
+jobs:
+  playtest:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.pull_request.head.repo.full_name == github.repository && !github.event.pull_request.draft)
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
+      id-token: write
+    env:
+      PR: ${{ github.event.pull_request.number || inputs.pr_number }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: refs/pull/${{ env.PR }}/head
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies and the test browser
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+
+      - name: Start the game
+        run: |
+          node tests/serve.js > /tmp/serve.log 2>&1 &
+          for i in $(seq 30); do curl -sf http://127.0.0.1:4173 > /dev/null && break; sleep 1; done
+          mkdir -p playtest
+
+      - uses: anthropics/claude-code-action@v1
+        env:
+          GH_TOKEN: ${{ github.token }}
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ github.token }}
+          claude_args: |
+            --max-turns 80
+            --allowedTools "Read,Glob,Grep,Write,Edit,Bash(node:*),Bash(npx:*),Bash(npm:*),Bash(gh pr view:*),Bash(gh pr diff:*),Bash(gh pr comment:*),Bash(gh issue view:*),Bash(ls:*),Bash(mkdir:*),Bash(cat:*)"
+          prompt: |
+            You are the TEST agent for "Hello, IT", a point-and-click escape room in this repository.
+            AGENTS.md (loaded as project instructions) explains the game, how tests seed localStorage, and all puzzle solutions.
+
+            Playtest pull request #${{ env.PR }} in ${{ github.repository }}.
+            Read what it changes: gh pr view ${{ env.PR }}   and   gh pr diff ${{ env.PR }}
+            The automated suite (npm test) runs separately in the "Play the game" workflow, so don't just rerun it.
+
+            The game is already running at http://127.0.0.1:4173.
+            Write throwaway Playwright scripts in /tmp (require('playwright'); chromium is installed) and play the changed parts like a player:
+            - the happy path, plus wrong moves and odd orders (clicking things too early, closing a close-up halfway, reloading the page);
+            - desktop 1280x900, phone portrait 412x915 and phone landscape 915x412 (isMobile, hasTouch);
+            - check for console errors, sideways scrolling, text that is cut off, and close-ups that don't fit;
+            - save screenshots of anything interesting in the playtest/ folder (they are uploaded with the workflow run).
+            Don't commit anything.
+
+            Post one comment (gh pr comment ${{ env.PR }} --body-file <file>) that starts with
+            "**Playtest: ✅ works**" or "**Playtest: ❌ problems found**", then: what you tried, what worked, and each problem with steps to
+            reproduce and the screenshot file name. Mention that screenshots are in the "playtest-screenshots" artifact of this workflow run.
+
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playtest-screenshots
+          path: playtest/
+          if-no-files-found: ignore
+          retention-days: 14

@@ -1,0 +1,93 @@
+# Step 3 of the agent workflow (see docs/agent-workflow.md).
+# When an issue gets the "ready-to-build" label, Claude builds the refined plan on a branch, runs the tests and opens a PR.
+name: "Agent: build"
+
+on:
+  issues:
+    types: [labeled]
+
+concurrency:
+  group: agent-build-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.event.label.name == 'ready-to-build'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      actions: write
+      id-token: write
+    env:
+      BRANCH: agent/issue-${{ github.event.issue.number }}
+      # Optional: a fine-grained token (contents, pull requests, issues: read & write). With it, the PR triggers
+      # the review, playtest and test workflows by itself. Without it, the last step starts them.
+      AGENT_TOKEN: ${{ secrets.AGENT_GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.AGENT_GITHUB_TOKEN || github.token }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies and the test browser
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+
+      - name: Prepare the branch
+        run: |
+          git config user.name "hello-it-agent"
+          git config user.email "hello-it-agent@users.noreply.github.com"
+          git checkout -B "$BRANCH" origin/main
+
+      - uses: anthropics/claude-code-action@v1
+        env:
+          GH_TOKEN: ${{ secrets.AGENT_GITHUB_TOKEN || github.token }}
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.AGENT_GITHUB_TOKEN || github.token }}
+          claude_args: |
+            --max-turns 150
+            --allowedTools "Read,Glob,Grep,Edit,Write,MultiEdit,Bash(npm:*),Bash(npx:*),Bash(node:*),Bash(git:*),Bash(gh issue:*),Bash(gh pr:*),Bash(ls:*),Bash(mkdir:*),Bash(cat:*),Bash(sed:*),Bash(grep:*)"
+          prompt: |
+            You are the BUILD agent for "Hello, IT", a point-and-click escape room in this repository.
+            AGENTS.md (loaded as project instructions) explains the code, the conventions and the checklists. Follow it closely.
+
+            Build issue #${{ github.event.issue.number }} in ${{ github.repository }}.
+            Read the issue, the refine agent's plan and the whole discussion: gh issue view ${{ github.event.issue.number }} --comments
+            The latest decisions in the discussion win over the original plan.
+
+            You are on branch ${{ env.BRANCH }}, created from main.
+            1. Implement the plan. Keep changes focused. Follow AGENTS.md: unique global names, unique SVG ids and CSS classes,
+               two hints per puzzle, British English, the characters' voices, phone layouts, accessibility.
+            2. Bump CACHE in sw.js and add any new files to CORE.
+            3. Add or update Playwright tests (tests/*.spec.js) for the new behaviour, including at least one wrong move.
+            4. Run `npm test` until everything passes. Do not skip or weaken existing tests to make them pass.
+            5. Update AGENTS.md (new puzzle solutions, flags, gotchas) and the README if the content changed.
+            6. Commit in small logical commits with clear messages, then push: git push -u origin ${{ env.BRANCH }}
+            7. Open a pull request:
+               gh pr create --base main --head ${{ env.BRANCH }} --label agent-pr --title "<short title>" --body-file <file>
+               The body has: what changed and why, how to try it in the game (where to click), the acceptance criteria from the
+               plan ticked off, the tests you added, and "Closes #${{ github.event.issue.number }}".
+               If you could not make all tests pass, open it as a draft (--draft) and explain exactly what fails.
+            8. Comment on the issue with a link to the pull request.
+
+      - name: Start review, playtest and tests for the new pull request
+        if: success() && env.AGENT_TOKEN == ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          PR=$(gh pr list --head "$BRANCH" --json number --jq '.[0].number')
+          if [ -z "$PR" ]; then echo "No pull request was opened."; exit 0; fi
+          gh workflow run tests.yml --ref "$BRANCH"
+          gh workflow run agent-review.yml -f pr_number="$PR"
+          gh workflow run agent-playtest.yml -f pr_number="$PR"

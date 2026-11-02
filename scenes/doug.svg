@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="scene" id="sc-doug" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-label="Douglas Reynholm's office">
+  <defs>
+    <linearGradient id="dWall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3d2618"/><stop offset="1" stop-color="#22140b"/></linearGradient>
+    <pattern id="dPanel" width="160" height="220" patternUnits="userSpaceOnUse"><rect x="12" y="14" width="136" height="192" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="5"/><rect x="17" y="19" width="126" height="182" fill="none" stroke="rgba(255,220,170,.05)" stroke-width="2"/></pattern>
+    <linearGradient id="dCarpet" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6a1420"/><stop offset="1" stop-color="#25050a"/></linearGradient>
+    <linearGradient id="dSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5b5f9a"/><stop offset=".55" stop-color="#c9708a"/><stop offset="1" stop-color="#f4a25a"/></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ecd078"/><stop offset="1" stop-color="#9c7425"/></linearGradient>
+    <radialGradient id="alarmG" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ff2a2a" stop-opacity=".5"/><stop offset="1" stop-color="#ff2a2a" stop-opacity="0"/></radialGradient>
+    <linearGradient id="tankG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a9cc0"/><stop offset="1" stop-color="#154a5e"/></linearGradient>
+    <radialGradient id="dScreenGlow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ff5fa2" stop-opacity=".35"/><stop offset="1" stop-color="#ff5fa2" stop-opacity="0"/></radialGradient>
+    <radialGradient id="vign4" cx=".5" cy=".45" r=".75"><stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".72"/></radialGradient>
+  </defs>
+
+  <rect width="1600" height="640" fill="url(#dWall)"/>
+  <rect width="1600" height="640" fill="url(#dPanel)"/>
+  <rect width="1600" height="40" fill="#1a0e07"/>
+  <rect y="40" width="1600" height="5" fill="url(#gold)"/>
+  <rect y="626" width="1600" height="16" fill="#1a0e07"/>
+  <rect y="642" width="1600" height="258" fill="url(#dCarpet)"/>
+  <rect x="640" y="690" width="600" height="160" fill="none" stroke="#c9a24a" stroke-opacity=".25" stroke-width="6"/>
+
+  <!-- window, skyline, blinds -->
+  <rect x="720" y="100" width="420" height="380" fill="#120a05"/>
+  <rect x="732" y="112" width="396" height="356" fill="url(#dSky)"/>
+  <circle cx="1040" cy="430" r="44" fill="#ffd27a" opacity=".85"/>
+  <g fill="#2a2440">
+    <rect x="740" y="330" width="34" height="138"/><path d="M748 330 l9 -40 l9 40z"/>
+    <circle cx="840" cy="390" r="58" fill="none" stroke="#2a2440" stroke-width="5"/><path d="M840 390 v78" stroke="#2a2440" stroke-width="5"/>
+    <rect x="904" y="372" width="40" height="96"/>
+    <path d="M968 468 q-16 -110 18 -170 q34 60 18 170z"/>
+    <path d="M1030 468 l34 -230 l34 230z"/>
+    <rect x="1104" y="350" width="24" height="118"/>
+  </g>
+  <g id="blinds"></g>
+  <rect x="716" y="476" width="428" height="10" fill="#1a0e07"/>
+
+  <!-- door + alarm -->
+  <ellipse id="alarm-glow" cx="170" cy="230" rx="180" ry="120" fill="url(#alarmG)" class="pulse"/>
+  <rect x="58" y="240" width="204" height="402" fill="#120a05"/>
+  <rect x="70" y="252" width="88" height="390" fill="#5a2e18"/><rect x="162" y="252" width="88" height="390" fill="#5a2e18"/>
+  <rect x="84" y="276" width="60" height="140" fill="none" stroke="#3e1f0f" stroke-width="5"/><rect x="176" y="276" width="60" height="140" fill="none" stroke="#3e1f0f" stroke-width="5"/>
+  <rect x="84" y="450" width="60" height="160" fill="none" stroke="#3e1f0f" stroke-width="5"/><rect x="176" y="450" width="60" height="160" fill="none" stroke="#3e1f0f" stroke-width="5"/>
+  <rect x="146" y="420" width="8" height="40" rx="4" fill="url(#gold)"/><rect x="166" y="420" width="8" height="40" rx="4" fill="url(#gold)"/>
+  <rect x="128" y="208" width="64" height="20" rx="4" fill="#ff2a2a" class="blink" id="alarm-light"/>
+  <rect x="124" y="262" width="72" height="48" rx="4" fill="#3a0a0a" stroke="#555" stroke-width="2" id="privacy-scr"/>
+  <text id="privacy-txt" x="160" y="283" text-anchor="middle" font-family="VT323, monospace" font-size="18" fill="#ff6b6b">PRIVACY</text>
+  <text x="160" y="301" text-anchor="middle" font-family="VT323, monospace" font-size="16" fill="#ff6b6b" id="privacy-txt2">MODE</text>
+
+  <!-- safe (behind portrait) -->
+  <g id="safe-vis" style="display:none">
+    <rect x="364" y="176" width="140" height="168" rx="4" fill="#6c737a" stroke="#3a3f44" stroke-width="6"/>
+    <rect x="382" y="194" width="104" height="44" fill="#021006"/>
+    <text x="392" y="224" font-family="VT323, monospace" font-size="22" fill="#7dff9a">SQL&gt;_</text>
+    <circle cx="434" cy="290" r="28" fill="#a9b0b6" stroke="#3a3f44" stroke-width="4"/>
+    <path d="M434 266v8M434 306v8M410 290h8M450 290h8" stroke="#3a3f44" stroke-width="3"/>
+    <rect x="480" y="280" width="10" height="24" rx="3" fill="#3a3f44"/>
+  </g>
+  <!-- portrait of Denholm -->
+  <g id="portrait">
+    <rect x="300" y="120" width="220" height="290" fill="url(#gold)"/>
+    <rect x="316" y="136" width="188" height="258" fill="#24362a"/>
+    <path d="M330 394 q10 -86 80 -92 q70 6 80 92z" fill="#1b2234"/>
+    <path d="M392 306 l18 42 l18 -42z" fill="#f2f0ea"/>
+    <path d="M406 312 h8 l4 30 l-8 10 l-8 -10z" fill="#6a1420"/>
+    <ellipse cx="410" cy="252" rx="38" ry="46" fill="#e2b48f"/>
+    <path d="M370 246 q2 -54 40 -56 q38 2 40 56 q-8 -30 -40 -32 q-32 2 -40 32z" fill="#cfcfcf"/>
+    <path d="M388 238 l14 4M432 238 l-14 4" stroke="#555" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="396" cy="250" r="3" fill="#222"/><circle cx="424" cy="250" r="3" fill="#222"/>
+    <path d="M398 278 h24" stroke="#7a3a2a" stroke-width="3" stroke-linecap="round"/>
+    <rect x="356" y="414" width="108" height="18" fill="url(#gold)"/>
+    <text x="410" y="427" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-weight="600" font-size="9" fill="#2a1a08">DENHOLM · FOUNDER</text>
+  </g>
+
+  <!-- trophies -->
+  <rect x="586" y="172" width="96" height="60" fill="#1a0e07" stroke="url(#gold)" stroke-width="3"/>
+  <text x="634" y="196" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-weight="600" font-size="10" fill="#e8c766">WORLD'S BEST</text>
+  <text x="634" y="214" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-weight="600" font-size="12" fill="#e8c766">BOSS</text>
+  <rect x="556" y="300" width="156" height="10" fill="#1a0e07"/>
+  <g fill="url(#gold)">
+    <path d="M572 254 h32 q0 30 -16 34 q-16 -4 -16 -34z"/><rect x="584" y="286" width="8" height="8"/><rect x="576" y="292" width="24" height="8"/>
+    <path d="M620 236 h40 q0 40 -20 46 q-20 -6 -20 -46z"/><rect x="636" y="280" width="8" height="12"/><rect x="626" y="290" width="28" height="10"/>
+    <path d="M676 262 h26 q0 24 -13 28 q-13 -4 -13 -28z"/><rect x="685" y="288" width="8" height="6"/><rect x="679" y="292" width="20" height="8"/>
+  </g>
+
+  <!-- fax table -->
+  <rect x="430" y="596" width="196" height="10" fill="#1a0e07"/>
+  <rect x="440" y="606" width="8" height="80" fill="#1a0e07"/><rect x="608" y="606" width="8" height="80" fill="#1a0e07"/>
+  <rect x="452" y="538" width="140" height="58" rx="6" fill="#d8d0bc"/>
+  <rect x="468" y="528" width="104" height="14" fill="#bdb5a0"/>
+  <rect x="540" y="550" width="42" height="13" fill="#9fb37a"/>
+  <g fill="#8d8572"><circle cx="472" cy="560" r="3"/><circle cx="484" cy="560" r="3"/><circle cx="496" cy="560" r="3"/><circle cx="472" cy="572" r="3"/><circle cx="484" cy="572" r="3"/><circle cx="496" cy="572" r="3"/></g>
+  <circle id="fax-led" cx="582" cy="582" r="4" fill="#ff3b30" class="blink"/>
+  <path id="fax-jam" d="M480 594 l14 22 l10 -8 l12 18 l14 -14 l8 10 l6 -28z" fill="#fff"/>
+  <rect x="598" y="574" width="22" height="22" fill="#1971c2"/><rect x="600" y="576" width="3" height="18" fill="#a5d8ff"/>
+
+  <!-- desk -->
+  <ellipse cx="935" cy="470" rx="170" ry="110" fill="url(#dScreenGlow)"/>
+  <rect x="924" y="528" width="22" height="30" fill="#222"/>
+  <rect x="850" y="404" width="170" height="126" rx="6" fill="#141418"/>
+  <rect id="doug-scr" x="860" y="414" width="150" height="106" fill="#1e3a8a"/>
+  <g id="screen-pops">
+    <rect x="866" y="420" width="64" height="40" fill="#fff"/><rect x="866" y="420" width="64" height="8" fill="#2b5cd6"/><rect x="880" y="440" width="36" height="10" fill="#2b8a3e"/>
+    <rect x="924" y="436" width="72" height="44" fill="#fff"/><rect x="924" y="436" width="72" height="8" fill="#2b5cd6"/><rect x="938" y="460" width="44" height="12" fill="#c8262c"/>
+    <rect x="880" y="470" width="60" height="40" fill="#fff"/><rect x="880" y="470" width="60" height="8" fill="#2b5cd6"/><rect x="892" y="490" width="36" height="10" fill="#e8590c"/>
+    <rect x="950" y="488" width="54" height="28" fill="#ffe066"/>
+  </g>
+  <rect x="700" y="556" width="482" height="26" fill="#4a1f10"/>
+  <rect x="700" y="580" width="482" height="4" fill="url(#gold)"/>
+  <rect x="714" y="584" width="454" height="124" fill="#3a170b"/>
+  <rect x="740" y="604" width="180" height="84" fill="none" stroke="#2a0f06" stroke-width="5"/><rect x="962" y="604" width="180" height="84" fill="none" stroke="#2a0f06" stroke-width="5"/>
+  <rect x="880" y="544" width="120" height="10" rx="2" fill="#2a2a2e"/>
+  <rect x="738" y="534" width="112" height="22" fill="url(#gold)"/>
+  <text x="794" y="549" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-weight="600" font-size="9" fill="#2a1a08">D. REYNHOLM · CEO</text>
+  <path d="M1052 556 h50 l-6 -20 h-38z" fill="url(#gold)"/><path d="M1050 532 q27 -16 54 0" stroke="url(#gold)" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <rect x="1128" y="526" width="22" height="30" fill="rgba(220,160,80,.55)" stroke="rgba(255,255,255,.4)"/>
+
+  <!-- Douglas -->
+  <g>
+    <rect x="1206" y="520" width="30" height="118" fill="#1b1d26"/><rect x="1246" y="520" width="30" height="118" fill="#1b1d26"/>
+    <ellipse cx="1220" cy="638" rx="20" ry="7" fill="#0d0d10"/><ellipse cx="1262" cy="638" rx="20" ry="7" fill="#0d0d10"/>
+    <path d="M1196 404 q-18 60 -4 110" stroke="#2a2e3d" stroke-width="22" fill="none" stroke-linecap="round"/>
+    <path d="M1186 540 L1196 400 Q1240 378 1284 400 L1294 540 Z" fill="#2a2e3d"/>
+    <path d="M1226 392 L1240 452 L1254 392 Z" fill="#f2f0ea"/>
+    <path d="M1236 398 h8 l4 44 l-8 12 l-8 -12z" fill="#c8262c"/>
+    <path d="M1284 404 q26 50 6 98" stroke="#2a2e3d" stroke-width="22" fill="none" stroke-linecap="round"/>
+    <circle cx="1290" cy="506" r="10" fill="#e8bc96"/>
+    <rect x="1282" y="484" width="16" height="20" fill="rgba(220,160,80,.6)" stroke="rgba(255,255,255,.5)"/>
+    <rect x="1230" y="368" width="20" height="22" fill="#e8bc96"/>
+    <ellipse cx="1240" cy="340" rx="30" ry="36" fill="#e8bc96"/>
+    <path d="M1208 336 q-2 -46 34 -48 q36 0 34 32 q-14 -16 -42 -12 q-18 4 -26 28z" fill="#4a2c18"/>
+    <path d="M1228 326 q6 -4 10 0M1246 326 q6 -4 10 0" stroke="#4a2c18" stroke-width="3" fill="none"/>
+    <circle cx="1232" cy="336" r="2.5" fill="#222"/><circle cx="1252" cy="336" r="2.5" fill="#222"/>
+    <path d="M1228 354 q12 10 24 0" stroke="#7a3a2a" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- fish tank & drinks cabinet -->
+  <rect x="1320" y="522" width="180" height="118" fill="#4a1f10"/>
+  <rect x="1332" y="534" width="72" height="94" fill="#2a0f06"/><rect x="1416" y="534" width="72" height="94" fill="#2a0f06"/>
+  <g><rect x="1342" y="580" width="12" height="44" fill="#8a5a1a"/><rect x="1360" y="574" width="12" height="50" fill="#2b5a2a"/><rect x="1430" y="584" width="12" height="40" fill="#c9a24a"/><rect x="1450" y="576" width="12" height="48" fill="#6a1420"/></g>
+  <rect x="1326" y="408" width="168" height="114" fill="url(#tankG)" stroke="#9fd8e8" stroke-width="3" opacity=".9"/>
+  <rect x="1328" y="500" width="164" height="20" fill="#d9c08a"/>
+  <path d="M1350 500 q-6 -30 6 -50 M1470 500 q8 -36 -4 -60" stroke="#3c8a4a" stroke-width="5" fill="none"/>
+  <g class="swim"><ellipse cx="1370" cy="456" rx="18" ry="10" fill="#ff9a1c"/><path d="M1352 456 l-12 -9 v18z" fill="#ff9a1c"/><circle cx="1380" cy="453" r="2" fill="#111"/></g>
+  <g fill="rgba(255,255,255,.5)"><circle cx="1440" cy="440" r="3" class="blink"/><circle cx="1446" cy="424" r="2"/><circle cx="1438" cy="412" r="2.5" class="blink"/></g>
+
+  <!-- putting green -->
+  <path d="M140 770 L640 752 L680 832 L120 852Z" fill="#3c7a3a"/>
+  <ellipse cx="590" cy="790" rx="14" ry="5" fill="#111"/>
+  <path d="M590 790 v-60" stroke="#ddd" stroke-width="3"/><path d="M590 730 l28 8 l-28 8z" fill="#c8262c"/>
+  <circle cx="220" cy="812" r="8" fill="#fff"/>
+
+  <rect width="1600" height="900" fill="url(#vign4)" pointer-events="none"/>
+
+  <g>
+    <rect class="hit" fill="transparent" data-hs="ddoor" data-label="Office door" x="58" y="200" width="206" height="442"/>
+    <rect class="hit" fill="transparent" data-hs="ddoor" data-label="Privacy Mode panel" x="120" y="258" width="80" height="56"/>
+    <rect class="hit" fill="transparent" data-hs="portrait" data-label="Portrait of Denholm" x="300" y="120" width="220" height="316" id="hit-portrait"/>
+    <rect class="hit" fill="transparent" data-hs="trophies" data-label="Trophies" x="552" y="168" width="162" height="140"/>
+    <rect class="hit" fill="transparent" data-hs="dwindow" data-label="Window" x="720" y="100" width="420" height="380"/>
+    <rect class="hit" fill="transparent" data-hs="dpc" data-label="Douglas's computer" x="846" y="400" width="180" height="156"/>
+    <rect class="hit" fill="transparent" data-hs="plate" data-label="Nameplate" x="734" y="528" width="120" height="30"/>
+    <rect class="hit" fill="transparent" data-hs="dphone" data-label="Gold telephone" x="1046" y="514" width="62" height="46"/>
+    <rect class="hit" fill="transparent" data-hs="whisky" data-label="Glass of whisky" x="1122" y="516" width="34" height="44"/>
+    <rect class="hit" fill="transparent" data-hs="douglas" data-label="Talk to Douglas" x="1180" y="292" width="126" height="352"/>
+    <rect class="hit" fill="transparent" data-hs="fax" data-label="Fax machine" x="446" y="522" width="150" height="78"/>
+    <rect class="hit" fill="transparent" data-hs="manual" data-label="Fax manual" x="594" y="566" width="32" height="34"/>
+    <rect class="hit" fill="transparent" data-hs="tank" data-label="Fish tank" x="1320" y="404" width="180" height="118"/>
+    <rect class="hit" fill="transparent" data-hs="cabinet" data-label="Drinks cabinet" x="1320" y="522" width="180" height="118"/>
+    <rect class="hit" fill="transparent" data-hs="golf" data-label="Putting green" x="120" y="748" width="560" height="104"/>
+  </g>
+</svg>

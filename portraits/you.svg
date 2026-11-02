@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><title>You, the IT temp</title>
+  <rect width="120" height="120" rx="14" fill="#1f1a10"/>
+  <circle cx="60" cy="56" r="50" fill="#f0a53a" opacity=".12"/>
+  <path d="M12 120 q4-32 48-36 q44 4 48 36z" fill="#3a3f2e"/>
+  <path d="M46 86 L60 106 L74 86" stroke="#c8262c" stroke-width="3" fill="none"/>
+  <rect x="50" y="104" width="20" height="14" rx="2" fill="#f2efe6"/>
+  <text x="60" y="114" text-anchor="middle" font-family="monospace" font-size="7" font-weight="700" fill="#1a1a22">TEMP</text>
+  <rect x="52" y="74" width="16" height="14" fill="#d9a77e"/>
+  <ellipse cx="60" cy="52" rx="23" ry="27" fill="#d9a77e"/>
+  <path d="M37 50 q-2-28 23-30 q25 2 23 28 q-8-14-23-14 q-15 0-23 16z" fill="#3a2a1a"/>
+  <circle cx="51" cy="54" r="2.4" fill="#222"/><circle cx="69" cy="54" r="2.4" fill="#222"/>
+  <path d="M53 69 q7 4 14 0" stroke="#7a3a2a" stroke-width="3" fill="none" stroke-linecap="round"/>
+</svg>

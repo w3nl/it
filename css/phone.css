@@ -1,0 +1,42 @@
+/* Phones: portrait panning, short landscape screens, and the rotate-your-phone banner. */
+/* ---------- phones ---------- */
+.frame{width:min(100%, calc((100svh - 150px) * 16 / 9));margin-inline:auto;min-width:0;max-width:100%}
+.pan{position:relative;max-width:100%;min-width:0}
+.swipe{display:none;font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:center;margin-top:6px}
+.hit:focus:not(:focus-visible){outline:none}
+@media (orientation:portrait) and (max-width:700px){
+  .frame{width:auto}
+  .pan{overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;border-radius:6px}
+  .pan .stage{width:calc(min(56svh, 480px) * 16 / 9);max-width:none}
+  .swipe{display:block}
+  .overlay{padding:16px calc(100% - min(100vw - 32px, 380px) + 16px) 16px 16px}
+}
+@media (orientation:landscape) and (max-height:520px){
+  .wrap{padding-block:6px 10px;gap:6px}
+  .brand h1{font-size:18px} .brand small{display:none}
+  .chip{padding:4px 8px;font-size:11px}
+  .frame{width:min(100%, calc((100svh - 104px) * 16 / 9))}
+  .dialog{padding:8px 12px 10px;min-height:0}
+  .dialog .txt{font-size:14px}
+  .tray{gap:8px} .slot{width:44px;height:44px} .slot svg{width:32px;height:32px} .tray-hint{font-size:12px}
+  .panel{padding:14px}
+  .lscr{aspect-ratio:auto;height:calc(100svh - 130px);min-height:0}
+  .crt{aspect-ratio:auto;height:calc(100svh - 200px)}
+  .monitor{padding:10px 12px 14px} .tower{margin-top:8px;padding:6px 12px} .power{width:38px;height:38px;font-size:16px}
+  .panel h3{font-size:17px} .panel .sub{margin-bottom:8px}
+  .overlay{gap:6px;padding-block:10px} .overlay p:not(.keep){display:none} .overlay h2{font-size:clamp(28px,9vh,44px)} .overlay p.keep{font-size:13px}
+}
+
+/* ---------- rotate-your-phone banner ---------- */
+.rotate{display:none;grid-template-columns:auto 1fr;align-items:center;gap:6px 12px;background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--phosphor);border-radius:4px;padding:10px 12px}
+.rotate .rot-ico{width:40px;height:40px;grid-row:span 2;color:var(--phosphor);animation:tilt 2.6s ease-in-out infinite}
+.rotate .rot-txt{display:flex;flex-direction:column;gap:2px;font-size:13px;color:var(--muted);min-width:0}
+.rotate .rot-txt b{color:var(--paper);font-size:15px}
+.rotate .chip{justify-self:start;white-space:nowrap;padding:5px 10px;font-size:11px}
+@keyframes tilt{0%,30%{transform:rotate(0)}50%,80%{transform:rotate(-90deg)}100%{transform:rotate(0)}}
+@media (orientation:portrait) and (max-width:700px) and (pointer:coarse){ .rotate{display:grid} }
+
+.watch{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:12px;color:var(--phosphor);text-decoration:none;max-width:52ch;line-height:1.4}
+.watch svg{width:22px;height:22px;flex:0 0 auto;color:#ff4e45}
+.watch span{text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(125,255,154,.4)}
+.watch:hover span{text-decoration-color:var(--phosphor)}

@@ -1,0 +1,54 @@
+/* Chapter 6: the yacht (logbook, engine, HTTP, radio, autopilot, CAPTCHA, tour boat). */
+/* ---------- chapter 6: the yacht ---------- */
+@keyframes drift{from{transform:translateX(0)}to{transform:translateX(-300px)}}
+.drift{animation:drift 60s linear infinite alternate}
+.docked .drift{animation:none}
+.logp{background:#f4ecd8;color:#2a1a0c;border-radius:4px;padding:16px 18px;font-size:14px}
+.logp .nums{font-family:var(--f-mono);font-size:16px;font-weight:600;line-height:1.7;word-spacing:4px;color:#7a1f22;margin:8px 0}
+.ascii{display:grid;grid-template-columns:repeat(auto-fill,minmax(64px,1fr));gap:2px 10px;font-family:var(--f-mono);font-size:12px;margin-top:10px;color:#5a3518}
+.ascii b{color:#1971c2;margin-right:4px}
+.sysgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.sysb{display:flex;align-items:center;gap:10px;background:#1a1e21;border:1px solid #3a4146;border-radius:6px;padding:10px 12px;font-size:14px;text-align:left}
+.sysb i{width:14px;height:14px;border-radius:50%;background:#3a1010;flex:0 0 auto;box-shadow:inset 0 2px 3px rgba(0,0,0,.5)}
+.sysb.on i{background:#3cff6a;box-shadow:0 0 10px #3cff6a}
+.sysb:hover{border-color:var(--amber)}
+.yjson{font-family:var(--f-mono);font-size:13px;background:#f1e3c8;color:#2a1a0c;border-radius:4px;padding:10px 12px;margin-bottom:10px;white-space:pre;overflow-x:auto}
+.http{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:6px}
+.http button{font-family:var(--f-mono);font-size:13px;text-align:left;background:#0a120c;color:#cfe8d4;border:1px solid #24402c;border-radius:4px;padding:8px 10px}
+.http button b{color:#ffd166}
+.http button:hover{border-color:var(--phosphor)}
+.hcode{font-family:var(--f-crt);font-size:64px;line-height:1;text-align:center;color:#ff6b6b;background:#05080c;border-radius:6px;padding:10px;margin-bottom:10px;min-height:84px}
+.hcode.ok{color:var(--phosphor)}
+.hcode small{display:block;font-size:20px;color:var(--muted)}
+.bits{display:grid;grid-template-columns:repeat(5,44px);gap:4px;justify-content:center;margin:12px 0}
+.bit{width:44px;height:44px;border-radius:4px;border:1px solid #3a4146;background:#0a120c;color:var(--phosphor);font-family:var(--f-crt);font-size:26px;padding:0}
+.bit.one{background:#1d5a2c}
+.bit.par{background:#2c2348;color:#ffd166;cursor:default}
+.bit.par.one{background:#5a4a14}
+.bit:not(.par):hover{border-color:var(--amber)}
+.bitlab{display:grid;grid-template-columns:repeat(5,44px);gap:4px;justify-content:center;font-family:var(--f-mono);font-size:10px;color:var(--muted);text-align:center}
+.sea{display:grid;grid-template-columns:repeat(8,1fr);gap:3px;max-width:520px;margin:0 auto;background:#2a4048;padding:6px;border-radius:6px}
+.cell{aspect-ratio:1;border-radius:3px;background:#3a5a64;display:grid;place-items:center;font-family:var(--f-mono);font-size:10px;font-weight:600;color:#fff;text-align:center;line-height:1.1;overflow:hidden}
+.cell.boat{background:#e8590c} .cell.drag{background:#2fa456} .cell.duck{background:#f1c232;color:#3a2a00} .cell.buoy{background:#c8262c}
+.cell.berth{background:#6b4a2e} .cell.berth.goal{background:#8a6a3a} .cell.barrier{background:#1a1a22;color:#ff6b6b}
+.cell .yt{font-size:22px;color:#fff;text-shadow:0 0 6px #000;transition:transform .2s}
+.prog{display:flex;flex-wrap:wrap;gap:4px;min-height:34px;background:#0a120c;border-radius:6px;padding:6px;margin:10px 0}
+.prog span{font-family:var(--f-mono);font-size:12px;background:#24402c;color:#cfe8d4;border-radius:12px;padding:4px 10px}
+.prog span.now{background:var(--amber);color:#1b1206}
+.pal{display:flex;flex-wrap:wrap;gap:6px}
+.pal button{font-family:var(--f-mono);font-size:13px;border-radius:4px;padding:8px 12px;border:1px solid var(--line);background:var(--ink)}
+.pal button:hover{border-color:var(--amber)}
+.pal .run{background:var(--amber);color:#1b1206;border-color:var(--amber);font-weight:600}
+.capt{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;max-width:460px;margin:0 auto}
+.ctile{aspect-ratio:1;border-radius:4px;border:3px solid transparent;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:6px;font-size:12px;font-weight:600;color:#fff;text-align:center;line-height:1.2;text-shadow:0 1px 2px rgba(0,0,0,.5)}
+.ctile svg{width:56%;height:auto}
+.ctile.on{border-color:#4dabf7;box-shadow:inset 0 0 0 3px #fff}
+.capthead{background:#4dabf7;color:#fff;padding:10px 14px;border-radius:4px 4px 0 0;max-width:460px;margin:0 auto;font-size:14px}
+.capthead b{display:block;font-size:20px}
+@media (max-width:600px){ .bits,.bitlab{grid-template-columns:repeat(5,38px)} .bit{width:38px;height:38px;font-size:22px} .cell{font-size:8px} }
+
+@keyframes sail{from{transform:translateX(-260px)}to{transform:translateX(1120px)}}
+.tourboat{transform:translateX(-260px)}
+.tourboat.pass{animation:sail 18s linear forwards}
+@media (prefers-reduced-motion:reduce){#tourboat.force-pass.pass{animation:sail 18s linear forwards!important}}
+:root.motion-off #tourboat.force-pass.pass{animation:sail 18s linear forwards!important}
