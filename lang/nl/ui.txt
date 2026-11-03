@@ -464,3 +464,5 @@
 > Nog geen hoofdstuk uitgespeeld. Ontsnap uit een kamer en je resultaat verschijnt hier.
 = Achievements ({n} of {m})
 > Prestaties ({n} van {m})
+= Finished before scores were kept
+> Uitgespeeld voordat scores werden bijgehouden

@@ -60,9 +60,11 @@ function recordScore(ch, t, hints){
 }
 function openScores(){
   const all = getScores(), open = [true, unlocked2(), unlocked3(), unlocked4(), unlocked5(), unlocked6()];
+  // finished = the next chapter is unlocked (or, for the yacht, the current save has finished it)
+  const finished = i => i < 5 ? open[i + 1] : (S.ch === 6 && !!S.f.out6);
   const done = CH_NAMES.map((_, i) => all[i + 1]).filter(Boolean);
   const rows = CH_NAMES.map((n, i) => { const r = all[i + 1];
-    return `<tr class="${r ? '' : 'todo'}"><td><b>${i + 1}</b> ${n}</td>` + (r ? `<td>${fmt(r.t)}</td><td>${r.hints}</td><td>${rankFor(r.hints)}</td>` : `<td colspan="3">${open[i] ? 'Not finished yet' : 'Not unlocked yet'}</td>`) + '</tr>'; }).join('');
+    return `<tr class="${r ? '' : 'todo'}"><td><b>${i + 1}</b> ${n}</td>` + (r ? `<td>${fmt(r.t)}</td><td>${r.hints}</td><td>${rankFor(r.hints)}</td>` : `<td colspan="3">${finished(i) ? 'Finished before scores were kept' : open[i] ? 'Not finished yet' : 'Not unlocked yet'}</td>`) + '</tr>'; }).join('');
   const sumT = done.reduce((s, r) => s + r.t, 0), sumH = done.reduce((s, r) => s + r.hints, 0);
   const total = done.length ? `<tr class="total"><td>${tx('Total ({n} of 6)', { n: done.length })}</td><td>${fmt(sumT)}</td><td>${sumH}</td><td>${rankFor(Math.round(sumH / done.length))}</td></tr>` : '';
   const got = ACH.filter(([k]) => S.ach[k]).length;
@@ -182,6 +184,8 @@ function start(data){
   buildDecor(); buildDecor3(); buildDecor4();
   const saved = (data && data.v===1) ? data : load();
   if(saved){ S = Object.assign(fresh(), saved); }
+  // A save that ends on a chapter finished before scores were kept still holds that run's time and hints: record them.
+  if(S.started && chapterDone() && !getScores()[S.ch]) recordScore(S.ch, S.t, S.hints);
   refreshMenu();
   renderInv(); applyVisuals(); $('#timer').textContent = fmt(S.t);
 }
