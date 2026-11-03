@@ -202,6 +202,8 @@ If you are one of those agents:
 
 ## Workflow
 
+**Never push to `main`.** Every change goes through a pull request: fetch first (the owner squash-merges, so `main` moves), branch from the latest `origin/main`, push the branch and open a PR. The owner reviews and merges. The claude.ai artifact copy is updated only after the PR is merged.
+
 ```bash
 npm install
 npx playwright install chromium   # first time only
