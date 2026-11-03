@@ -133,3 +133,17 @@ test('the menu shows each chapter\'s best result, kept across new games', async 
   await expect(page.locator('.scores tr.total')).toContainText('Total (1 of 6)');
   await expect(page.locator('.scores-h')).toContainText('Achievements (0 of');
 });
+
+test('a save from before scores existed still shows what was finished', async ({ page }) => {
+  // finished Chapters 1 and 2 earlier, and the save ends on a finished Chapter 3 (8:20, 2 hints)
+  await seed(page, { ch: 3, scene: 'doug', t: 500, hints: 2, f: { out3: true } }, ['-ch2', '-ch3']);
+  await expect(page.locator('#title')).not.toHaveClass(/loading/);
+  await page.locator('#btn-scores').click();
+  const rows = page.locator('.scores tbody tr');
+  await expect(rows.nth(0)).toContainText('Finished before scores were kept');
+  await expect(rows.nth(1)).toContainText('Finished before scores were kept');
+  await expect(rows.nth(2).locator('td').nth(1)).toHaveText('08:20');
+  await expect(rows.nth(2).locator('td').nth(2)).toHaveText('2');
+  await expect(rows.nth(3)).toContainText('Not finished yet');
+  await expect(rows.nth(4)).toContainText('Not unlocked yet');
+});
