@@ -13,7 +13,7 @@ concurrency:
 jobs:
   build:
     if: github.event.label.name == 'ready-to-build'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     timeout-minutes: 60
     permissions:
       contents: write
@@ -27,14 +27,14 @@ jobs:
       # the review, playtest and test workflows by itself. Without it, the last step starts them.
       AGENT_TOKEN: ${{ secrets.AGENT_GITHUB_TOKEN }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
           token: ${{ secrets.AGENT_GITHUB_TOKEN || github.token }}
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
-          node-version: 22
+          node-version-file: .nvmrc
           cache: npm
 
       - name: Install dependencies and the test browser

@@ -65,6 +65,8 @@ npx playwright install chromium
 npm test
 ```
 
+The project uses **Node.js 26** (see `.nvmrc`); with nvm, run `nvm use`. GitHub Actions read the same file.
+
 `npm start` serves the game at http://127.0.0.1:4173 if you want to play it locally over http. The tests also run on GitHub Actions for every push and pull request (see `.github/workflows/tests.yml`); if one fails, the HTML report with screenshots is attached to the workflow run.
 
 ## Chapters

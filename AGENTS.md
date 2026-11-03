@@ -193,6 +193,7 @@ npm test                           # about 2 minutes: 23 tests, desktop + Pixel 
 npm start                          # http://127.0.0.1:4173 to play locally
 ```
 
+- **Node.js 26** (`.nvmrc`), used by every workflow via `node-version-file`. The workflows run on `ubuntu-26.04` with `actions/checkout`, `setup-node` and `upload-artifact` v7. Dependabot (`.github/dependabot.yml`) opens weekly PRs for new action and Playwright versions; the AI agents skip those PRs.
 - Tests seed `localStorage` and click hotspots by `data-hs` through `hs()` in `tests/helpers.js`. When a `data-hs` is shared, use `.first()`.
 - After changing the game: **bump `CACHE` in `sw.js`** (and add new files to `CORE`), run `npm test`, and update the README chapter list if content changed.
 - Licence: GPL-3.0. Character names and jokes come from *The IT Crowd*. This is a non-commercial fan project.

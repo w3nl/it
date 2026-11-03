@@ -1,0 +1,21 @@
+# Keeps the GitHub Actions and the test tools (Playwright) up to date with weekly pull requests.
+# The "Play the game" workflow tests every update; the AI review and playtest agents skip these PRs.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      actions:
+        patterns: ["*"]
+
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    groups:
+      playwright:
+        patterns: ["@playwright/*", "playwright*"]
