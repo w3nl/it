@@ -466,3 +466,9 @@
 > Prestaties ({n} van {m})
 = Finished before scores were kept
 > Uitgespeeld voordat scores werden bijgehouden
+
+# ---------- updates ----------
+= A new version of the game is ready.
+> Er staat een nieuwe versie van het spel klaar.
+= Reload
+> Herladen

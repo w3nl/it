@@ -32,7 +32,7 @@ Context for AI agents and new contributors. The README covers what the game is a
 | `js/ambience.js` | Generated ambient sound per room (Web Audio, no audio files): `ambKey()` decides what plays, `SOUNDSCAPES` builds each room |
 | `portraits/*.svg` | Character portraits for the dialogue strip and talk windows: `you`, `roy`, `moss`, `jen`, `douglas`, `douglas-captain`, `machine`, `duck`, `fax`, `dragon` |
 | `js/app.js` | Chapter management (`chapterDone`, `nextChapter`, `exitLabels`, `refreshMenu`), end screens (`CH_END`, `showWin`), scores (`recordScore`, `openScores`), buttons, timer, achievements (`ACH`), title menu, PWA install, `start()` |
-| `sw.js` | Service worker. **List every new file in `CORE` and bump `CACHE` on every change.** |
+| `sw.js` | Service worker. **List every new file in `CORE` and bump `CACHE` on every change, together with `GAME_VERSION` in `js/boot.js`.** |
 | `manifest.webmanifest`, `icons/` | PWA manifest and icons (`icon.svg` is the source; PNGs are rendered from it) |
 | `tests/*.spec.js` | Playwright tests: one playthrough per chapter, plus progress, PWA, phone and fun checks |
 | `tests/helpers.js` | Test helpers: `seed`, `hs`, `skip`, `useSlot`, `closeModal`, `waitModalClosed`, `expectWin` |
@@ -174,7 +174,8 @@ Context for AI agents and new contributors. The README covers what the game is a
 - **Accessibility:** buttons need `type="button"`; form inputs need labels or `aria-label`. Hotspots get `tabindex`/`role="button"` automatically, and Space reveals all hotspots.
 - **`window.alert/confirm/prompt` are never used.** Build confirmations into the UI (see the phone's "Power off?" overlay).
 - **The claude.ai Artifact copy:** the game is also published as a private claude.ai artifact, as a multi-file artifact (the page plus `css/`, `js/`, `scenes/`, `portraits/`, `lang/`). The page is `index.html` without the `<!doctype>`/`<html>`/`<head>` wrapper and without the PWA tags (manifest, icons, theme-color, apple-*). The service worker only registers when a `link[rel=manifest]` exists, so the artifact stays a plain page.
-- **Service worker strategy:** the page and the game's own files are network-first (so an update never mixes old and new files), with the cache as the offline fallback. Google Fonts are cache-first.
+- **Service worker strategy:** the page and the game's own files are network-first with `cache: 'no-cache'` (the browser checks with the server every time instead of reusing a copy for GitHub Pages' 10 minutes, so an update never mixes old and new files), with the cache as the offline fallback. Installing fills the offline cache with `cache: 'reload'` for the same reason. Google Fonts are cache-first.
+- **Versions:** `GAME_VERSION` (`js/boot.js`) and `CACHE` (`sw.js`) are the same number, shown as `v15` at the bottom of the title screen; `tests/pwa.spec.js` fails when they differ. The service worker tells open pages its version (on activate, and when asked); a page running an older version shows the "A new version of the game is ready · Reload" bar (`swVersion()` in `app.js`).
 
 ## Tone and writing
 
@@ -207,7 +208,7 @@ If you are one of those agents:
 ```bash
 npm install
 npx playwright install chromium   # first time only
-npm test                           # about 2 minutes: 29 tests, desktop + Pixel 7 (+ Firefox in CI)
+npm test                           # about 2 minutes: 30 tests, desktop + Pixel 7 (+ Firefox in CI)
 node tools/i18n-check.js           # English text that has no Dutch translation yet
 npm start                          # http://127.0.0.1:4173 to play locally
 ```
@@ -215,5 +216,5 @@ npm start                          # http://127.0.0.1:4173 to play locally
 - **Node.js 26** (`.nvmrc`), used by every workflow via `node-version-file`. The workflows run on `ubuntu-26.04` with `actions/checkout`, `setup-node` and `upload-artifact` v7. Dependabot (`.github/dependabot.yml`) opens weekly PRs for new action and Playwright versions; the AI agents skip those PRs.
 - Tests seed `localStorage` and click hotspots by `data-hs` through `hs()` in `tests/helpers.js`. When a `data-hs` is shared, use `.first()`.
 - Tests run in English. `PW_LANG=nl npx playwright test tests/phone.spec.js` checks the phone layouts in Dutch (CI does this too); `tests/language.spec.js` covers the switch and the Dutch puzzle answers.
-- After changing the game: **bump `CACHE` in `sw.js`** (and add new files to `CORE`), run `npm test`, and update the README chapter list if content changed.
+- After changing the game: **bump `CACHE` in `sw.js` and `GAME_VERSION` in `js/boot.js`** (and add new files to `CORE`), run `npm test`, and update the README chapter list if content changed.
 - Licence: GPL-3.0. Character names and jokes come from *The IT Crowd*. This is a non-commercial fan project.
