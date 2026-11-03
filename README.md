@@ -6,6 +6,8 @@ You're the new IT temp. Roy is at lunch, Moss is stuck upstairs in the stationer
 
 ## Play
 
+The game speaks **UK English** and **Dutch** (Nederlands). Switch with the **EN · NL** button in the header; the game remembers your choice, and starts in Dutch when your browser is set to Dutch.
+
 Play online at **https://w3nl.github.io/it/** (GitHub Pages: Settings → Pages → deploy from `main`).
 
 To play locally, serve the folder with any static web server. There's no build step. With Node.js:
@@ -22,10 +24,12 @@ Then open http://127.0.0.1:4173. Double-clicking `index.html` doesn't work, beca
 |---|---|
 | `index.html` | The page: header, stage, menus |
 | `css/` | Styles: `base`, one file per chapter, `phone`, `animations` |
-| `js/` | Code: `boot` (start-up), `core` (engine), one file per chapter, `items`, `hints`, `app` |
+| `js/` | Code: `boot` (start-up), `i18n` (languages), `core` (engine), one file per chapter, `items`, `hints`, `app` |
+| `lang/nl/` | The Dutch translation, as plain text: each English line followed by its Dutch version |
 | `scenes/` | One SVG drawing per room. Open one in a browser or SVG editor to see it |
 | `portraits/` | Character portraits (SVG) for the dialogue |
 | `tests/` | Playwright tests that play the game |
+| `tools/` | Helper scripts: `i18n-check.js` (finds text without a Dutch translation), `lift-panel.py` |
 
 See [AGENTS.md](AGENTS.md) for how it all fits together.
 
@@ -45,7 +49,7 @@ After the first visit it also works offline. When you change the game, bump `CAC
 
 ## Saved progress
 
-Progress is saved in your browser's `localStorage` after every step: the current chapter and room, solved puzzles, inventory, timer, hints, achievements, and which chapters are unlocked. Refresh and press **Continue** to carry on. Progress is per browser and per device.
+Progress is saved in your browser's `localStorage` after every step: the current chapter and room, solved puzzles, inventory, timer, hints, achievements, and which chapters are unlocked. Your language, sound and motion settings are saved too. Refresh and press **Continue** to carry on. Progress is per browser and per device.
 
 ## Have an idea?
 
@@ -57,7 +61,7 @@ New contributors (and AI coding agents) should start with [AGENTS.md](AGENTS.md)
 
 ## Tests
 
-The game has automated tests that play it in a real browser with [Playwright](https://playwright.dev): every chapter from start to finish (including some wrong moves), saving and navigation, the installable app and offline mode, and phone layouts.
+The game has automated tests that play it in a real browser with [Playwright](https://playwright.dev): every chapter from start to finish (including some wrong moves), saving and navigation, the installable app and offline mode, phone layouts, and the Dutch version.
 
 ```bash
 npm install

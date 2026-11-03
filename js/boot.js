@@ -2,7 +2,7 @@
 // Scenes are fetched, so the game must be served over http(s): GitHub Pages, `npm start`, or any static server.
 (async () => {
   const scenes = ['office', 'server', 'jen', 'doug', 'lift', 'dungeon', 'yacht'];
-  const scripts = ['core', 'chapter1', 'items', 'chapter2', 'chapter3', 'chapter4', 'chapter5', 'chapter6', 'hints', 'ambience', 'app'];
+  const scripts = ['i18n', 'core', 'chapter1', 'items', 'chapter2', 'chapter3', 'chapter4', 'chapter5', 'chapter6', 'hints', 'ambience', 'app'];
   const title = document.getElementById('title');
   try {
     if (location.protocol === 'file:') throw new Error('file');
@@ -15,6 +15,7 @@
         el.src = `js/${name}.js`; el.async = false; el.onload = resolve; el.onerror = () => reject(new Error(name));
         document.body.appendChild(el);
       });
+      if (name === 'i18n') await langReady;   // the Dutch text has to be there before the game draws anything
     }
     title.classList.remove('loading');
   } catch (e) {

@@ -10,6 +10,7 @@ Context for AI agents and new contributors. The README covers what the game is a
 
 - 6 chapters, 7 rooms, 37 puzzles. Plain HTML, CSS, JavaScript and SVG: **no build step, no framework, no runtime dependencies** (only Google Fonts).
 - Hosted as a static site (GitHub Pages: `https://w3nl.github.io/it/`), installable as a PWA, and playable offline.
+- Two languages: **UK English** (written in the code) and **Dutch** (`lang/nl/*.txt`). See "Languages" below.
 - **It must be served over http(s).** `js/boot.js` fetches the room drawings, so double-clicking `index.html` (`file://`) shows a "needs a web server" message. Use `npm start` (http://127.0.0.1:4173).
 - `node_modules/` and `package.json` exist **only for the tests and the local server**.
 
@@ -20,7 +21,9 @@ Context for AI agents and new contributors. The README covers what the game is a
 | `index.html` | Page shell: header, stage, title and end screens, inventory, close-up modal. Loads the CSS, then `js/boot.js` |
 | `css/*.css` | Styles, loaded in this order (the order matters for the cascade): `base`, `chapter2`, `chapter3`, `phone`, `chapter4`, `chapter5`, `chapter6`, `animations` |
 | `scenes/*.svg` | One drawing per room: `office`, `server` (Chapter 1), `jen`, `doug`, `lift`, `dungeon`, `yacht`. Each opens on its own in a browser or SVG editor |
-| `js/boot.js` | Start-up: fetches the scenes into the stage, then loads the game scripts **in order** |
+| `js/boot.js` | Start-up: fetches the scenes into the stage, then loads the game scripts **in order** (first `i18n`, and waits for the Dutch text if needed) |
+| `js/i18n.js` | Languages: `LANG`, `tx()`, `setLang()`, `onLangChange()`, and the observer that translates the page |
+| `lang/nl/*.txt` | The Dutch translation, one file per part: `ui`, `ch1`…`ch6`, `hints`, `scenes` |
 | `js/core.js` | Engine: state `S`, `save`/`load`, sound, dialogue `say()`, inventory, `applyVisuals()`, hotspot input, `openModal()`, `nope()` |
 | `js/chapter1.js` | Chapter 1, plus `H` (the hotspot table that every chapter adds to) |
 | `js/items.js` | `useItem()`: using inventory items on hotspots, for every chapter |
@@ -38,6 +41,7 @@ Context for AI agents and new contributors. The README covers what the game is a
 | `.github/workflows/agent-*.yml`, `claude.yml` | The idea → plan → PR → review → playtest agents (see `docs/agent-workflow.md`) |
 | `.github/ISSUE_TEMPLATE/idea.yml` | The "Idea" issue form that starts the agents |
 | `tools/lift-panel.py` | Regenerates the lift's right-wall panel in perspective (`python3 tools/lift-panel.py`) |
+| `tools/i18n-check.js` | Lists English text without a Dutch translation, stale keys and conflicts (`node tools/i18n-check.js`) |
 
 ## How the code fits together
 
@@ -61,7 +65,7 @@ Context for AI agents and new contributors. The README covers what the game is a
 - `S` is the whole save. `fresh()` gives a new one: `{ v:1, ch, scene, pc, f:{}, inv:[], hl:{}, hints, t, ach:{}, started }`. Chapters add their own fields (`sl`, `killed`, `mail`, `cable`, `hanoi`, `potions`, `sys`, `prog`…).
 - `S.f` holds the per-chapter **flags** (see the solutions table for names).
 - `save()` writes `S` to `localStorage['hello-it-basement-v1']` after every meaningful action.
-- **Chapter unlocks are separate keys:** `hello-it-basement-v1-ch2` … `-ch6` (value `'1'`), plus `unlockedN()` fallbacks based on `S.ch` (for browsers that block storage). `…-norotate` remembers that the phone rotate banner was dismissed.
+- **Chapter unlocks are separate keys:** `hello-it-basement-v1-ch2` … `-ch6` (value `'1'`), plus `unlockedN()` fallbacks based on `S.ch` (for browsers that block storage). `…-norotate` remembers that the phone rotate banner was dismissed, and `…-lang` the language (`en` or `nl`).
 - Starting a chapter (`startChN()`) replaces `S` with `Object.assign(fresh(), { ach: S.ach })`. **Achievements carry over; everything else resets.**
 - Never assume `localStorage` works. Every access is wrapped in `try/catch`.
 
@@ -80,6 +84,14 @@ Context for AI agents and new contributors. The README covers what the game is a
 - The flow is: select an item → click a hotspot → `useItem(item, hotspotId)`. **The item is deselected before `useItem` runs**, whether or not it works.
 - `dphone` (chapter 4) is special: clicking its slot opens the phone instead of selecting it.
 
+### Languages (`js/i18n.js`, `lang/nl/`)
+- **English stays in the code.** The Dutch lives in `lang/nl/*.txt` as pairs: a line `= English text`, then `> Nederlandse tekst`. `\n` is a line break, `#` starts a comment, and `~ regex` + `> replacement with $1` handles text with numbers in it (`~ ^Moves: (\d+)$`). Keys are matched with whitespace collapsed, so line breaks and indentation in the code don't matter.
+- **Most text needs no code changes.** A `MutationObserver` translates every text node, and the `title`, `aria-label`, `data-label`, `placeholder` and `alt` attributes, as they appear on the page. `say()` translates each line with `tx()`. Elements with `translate="no"` are skipped (the language button, the typing dialogue text).
+- **Use `tx()` when text is built from pieces.** A text node only matches when it is one whole sentence. When code glues text together (numbers, names, `+`), write a template with placeholders and translate it as one: `tx('Found in {n} guesses.', { n })`, with `= Found in {n} guesses.` / `> Gevonden in {n} keer raden.` in the language file. Translate the pieces that go into placeholders too (`tx(SYS[k][0])`). The same goes for sentences with markup inside (`<b>`, `<i>`): wrap the whole HTML string in `tx()` and translate it with the markup.
+- **Puzzles with English words have a Dutch version,** chosen with `tx()` on the English value: the ROT13 note (`NOTE_PLAIN`) and Jen's door answer (`INTERNET THING` → `INTERNET DING`; the SmartLock accepts both), the potion letters (`BATTERY` → `ENERGIE`, via `potionLetter()`), the logbook (`LOOK UNDER THE BELL` → `KIJK ONDER DE BEL`). Code, commands, SQL, HTTP, regex names and Unix error messages stay English.
+- **Switching** calls `setLang()`, which re-translates the page (and restores English from remembered originals) and runs the `onLangChange()` hooks in `app.js`: close the close-up, redraw the inventory, labels, menu, end screen and current dialogue line. The first visit picks Dutch when the browser's language is Dutch.
+- **When you add or change English text, add or change its Dutch line** in the matching `lang/nl` file, keeping the joke (rewrite it if it doesn't work in Dutch). Then run `node tools/i18n-check.js`: it lists text without a translation (some of it is code or names, which is fine) and fails on stale keys and conflicting translations, which `tests/language.spec.js` also checks. Dutch is informal (`je`), and drawn text in the scenes has to fit the same space.
+
 ### Adding a chapter (checklist)
 1. `scenes/<room>.svg` (unique ids, `.hit` rects last), and add the name to `scenes` in `js/boot.js`.
 2. `css/chapterN.css`, linked in `index.html` before `css/animations.css`.
@@ -91,7 +103,8 @@ Context for AI agents and new contributors. The README covers what the game is a
    - in `js/items.js`: new `useItem` cases
    - in `index.html`: a chapter chip on the title screen
 6. Add the new files to `CORE` in `sw.js` and bump `CACHE`.
-7. A test file `tests/chapterN.spec.js`, rooms added to `tests/phone.spec.js`, and a README section.
+7. The Dutch translation: a `lang/nl/chN.txt` (add it to `LANG_FILES` in `js/i18n.js` and to `CORE`), plus the new labels in `lang/nl/scenes.txt`.
+8. A test file `tests/chapterN.spec.js`, rooms added to `tests/phone.spec.js`, and a README section.
 
 ## Puzzle solutions (spoilers)
 
@@ -158,7 +171,7 @@ Context for AI agents and new contributors. The README covers what the game is a
 - **Text inside JS template strings** is HTML. Escape `<`, `&`, and quotes that clash with the surrounding string. Prefer typographic apostrophes (’) or double-quoted JS strings for dialogue.
 - **Accessibility:** buttons need `type="button"`; form inputs need labels or `aria-label`. Hotspots get `tabindex`/`role="button"` automatically, and Space reveals all hotspots.
 - **`window.alert/confirm/prompt` are never used.** Build confirmations into the UI (see the phone's "Power off?" overlay).
-- **The claude.ai Artifact copy:** the game is also published as a private claude.ai artifact, as a multi-file artifact (the page plus `css/`, `js/`, `scenes/`). The page is `index.html` without the `<!doctype>`/`<html>`/`<head>` wrapper and without the PWA tags (manifest, icons, theme-color, apple-*). The service worker only registers when a `link[rel=manifest]` exists, so the artifact stays a plain page.
+- **The claude.ai Artifact copy:** the game is also published as a private claude.ai artifact, as a multi-file artifact (the page plus `css/`, `js/`, `scenes/`, `portraits/`, `lang/`). The page is `index.html` without the `<!doctype>`/`<html>`/`<head>` wrapper and without the PWA tags (manifest, icons, theme-color, apple-*). The service worker only registers when a `link[rel=manifest]` exists, so the artifact stays a plain page.
 - **Service worker strategy:** the page and the game's own files are network-first (so an update never mixes old and new files), with the cache as the offline fallback. Google Fonts are cache-first.
 
 ## Tone and writing
@@ -173,6 +186,7 @@ Context for AI agents and new contributors. The README covers what the game is a
 - Running jokes to reuse: the 0118 999 881 999 119 725… 3 emergency number, the clock stuck at 12:58, the Internet in a box, "There is no Douglas I", the rubber duck (free hints), ROT13, `sudo`.
 - No emoji in UI chrome. A few Unicode symbols in game text (✕ ⇄ ▶ ♪) are fine.
 - Every puzzle needs two hints in `HINTS`: a nudge, then the answer.
+- Every English text needs a Dutch line in `lang/nl` (see "Languages"). In Dutch the voices stay the same: Roy says "Heb je al geprobeerd hem uit en weer aan te zetten?", and names, product names and the IT acronyms stay as they are.
 
 ## Agents on GitHub
 
@@ -180,8 +194,8 @@ Ideas arrive as GitHub issues and go through a team of Claude agents in GitHub A
 
 If you are one of those agents:
 - Your role and task are in the workflow's prompt; this file is your project knowledge.
-- **Refine:** make the plan concrete enough to build and check: files, acceptance criteria, test plan, both hints for every puzzle.
-- **Build:** follow the plan and the later discussion, keep the change focused, bump `CACHE`, add tests, make `npm test` pass, update this file.
+- **Refine:** make the plan concrete enough to build and check: files, acceptance criteria, test plan, both hints for every puzzle, and how any word-based puzzle works in Dutch.
+- **Build:** follow the plan and the later discussion, keep the change focused, add the Dutch translation, bump `CACHE`, add tests, make `npm test` pass, update this file.
 - **Review / playtest:** report concrete problems with a suggested fix or steps to reproduce. Don't block on taste.
 
 ## Workflow
@@ -189,11 +203,13 @@ If you are one of those agents:
 ```bash
 npm install
 npx playwright install chromium   # first time only
-npm test                           # about 2 minutes: 23 tests, desktop + Pixel 7 (+ Firefox in CI)
+npm test                           # about 2 minutes: 26 tests, desktop + Pixel 7 (+ Firefox in CI)
+node tools/i18n-check.js           # English text that has no Dutch translation yet
 npm start                          # http://127.0.0.1:4173 to play locally
 ```
 
 - **Node.js 26** (`.nvmrc`), used by every workflow via `node-version-file`. The workflows run on `ubuntu-26.04` with `actions/checkout`, `setup-node` and `upload-artifact` v7. Dependabot (`.github/dependabot.yml`) opens weekly PRs for new action and Playwright versions; the AI agents skip those PRs.
 - Tests seed `localStorage` and click hotspots by `data-hs` through `hs()` in `tests/helpers.js`. When a `data-hs` is shared, use `.first()`.
+- Tests run in English. `PW_LANG=nl npx playwright test tests/phone.spec.js` checks the phone layouts in Dutch (CI does this too); `tests/language.spec.js` covers the switch and the Dutch puzzle answers.
 - After changing the game: **bump `CACHE` in `sw.js`** (and add new files to `CORE`), run `npm test`, and update the README chapter list if content changed.
 - Licence: GPL-3.0. Character names and jokes come from *The IT Crowd*. This is a non-commercial fan project.

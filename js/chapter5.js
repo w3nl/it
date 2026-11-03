@@ -9,6 +9,8 @@ function setUnlocked5(){ ch5Open = true; try{ localStorage.setItem(UNLOCK5,'1');
 
 const DRV = [['5 GB','#c8262c'],['20 GB','#e8590c'],['80 GB','#1971c2'],['250 GB','#2b8a3e']];
 const POTIONS = { 1:['B','#5f3dc4'], 3:['A','#1971c2'], 5:['T','#0b7285'], 8:['T','#2b8a3e'], 13:['E','#e8590c'], 21:['R','#c8262c'], 42:['Y','#ae3ec9'] };
+// The letters spell BATTERY once sorted; in Dutch they spell ENERGIE (the translation of 'BATTERY' in lang/nl).
+const potionLetter = n => (tx('BATTERY')[Object.keys(POTIONS).map(Number).indexOf(n)] || POTIONS[n][0]);
 const POTION_START = [8,3,42,1,13,21,5];
 function drawDungeon(){
   // hanoi on the table
@@ -88,7 +90,7 @@ function openHanoi(){
       if(top !== undefined && top < d){ nope(); f("You can't put a bigger drive on a smaller one. Over the walkie-talkie, Moss gasps.", 'bad'); pick = null; return draw(); }
       to.push(from.pop()); S.hmoves++; pick = null; beep(700,.03); f(''); save(); drawDungeon(); draw();
       if(S.hanoi[2].length===4){ S.f.hanoi = true; if(S.hmoves<=15) S.ach.hanoi = true; save(); give('usb'); chord([523,659,784,1046]);
-        f(`Done in ${S.hmoves} moves${S.hmoves<=15 ? ' (the minimum possible!)' : ' (15 is the minimum)'}. The 250 GB drive pops open: inside is a USB stick labelled SPELL.JS. You take it.`, 'good');
+        f(tx('Done in {n} moves {note}. The 250 GB drive pops open: inside is a USB stick labelled SPELL.JS. You take it.', { n: S.hmoves, note: tx(S.hmoves<=15 ? '(the minimum possible!)' : '(15 is the minimum)') }), 'good');
         setTimeout(()=>{ closeModal(); say([['moss',"The Tower of Hard Drives! Solved! The trick is recursion: to move four drives, you move three, then one, then three again. And to move three…"],['roy',"We get it, Moss."]]); }, 1800); }
     };
     $('#hreset').onclick = () => { if(S.f.hanoi) return; S.hanoi = [[3,2,1,0],[],[]]; S.hmoves = 0; pick = null; save(); drawDungeon(); draw(); f('Back to the start.'); };
@@ -104,7 +106,7 @@ function openRegexScroll(){
   openModal('Regex for Wizards', 'A scroll in Moss\'s handwriting', `<div class="parch"><h4>Regex for Wizards</h4>
     <p style="margin:0 0 10px">A regular expression is a pattern that a word must fit, letter by letter.</p>
     <dl><dt>^</dt><dd>the start of the word</dd><dt>$</dt><dd>the end of the word</dd><dt>[RM]</dt><dd>one letter: either R or M</dd><dt>o</dt><dd>just the letter o</dd><dt>\\w</dt><dd>any single letter or digit</dd><dt>{1,2}</dt><dd>the thing before it, one or two times</dd></dl>
-    <p style="margin:12px 0 0">Example: <b>^Ca\\w$</b> matches <i>Cat</i> and <i>Cab</i>, but not <i>Cart</i> (too long) or <i>Bat</i> (wrong start).</p></div>`);
+    <p style="margin:12px 0 0">${tx('Example: <b>^Ca\\w$</b> matches <i>Cat</i> and <i>Cab</i>, but not <i>Cart</i> (too long) or <i>Bat</i> (wrong start).')}</p></div>`);
 }
 function openRunes(){
   const picked = new Set();
@@ -118,7 +120,7 @@ function openRunes(){
         setTimeout(()=>{ closeModal(); say([['jen',"What happened? Did I do that? I think I did that."],['roy',"You did not do that."]]); }, 1400); return; }
       nope(); f.className = 'feedback bad';
       const wrong = [...picked].find(w => !RUNE_RE.test(w));
-      f.textContent = wrong==='Mo' ? "Mo is too short: \\w{1,2} needs at least one more letter after the o." : wrong==='Robot' ? "Robot is too long: after 'Ro' it has three letters, and {1,2} allows only one or two." : wrong==='Jen' ? "Jen doesn't start with R or M. Also, she's not IT. She'd like everyone to stop saying that." : wrong==='Douglas' ? "Douglas starts with D. The runes are unimpressed." : `The runes flicker. ${want.filter(w => !picked.has(w)).length ? 'You missed at least one match.' : 'Something is off.'}`;
+      f.textContent = wrong==='Mo' ? "Mo is too short: \\w{1,2} needs at least one more letter after the o." : wrong==='Robot' ? "Robot is too long: after 'Ro' it has three letters, and {1,2} allows only one or two." : wrong==='Jen' ? "Jen doesn't start with R or M. Also, she's not IT. She'd like everyone to stop saying that." : wrong==='Douglas' ? "Douglas starts with D. The runes are unimpressed." : tx('The runes flicker. {why}', { why: tx(want.filter(w => !picked.has(w)).length ? 'You missed at least one match.' : 'Something is off.') });
     };
   });
 }
@@ -165,13 +167,13 @@ function openPotions(){
   openModal('The potion shelf', 'Sort from smallest to largest, swapping neighbours only', `<div class="bottles" id="bots"></div><div class="feedback" id="pofb"></div><div class="tray-label" id="poswaps" style="margin-top:6px"></div>`, () => {
     const f = (t,c='') => { const e = $('#pofb'); if(e){ e.className = 'feedback ' + c; e.textContent = t; } };
     const draw = () => { const b = $('#bots'); if(!b) return;
-      b.innerHTML = S.potions.map((n,i) => `<div class="bottle"><div class="cork"></div><div class="glass" style="background:${POTIONS[n][1]}">${n}</div><div class="lt">${POTIONS[n][0]}</div></div>` + (i < S.potions.length-1 ? `<button type="button" class="swapb" data-i="${i}" aria-label="Swap ${n} and ${S.potions[i+1]}" ${S.f.sorted ? 'disabled' : ''}>⇄</button>` : '')).join('');
+      b.innerHTML = S.potions.map((n,i) => `<div class="bottle"><div class="cork"></div><div class="glass" style="background:${POTIONS[n][1]}">${n}</div><div class="lt">${potionLetter(n)}</div></div>` + (i < S.potions.length-1 ? `<button type="button" class="swapb" data-i="${i}" aria-label="Swap ${n} and ${S.potions[i+1]}" ${S.f.sorted ? 'disabled' : ''}>⇄</button>` : '')).join('');
       $('#poswaps').textContent = `Swaps: ${S.swaps}`;
       b.querySelectorAll('.swapb').forEach(s => s.onclick = () => { const i = +s.dataset.i, a = S.potions;
         if(a[i] < a[i+1]){ f("Those two are already in order. Swapping them would only make things worse. Moss would be disappointed. Quietly."); nope(); return; }
         [a[i], a[i+1]] = [a[i+1], a[i]]; S.swaps++; beep(600,.04); save(); drawDungeon(); draw(); f('');
         if(a.every((v,j) => j===0 || a[j-1] < v)){ S.f.sorted = true; if(S.swaps<=10) S.ach.bubble = true; save(); give('batteries'); applyVisuals(); chord([523,659,784,1046]);
-          f(`Sorted in ${S.swaps} swaps. The labels spell BATTERY, and the secret compartment clicks open: four AA batteries. You take them.`, 'good');
+          f(tx('Sorted in {n} swaps. The labels spell BATTERY, and the secret compartment clicks open: four AA batteries. You take them.', { n: S.swaps }), 'good');
           setTimeout(()=>{ closeModal(); say([['moss',"Bubble sort! Slow, but honest. Like me."]]); }, 1800); }
       }); };
     if(S.f.sorted) f('Sorted. B-A-T-T-E-R-Y. The compartment is empty now.', 'good');
@@ -191,12 +193,12 @@ function openDragon(){
     hist(); setTimeout(()=>$('#dgin') && $('#dgin').focus(), 50);
     $('#dgf').onsubmit = e => { e.preventDefault(); const g = parseInt($('#dgin').value, 10); $('#dgin').value = ''; const say2 = t => $('#dsay').textContent = t;
       if(!(g>=1 && g<=100)) return say2('A NUMBER FROM 1 TO 100. I AM A DRAGON, NOT A CALCULATOR.');
-      if(g===S.dnum){ S.f.dragon = true; save(); applyVisuals(); chord([523,659,784,1046,1318],110); say2(`${g}! NOOO! YOU HAVE DEFEATED ME. THE FIREWALL ADMIN PANEL IS NOW UNLOCKED.`);
-        $('#dgfb').className = 'feedback good'; $('#dgfb').textContent = `Found in ${S.dg.length+1} guesses.`;
+      if(g===S.dnum){ S.f.dragon = true; save(); applyVisuals(); chord([523,659,784,1046,1318],110); say2(tx('{g}! NOOO! YOU HAVE DEFEATED ME. THE FIREWALL ADMIN PANEL IS NOW UNLOCKED.', { g }));
+        $('#dgfb').className = 'feedback good'; $('#dgfb').textContent = tx('Found in {n} guesses.', { n: S.dg.length+1 });
         setTimeout(()=>{ closeModal(); say([['moss',"Binary search! Always guess the middle. Seven guesses are enough for 100 numbers, because 2 × 2 × 2 × 2 × 2 × 2 × 2 is 128."],['jen',"I knew it was the middle one. I was just about to say."]]); }, 1700); return; }
       S.dg.push([g, g < S.dnum ? '↑' : '↓']); save(); beep(g < S.dnum ? 700 : 400, .08);
-      if(S.dg.length >= 7){ const was = S.dnum; newDragonNumber(); nope(); say2(`HA! IT WAS ${was}. I HAVE CHOSEN A NEW NUMBER. TRY AGAIN, PUNY HUMAN.`); $('#dgfb').textContent = 'Tip from Roy: always go for the middle of what is left.'; hist(); return; }
-      say2(g < S.dnum ? `HIGHER! (${7 - S.dg.length} GUESSES LEFT)` : `LOWER! (${7 - S.dg.length} GUESSES LEFT)`); hist();
+      if(S.dg.length >= 7){ const was = S.dnum; newDragonNumber(); nope(); say2(tx('HA! IT WAS {n}. I HAVE CHOSEN A NEW NUMBER. TRY AGAIN, PUNY HUMAN.', { n: was })); $('#dgfb').textContent = 'Tip from Roy: always go for the middle of what is left.'; hist(); return; }
+      say2(tx(g < S.dnum ? 'HIGHER! ({n} GUESSES LEFT)' : 'LOWER! ({n} GUESSES LEFT)', { n: 7 - S.dg.length })); hist();
     };
   });
 }
@@ -209,7 +211,7 @@ const RULES = [
   ['Include a special character, like ! # or ?', v => /[^A-Za-z0-9]/.test(v)],
   ['The digits must add up to 13. (In honour of ROT13.)', v => (v.match(/\d/g) || []).reduce((s,d) => s + +d, 0) === 13],
   ['Include the name of someone in the IT department.', v => /roy|moss/i.test(v)],
-  ['Must not contain the word "password". Sorry, Jen.', v => !/password/i.test(v)]
+  ['Must not contain the word "password". Sorry, Jen.', v => !/password|wachtwoord/i.test(v)]
 ];
 function openFirewall(){
   if(S.f.out5) return say("The Firewall is down.");
@@ -246,7 +248,7 @@ function startCh5(){
 }
 function win5(){
   say([["sys","The Firewall's paper flames flop over. The castle door swings open onto the basement corridor."],
-       ["moss","You did it! Escape time: " + fmt(S.t) + ". That's a new record. It's also the only record."],
+       ["moss", tx("You did it! Escape time: {time}. That's a new record. It's also the only record.", { time: fmt(S.t) })],
        ["jen","Team building complete! I feel so much closer to all of you."],
        ["roy","I feel closer to the door."],
        ["douglas","I say! Is this the famous escape room? I'd like to book it for the board. Can you make it harder? More dragons. And a yacht."],

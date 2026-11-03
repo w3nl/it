@@ -1,0 +1,181 @@
+# Dutch translation: all hints (js/hints.js). Two per puzzle: a nudge, then the answer.
+
+# ---------- Chapter 1 ----------
+= Moss's computer has crashed hard. The answering machine on Roy's desk has some classic IT wisdom.
+> De computer van Moss is keihard gecrasht. Het antwoordapparaat op het bureau van Roy heeft wat klassieke IT-wijsheid.
+= Open Moss's computer and press the power button on the tower twice: off, then on again.
+> Open de computer van Moss en druk twee keer op de aan/uit-knop van de tower: uit, en dan weer aan.
+= The login wants Moss's password. The hint says 'where the heart is'. Something on his desk says it too.
+> De login wil het wachtwoord van Moss. De hint zegt 'home is where the heart is'. Iets op zijn bureau zegt het ook.
+= Moss's mug: 'There's no place like 127.0.0.1'. Type 127.0.0.1 as the password.
+> De mok van Moss: 'There's no place like 127.0.0.1'. Typ 127.0.0.1 als wachtwoord.
+= You're in. Type ls to list the files and cat <filename> to read one.
+> Je bent binnen. Typ ls om de bestanden te zien en cat <bestandsnaam> om er een te lezen.
+= Type: cat lockdown.log, then: cat note_to_self.rot13
+> Typ: cat lockdown.log, en daarna: cat note_to_self.rot13
+= The note is in ROT13: every letter swaps with the one 13 places along. Decode it by hand with the whiteboard table, or let Moss's computer do it: type man tr in the terminal.
+> Het briefje is in ROT13: elke letter wordt verwisseld met de letter 13 plaatsen verderop. Ontcijfer het met de hand met de tabel op het whiteboard, of laat de computer van Moss het doen: typ man tr in de terminal.
+= Type: cat note_to_self.rot13 | tr 'A-Za-z' 'N-ZA-Mn-za-m' — it says the code is the answer to life, the universe and everything, in binary. One of the books on the shelf knows the answer.
+> Typ: cat note_to_self.rot13 | tr 'A-Za-z' 'N-ZA-Mn-za-m' — er staat dat de code het antwoord is op het leven, het universum en alles, in binair. Een van de boeken in de kast weet het antwoord.
+= The answer is 42. Flip the switches so their values add up to 42.
+> Het antwoord is 42. Zet de schakelaars zo dat hun waarden samen 42 zijn.
+= 42 = 32 + 8 + 2. Switch ON the ones marked 32, 8 and 2 (binary 00101010).
+> 42 = 32 + 8 + 2. Zet de schakelaars met 32, 8 en 2 AAN (binair 00101010).
+= There's a fire right in front of the breaker panel. You've seen something red and useful next to the exit door.
+> Er brandt iets vlak voor de stoppenkast. Je hebt naast de nooduitgang iets roods en nuttigs gezien.
+= Take the fire extinguisher from the office wall, select it in your inventory, then click the fire.
+> Pak de brandblusser van de muur in het kantoor, kies hem in je inventaris en klik dan op het vuur.
+= The lamp needs the AND gate to get three 1s: from XOR, NOT and OR.
+> Het lampje brandt als de AND-poort drie enen krijgt: van XOR, NOT en OR.
+= Set A on, B off, C off, D on. XOR(1,0)=1, NOT(0)=1, OR(0,1)=1.
+> Zet A aan, B uit, C uit, D aan. XOR(1,0)=1, NOT(0)=1, OR(0,1)=1.
+= With the power back, read the rack display. The yellow sticky note explains hex.
+> Nu de stroom terug is, lees je het scherm van het rack. Het gele geeltje legt hex uit.
+= 0x539 = 5×256 + 3×16 + 9 = 1337. Enter 1337 on the exit keypad. Very elite.
+> 0x539 = 5×256 + 3×16 + 9 = 1337. Toets 1337 in op het paneel bij de uitgang. Heel elite.
+
+# ---------- Chapter 2 ----------
+= Jen's laptop is locked, but there's a 'Forgot password?' link. The answers to her security questions are all over her office.
+> Jens laptop is vergrendeld, maar er is een link 'Wachtwoord vergeten?'. De antwoorden op haar beveiligingsvragen hangen overal in haar kantoor.
+= Pet: the photo on her desk (Sir Purrcival). Shoe designer: the shoe rack (Belladonna). Home town: the postcard (Swindon).
+> Huisdier: de foto op haar bureau (Sir Purrcival). Schoenontwerper: het schoenenrek (Belladonna). Geboorteplaats: de ansichtkaart (Swindon).
+= Open 'What is IT.pptx' on the laptop and fix the acronym on every slide.
+> Open 'What is IT.pptx' op de laptop en verbeter de afkorting op elke dia.
+= CPU = Central Processing Unit, RAM = Random Access Memory, USB = Universal Serial Bus, HTML = HyperText Markup Language, Wi-Fi = it doesn't stand for anything, IT = Information Technology.
+> CPU = Central Processing Unit, RAM = Random Access Memory, USB = Universal Serial Bus, HTML = HyperText Markup Language, Wi-Fi = het staat nergens voor, IT = Information Technology.
+= The projector is on its own Wi-Fi network. Jen hid the key somewhere she'd never look. Her calendar says where.
+> De beamer heeft een eigen wifi-netwerk. Jen heeft de sleutel verstopt op een plek waar ze zelf nooit kijkt. Haar kalender zegt waar.
+= Open the shoe rack and look in the Crocs box.
+> Open het schoenenrek en kijk in de doos van de Crocs.
+= Open Wi-Fi on the laptop, choose Boardroom-Projector and type the key from the card in your inventory.
+> Open Wifi op de laptop, kies Boardroom-Projector en typ de sleutel van het kaartje in je inventaris.
+= Network: Boardroom-Projector. Key: SHOES4EVER.
+> Netwerk: Boardroom-Projector. Sleutel: SHOES4EVER.
+= Slides fixed, Wi-Fi connected. Time to present.
+> Dia's verbeterd, wifi verbonden. Tijd om te presenteren.
+= In the slides app, press 'Present to boardroom'.
+> Druk in de dia-app op 'Presenteer in de bestuurskamer'.
+= The lock wants Jen's own answer, not the right one, plus the code in Messages. Her speaker notes on the last slide hide her answer in Moss's code. Her notepad has the key.
+> Het slot wil Jens eigen antwoord, niet het juiste, plus de code in Berichten. In haar notities bij de laatste dia staat haar antwoord in de code van Moss. Haar notitieblok heeft de sleutel.
+= VAGREARG GUVAT in ROT13 is INTERNET THING. The one-time code is 8086.
+> VAGREARG QVAT in ROT13 is INTERNET DING. De eenmalige code is 8086.
+
+# ---------- Chapter 3 ----------
+= Douglas's computer is covered in pop-ups. Only the small ✕ in each pop-up's title bar really closes it.
+> De computer van Douglas zit vol pop-ups. Alleen het kleine ✕ in de titelbalk van elke pop-up sluit hem echt.
+= Ignore the big coloured buttons inside the pop-ups: they spawn more. Click the red ✕ at the top right of each window.
+> Negeer de grote gekleurde knoppen in de pop-ups: die maken er meer. Klik op het rode ✕ rechtsboven in elk venster.
+= The computer is crawling. Open Task Manager and look for programs that use lots of CPU and come from unknown publishers.
+> De computer is tergend traag. Open Taakbeheer en zoek naar programma's die veel CPU gebruiken en van onbekende uitgevers komen.
+= End totally_not_a_virus.exe, free_yacht_screensaver.exe, crypto_miner_lite.exe and cursor_glitter_trail.exe.
+> Beëindig totally_not_a_virus.exe, free_yacht_screensaver.exe, crypto_miner_lite.exe en cursor_glitter_trail.exe.
+= Open Mail. Moss's security training makes you mark every email as Phishing or Legit. Check the address after the @, letter by letter.
+> Open Mail. Door de beveiligingstraining van Moss moet je elke e-mail als Phishing of Echt markeren. Controleer het adres na de @, letter voor letter.
+= Legit: board@reynholm.co.uk, jen.barber@reynholm.co.uk and maurice.moss@reynholm.co.uk. The rest are phishing (watch out for reynho1m with a number 1).
+> Echt: board@reynholm.co.uk, jen.barber@reynholm.co.uk en maurice.moss@reynholm.co.uk. De rest is phishing (let op reynho1m met een cijfer 1).
+= Use MossBackup to restore the annual report. The Board's email says exactly which version they approved.
+> Gebruik MossBackup om het jaarverslag terug te zetten. In de e-mail van het bestuur staat precies welke versie ze hebben goedgekeurd.
+= Restore report_FINAL_REAL_use_this.doc: Friday 14:32, 2.4 MB. Not the 0 KB copy.
+> Zet report_FINAL_REAL_use_this.doc terug: vrijdag 14:32, 2,4 MB. Niet de kopie van 0 KB.
+= The fax machine needs paper. Ask Douglas where his father kept the last ream, and where he kept his safe.
+> Het faxapparaat heeft papier nodig. Vraag Douglas waar zijn vader het laatste pak bewaarde, en waar hij zijn kluis had.
+= Click the portrait to swing it open. In the database type: SELECT code FROM safe WHERE owner = 'Denholm'; then enter 1966 on the safe.
+> Klik op het portret om het open te zwaaien. Typ in de database: SELECT code FROM safe WHERE owner = 'Denholm'; en voer dan 1966 in op de kluis.
+= Clear the jam, load the paper and dial the Board's number from the advert (Douglas can sing it). If the fax shows an error code, the manual next to it explains.
+> Verhelp de papierstoring, plaats het papier en kies het nummer van het bestuur uit de reclame (Douglas kan het zingen). Toont de fax een foutcode, dan legt de handleiding ernaast het uit.
+= Open the cover, load the paper, then dial 9 for an outside line followed by 0118 999 881 999 119 725 3, and press Send.
+> Open de klep, plaats het papier, kies dan 9 voor een buitenlijn gevolgd door 0118 999 881 999 119 725 3, en druk op Verzend.
+
+# ---------- Chapter 4 ----------
+= Douglas's phone is dead. Roy's backpack is full of cables and the lift panel has a service USB port. Compare the plug shapes at both ends.
+> De telefoon van Douglas is leeg. De rugzak van Roy zit vol kabels en het liftpaneel heeft een service-USB-poort. Vergelijk de vormen van de stekkers aan beide uiteinden.
+= Take the USB-A to USB-C cable from Roy's backpack, select it in your inventory and use it on the service USB port.
+> Pak de kabel USB-A naar USB-C uit de rugzak van Roy, kies hem in je inventaris en gebruik hem op de service-USB-poort.
+= The phone has a pattern lock. Douglas says it's a letter, and Roy knows how to see fingerprints. Tilt the screen to the light.
+> De telefoon heeft een patroonslot. Douglas zegt dat het een letter is, en Roy weet hoe je vingerafdrukken ziet. Houd het scherm schuin in het licht.
+= Draw a D: top-left, middle-left, bottom-left, bottom-middle, middle-right, top-middle.
+> Teken een D: linksboven, linksmidden, linksonder, middenonder, rechtsmidden, middenboven.
+= The battery is stuck at 4% and the phone keeps making noises. Open Settings and see which app is draining it.
+> De batterij blijft op 4% hangen en de telefoon blijft geluiden maken. Open Instellingen en kijk welke app hem leegtrekt.
+= Uninstall SuperBright Flashlight FREE: it uses 61% of the battery and wants your microphone, contacts and text messages.
+> Verwijder SuperBright Flashlight FREE: die gebruikt 61% van de batterij en wil je microfoon, contacten en sms'jes.
+= Open Smart Building and pair with the lift. The pairing code is on the service display, but you can only see it in the mirror.
+> Open Smart Building en koppel met de lift. De koppelcode staat op het servicedisplay, maar dat zie je alleen in de spiegel.
+= Mirrors flip left and right: read the digits from right to left and swap the 2s and 5s. The code is 205815.
+> Spiegels draaien links en rechts om: lees de cijfers van rechts naar links en verwissel de 2'en en 5'en. De code is 205815.
+= The override needs Moss's passphrase. Ring him on the emergency phone and watch the light. The inspection certificate has a Morse table.
+> De override heeft het wachtwoord van Moss nodig. Bel hem met de noodtelefoon en let op het licht. Op het keuringscertificaat staat een morsetabel.
+= Short-short-short, short-short-long, long-short-short, long-long-long: S U D O. The passphrase is sudo.
+> Kort-kort-kort, kort-kort-lang, lang-kort-kort, lang-lang-lang: S U D O. Het wachtwoord is sudo.
+= The update is stuck at 99%. Ask Roy what to do. You already know what he'll say.
+> De update hangt op 99%. Vraag Roy wat je moet doen. Je weet al wat hij gaat zeggen.
+= Press the power button on the side of the phone, choose Power off, then press the power button again to turn it back on.
+> Druk op de aan/uit-knop aan de zijkant van de telefoon, kies Uitzetten en druk dan nog een keer op de aan/uit-knop om hem weer aan te zetten.
+
+# ---------- Chapter 5 ----------
+= Start with the Tower of Hard Drives on the table. Move the whole stack to the right-hand peg, one drive at a time, never a bigger drive on a smaller one.
+> Begin met de Toren van Harde Schijven op tafel. Verplaats de hele stapel naar de rechterpin, één schijf tegelijk, en nooit een grotere schijf op een kleinere.
+= Move the smallest drive every other turn, always one peg to the right (from the right-hand peg it jumps back to the left one). In between, make the only other legal move. 15 moves in total.
+> Verplaats om de beurt de kleinste schijf, altijd één pin naar rechts (vanaf de rechterpin springt hij terug naar de linker). Doe daartussen de enige andere zet die mag. 15 zetten in totaal.
+= The rune cabinet opens for every name its pattern matches, and only those. The regex scroll on the wall explains the symbols.
+> De runenkast gaat open voor elke naam die bij het patroon past, en alleen die. De regex-rol aan de muur legt de symbolen uit.
+= ^[RM]o\w{1,2}$ means: starts with R or M, then o, then one or two more letters, then stop. Select Roy, Moss and Rose.
+> ^[RM]o\w{1,2}$ betekent: begint met R of M, dan een o, dan nog één of twee letters, en dan klaar. Kies Roy, Moss en Rose.
+= The Wizard's laptop wants a spell on a USB stick. You found one inside the biggest hard drive.
+> De laptop van de Tovenaar wil een spreuk op een USB-stick. Die heb je gevonden in de grootste harde schijf.
+= Select the USB stick in your inventory and click the rune cabinet.
+> Kies de USB-stick in je inventaris en klik op de runenkast.
+= Run the spell on the Wizard's laptop. Something in the loop line is wrong: change it with the dropdown.
+> Voer de spreuk uit op de laptop van de Tovenaar. Er klopt iets niet in de regel met de lus: verander die met het keuzemenu.
+= Lists start at 0 and stop before their length. Choose: for (let i = 0; i < runes.length; i++). The output is 628210.
+> Lijsten beginnen bij 0 en stoppen vóór hun lengte. Kies: for (let i = 0; i < runes.length; i++). De uitkomst is 628210.
+= The spell printed a six-digit number. Try it on the treasure chest.
+> De spreuk gaf een getal van zes cijfers. Probeer het op de schatkist.
+= Enter 628210 on the chest.
+> Voer 628210 in op de kist.
+= The dragon manual says its batteries are behind the potion shelf. Sort the potions from smallest to largest number by swapping neighbours.
+> Volgens de drakenhandleiding zitten de batterijen achter de toverdrankenplank. Sorteer de drankjes van het kleinste naar het grootste getal door buren te verwisselen.
+= The order is 1, 3, 5, 8, 13, 21, 42, and the labels spell BATTERY. Keep swapping any neighbours where the left one is bigger.
+> De volgorde is 1, 3, 5, 8, 13, 21, 42, en de etiketten vormen het woord ENERGIE. Blijf buren verwisselen waarvan de linker groter is.
+= You have batteries. Something cardboard needs them.
+> Je hebt batterijen. Iets van karton heeft ze nodig.
+= Select the batteries in your inventory and click the dragon.
+> Kies de batterijen in je inventaris en klik op de draak.
+= Beat the dragon's number game. Always guess the middle of the numbers that are still possible.
+> Versla de draak in zijn getallenspel. Raad altijd het midden van de getallen die nog kunnen.
+= Start with 50. If it says HIGHER, try 75; if LOWER, try 25. Keep halving the gap. Seven guesses are always enough.
+> Begin met 50. Zegt hij HOGER, probeer dan 75; zegt hij LAGER, probeer dan 25. Blijf het verschil halveren. Zeven keer raden is altijd genoeg.
+= The Firewall admin panel wants a password that follows every rule. A new rule appears each time you pass one.
+> Het beheerpaneel van de Firewall wil een wachtwoord dat aan alle regels voldoet. Elke keer dat je een regel haalt, verschijnt er een nieuwe.
+= One that works: Moss#4900. The digits 4 + 9 + 0 + 0 add up to 13.
+> Eentje die werkt: Moss#4900. De cijfers 4 + 9 + 0 + 0 zijn samen 13.
+
+# ---------- Chapter 6 ----------
+= The logbook on the map table is written in numbers. The ASCII table inside its cover turns numbers into letters.
+> Het logboek op de kaartentafel is in getallen geschreven. De ASCII-tabel op de binnenkant van de kaft maakt van getallen letters.
+= 76 79 79 75 32 85 78 68 69 82 32 84 72 69 32 66 69 76 76 spells LOOK UNDER THE BELL. Type that into the decoder.
+> 75 73 74 75 32 79 78 68 69 82 32 68 69 32 66 69 76 betekent KIJK ONDER DE BEL. Typ dat in bij het ontcijferde bericht.
+= The logbook told you where the ignition key is hidden.
+> Het logboek heeft je verteld waar de contactsleutel verstopt is.
+= Click the brass ship's bell next to the life ring.
+> Klik op de koperen scheepsbel naast de reddingsboei.
+= Start the engine panel's systems in an order that respects yacht.json. Put the ignition key in first.
+> Start de systemen op het motorpaneel in een volgorde die klopt met yacht.json. Steek eerst de contactsleutel erin.
+= Tap the ignition key slot, then switch on: Battery, Fuel pump, Bilge pump, Navigation computer, Engine, Propeller.
+> Tik op het contactslot en zet dan aan: Accu, Brandstofpomp, Lenspomp, Navigatiecomputer, Motor, Schroef.
+= SKIPPER-OS only answers in HTTP status codes. The poster on the wall explains them. You need GET /helm to return 200.
+> SKIPPER-OS antwoordt alleen met HTTP-statuscodes. De poster aan de muur legt ze uit. Je wilt dat GET /helm 200 teruggeeft.
+= GET /helm gives 401: log in first. Douglas gets 403, Roy 423 and Jen 404. Log in as Moss, then send GET /helm again.
+> GET /helm geeft 401: log eerst in. Douglas krijgt 403, Roy 423 en Jen 404. Log in als Moss en stuur dan opnieuw GET /helm.
+= The harbour radio's berth number has one flipped bit. Every row and column should contain an even number of 1s.
+> In het nummer van de ligplaats via de havenradio is één bit omgedraaid. Elke rij en kolom hoort een even aantal enen te hebben.
+= Row 3 and column 2 are the odd ones out: tap the bit where they cross. The fixed 1s draw a 7. Berth 7.
+> Rij 3 en kolom 2 zijn de vreemde eenden: tik op de bit waar ze elkaar kruisen. De gerepareerde enen tekenen een 7. Ligplaats 7.
+= Program the autopilot to reach Berth 7 without hitting anything. You start facing right.
+> Programmeer de automatische piloot zo dat je ligplaats 7 bereikt zonder ergens tegenaan te varen. Je begint met de neus naar rechts.
+= Forward, Forward, Right, Forward, Left, then Forward five times.
+> Vooruit, Vooruit, Rechtsaf, Vooruit, Linksaf, en dan vijf keer Vooruit.
+= The smart gangway wants you to select every square with a dragon. Douglas in a onesie counts.
+> De slimme loopplank wil dat je elk vakje met een draak selecteert. Douglas in een onesie telt mee.
+= Select the inflatable dragon, the Welsh flag, SMAUG-O-TRON 3000, the Komodo dragon and Douglas in a dragon onesie.
+> Kies de opblaasdraak, de Welshe vlag, SMAUG-O-TRON 3000, de komodovaraan en Douglas in een drakenonesie.

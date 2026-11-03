@@ -1,0 +1,350 @@
+# Dutch translation: Chapter 5, Dungeons & Datacenters (js/chapter5.js).
+# The potions spell ENERGIE instead of BATTERY: js/chapter5.js reads the letters from the translation of BATTERY.
+# The rune names (Roy, Moss, Rose…) and the code of the spell stay as they are.
+
+= BATTERY
+> ENERGIE
+
+# ---------- hotspots ----------
+= THE FIREWALL. Cardboard bricks, paper flames and a very real lock.
+> DE FIREWALL. Kartonnen bakstenen, papieren vlammen en een heel echt slot.
+= Moss, over the walkie-talkie: 'The Firewall only opens when its admin panel gets a new, secure password. The admin panel is guarded by the dragon. Obviously.'
+> Moss, via de portofoon: 'De Firewall gaat pas open als het beheerpaneel een nieuw, veilig wachtwoord krijgt. Het beheerpaneel wordt bewaakt door de draak. Uiteraard.'
+= The Firewall admin panel. The screen says: LOCKED BY DRAGON.
+> Het beheerpaneel van de Firewall. Op het scherm staat: VERGRENDELD DOOR DRAAK.
+= Moss: 'Defeat the dragon first. Intellectually. Please don't actually hit it.'
+> Moss: 'Versla eerst de draak. Intellectueel. Ga hem alsjeblieft niet echt slaan.'
+= A hand-painted poster: MOSS THE MAGNIFICENT, GAME MASTER. Underneath, the rules:
+> Een met de hand beschilderde poster: MOSS DE MAGNIFIEKE, SPELLEIDER. Daaronder de regels:
+= 1. No phones. 2. Do not touch the dragon's tail. 3. Roy, that means you. 4. Have fun (this is compulsory).
+> 1. Geen telefoons. 2. Niet aan de staart van de draak komen. 3. Roy, dat geldt voor jou. 4. Veel plezier (dit is verplicht).
+= A large cardboard dragon, held together with parcel tape and ambition. It isn't moving.
+> Een grote kartonnen draak, bij elkaar gehouden door tape en ambitie. Hij beweegt niet.
+= A label on its belly: SMAUG-O-TRON 3000. REQUIRES 4 × AA BATTERIES (NOT INCLUDED).
+> Een etiket op zijn buik: SMAUG-O-TRON 3000. WERKT OP 4 × AA-BATTERIJEN (NIET INBEGREPEN).
+= The rune cabinet is open. Inside, on a lectern, sits the Wizard's laptop.
+> De runenkast is open. Binnen, op een lessenaar, staat de laptop van de Tovenaar.
+= Its screen says: INSERT SPELL (USB).
+> Op het scherm staat: PLAATS SPREUK (USB).
+= A barrel. Inside: Moss's spare cape, a bag of crisps and a laminated sign that says 'BARREL'.
+> Een ton. Erin: de reservecape van Moss, een zak chips en een gelamineerd bordje met 'TON'.
+= The chest is open: chocolate coins, a plastic sword and a large, empty space where Moss's dragon manual was.
+> De kist is open: chocolademunten, een plastic zwaard en een grote lege plek waar de drakenhandleiding van Moss lag.
+= A webcam with a red light. Moss is watching you all from his desk. You can hear his cape rustle when he leans in.
+> Een webcam met een rood lampje. Moss kijkt vanaf zijn bureau naar jullie allemaal. Je hoort zijn cape ritselen als hij naar voren buigt.
+= A battery-powered 'flaming' torch. After the toast incident, health and safety insisted.
+> Een 'vlammende' fakkel op batterijen. Na het toastincident stond de arbodienst erop.
+
+# ---------- talking to Jen, Roy and Moss ----------
+= Jen
+> Jen
+= Relationship Manager · team builder
+> Relationship Manager · teambuilder
+= "Isn't this fun? Team building! I'm building the team. You're doing the puzzles."
+> "Is dit niet leuk? Teambuilding! Ik bouw het team. Jij doet de puzzels."
+= Reluctant adventurer
+> Avonturier tegen wil en dank
+= "I want you to know I am here against my will."
+> "Ik wil dat je weet dat ik hier tegen mijn wil ben."
+= Moss (walkie-talkie)
+> Moss (portofoon)
+= Game Master · watching on the webcam
+> Spelleider · kijkt mee via de webcam
+= "Moss the Magnificent here. Over."
+> "Moss de Magnifieke hier. Over."
+= Whose idea was this?
+> Wiens idee was dit?
+= Mine! Team building. We escape a room together and we bond. I read about it in a magazine. At the dentist's.
+> Van mij! Teambuilding. We ontsnappen samen uit een kamer en dan hebben we een band. Ik las het in een tijdschrift. Bij de tandarts.
+= Can you help with the puzzles?
+> Kun jij helpen met de puzzels?
+= Absolutely. I'm a people person. I'll do the people bits. Are there any people bits?
+> Absoluut. Ik ben een mensenmens. Ik doe de stukjes met mensen. Zijn er stukjes met mensen?
+= What's a regex?
+> Wat is een regex?
+= Is it a dinosaur? It sounds like a dinosaur. A big one. With small arms.
+> Is dat een dinosaurus? Het klinkt als een dinosaurus. Een grote. Met kleine armpjes.
+= What password should we use?
+> Welk wachtwoord zullen we nemen?
+= password1. It's easy to remember. That's the whole point of passwords, isn't it?
+> password1. Makkelijk te onthouden. Daar zijn wachtwoorden toch voor?
+= Why are you wearing heels in a dungeon?
+> Waarom draag je hakken in een kerker?
+= These are my dungeon shoes.
+> Dit zijn mijn kerkerschoenen.
+= Are you enjoying team building?
+> Vind je de teambuilding leuk?
+= I've been locked in a cupboard with a cardboard dragon by a man who owns a cape. No. I am not.
+> Ik ben in een bezemkast opgesloten met een kartonnen draak, door een man die een cape bezit. Nee. Niet leuk.
+= Any tips for the Tower of Hard Drives?
+> Tips voor de Toren van Harde Schijven?
+= Moss explained it once. Move the smallest one every other turn, always in the same direction. Then make the only other move you can. Then I fell asleep.
+> Moss heeft het een keer uitgelegd. Verplaats om de beurt de kleinste, altijd dezelfde kant op. Doe daartussen de enige andere zet die kan. Toen viel ik in slaap.
+= How do you guess a number quickly?
+> Hoe raad je snel een getal?
+= Go for the middle. Fifty. Then the middle of whatever's left. Moss calls it binary search. I call it common sense.
+> Ga voor het midden. Vijftig. Dan het midden van wat er over is. Moss noemt het binair zoeken. Ik noem het gezond verstand.
+= What's bubble sort?
+> Wat is bubblesort?
+= You compare two neighbours and swap them if they're the wrong way round. Over and over. Like Moss explaining things.
+> Je vergelijkt twee buren en verwisselt ze als ze verkeerd om staan. Steeds opnieuw. Net als Moss als hij iets uitlegt.
+= What is this place?
+> Wat is dit voor plek?
+= Welcome to DUNGEONS & DATACENTERS! My escape room. I built it for Jen's team building. Well, I built it for me. Jen just asked.
+> Welkom bij DUNGEONS & DATACENTERS! Mijn escaperoom. Ik heb hem gebouwd voor Jens teambuilding. Nou ja, ik heb hem voor mezelf gebouwd. Jen vroeg er alleen om.
+= Is the dragon safe?
+> Is de draak veilig?
+= Perfectly safe. It's cardboard, four AA batteries and a tiny computer. Don't touch its tail; that's where the computer is.
+> Volkomen veilig. Het is karton, vier AA-batterijen en een piepkleine computer. Niet aan zijn staart komen; daar zit de computer.
+= Why are you worried?
+> Waarom maak je je zorgen?
+= I may have made it slightly too difficult. The first version of the Tower had sixty-four hard drives. The monks would have been proud.
+> Misschien heb ik het iets te moeilijk gemaakt. De eerste versie van de Toren had vierenzestig harde schijven. De monniken zouden trots zijn geweest.
+= How long do we have?
+> Hoeveel tijd hebben we?
+= Sixty minutes. Or until Jen gets hungry. Whichever comes first.
+> Zestig minuten. Of tot Jen honger krijgt. Wat het eerst komt.
+= Can we have a hint?
+> Mogen we een hint?
+= Hints cost one Moss Point. You have zero Moss Points. Try the Hint button, or the duck. The duck is very wise.
+> Een hint kost één Mosspunt. Jullie hebben nul Mosspunten. Probeer de Hint-knop, of het eendje. Het eendje is heel wijs.
+
+# ---------- 1. the Tower of Hard Drives ----------
+= The Tower of Hard Drives
+> De Toren van Harde Schijven
+= Move the whole stack to the right-hand peg
+> Verplaats de hele stapel naar de rechterpin
+= Three pegs with hard drives
+> Drie pinnen met harde schijven
+= Tap a peg to pick up its top drive, then tap another peg to put it down. Never put a bigger drive on a smaller one.
+> Tik op een pin om de bovenste schijf op te pakken en tik op een andere pin om hem neer te leggen. Leg nooit een grotere schijf op een kleinere.
+= Start again
+> Opnieuw beginnen
+= START
+> START
+= GOAL
+> DOEL
+~ ^Moves: (\d+)$
+> Zetten: $1
+= That peg is empty.
+> Die pin is leeg.
+= You can't put a bigger drive on a smaller one. Over the walkie-talkie, Moss gasps.
+> Je kunt geen grotere schijf op een kleinere leggen. Via de portofoon hoor je Moss naar adem happen.
+= Done in {n} moves {note}. The 250 GB drive pops open: inside is a USB stick labelled SPELL.JS. You take it.
+> Klaar in {n} zetten {note}. De schijf van 250 GB springt open: erin zit een USB-stick met het etiket SPELL.JS. Je neemt hem mee.
+= (the minimum possible!)
+> (het minimum!)
+= (15 is the minimum)
+> (15 is het minimum)
+= The Tower of Hard Drives! Solved! The trick is recursion: to move four drives, you move three, then one, then three again. And to move three…
+> De Toren van Harde Schijven! Opgelost! De truc is recursie: om vier schijven te verplaatsen, verplaats je er drie, dan één en dan weer drie. En om er drie te verplaatsen…
+= We get it, Moss.
+> We snappen het, Moss.
+= Back to the start.
+> Terug naar het begin.
+= Solved. The drives are back in order, and very pleased with themselves.
+> Opgelost. De schijven staan weer op volgorde en zijn erg tevreden met zichzelf.
+
+# ---------- 2. the rune cabinet ----------
+= Regex for Wizards
+> Regex voor tovenaars
+= A scroll in Moss's handwriting
+> Een perkamentrol in het handschrift van Moss
+= A regular expression is a pattern that a word must fit, letter by letter.
+> Een reguliere expressie is een patroon waar een woord letter voor letter in moet passen.
+= the start of the word
+> het begin van het woord
+= the end of the word
+> het einde van het woord
+= one letter: either R or M
+> één letter: R of M
+= just the letter o
+> gewoon de letter o
+= any single letter or digit
+> één willekeurige letter of één cijfer
+= the thing before it, one or two times
+> wat ervoor staat, één of twee keer
+= Example: <b>^Ca\w$</b> matches <i>Cat</i> and <i>Cab</i>, but not <i>Cart</i> (too long) or <i>Bat</i> (wrong start).
+> Voorbeeld: <b>^Ka\w$</b> past op <i>Kat</i> en <i>Kam</i>, maar niet op <i>Kaart</i> (te lang) of <i>Rat</i> (verkeerd begin).
+= The Rune Cabinet
+> De Runenkast
+= Select every name the pattern matches, then cast
+> Kies elke naam die bij het patroon past en spreek dan de spreuk uit
+= Cast
+> Uitspreken
+= The scroll on the wall explains the symbols.
+> De perkamentrol aan de muur legt de symbolen uit.
+= The runes glow. The cabinet doors swing open, revealing the Wizard's laptop.
+> De runen gloeien op. De deurtjes van de kast zwaaien open en daar staat de laptop van de Tovenaar.
+= What happened? Did I do that? I think I did that.
+> Wat gebeurde er? Heb ik dat gedaan? Ik denk dat ik dat gedaan heb.
+= You did not do that.
+> Dat heb jij niet gedaan.
+= Mo is too short: \w{1,2} needs at least one more letter after the o.
+> Mo is te kort: \w{1,2} wil na de o nog minstens één letter.
+= Robot is too long: after 'Ro' it has three letters, and {1,2} allows only one or two.
+> Robot is te lang: na 'Ro' komen nog drie letters, en {1,2} staat er maar één of twee toe.
+= Jen doesn't start with R or M. Also, she's not IT. She'd like everyone to stop saying that.
+> Jen begint niet met een R of een M. Bovendien is ze geen IT. Ze wil graag dat iedereen ophoudt dat te zeggen.
+= Douglas starts with D. The runes are unimpressed.
+> Douglas begint met een D. De runen zijn niet onder de indruk.
+= The runes flicker. {why}
+> De runen flakkeren. {why}
+= You missed at least one match.
+> Je hebt minstens één naam gemist.
+= Something is off.
+> Er klopt iets niet.
+
+# ---------- 3. the Wizard's laptop ----------
+= The Wizard's laptop
+> De laptop van de Tovenaar
+= spell.js · by Moss the Magnificent
+> spell.js · door Moss de Magnifieke
+= Loop line
+> Regel met de lus
+= // Spell of Opening. Doubles every rune.
+> // Spreuk van Opening. Verdubbelt elke rune.
+= Run spell ▶
+> Spreuk uitvoeren ▶
+= Tip: the dashed line can be changed.
+> Tip: de gestippelde regel kun je veranderen.
+= The spell summons a NaN: a small, confused grey goat. It is Not a Number. The loop ran one step past the end of the list.
+> De spreuk roept een NaN op: een klein, verward grijs geitje. Het is Not a Number, geen getal. De lus liep één stap voorbij het einde van de lijst.
+= Only five digits. The first rune (3) was skipped: in JavaScript, lists start counting at 0, not 1.
+> Maar vijf cijfers. De eerste rune (3) is overgeslagen: in JavaScript beginnen lijsten te tellen bij 0, niet bij 1.
+= The spell works! The laptop shows 628210 in sparkly letters. Six digits. That looks like a chest code.
+> De spreuk werkt! De laptop toont 628210 in glinsterende letters. Zes cijfers. Dat lijkt op de code van een kist.
+
+# ---------- the treasure chest ----------
+= Treasure chest
+> Schatkist
+= A six-digit brass combination lock
+> Een koperen cijferslot met zes cijfers
+= Combination
+> Combinatie
+= Open
+> Open
+= The lid creaks open.
+> Het deksel gaat krakend open.
+= Inside: chocolate coins, a plastic sword, and a booklet: THE DRAGON MANUAL, by Moss.
+> Erin: chocolademunten, een plastic zwaard en een boekje: DE DRAKENHANDLEIDING, door Moss.
+= 'SMAUG-O-TRON 3000 runs on 4 AA batteries. The batteries are in the secret compartment of the potion shelf. It opens when the potions are sorted from smallest to largest. You may only swap two neighbouring potions. This is called bubble sort. It is educational.'
+> 'SMAUG-O-TRON 3000 werkt op 4 AA-batterijen. De batterijen zitten in het geheime vakje van de toverdrankenplank. Dat gaat open als de drankjes gesorteerd zijn van klein naar groot. Je mag alleen twee buurdrankjes verwisselen. Dit heet bubblesort. Het is leerzaam.'
+= Of course it is.
+> Natuurlijk is het dat.
+= The lock only has digits. No goats.
+> Het slot heeft alleen cijfers. Geen geiten.
+= The lock stays shut.
+> Het slot blijft dicht.
+
+# ---------- 4. the potion shelf ----------
+= The potion shelf
+> De toverdrankenplank
+= Sort from smallest to largest, swapping neighbours only
+> Sorteer van klein naar groot, door alleen buren te verwisselen
+~ ^Swap (\d+) and (\d+)$
+> Verwissel $1 en $2
+~ ^Swaps: (\d+)$
+> Verwisselingen: $1
+= Those two are already in order. Swapping them would only make things worse. Moss would be disappointed. Quietly.
+> Die twee staan al op volgorde. Verwisselen maakt het alleen maar erger. Moss zou teleurgesteld zijn. In stilte.
+= Sorted in {n} swaps. The labels spell BATTERY, and the secret compartment clicks open: four AA batteries. You take them.
+> Gesorteerd in {n} verwisselingen. De etiketten vormen het woord ENERGIE, en het geheime vakje klikt open: vier AA-batterijen. Je neemt ze mee.
+= Bubble sort! Slow, but honest. Like me.
+> Bubblesort! Langzaam, maar eerlijk. Net als ik.
+= Sorted. B-A-T-T-E-R-Y. The compartment is empty now.
+> Gesorteerd. E-N-E-R-G-I-E. Het vakje is nu leeg.
+
+# ---------- 5. the dragon ----------
+= SMAUG-O-TRON 3000 is purring quietly. Well, whirring. It respects you now.
+> SMAUG-O-TRON 3000 spint zachtjes. Nou ja, zoemt. Hij respecteert je nu.
+= A cardboard dragon with a very small computer in its tail
+> Een kartonnen draak met een heel klein computertje in zijn staart
+= I AM THINKING OF A NUMBER FROM 1 TO 100. YOU HAVE 7 GUESSES, PUNY HUMAN.
+> IK DENK AAN EEN GETAL VAN 1 TOT EN MET 100. JE MAG 7 KEER RADEN, NIETIG MENS.
+= Your guess
+> Jouw gok
+= Guess
+> Raad
+~ ^(\d+) left$
+> nog $1
+= A NUMBER FROM 1 TO 100. I AM A DRAGON, NOT A CALCULATOR.
+> EEN GETAL VAN 1 TOT EN MET 100. IK BEN EEN DRAAK, GEEN REKENMACHINE.
+= {g}! NOOO! YOU HAVE DEFEATED ME. THE FIREWALL ADMIN PANEL IS NOW UNLOCKED.
+> {g}! NEEEE! JE HEBT ME VERSLAGEN. HET BEHEERPANEEL VAN DE FIREWALL IS NU ONTGRENDELD.
+= Found in {n} guesses.
+> Gevonden in {n} keer raden.
+= Binary search! Always guess the middle. Seven guesses are enough for 100 numbers, because 2 × 2 × 2 × 2 × 2 × 2 × 2 is 128.
+> Binair zoeken! Gok altijd het midden. Zeven keer raden is genoeg voor 100 getallen, want 2 × 2 × 2 × 2 × 2 × 2 × 2 is 128.
+= I knew it was the middle one. I was just about to say.
+> Ik wist dat het die in het midden was. Ik wilde het net zeggen.
+= HA! IT WAS {n}. I HAVE CHOSEN A NEW NUMBER. TRY AGAIN, PUNY HUMAN.
+> HA! HET WAS {n}. IK HEB EEN NIEUW GETAL GEKOZEN. PROBEER HET NOG EENS, NIETIG MENS.
+= Tip from Roy: always go for the middle of what is left.
+> Tip van Roy: ga altijd voor het midden van wat er over is.
+= HIGHER! ({n} GUESSES LEFT)
+> HOGER! (NOG {n} KEER RADEN)
+= LOWER! ({n} GUESSES LEFT)
+> LAGER! (NOG {n} KEER RADEN)
+
+# ---------- 6. the Firewall ----------
+= At least 8 characters.
+> Minstens 8 tekens.
+= Include a number.
+> Gebruik een cijfer.
+= Include a capital letter.
+> Gebruik een hoofdletter.
+= Include a special character, like ! # or ?
+> Gebruik een speciaal teken, zoals ! # of ?
+= The digits must add up to 13. (In honour of ROT13.)
+> De cijfers moeten samen 13 zijn. (Ter ere van ROT13.)
+= Include the name of someone in the IT department.
+> Gebruik de naam van iemand van de IT-afdeling.
+= Must not contain the word "password". Sorry, Jen.
+> Het woord "password" (of "wachtwoord") mag er niet in staan. Sorry, Jen.
+= The Firewall is down.
+> De Firewall is neergehaald.
+= Firewall admin panel
+> Beheerpaneel van de Firewall
+= Set a new secure password to lower the Firewall
+> Stel een nieuw, veilig wachtwoord in om de Firewall neer te halen
+= New password
+> Nieuw wachtwoord
+= Set password
+> Wachtwoord instellen
+= Jen leans over and types "password1" before you can stop her.
+> Jen buigt zich over je heen en typt "password1" voor je haar kunt tegenhouden.
+= Jen is the Relationship Manager. She is not in the IT department. She has asked everyone to stop pointing this out.
+> Jen is de Relationship Manager. Ze zit niet op de IT-afdeling. Ze heeft iedereen gevraagd daarover op te houden.
+= PASSWORD ACCEPTED. LOWERING FIREWALL…
+> WACHTWOORD GEACCEPTEERD. FIREWALL WORDT NEERGEHAALD…
+
+# ---------- start and end ----------
+= Basement, 16:30. You're admiring Moss's laminated certificate when Jen claps her hands.
+> Kelder, 16:30. Je staat de gelamineerde oorkonde van Moss te bewonderen als Jen in haar handen klapt.
+= Right! I've had an idea. Team building! An escape room! We escape a room together, as a team!
+> Goed! Ik heb een idee. Teambuilding! Een escaperoom! We ontsnappen samen uit een kamer, als team!
+= We? They've escaped four rooms today. On their own. I was at lunch for most of it.
+> Wij? Die is vandaag al uit vier kamers ontsnapt. In z'n eentje. Ik was het grootste deel van de tijd aan het lunchen.
+= Exactly, so they can carry us. Moss has built one in the old storeroom. In you go!
+> Precies, dus die kan ons erdoorheen slepen. Moss heeft er een gebouwd in de oude opslagruimte. Naar binnen!
+= The storeroom door slams shut behind the three of you. Someone has painted it to look like a castle. A walkie-talkie crackles.
+> De deur van de opslagruimte slaat achter jullie drieën dicht. Iemand heeft hem beschilderd als een kasteel. Een portofoon kraakt.
+= Welcome, adventurers, to DUNGEONS & DATACENTERS. I am your Game Master, Moss the Magnificent. To escape, you must lower the Firewall.
+> Welkom, avonturiers, bij DUNGEONS & DATACENTERS. Ik ben jullie spelleider, Moss de Magnifieke. Om te ontsnappen moeten jullie de Firewall neerhalen.
+= I should mention that I'm a little worried. I may have made it slightly too hard.
+> Ik moet zeggen dat ik me een beetje zorgen maak. Misschien heb ik het iets te moeilijk gemaakt.
+= Locked in. Fifth time today. This time on purpose.
+> Opgesloten. Voor de vijfde keer vandaag. Deze keer expres.
+= The Firewall's paper flames flop over. The castle door swings open onto the basement corridor.
+> De papieren vlammen van de Firewall zakken in elkaar. De kasteeldeur zwaait open naar de keldergang.
+= You did it! Escape time: {time}. That's a new record. It's also the only record.
+> Het is jullie gelukt! Ontsnappingstijd: {time}. Dat is een nieuw record. Het is ook het enige record.
+= Team building complete! I feel so much closer to all of you.
+> Teambuilding voltooid! Ik voel me zo veel dichter bij jullie allemaal.
+= I feel closer to the door.
+> Ik voel me dichter bij de deur.
+= I say! Is this the famous escape room? I'd like to book it for the board. Can you make it harder? More dragons. And a yacht.
+> Kijk eens aan! Is dit de beroemde escaperoom? Ik wil hem boeken voor het bestuur. Kun je hem moeilijker maken? Meer draken. En een jacht.
+= …I'm going to need a lot more cardboard.
+> …Ik ga veel meer karton nodig hebben.

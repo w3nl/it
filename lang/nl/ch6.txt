@@ -1,0 +1,414 @@
+# Dutch translation: Chapter 6, the yacht (js/chapter6.js).
+# The logbook spells KIJK ONDER DE BEL in Dutch: js/chapter6.js encodes the translation of LOOK UNDER THE BELL.
+# HTTP requests and status names stay English (that's what HTTP speaks); their explanations are translated.
+
+= LOOK UNDER THE BELL
+> KIJK ONDER DE BEL
+
+# ---------- engine systems ----------
+= Battery
+> Accu
+= Fuel pump
+> Brandstofpomp
+= Bilge pump
+> Lenspomp
+= Navigation computer
+> Navigatiecomputer
+= Engine
+> Motor
+= Propeller
+> Schroef
+= ENGINE
+> MOTOR
+= PROP
+> SCHR
+= BATT
+> ACCU
+= FUEL
+> BRST
+= BILGE
+> LENS
+
+# ---------- hotspots ----------
+= A Thames tour boat glides past. Forty tourists are photographing Douglas.
+> Er glijdt een rondvaartboot over de Theems voorbij. Veertig toeristen fotograferen Douglas.
+= Douglas waves back with enormous enthusiasm. 'Ahoy! Ahoy! Yes, it's mine! Douglas II! There is no Douglas I!'
+> Douglas zwaait enorm enthousiast terug. 'Ahoi! Ahoi! Ja, hij is van mij! Douglas II! Er is geen Douglas I!'
+= Berth 7. Solid ground, just a gangway away. Roy is already looking at it like a long-lost friend.
+> Ligplaats 7. Vaste grond, op één loopplank afstand. Roy kijkt er al naar als naar een lang verloren vriend.
+= The Thames slides past the windows. Tower Bridge, the Shard, the London Eye. In the wrong direction, and getting smaller.
+> De Theems schuift langs de ramen. Tower Bridge, de Shard, de London Eye. In de verkeerde richting, en steeds kleiner.
+= Somewhere downstream is the Thames Barrier. Moss keeps looking at it.
+> Ergens stroomafwaarts ligt de Thames Barrier, de grote stormvloedkering. Moss blijft ernaar kijken.
+= Jen is on the front deck, taking selfies with the skyline.
+> Jen staat op het voordek selfies te maken met de skyline.
+= She gives you a thumbs up through the glass. She has not noticed that the yacht is drifting.
+> Ze steekt door het glas haar duim naar je op. Ze heeft niet gemerkt dat het jacht op drift is.
+= A brass plaque: DOUGLAS II. You ask what happened to Douglas I. Douglas: 'There was never a Douglas I. Starting at two sounds more successful.'
+> Een koperen bordje: DOUGLAS II. Je vraagt wat er met Douglas I is gebeurd. Douglas: 'Er is nooit een Douglas I geweest. Beginnen bij twee klinkt succesvoller.'
+= A life ring. Roy has been eyeing it since the mooring lines dropped.
+> Een reddingsboei. Roy loert er al naar sinds de meertouwen los zijn.
+= The ship's bell. You give it a ring. DING.
+> De scheepsbel. Je luidt hem. DING.
+= Douglas: 'Lovely, isn't it? Moss said he hid something on board for the game, but he won't tell me where.'
+> Douglas: 'Prachtig, hè? Moss zei dat hij iets aan boord heeft verstopt voor het spel, maar hij wil me niet vertellen waar.'
+= DING. The bell is empty now. It still sounds lovely.
+> DING. De bel is nu leeg. Hij klinkt nog steeds prachtig.
+= You look under the bell, like the logbook said. Taped inside: a small brass key with a tag.
+> Je kijkt onder de bel, zoals het logboek zei. Erin vastgeplakt: een klein koperen sleuteltje met een label.
+= IGNITION. You take it.
+> CONTACT. Je neemt hem mee.
+= The autopilot chart. The screen says: NO PROPULSION. Start the engine first.
+> De zeekaart van de automatische piloot. Op het scherm staat: GEEN VOORTSTUWING. Start eerst de motor.
+= The autopilot chart. The screen says: HELM LOCKED BY SKIPPER-OS.
+> De zeekaart van de automatische piloot. Op het scherm staat: STUURWIEL VERGRENDELD DOOR SKIPPER-OS.
+= The autopilot says: DOCKED AT BERTH 7. It sounds proud of itself.
+> De automatische piloot zegt: AANGEMEERD BIJ LIGPLAATS 7. Hij klinkt trots op zichzelf.
+= Roy is holding a bucket and staring at the horizon.
+> Roy houdt een emmer vast en staart naar de horizon.
+= "I'm fine. I'm fine. Don't talk to me about waves."
+> "Het gaat prima. Het gaat prima. Begin niet over golven."
+= "Why is it moving? Buildings don't move. Why do boats move?"
+> "Waarom beweegt het? Gebouwen bewegen niet. Waarom bewegen boten wel?"
+= "If you turn this boat off and on again, I will be very happy."
+> "Als je deze boot uit en weer aan zet, word ik heel gelukkig."
+= An inflatable dragon pool toy. Douglas asked for more dragons, and Moss delivered.
+> Een opblaasdraak voor in het zwembad. Douglas vroeg om meer draken, en Moss heeft geleverd.
+= It's labelled DRAGON #2 (OF 5). You've never wanted to know where the other three are less.
+> Er staat DRAAK #2 (VAN 5) op. Je hebt nog nooit zo weinig willen weten waar de andere drie zijn.
+
+# ---------- talking to Moss and Douglas ----------
+= Game Master · wearing his cape on a boat
+> Spelleider · met zijn cape aan op een boot
+= "I connected every puzzle to the yacht's real systems. For immersion. I'm now regretting the immersion."
+> "Ik heb elke puzzel aan de echte systemen van het jacht gekoppeld. Voor de beleving. Ik heb nu spijt van de beleving."
+= Captain (self-appointed)
+> Kapitein (zelfbenoemd)
+= "Welcome aboard! Isn't she magnificent? The yacht, I mean. Moss is also quite magnificent. In his cape."
+> "Welkom aan boord! Is ze niet magnifiek? Het jacht, bedoel ik. Moss is ook behoorlijk magnifiek. In zijn cape."
+= What's happening?
+> Wat gebeurt er?
+= Douglas pressed the big red Start button. I'd connected it to the yacht's real systems. So it started the game, released the mooring lines, switched off the engine and locked the helm. All at once. Very immersive.
+> Douglas drukte op de grote rode startknop. Die had ik aan de echte systemen van het jacht gekoppeld. Dus hij startte het spel, gooide de meertouwen los, zette de motor uit en vergrendelde het stuurwiel. Alles tegelijk. Heel meeslepend.
+= How do we start the engine?
+> Hoe starten we de motor?
+= Engines have dependencies, like software. Some systems need others running first. It's all on the yacht.json sticker. Turn things on in the wrong order and the breaker trips.
+> Motoren hebben afhankelijkheden, net als software. Sommige systemen hebben andere nodig die eerst moeten draaien. Het staat allemaal op de sticker yacht.json. Zet je dingen in de verkeerde volgorde aan, dan springt de stop eruit.
+= Why won't the helm computer talk to me?
+> Waarom praat de stuurcomputer niet met me?
+= SKIPPER-OS only speaks HTTP status codes. I thought it would be charming. My poster on the wall explains them. 4xx means it's your fault. 5xx means it's my fault. It's never 5xx.
+> SKIPPER-OS spreekt alleen HTTP-statuscodes. Ik dacht dat dat charmant zou zijn. Mijn poster aan de muur legt ze uit. 4xx betekent dat het jouw schuld is. 5xx betekent dat het mijn schuld is. Het is nooit 5xx.
+= Where do we dock?
+> Waar meren we aan?
+= The harbour master sends the berth number over the radio. The radio's a bit crackly, though. One flipped bit and you've got the wrong berth.
+> De havenmeester stuurt het nummer van de ligplaats over de radio. Die kraakt alleen een beetje. Eén omgedraaide bit en je hebt de verkeerde ligplaats.
+= Why are you wearing a cape?
+> Waarom draag je een cape?
+= I'm the Game Master. And it's windy on deck. It's a practical cape.
+> Ik ben de spelleider. En het waait aan dek. Het is een praktische cape.
+= Why did you press the red button?
+> Waarom drukte je op de rode knop?
+= It was big and red! You can't put a big red button in front of a man like me and expect nothing to happen.
+> Hij was groot en rood! Je kunt geen grote rode knop voor een man als ik neerzetten en verwachten dat er niets gebeurt.
+= Can you steer?
+> Kun jij sturen?
+= Of course! Well, I've played Yacht Tycoon for four hundred hours. It's practically the same.
+> Natuurlijk! Nou ja, ik heb vierhonderd uur Yacht Tycoon gespeeld. Dat is praktisch hetzelfde.
+= Where's the ignition key?
+> Waar is de contactsleutel?
+= Moss hid it for the game. He said it was in the logbook. I opened the logbook. It was all numbers. I closed the logbook.
+> Moss heeft hem verstopt voor het spel. Hij zei dat het in het logboek stond. Ik heb het logboek opengeslagen. Het waren allemaal getallen. Ik heb het logboek dichtgeslagen.
+= Where are the board members?
+> Waar zijn de bestuursleden?
+= They couldn't make it. Something about 'a prior engagement' and 'absolutely not'. More yacht for us!
+> Ze konden niet. Iets over 'een eerdere afspraak' en 'echt niet'. Meer jacht voor ons!
+= Incredibly Talented. I've had it printed on the life rings.
+> Incredibly Talented. Ingenieus Talentvol. Ik heb het op de reddingsboeien laten drukken.
+
+# ---------- 1. the logbook ----------
+= (space)
+> (spatie)
+= Captain's logbook
+> Logboek van de kapitein
+= The Douglas II · written by Moss
+> De Douglas II · geschreven door Moss
+= Captain's log, Saturday.
+> Logboek van de kapitein, zaterdag.
+= Ignition key hidden for the game. Location recorded in ASCII, the way computers store letters, so Douglas can't read it.
+> Contactsleutel verstopt voor het spel. Locatie genoteerd in ASCII, zoals computers letters opslaan, zodat Douglas het niet kan lezen.
+= Inside the cover, a printed table:
+> Op de binnenkant van de kaft een gedrukte tabel:
+= ASCII, for sailors.
+> ASCII, voor zeelui.
+= Decoded message
+> Ontcijferd bericht
+= Check
+> Controleer
+= Decoded: LOOK UNDER THE BELL.
+> Ontcijferd: KIJK ONDER DE BEL.
+= LOOK UNDER THE BELL. Of course. Where else would you hide a key on a boat?
+> KIJK ONDER DE BEL. Natuurlijk. Waar zou je anders een sleutel op een boot verstoppen?
+= A good start. Keep going: 32 is a space.
+> Een goed begin. Ga door: 32 is een spatie.
+= Not quite. Look up each number in the table: 76 is L.
+> Niet helemaal. Zoek elk getal op in de tabel: 75 is K.
+
+# ---------- 2. the engine panel ----------
+= Engine panel
+> Motorpaneel
+= Switch on every system, in an order that works
+> Zet alle systemen aan, in een volgorde die werkt
+= // yacht.json  (what each system needs first)\n{\n  "Battery":             [],\n  "Fuel pump":           ["Battery"],\n  "Bilge pump":          ["Battery"],\n  "Navigation computer": ["Battery"],\n  "Engine":              ["Fuel pump", "Bilge pump", "ignition key"],\n  "Propeller":           ["Engine", "Navigation computer"]\n}
+> // yacht.json  (wat elk systeem eerst nodig heeft)\n{\n  "Accu":              [],\n  "Brandstofpomp":     ["Accu"],\n  "Lenspomp":          ["Accu"],\n  "Navigatiecomputer": ["Accu"],\n  "Motor":             ["Brandstofpomp", "Lenspomp", "contactsleutel"],\n  "Schroef":           ["Motor", "Navigatiecomputer"]\n}
+= Ignition key (in)
+> Contactsleutel (erin)
+= Ignition key (missing)
+> Contactsleutel (ontbreekt)
+= The key is in the ignition.
+> De sleutel zit in het contact.
+= You turn the key in the ignition. Click.
+> Je draait de sleutel om in het contact. Klik.
+= There's no key in the ignition. Douglas: 'Moss hid it. Somewhere in the logbook, he said.'
+> Er zit geen sleutel in het contact. Douglas: 'Moss heeft hem verstopt. Ergens in het logboek, zei hij.'
+= Everything is running. The engine purrs. Roy whimpers.
+> Alles draait. De motor spint. Roy jammert.
+= {sys} is already on.
+> {sys} staat al aan.
+= npm ERR! {sys} needs {deps} first. The breaker trips and everything switches off.
+> npm ERR! {sys} heeft eerst {deps} nodig. De stop springt eruit en alles gaat uit.
+= the ignition key
+> de contactsleutel
+= and
+> en
+= The engine rumbles to life. The propeller turns. You are no longer drifting; you are now going nowhere on purpose.
+> De motor rommelt tot leven. De schroef draait. Je drijft niet meer rond; je gaat nu doelbewust nergens heen.
+= Dependencies resolved! Just like npm install. Except this time nothing broke. That's a first.
+> Afhankelijkheden opgelost! Net als npm install. Alleen ging er deze keer niets kapot. Dat is een primeur.
+= Can we go back now?
+> Kunnen we nu terug?
+= {sys}: ON.
+> {sys}: AAN.
+
+# ---------- 3. the helm ----------
+= OK · helm unlocked
+> OK · stuurwiel ontgrendeld
+= The helm computer. It only speaks HTTP.
+> De stuurcomputer. Hij spreekt alleen HTTP.
+= send a request
+> stuur een verzoek
+= The helm is unlocked.
+> Het stuurwiel is ontgrendeld.
+= SKIPPER-OS doesn't explain itself. Moss's poster on the wall might.
+> SKIPPER-OS legt zichzelf niet uit. De poster van Moss aan de muur misschien wel.
+= The wheel unlocks with a clunk. The autopilot chart lights up.
+> Het stuurwiel ontgrendelt met een klonk. De zeekaart van de automatische piloot licht op.
+= 200 OK! It likes you. It never liked me. I logged in as me, though. Never mind.
+> 200 OK! Hij vindt je aardig. Mij heeft hij nooit aardig gevonden. Al logde ik wel in als mij. Laat maar.
+= Logged in as Moss. SKIPPER-OS gave you a token: proof of who you are. Now send the request it refused before.
+> Ingelogd als Moss. SKIPPER-OS heeft je een token gegeven: een bewijs van wie je bent. Stuur nu het verzoek dat hij eerst weigerde.
+= 401 means: log in first. Who might SKIPPER-OS trust?
+> 401 betekent: log eerst in. Wie zou SKIPPER-OS vertrouwen?
+= HTTP for sailors
+> HTTP voor zeelui
+= A laminated poster by Moss
+> Een gelamineerde poster van Moss
+= What SKIPPER-OS is trying to tell you
+> Wat SKIPPER-OS je probeert te vertellen
+= Everything worked.
+> Alles werkte.
+= Who are you? Log in first.
+> Wie ben jij? Log eerst in.
+= I know who you are. You're still not allowed.
+> Ik weet wie je bent. Je mag het nog steeds niet.
+= That doesn't exist. Or that person isn't in the system.
+> Dat bestaat niet. Of die persoon staat niet in het systeem.
+= You can't do that. Not even on a yacht.
+> Dat kan niet. Zelfs niet op een jacht.
+= A real code. Look it up. It refuses to make coffee.
+> Een echte code. Zoek maar op. Hij weigert koffie te zetten.
+= This account is locked. Too many wrong passwords.
+> Dit account is vergrendeld. Te vaak een verkeerd wachtwoord.
+= Something broke inside. (Never happens. — M.)
+> Er is binnenin iets kapotgegaan. (Gebeurt nooit. — M.)
+
+# ---------- 4. the radio ----------
+= Harbour radio
+> Havenradio
+= Channel 16 · Port of London
+> Kanaal 16 · Haven van Londen
+= "Harbour master to Douglas II. Your berth number follows as a 4×4 picture, with parity bits for error checking. Interference on the line today. Over."
+> "Havenmeester aan Douglas II. Het nummer van je ligplaats volgt als een plaatje van 4×4, met pariteitsbits voor foutcontrole. Er is vandaag storing op de lijn. Over."
+= Every row and every column, parity bit included, was sent with an
+> Elke rij en elke kolom, de pariteitsbit meegeteld, is verstuurd met een
+= even
+> even
+= number of 1s. One bit got flipped on the way. Tap the bit that's wrong.
+> aantal enen. Onderweg is één bit omgedraaid. Tik op de bit die fout is.
+~ ^col (\d)$
+> kol $1
+= parity
+> pariteit
+~ ^Row (\d) column (\d): ([01])$
+> Rij $1, kolom $2: $3
+= Fixed. The 1s draw a shape: a seven. Berth 7.
+> Gerepareerd. De enen tekenen een vorm: een zeven. Ligplaats 7.
+= Fixed! Every row and column is even again. Look at the 1s in the four data rows: they draw a 7. Berth 7.
+> Gerepareerd! Elke rij en kolom is weer even. Kijk naar de enen in de vier datarijen: ze tekenen een 7. Ligplaats 7.
+= Row {r} and column {c} both have an even number of 1s. That bit is fine.
+> Rij {r} en kolom {c} hebben allebei een even aantal enen. Die bit is goed.
+= Row {r} adds up fine, so the bad bit isn't in this row. Column {c} looks suspicious, though.
+> Rij {r} klopt, dus de foute bit zit niet in deze rij. Kolom {c} ziet er wel verdacht uit.
+= Column {c} adds up fine, so the bad bit isn't in this column. Row {r} looks suspicious, though.
+> Kolom {c} klopt, dus de foute bit zit niet in deze kolom. Rij {r} ziet er wel verdacht uit.
+= Fixed. The 1s draw a 7. Berth 7.
+> Gerepareerd. De enen tekenen een 7. Ligplaats 7.
+
+# ---------- 5. the autopilot ----------
+= Autopilot
+> Automatische piloot
+= Program a route from the yacht to the right berth
+> Programmeer een route van het jacht naar de juiste ligplaats
+= Forward
+> Vooruit
+= Turn left
+> Linksaf
+= Turn right
+> Rechtsaf
+= Left
+> Links
+= Right
+> Rechts
+= Undo
+> Ongedaan
+= Run ▶
+> Start ▶
+= Up to 14 steps. Turning happens on the spot; Forward moves one square.
+> Maximaal 14 stappen. Draaien gebeurt op de plek; Vooruit gaat één vakje verder.
+~ ^BERTH (\d)$
+> LIGPLAATS $1
+= TOUR BOAT
+> RONDVAARTBOOT
+= DRAGON #3
+> DRAAK #3
+= GIANT DUCK
+> REUZENEEND
+= BUOY
+> BOEI
+= THAMES BARRIER
+> THAMES BARRIER
+= Your program is empty.
+> Je programma is leeg.
+= The autopilot only remembers 14 steps. Moss says that is plenty.
+> De automatische piloot onthoudt maar 14 stappen. Volgens Moss is dat ruim voldoende.
+= Running…
+> Bezig…
+= The program ended in open water. The yacht bobs there, waiting for more instructions.
+> Het programma eindigde in open water. Het jacht dobbert daar, wachtend op meer instructies.
+= You run aground on the riverbank. Douglas: 'Is that Battersea?' Roy: 'I'm getting off.' Change the program and try again.
+> Je loopt vast op de oever. Douglas: 'Is dat Battersea?' Roy: 'Ik stap uit.' Pas het programma aan en probeer het opnieuw.
+= You nearly ram a tourist boat. Forty tourists photograph Douglas. He waves. Try another route.
+> Je ramt bijna een rondvaartboot. Veertig toeristen fotograferen Douglas. Hij zwaait. Probeer een andere route.
+= You bump into DRAGON #3, an inflatable one. It squeaks. Moss: "Mind the dragons! They were expensive!"
+> Je botst tegen DRAAK #3, een opblaasbare. Hij piept. Moss: "Pas op de draken! Die waren duur!"
+= BOING. A giant rubber duck. You wonder who it was explaining its problems to.
+> BOING. Een reusachtige badeend. Je vraagt je af aan wie hij zijn problemen stond uit te leggen.
+= You clip a buoy. It goes ding. Nobody is impressed.
+> Je schampt een boei. Hij doet ding. Niemand is onder de indruk.
+= THE THAMES BARRIER. Moss screams. Autopilot emergency stop. Not that way!
+> DE THAMES BARRIER. Moss gilt. Noodstop van de automatische piloot. Niet die kant op!
+= You dock at Berth {n}. A man on the pier shouts that it's his berth, and his yacht is bigger. Douglas is devastated. The harbour radio said which berth is yours.
+> Je meert aan bij ligplaats {n}. Een man op de steiger roept dat het zijn ligplaats is, en dat zijn jacht groter is. Douglas is er kapot van. De havenradio zei welke ligplaats van jullie is.
+= You reach a berth, but you don't know if it's the right one. Check the harbour radio for your berth number first.
+> Je bereikt een ligplaats, maar je weet niet of het de goede is. Zoek eerst het nummer van je ligplaats op via de havenradio.
+= Docked at Berth 7! The mooring lines are thrown. Roy kisses the pier. Well, nearly.
+> Aangemeerd bij ligplaats 7! De meertouwen worden uitgegooid. Roy kust de steiger. Nou ja, bijna.
+= The Douglas II glides gently into Berth 7. Ropes are tied. The engine settles to a happy idle.
+> De Douglas II glijdt zachtjes ligplaats 7 in. De touwen worden vastgemaakt. De motor zakt terug naar een tevreden stationair toerental.
+= We're docked! Now we just need to get off. Which, ah, requires the smart gangway. Which is also part of the game.
+> We liggen aan! Nu moeten we er alleen nog af. Daarvoor is, eh, de slimme loopplank nodig. Die ook onderdeel van het spel is.
+= Another puzzle? Splendid! This is the best Saturday I've ever had.
+> Nog een puzzel? Heerlijk! Dit is de beste zaterdag die ik ooit heb gehad.
+
+# ---------- 6. the smart gangway ----------
+= Inflatable dragon
+> Opblaasdraak
+= Dragonfly
+> Libel
+= A dragonfly is an insect. A very fast one, but still an insect.
+> Een libel is een insect. Een heel snel insect, maar toch een insect. (In het Engels heet hij wel dragonfly.)
+= The Welsh flag
+> De Welshe vlag
+= Dragon fruit
+> Drakenvrucht
+= Dragon fruit is a fruit. Delicious, but it has never guarded anything.
+> Een drakenvrucht is een vrucht. Heerlijk, maar hij heeft nog nooit iets bewaakt.
+= Snapdragon (a flower)
+> Leeuwenbek (een bloem)
+= A snapdragon is a flower. Jen has some on her desk.
+> Een leeuwenbek is een bloem. (In het Engels: snapdragon.) Jen heeft er een paar op haar bureau.
+= Komodo dragon
+> Komodovaraan
+= A rubber duck
+> Een badeend
+= That's a rubber duck. A very good listener, but not a dragon.
+> Dat is een badeend. Een heel goede luisteraar, maar geen draak.
+= Douglas in a dragon onesie
+> Douglas in een drakenonesie
+= You're off the yacht. Roy is lying on the pier, hugging it.
+> Je bent van het jacht af. Roy ligt op de steiger en knuffelt hem.
+= Smart gangway
+> Slimme loopplank
+= Reynholm SmartDock · bot protection
+> Reynholm SmartDock · botbescherming
+= Select all squares with
+> Selecteer alle vakjes met
+= dragons
+> draken
+= Douglas in a onesie counts. He insisted.
+> Douglas in een onesie telt mee. Daar stond hij op.
+= Verify
+> Controleer
+= {why} Please try again.
+> {why} Probeer het opnieuw.
+= You missed 1 dragon. {more}
+> Je hebt 1 draak gemist. {more}
+= You missed {n} dragons. {more}
+> Je hebt {n} draken gemist. {more}
+= Look closely. Flags count. Lizards count. Douglas counts.
+> Kijk goed. Vlaggen tellen mee. Hagedissen tellen mee. Douglas telt mee.
+= Some dragons are less obvious than others.
+> Sommige draken zijn minder opvallend dan andere.
+= Verified: you are a human. Or a very well-informed robot. Gangway lowering.
+> Geverifieerd: je bent een mens. Of een heel goed geïnformeerde robot. De loopplank zakt.
+
+# ---------- start and end ----------
+= Saturday, 11:00. The Thames. Douglas's brand-new yacht, the Douglas II, bobs gently at its berth. There is still no Douglas I.
+> Zaterdag, 11:00. De Theems. Het gloednieuwe jacht van Douglas, de Douglas II, dobbert zachtjes op zijn ligplaats. Er is nog steeds geen Douglas I.
+= Welcome aboard! The board couldn't make it, so it's just us. Moss has rebuilt his escape room on my yacht. Harder! More dragons!
+> Welkom aan boord! Het bestuur kon niet, dus het is alleen wij. Moss heeft zijn escaperoom opnieuw gebouwd op mijn jacht. Moeilijker! Meer draken!
+= I've connected every puzzle to the yacht's real systems. For immersion. I'm starting to think that was a mistake.
+> Ik heb elke puzzel aan de echte systemen van het jacht gekoppeld. Voor de beleving. Ik begin te denken dat dat een vergissing was.
+= Nonsense. Now, which button starts the game? This big red one?
+> Onzin. Zo, welke knop start het spel? Deze grote rode?
+= Douglas presses the big red button. The mooring lines drop. The engine cuts out. The helm locks. Slowly, the yacht begins to drift down the Thames.
+> Douglas drukt op de grote rode knop. De meertouwen vallen. De motor slaat af. Het stuurwiel gaat op slot. Langzaam begint het jacht de Theems af te drijven.
+= We're moving. Why are we moving? I get seasick looking at puddles.
+> We bewegen. Waarom bewegen we? Ik word al zeeziek van een plas.
+= We're drifting towards the Thames Barrier. Nobody panic. I'm… I'm panicking.
+> We drijven naar de Thames Barrier. Niemand raakt in paniek. Ik… ik raak in paniek.
+= Wooo! Look at the view! Selfie!
+> Wieee! Moet je dat uitzicht zien! Selfie!
+= Locked in. Sixth time. This time there's a river.
+> Opgesloten. Voor de zesde keer. Deze keer met een rivier.
+= The smart gangway lowers with a satisfied beep. Roy is first off. He lies down on the pier and hugs it.
+> De slimme loopplank zakt met een tevreden piepje. Roy is als eerste van boord. Hij gaat op de steiger liggen en knuffelt hem.
+= Wait, were we drifting? I thought that was the view moving.
+> Wacht, waren we aan het drijven? Ik dacht dat het uitzicht bewoog.
+= Six escapes. One yacht. Zero sinkings. I'm calling that a successful product launch.
+> Zes ontsnappingen. Eén jacht. Nul keer gezonken. Dat noem ik een geslaagde productlancering.
+= Best team building ever! Same time next week? I'll buy a bigger yacht. Douglas III. We'll skip Douglas I again.
+> Beste teambuilding ooit! Volgende week zelfde tijd? Ik koop een groter jacht. Douglas III. Douglas I slaan we weer over.
+= Have you tried… not doing that?
+> Heb je al geprobeerd… dat niet te doen?
+= And that was the week the new IT temp escaped all of Reynholm Industries. Monday, they start again at 12:58.
+> En dat was de week waarin de nieuwe IT-uitzendkracht uit heel Reynholm Industries ontsnapte. Maandag begint alles weer om 12:58.

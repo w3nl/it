@@ -67,11 +67,11 @@ function openSmartLock(){
       const a = $('#sla').value.toLowerCase().replace(/[^a-z]/g,''), c = $('#slc').value.replace(/\D/g,''), fb = $('#slfb');
       const bad = t => { fb.className = 'feedback bad'; fb.textContent = t; nope(); };
       if(!a) return bad('Answer the security question first.');
-      if(a==='informationtechnology'){
+      if(['informationtechnology','informatietechnologie','informatietechniek'].includes(a)){
         if(!S.f.triedIT){ S.f.triedIT = true; save(); setTimeout(()=>say([['moss',"Ah. That's the right answer. But it isn't Jen's answer. The lock wants whatever Jen thought IT stood for when she set it."]]), 300); }
         return bad("INCORRECT. That is the correct answer. It is not the owner's answer.");
       }
-      if(!['internetthing','internetthings','internetthingy','internetthingies'].includes(a)) return bad("INCORRECT. That doesn't match the owner's answer.");
+      if(!['internetthing','internetthings','internetthingy','internetthingies','internetding','internetdingen','internetdinges','internetdingetje'].includes(a)) return bad("INCORRECT. That doesn't match the owner's answer.");
       if(!c) return bad("ANSWER ACCEPTED. Now enter the one-time code sent to the owner.");
       if(c!=='8086') return bad('ANSWER ACCEPTED. ONE-TIME CODE INVALID.');
       fb.className = 'feedback good'; fb.textContent = 'ACCESS GRANTED. Have a lovely day, J. Barber.'; chord([523,659,784,1046,1318],120);
@@ -144,7 +144,7 @@ function resetScreen(L){
       $('#rmsg').textContent = 'Password reset to "password1". Logging in…';
       setTimeout(() => { renderLap(); const s = $('#m-sub'); if(s) s.textContent = 'Logged in as Jen Barber';
         say([['moss',"You reset Jen's password using her cat, her shoes and her home town? This is why you don't put your whole life on Friendface."],['you',"To be fair, she put it on her walls."]]); }, 1100);
-    } else { nope(); $('#rmsg').textContent = `${ok.filter(Boolean).length} of 3 answers correct. The answers are somewhere in this office.`; }
+    } else { nope(); $('#rmsg').textContent = tx('{n} of 3 answers correct. The answers are somewhere in this office.', { n: ok.filter(Boolean).length }); }
   };
   setTimeout(()=>$('#q1') && $('#q1').focus(), 50);
 }
@@ -152,7 +152,7 @@ function desktop(L){
   const newMsg = S.f.sent && !S.f.readCode;
   const apps = [['slides','What is IT.pptx'],['wifi','Wi-Fi'],['msgs', newMsg ? 'Messages (1)' : 'Messages'],['bin','Recycle Bin'],['sol','Solitaire']];
   L.innerHTML = `<div class="desk">${apps.map(([k,l])=>`<button class="ico" type="button" data-app="${k}">${IC[k]}<span>${l}</span></button>`).join('')}</div>
-    <div class="taskbar"><span>Start</span><span>${S.f.wifi ? 'Wi-Fi: Boardroom-Projector' : 'Wi-Fi: not connected'} · 13:24</span></div>`;
+    <div class="taskbar"><span>Start</span><span>${S.f.wifi ? 'Wi-Fi: Boardroom-Projector · 13:24' : 'Wi-Fi: not connected · 13:24'}</span></div>`;
   L.querySelectorAll('.ico').forEach(b => b.onclick = () => { lapView = b.dataset.app; beep(700,.03); renderLap(); });
 }
 function slidesApp(L){
@@ -161,7 +161,7 @@ function slidesApp(L){
   const body = appFrame(L, 'What is IT.pptx · SlideShow', `
     <div class="slide ${fixed ? 'fixed' : ''}"><h4>${s.t}</h4>${content}</div>
     ${(!fixed && s.opts) ? `<div class="opts">${s.opts.map((o,k)=>`<button type="button" data-o="${k}">${o}</button>`).join('')}</div>` : ''}
-    ${s.notes ? `<div class="notes"><b>Speaker notes:</b> Roy told me what IT REALLY stands for!! I wrote it in Moss's secret code so nobody can steal it: <code>${rot13('INTERNET THING')}</code>. (It's my door answer too. Don't forget!!) — J</div>` : ''}
+    ${s.notes ? `<div class="notes"><b>Speaker notes:</b> Roy told me what IT REALLY stands for!! I wrote it in Moss's secret code so nobody can steal it: <code>${rot13(tx('INTERNET THING'))}</code>. (It's my door answer too. Don't forget!!) — J</div>` : ''}
     <div class="smsg" id="smsg">${curSlide===0 ? "Jen's slides need fixing. Use the numbered buttons to move between slides." : ''}</div>
     <div class="snav"><div class="dots">${SLIDES.map((_,k)=>`<button type="button" data-s="${k}" class="${S.sl[k]?'ok':''} ${k===curSlide?'cur':''}" aria-label="Slide ${k+1}">${k+1}</button>`).join('')}</div>
       <button class="lbtn" type="button" id="present">Present to boardroom ▶</button></div>`);

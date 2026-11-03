@@ -1,0 +1,444 @@
+# Dutch translation: the page, menus, end screens, dialogue labels, items and using items (index.html, app.js, core.js, items.js).
+# Format (see js/i18n.js): "= English" and on the next line "> Nederlands". {name} is a placeholder. "~ regex" lines match text with numbers.
+# Tone: informal ("je"), dry, British jokes kept British. IT terms stay as Dutch IT people say them.
+
+# ---------- header and title screen ----------
+= Time in the basement
+> Tijd in de kelder
+= Hold Space to reveal hotspots
+> Houd de spatiebalk ingedrukt om alles te zien waar je op kunt klikken
+= Hint
+> Hint
+= Reveal
+> Toon
+= Install
+> Installeer
+= Menu
+> Menu
+= Sound on
+> Geluid aan
+= Sound off
+> Geluid uit
+= Motion auto
+> Beweging auto
+= Motion on
+> Beweging aan
+= Motion off
+> Beweging uit
+= Auto follows your device's "reduce motion" setting (now: {now}). Click to change.
+> Auto volgt de instelling "beweging beperken" van je apparaat (nu: {now}). Klik om te wisselen.
+= reduced, so things stand still
+> beperkt, dus alles staat stil
+= full motion
+> volledige beweging
+= Everything moves, whatever your device prefers. Click to change.
+> Alles beweegt, wat je apparaat ook wil. Klik om te wisselen.
+= Nothing moves. Click to change.
+> Niets beweegt. Klik om te wisselen.
+= Have you tried turning it sideways?
+> Heb je al geprobeerd hem te kantelen?
+= Nah, I'll swipe
+> Nee joh, ik swipe wel
+= Reynholm Industries · Basement · 12:58
+> Reynholm Industries · Kelder · 12:58
+= Hello, IT
+> Hello, IT
+= Your first day as the IT temp. Roy is at lunch, Moss is stuck upstairs, and Moss's Lockdown Protocol has sealed the basement. Find the override PIN and get out.
+> Je eerste dag als IT-uitzendkracht. Roy is aan het lunchen, Moss zit boven vast en Moss' Lockdownprotocol heeft de kelder verzegeld. Vind de noodcode en ontsnap.
+= Click around the room, read everything, and combine items from your inventory. Stuck? Use a hint, or talk it through with a rubber duck.
+> Klik rond, lees alles en gebruik spullen uit je inventaris. Vast? Vraag een hint, of leg je probleem uit aan een badeendje.
+= New game
+> Nieuw spel
+= Continue
+> Verder
+= Continue to Chapter {n}
+> Door naar hoofdstuk {n}
+= Chapters
+> Hoofdstukken
+= Chapter 1: The basement
+> Hoofdstuk 1: De kelder
+= Chapter 2: Jen's office
+> Hoofdstuk 2: Jens kantoor
+= Chapter 3: The executive floor
+> Hoofdstuk 3: De directieverdieping
+= Chapter 4: The lift
+> Hoofdstuk 4: De lift
+= Chapter 5: Dungeons & Datacenters
+> Hoofdstuk 5: Dungeons & Datacenters
+= Chapter 6: The yacht
+> Hoofdstuk 6: Het jacht
+= The basement
+> De kelder
+= Jen's office
+> Jens kantoor
+= The executive floor
+> De directieverdieping
+= The lift
+> De lift
+= Dungeons & Datacenters
+> Dungeons & Datacenters
+= The yacht
+> Het jacht
+= Tip: never seen
+> Tip: nog nooit
+= The IT Crowd
+> The IT Crowd
+= ? Watch it on YouTube. Moss calls it research.
+# (the leading space is on purpose: the Dutch sentence goes on after the title)
+>  gezien? Kijk het op YouTube. Moss noemt het onderzoek.
+= Waiting for the next chapter? Watch the real IT department on YouTube.
+> Wachten op het volgende hoofdstuk? Kijk naar de echte IT-afdeling op YouTube.
+= ← swipe to look around →
+> ← swipe om rond te kijken →
+= click ▸
+> klik ▸
+= click ✕
+> klik ✕
+= tap ▸
+> tik ▸
+= tap ✕
+> tik ✕
+= Inventory
+> Inventaris
+= Close ✕
+> Sluiten ✕
+= The Basement Lockdown
+> Opgesloten in de kelder
+= Installed! The game now lives on your device. Like a very small, very nerdy lodger.
+> Geïnstalleerd! Het spel woont nu op je apparaat. Als een heel kleine, heel nerdy onderhuurder.
+= The Dutch text could not be loaded. Are you offline? Try again when you are connected.
+> De Nederlandse tekst kon niet worden geladen. Ben je offline? Probeer het opnieuw als je verbinding hebt.
+
+# ---------- rotate banner on phones ----------
+= This basement is wider than your phone. Roy says: turn it sideways. Moss says: exactly 90 degrees, please, not 89.
+> Deze kelder is breder dan je telefoon. Roy zegt: draai hem een kwartslag. Moss zegt: precies 90 graden graag, niet 89.
+= Error 0x5A: SCREEN_TOO_TALL. Rotate your phone to continue. Or swipe, like an animal.
+> Fout 0x5A: SCHERM_TE_HOOG. Draai je telefoon om verder te gaan. Of swipe, als een wilde.
+= Jen read that phones work better sideways. She's holding hers sideways right now. Upside down, but still.
+> Jen las dat telefoons dwars beter werken. Ze houdt de hare nu dwars. Ondersteboven, maar toch.
+= Douglas turned his phone sideways once and saw a yacht. Your results may vary.
+> Douglas draaide zijn telefoon ooit een kwartslag en zag een jacht. Resultaten uit het verleden bieden geen garantie voor de toekomst.
+
+# ---------- motion messages ----------
+= Motion on: feet, boats and dragons move, even if your device asks for less motion.
+> Beweging aan: voeten, boten en draken bewegen, ook als je apparaat om minder beweging vraagt.
+= Motion off: everything stands still. Even Douglas. Especially Douglas.
+> Beweging uit: alles staat stil. Zelfs Douglas. Vooral Douglas.
+= Motion auto: following your device's setting, which is {now}.
+> Beweging auto: we volgen de instelling van je apparaat, en die staat op {now}.
+= "reduce motion", so things stand still
+> "beweging beperken", dus alles staat stil
+
+# ---------- dialogue labels ----------
+= You
+> Jij
+= Moss · intercom
+> Moss · intercom
+= Basement
+> Kelder
+= Answering machine
+> Antwoordapparaat
+= Rubber duck
+> Badeendje
+= Terminal
+> Terminal
+= Jen · phone
+> Jen · telefoon
+= Jen · on deck
+> Jen · aan dek
+= Moss · walkie-talkie
+> Moss · portofoon
+= The river
+> De rivier
+= The dungeon
+> De kerker
+= Top floor
+> Bovenste verdieping
+
+# ---------- chapter titles (header) ----------
+= Chapter 1 · The Basement Lockdown
+> Hoofdstuk 1 · Opgesloten in de kelder
+= Chapter 2 · Jen's Office
+> Hoofdstuk 2 · Jens kantoor
+= Chapter 3 · The Executive Floor
+> Hoofdstuk 3 · De directieverdieping
+= Chapter 4 · The Lift
+> Hoofdstuk 4 · De lift
+= Chapter 5 · Dungeons & Datacenters
+> Hoofdstuk 5 · Dungeons & Datacenters
+= Chapter 6 · The Yacht
+> Hoofdstuk 6 · Het jacht
+
+# ---------- exits ----------
+= Exit: on to Chapter {n}
+> Uitgang: door naar hoofdstuk {n}
+= Exit door
+> Nooduitgang
+= Jen's office: on to Chapter {n}
+> Jens kantoor: door naar hoofdstuk {n}
+= Door: on to Chapter {n}
+> Deur: door naar hoofdstuk {n}
+= Office door
+> Kantoordeur
+= Step out: on to Chapter {n}
+> Uitstappen: door naar hoofdstuk {n}
+= Lift buttons
+> Liftknoppen
+= Way out: on to Chapter {n}
+> Uitgang: door naar hoofdstuk {n}
+= The Firewall
+> De Firewall
+= Smart gangway (exit)
+> Slimme loopplank (uitgang)
+= Helm (SKIPPER-OS)
+> Stuurwiel (SKIPPER-OS)
+= Window
+> Raam
+= Portrait of Denholm
+> Portret van Denholm
+= Denholm's safe
+> Denholms kluis
+
+# ---------- end of a chapter ----------
+= Lockdown lifted · Chapter 1 complete
+> Lockdown opgeheven · hoofdstuk 1 voltooid
+= You're out
+> Je bent eruit
+= Next: Jen's office. She has a board presentation in ten minutes and no idea what IT stands for.
+> Hierna: Jens kantoor. Ze moet over tien minuten presenteren voor de raad van bestuur en heeft geen idee waar IT voor staat.
+= Door unlocked · Chapter 2 complete
+> Deur open · hoofdstuk 2 voltooid
+= Out again
+> Weer buiten
+= Next: the top floor. Douglas Reynholm says the internet is broken and his computer is making noises.
+> Hierna: de bovenste verdieping. Douglas Reynholm zegt dat het internet kapot is en dat zijn computer geluiden maakt.
+= Privacy Mode lifted · Chapter 3 complete
+> Privacymodus opgeheven · hoofdstuk 3 voltooid
+= Promoted
+> Promotie
+= Next: the lift. Douglas's phone is making noises too, and he'd like it fixed on the way down.
+> Hierna: de lift. Douglas' telefoon maakt ook geluiden, en hij wil hem graag gerepareerd hebben op weg naar beneden.
+= Lift released · Chapter 4 complete
+> Lift vrijgegeven · hoofdstuk 4 voltooid
+= Ding!
+> Ding!
+= Next: Jen has had an idea. Team building. Moss has built something for it, and he's worried.
+> Hierna: Jen heeft een idee. Teambuilding. Moss heeft er iets voor gebouwd, en hij maakt zich zorgen.
+= Firewall lowered · Chapter 5 complete
+> Firewall neergehaald · hoofdstuk 5 voltooid
+= Escaped
+> Ontsnapt
+= Next: Douglas wants the escape room for the board. Harder. More dragons. And a yacht.
+> Hierna: Douglas wil de escaperoom voor de raad van bestuur. Moeilijker. Meer draken. En een jacht.
+= Docked · Chapter 6 complete
+> Aangemeerd · hoofdstuk 6 voltooid
+= The end. Really.
+> Einde. Echt waar.
+= You escaped five rooms and one yacht at Reynholm Industries. Thank you for playing! On Monday, it all starts again at 12:58.
+> Je bent ontsnapt uit vijf kamers en één jacht bij Reynholm Industries. Bedankt voor het spelen! Maandag begint alles weer om 12:58.
+= Time
+> Tijd
+= Hints
+> Hints
+= Rank
+> Rang
+= Look around
+> Rondkijken
+= Play again
+> Opnieuw spelen
+= Elite
+> Elite
+= Senior dev
+> Senior dev
+= Junior dev
+> Junior dev
+= Roy
+> Roy
+= Take your time. When you're ready, use the way out to go on to Chapter {n}.
+> Neem je tijd. Klaar? Gebruik de uitgang om door te gaan naar hoofdstuk {n}.
+= Take your time. The pier isn't going anywhere, and neither is Roy.
+> Neem je tijd. De steiger gaat nergens heen, en Roy ook niet.
+
+# ---------- achievements ----------
+= Touched the Internet
+> Het internet aangeraakt
+= sudo make me a sandwich
+> sudo make me a sandwich
+= Rubber-duck debugger
+> Badeend-debugger
+= Tried rm -rf
+> rm -rf geprobeerd
+= Tried to join the FBI van
+> Verbinding gezocht met het FBI-busje
+= Read Jen's honest CV
+> Jens eerlijke cv gelezen
+= Ended explorer.exe
+> explorer.exe beëindigd
+= Little Bobby Tables
+> Kleine Bobby Tables
+= Hole in one
+> Hole-in-one
+= Let Roy say his line
+> Roy zijn zin laten zeggen
+= Tower in 15 moves
+> Toren in 15 zetten
+= Bubble sort champion
+> Bubblesort-kampioen
+= 418 I'm a teapot
+> 418 I'm a teapot
+= Decoded with tr
+> Ontcijferd met tr
+
+# ---------- hints (the button) ----------
+= Big hint: {hint}
+> Grote hint: {hint}
+= Hint: {hint}
+> Hint: {hint}
+
+# ---------- Chapter 1 start and end ----------
+= Reynholm Industries. The basement. 12:58 on a Monday.
+> Reynholm Industries. De kelder. 12:58 op een maandag.
+= First day as the IT temp. Roy's at lunch. Moss is… somewhere.
+> Eerste dag als IT-uitzendkracht. Roy is aan het lunchen. Moss is… ergens.
+= Hello? Is this thing on? It's Moss. I'm upstairs. In the stationery cupboard. Don't ask.
+> Hallo? Staat dit ding aan? Met Moss. Ik zit boven. In de kantoorartikelenkast. Niet vragen.
+= There was a small fire. Toast-related. My Lockdown Protocol has sealed the basement, which is good, because it means it works.
+> Er was een brandje. Toastgerelateerd. Mijn Lockdownprotocol heeft de kelder verzegeld. Dat is goed, want het betekent dat het werkt.
+= And bad, because you're in it. The exit override PIN is somewhere in the system. Have a click around. Carefully. And please don't touch the Internet.
+> En slecht, want jij zit erin. De noodcode voor de uitgang staat ergens in het systeem. Klik maar wat rond. Voorzichtig. En raak alsjeblieft het internet niet aan.
+= …The Internet?
+> …Het internet?
+= The lock clunks. The door swings open onto the stairwell.
+> Het slot klikt. De deur zwaait open naar het trappenhuis.
+= You did it! You're out! And with 1337 as well. That's literally elite.
+> Het is je gelukt! Je bent eruit! En dan ook nog met 1337. Dat is letterlijk elite.
+= Now, could you come and get me out of the stationery cupboard? …Hello?
+> Zou je mij nu even uit de kantoorartikelenkast willen halen? …Hallo?
+
+# ---------- continuing a saved game ----------
+= Back on the Douglas II. Roy is still holding the bucket.
+> Terug aan boord van de Douglas II. Roy houdt de emmer nog steeds vast.
+= Back in the dungeon. The dragon is still made of cardboard.
+> Terug in de kerker. De draak is nog steeds van karton.
+= Back in the lift. The pan-pipes haven't stopped.
+> Terug in de lift. De panfluit is niet gestopt.
+= Back on the top floor. Douglas raises his whisky at you.
+> Terug op de bovenste verdieping. Douglas heft zijn whisky naar je.
+= Back in Jen's office. The SmartLock blinks at you.
+> Terug in Jens kantoor. Het SmartLock knippert naar je.
+= Back in the server room. Still cold. Still humming.
+> Terug in de serverruimte. Nog steeds koud. Nog steeds zoemend.
+= Back in the basement. The clock still says 12:58.
+> Terug in de kelder. De klok staat nog steeds op 12:58.
+
+# ---------- inventory ----------
+= Empty slot
+> Leeg vak
+= {name}: {desc} Click a spot to use it, or the item again to put it away.
+> {name}: {desc} Klik ergens om het te gebruiken, of klik nog een keer op het voorwerp om het weg te stoppen.
+= Select an item, then tap where you want to use it.
+> Kies een voorwerp en tik dan waar je het wilt gebruiken.
+= Select an item, then click where you want to use it.
+> Kies een voorwerp en klik dan waar je het wilt gebruiken.
+= Use {item} on {spot}
+> Gebruik {item} op {spot}
+= Nothing interesting.
+> Niets bijzonders.
+= Fire extinguisher
+> Brandblusser
+= Made in Britain. Use it on something that is on fire.
+> Made in Britain. Gebruik hem op iets wat in brand staat.
+= Explain your problem to it. Use it on anything for a free hint.
+> Leg er je probleem aan uit. Gebruik hem waar dan ook voor een gratis hint.
+= Wi-Fi card
+> Wifi-kaartje
+= Jen's handwriting: "BOARDROOM WI-FI. Network: Boardroom-Projector. Key: SHOES4EVER."
+> Jens handschrift: "WIFI BESTUURSKAMER. Netwerk: Boardroom-Projector. Sleutel: SHOES4EVER."
+= Fax paper
+> Faxpapier
+= Denholm's last ream of fax paper. 'For emergencies and contracts.'
+> Denholms laatste pak faxpapier. 'Voor noodgevallen en contracten.'
+= Douglas's phone
+> Douglas' telefoon
+= Warm, slightly sticky, and full of apps Douglas shouldn't have installed.
+> Warm, een beetje plakkerig en vol apps die Douglas niet had moeten installeren.
+= Cable
+> Kabel
+= A cable
+> Een kabel
+= {cable}. From Roy's backpack.
+> {cable}. Uit Roys rugzak.
+= USB stick
+> USB-stick
+= Labelled SPELL.JS. Found inside the 250 GB hard drive.
+> Met het etiket SPELL.JS. Gevonden in de harde schijf van 250 GB.
+= 4 × AA batteries
+> 4 × AA-batterijen
+= From the potion shelf's secret compartment. A dragon's favourite snack.
+> Uit het geheime vakje van de toverdrankenplank. Het lievelingshapje van een draak.
+= Ignition key
+> Contactsleutel
+= A small brass key with a tag: IGNITION. It was taped inside the ship's bell.
+> Een klein koperen sleuteltje met een label: CONTACT. Het zat vastgeplakt in de scheepsbel.
+
+# ---------- using items (items.js) ----------
+= It's an ignition key. It belongs in the engine panel.
+> Het is een contactsleutel. Die hoort in het motorpaneel.
+= You slide the key into the ignition on the engine panel. Click. Now the systems need switching on.
+> Je steekt de sleutel in het contact van het motorpaneel. Klik. Nu moeten de systemen nog aan.
+= A USB stick needs a computer. The Wizard's laptop is in the rune cabinet.
+> Een USB-stick heeft een computer nodig. De laptop van de Tovenaar staat in de runenkast.
+= The Wizard's laptop is behind the cabinet's glass doors. Solve the runes first.
+> De laptop van de Tovenaar staat achter de glazen deurtjes van de kast. Los eerst de runen op.
+= You plug SPELL.JS into the Wizard's laptop. It opens the spell in an editor. Moss has left a bug in it. On purpose. Probably.
+> Je steekt SPELL.JS in de laptop van de Tovenaar. De spreuk opent in een editor. Moss heeft er een bug in laten zitten. Expres. Waarschijnlijk.
+= The batteries are for something that needs waking up. Something large and cardboard.
+> De batterijen zijn voor iets dat wakker gemaakt moet worden. Iets groots van karton.
+= You click the batteries into the dragon's belly. Its eyes glow red. Its wings flap, once, with a cardboard flop.
+> Je klikt de batterijen in de buik van de draak. Zijn ogen gloeien rood op. Zijn vleugels klapperen één keer, met een kartonnen flop.
+= I AM SMAUG-O-TRON 3000. I GUARD THE FIREWALL. ANSWER MY CHALLENGE, OR… OR BE SLIGHTLY DELAYED.
+> IK BEN SMAUG-O-TRON 3000. IK BEWAAK DE FIREWALL. BEANTWOORD MIJN UITDAGING, OF… OF LOOP ENIGE VERTRAGING OP.
+= The phone end is sorted. Now the other end needs power: try the lift's service USB port.
+> De kant van de telefoon zit goed. Nu moet het andere uiteinde nog stroom krijgen: probeer de service-USB-poort van de lift.
+= That's not somewhere a cable goes. The lift panel has a service USB port, though.
+> Daar hoort geen kabel. Het liftpaneel heeft wel een service-USB-poort.
+= USB-A into the flat port, USB-C into the phone's oval port. It fits first time. A small miracle.
+> USB-A in de platte poort, USB-C in de ovale poort van de telefoon. Hij past in één keer. Een klein wonder.
+= The phone buzzes into life. Battery: 1%… 2%… 4%… and then it stops climbing.
+> De telefoon zoemt tot leven. Batterij: 1%… 2%… 4%… en dan stijgt hij niet meer.
+= It lives! Is it saying anything about torches?
+> Hij leeft! Zegt hij iets over zaklampen?
+= You load Denholm's last ream of paper into the fax. It hums approvingly.
+> Je legt Denholms laatste pak papier in de fax. Hij zoemt goedkeurend.
+= This paper belongs in the fax machine.
+> Dit papier hoort in het faxapparaat.
+= Better to type the key into the Wi-Fi settings on the laptop.
+> Je kunt de sleutel beter intypen bij de wifi-instellingen op de laptop.
+= It's a Wi-Fi key. It belongs in the laptop's Wi-Fi settings, not there.
+> Het is een wifi-sleutel. Die hoort in de wifi-instellingen van de laptop, niet daar.
+= You hold up the duck and explain the problem out loud, step by step…
+> Je houdt het eendje omhoog en legt het probleem hardop uit, stap voor stap…
+= Wait. Saying it out loud helps. {hint}
+> Wacht. Hardop zeggen helpt. {hint}
+= You pull the pin and squeeze. The extinguisher coughs out one small, apologetic British puff.
+> Je trekt de pin eruit en knijpt. De blusser hoest één klein, verontschuldigend Brits pufje uit.
+= You give it a firm whack on the side. Made in Britain. WHOOSH.
+> Je geeft hem een flinke klap op de zijkant. Made in Britain. WOESJ.
+= Fire out. The breaker panel is reachable.
+> Brand geblust. Je kunt nu bij de stoppenkast.
+= Did you put it out? Brilliant. I'll put it in an email to the fire brigade, for their records.
+> Heb je hem geblust? Briljant. Ik zet het in een e-mail aan de brandweer, voor hun administratie.
+= You point the extinguisher at it. Nothing there is on fire. Yet.
+> Je richt de blusser erop. Daar staat niets in brand. Nog niet.
+= That doesn't do anything useful.
+> Dat doet niets nuttigs.
+= Continue to Chapter 2
+> Door naar hoofdstuk 2
+= Continue to Chapter 3
+> Door naar hoofdstuk 3
+= Continue to Chapter 4
+> Door naar hoofdstuk 4
+= Continue to Chapter 5
+> Door naar hoofdstuk 5
+= Continue to Chapter 6
+> Door naar hoofdstuk 6

@@ -1,0 +1,453 @@
+# Dutch translation: Chapter 3, the executive floor (js/chapter3.js).
+# The SQL puzzle keeps its English table and column names and values (staff, safe, owner, 'Board', 'basement'):
+# players type them in queries. Only the error messages and the safe's contents are translated.
+
+# ---------- hotspots ----------
+= The office doors are sealed. A red panel reads: PRIVACY MODE · SECURITY BREACH ON EXECUTIVE PC.
+> De kantoordeuren zijn verzegeld. Op een rood paneel staat: PRIVACYMODUS · BEVEILIGINGSLEK OP DIRECTIE-PC.
+= Underneath, in smaller letters: 'Release requires Board authorisation.'
+> Daaronder, in kleinere letters: 'Opheffen vereist toestemming van het bestuur.'
+= Denholm Reynholm, the founder, glares down from a huge gold frame. Even in oil paint he looks disappointed in you.
+> Denholm Reynholm, de oprichter, kijkt streng op je neer vanuit een enorme gouden lijst. Zelfs in olieverf lijkt hij teleurgesteld in je.
+= You tug the frame. It swings open on a hinge. Behind it: a steel safe, wired to a very old computer terminal.
+> Je trekt aan de lijst. Hij zwaait open aan een scharnier. Erachter: een stalen kluis, aangesloten op een heel oude computerterminal.
+= A wall of trophies: 'World's Best Boss', 'World's Best Boss (runner-up)' and 'Best Hair, Executive Category'.
+> Een muur vol trofeeën: 'Beste Baas ter Wereld', 'Beste Baas ter Wereld (tweede plaats)' en 'Mooiste Haar, Categorie Directie'.
+= Every engraving says: 'From Douglas Reynholm, to Douglas Reynholm.'
+> Op elke gravure staat: 'Van Douglas Reynholm, voor Douglas Reynholm.'
+= The blinds are up again. London glitters. Somewhere down there, Roy is still at lunch.
+> De jaloezieën zijn weer omhoog. Londen schittert. Ergens daar beneden is Roy nog steeds aan het lunchen.
+= The blinds are down and glowing red. Through a gap you can see London, carrying on without you.
+> De jaloezieën zijn dicht en gloeien rood. Door een kier zie je Londen gewoon doorgaan zonder jou.
+= A gold nameplate: D. REYNHOLM, CEO. Someone has added a sticker underneath: 'and IT expert'. It's in Douglas's handwriting.
+> Een gouden naambordje: D. REYNHOLM, CEO. Iemand heeft er een stickertje onder geplakt: 'en IT-expert'. In het handschrift van Douglas.
+= A gold telephone. You lift the receiver.
+> Een gouden telefoon. Je pakt de hoorn op.
+= It's Moss, instantly: 'Don't bother calling the Board. They don't take calls on report day. Paper only. They're very old-fashioned. Fax.'
+> Meteen hoor je Moss: 'Het bestuur bellen heeft geen zin. Op de dag van het jaarverslag nemen ze niet op. Alleen papier. Ze zijn heel ouderwets. Fax.'
+= A crystal glass of whisky. At 14:12. On a Tuesday.
+> Een kristallen glas whisky. Om 14:12. Op een dinsdag.
+= A fish tank with one very large, very smug goldfish. A tiny brass plaque reads: DOUGLAS JR.
+> Een aquarium met één heel grote, heel zelfvoldane goudvis. Op een piepklein koperen bordje staat: DOUGLAS JR.
+= The drinks cabinet. Every bottle in it is older than the internet. Including the one in the basement.
+> De drankkast. Elke fles erin is ouder dan het internet. Ook dan dat in de kelder.
+= You line up a putt on Douglas's practice green. It misses.
+> Je mikt een putt op de oefengreen van Douglas. Mis.
+= Douglas: 'The hole moves. It's a known fault. I've emailed IT about it.'
+> Douglas: 'De hole beweegt. Bekend probleem. Ik heb IT er een mailtje over gestuurd.'
+= Hole in one!
+> Hole-in-one!
+= Douglas: 'Lucky. I'd have got that too. Eventually.'
+> Douglas: 'Geluk. Die had ik ook gemaakt. Uiteindelijk.'
+
+# ---------- talking to Douglas ----------
+= Douglas Reynholm
+> Douglas Reynholm
+= CEO · charming · no help at all
+> CEO · charmant · totaal niet behulpzaam
+= "Ask me anything. I know everything. About most things."
+> "Vraag maar raak. Ik weet alles. Over de meeste dingen."
+= What happened to your computer?
+> Wat is er met je computer gebeurd?
+= I was looking at yachts. And a few other websites. Educational ones. Then it made a noise like a very happy robot and the blinds came down.
+> Ik keek naar jachten. En naar een paar andere websites. Leerzame. Toen maakte hij een geluid als een heel blije robot en gingen de jaloezieën dicht.
+= Do you know the Board's fax number?
+> Weet je het faxnummer van het bestuur?
+= The number from the advert? I know this one! ♪ Zero one one eight, nine nine nine, eight eight one, nine nine nine, one one nine, seven two five… THREE! ♪ That's 0118 999 881 999 119 725 3. I can't get it out of my head.
+> Het nummer uit de reclame? Die ken ik! ♪ Nul één één acht, negen negen negen, acht acht één, negen negen negen, één één negen, zeven twee vijf… DRIE! ♪ Dat is 0118 999 881 999 119 725 3. Ik krijg het niet meer uit mijn hoofd.
+= Fax? Isn't that email for old people? The Board will have emailed me about it. They always email. I never read them.
+> Fax? Is dat niet e-mail voor oude mensen? Het bestuur heeft me er vast over gemaild. Ze mailen altijd. Ik lees ze nooit.
+= Where would your father keep a safe?
+> Waar zou je vader een kluis bewaren?
+= Father kept everything important behind his portrait. Money, contracts, his feelings.
+> Vader bewaarde alles wat belangrijk was achter zijn portret. Geld, contracten, zijn gevoelens.
+= What's the code for the safe?
+> Wat is de code van de kluis?
+= Father never told me. He said it was 'in the database'. I always assumed a database was a sort of filing cabinet for bases.
+> Dat heeft vader me nooit verteld. Hij zei dat het 'in de database' stond. Ik dacht altijd dat een database een soort archiefkast voor basissen was.
+= Have you got any fax paper?
+> Heb je faxpapier?
+= Paper? Father kept the last ream in his safe. 'For emergencies and contracts,' he said. This is both, really.
+> Papier? Vader bewaarde het laatste pak in zijn kluis. 'Voor noodgevallen en contracten,' zei hij. Dit is eigenlijk allebei.
+= What does IT stand for?
+> Waar staat IT voor?
+= Incredibly Talented. I decided this morning. Although Barber's slides were very persuasive.
+> Incredibly Talented. Ingenieus Talentvol. Dat heb ik vanochtend besloten. Al waren de dia's van Barber erg overtuigend.
+
+# ---------- Douglas's computer: pop-ups ----------
+= Reynholm Executive Edition
+> Reynholm Directie-editie
+= WINNER!!!
+> WINNAAR!!!
+= YOU ARE THE 1,000,000th VISITOR!
+> JIJ BENT DE 1.000.000e BEZOEKER!
+= CLAIM PRIZE
+> CLAIM PRIJS
+= Security Alert
+> Beveiligingswaarschuwing
+= Your PC has 3,141 viruses! Act now!
+> Je pc heeft 3.141 virussen! Kom nu in actie!
+= REMOVE VIRUSES
+> VERWIJDER VIRUSSEN
+= Yachts Near You
+> Jachten bij jou in de buurt
+= Hot yachts in your area want to meet you.
+> Hete jachten bij jou in de buurt willen je ontmoeten.
+= SHOW ME
+> LAAT ZIEN
+= Download RAM
+> Download RAM
+= Is your PC slow? Download more RAM for free!
+> Is je pc traag? Download gratis meer RAM!
+= DOWNLOAD
+> DOWNLOAD
+= Congratulations
+> Gefeliciteerd
+= Douglas, you have won a free tie!
+> Douglas, je hebt een gratis stropdas gewonnen!
+= ✕ CLOSE
+> ✕ SLUITEN
+= Speed Up PC
+> Pc versnellen
+= Click here to make your computer faster.
+> Klik hier om je computer sneller te maken.
+= Quick Survey
+> Korte enquête
+= Rate your experience with pop-ups! ★★★★★
+> Beoordeel je ervaring met pop-ups! ★★★★★
+= NO THANKS
+> NEE BEDANKT
+= Free Screensaver
+> Gratis screensaver
+= Your boss would LOVE this yacht screensaver.
+> Je baas zou deze jachtscreensaver GEWELDIG vinden.
+= INSTALL
+> INSTALLEER
+~ ^Close (.+)$
+> Sluit $1
+= All pop-ups closed. The desktop is back, but everything is still crawling.
+> Alle pop-ups zijn dicht. Het bureaublad is terug, maar alles gaat nog tergend traag.
+= That wasn't a real close button. Two more pop-ups appear. Only the ✕ in the title bar really closes one.
+> Dat was geen echte sluitknop. Er verschijnen nog twee pop-ups. Alleen het ✕ in de titelbalk sluit er echt een.
+
+# ---------- desktop ----------
+= Task Manager
+> Taakbeheer
+= Mail
+> Mail
+= MossBackup
+> MossBackup
+= Internet
+> Internet
+= CPU {cpu}% · Fax queue: {queue}
+> CPU {cpu}% · Faxwachtrij: {queue}
+= 1 document
+> 1 document
+= empty
+> leeg
+= {app} is frozen. The CPU is at 100%: something is hogging the computer.
+> {app} is bevroren. De CPU staat op 100%: iets legt beslag op de hele computer.
+
+# ---------- Task Manager ----------
+= System
+> Systeem
+= Unknown
+> Onbekend
+= You end explorer.exe. The whole desktop vanishes. Douglas screams. You quickly start it again. Let's not do that twice.
+> Je beëindigt explorer.exe. Het hele bureaublad verdwijnt. Douglas gilt. Je start het snel weer op. Laten we dat niet nog eens doen.
+= Access denied. svchost.exe is a system process. Nobody knows exactly what it does, but everything needs it.
+> Toegang geweigerd. svchost.exe is een systeemproces. Niemand weet precies wat het doet, maar alles heeft het nodig.
+= You hover over 'End task' on the antivirus… and stop. That's exactly how Douglas got into this mess.
+> Je hangt met de muis boven 'Taak beëindigen' bij de virusscanner… en stopt. Zo is Douglas precies in deze ellende beland.
+= Access denied. Privacy Mode can only be released by the Board.
+> Toegang geweigerd. Alleen het bestuur kan de privacymodus opheffen.
+= Douglas: 'Not my Barry Manilow! That stays.'
+> Douglas: 'Niet mijn Barry Manilow! Die blijft.'
+= End task
+> Taak beëindigen
+= CPU back to normal. The computer breathes again.
+> CPU weer normaal. De computer ademt weer.
+= Something is eating the CPU. Be careful what you end.
+> Iets vreet de CPU op. Pas op wat je beëindigt.
+= Process
+> Proces
+= Publisher
+> Uitgever
+= It's stopped whirring! What did you do? Never mind. I'll tell the Board it was me.
+> Hij is gestopt met zoemen! Wat heb je gedaan? Laat maar. Ik zeg tegen het bestuur dat ik het was.
+~ ^Ended (\S+)\.$
+> $1 beëindigd.
+
+# ---------- Mail ----------
+= Reynholm Board
+> Bestuur Reynholm
+= URGENT: annual report by 15:00
+> DRINGEND: jaarverslag vóór 15:00
+= Douglas, the annual report must reach the Board by 15:00 today. Email is quarantined again, so FAX it to the boardroom. The number is the one from the new emergency services advert, the one you keep singing. Send the version we approved: Friday 14:32, 2.4 MB, with the new pie chart. NOT the one with your yacht in it. — The Board
+> Douglas, het jaarverslag moet vandaag vóór 15:00 bij het bestuur zijn. De e-mail staat weer in quarantaine, dus FAX het naar de bestuurskamer. Het nummer is dat uit de nieuwe reclame voor het alarmnummer, die je steeds zingt. Stuur de versie die wij hebben goedgekeurd: vrijdag 14:32, 2,4 MB, met het nieuwe taartdiagram. NIET die met je jacht erin. — Het bestuur
+= Reynholm IT Support
+> Reynholm IT Support
+= Your password expires TODAY
+> Je wachtwoord verloopt VANDAAG
+= Dear user, your password expires in 1 hour. Log in here to keep it: http://reynholm-secure.biz/login-now
+> Beste gebruiker, je wachtwoord verloopt over 1 uur. Log hier in om het te behouden: http://reynholm-secure.biz/login-now
+= Quick favour, very urgent
+> Klein gunstje, heel dringend
+= Hi, it's me, Douglas, your boss. Please transfer £50,000 to the account below straight away. Don't tell anyone. Especially not me.
+> Hoi, ik ben het, Douglas, je baas. Maak alsjeblieft meteen £50.000 over naar de rekening hieronder. Vertel het aan niemand. Vooral niet aan mij.
+= Thanks for the meeting!
+> Bedankt voor de vergadering!
+= Douglas, thank you for liking my presentation. Please stop calling me 'Barber the Computer Wizard' in front of the Board. — Jen
+> Douglas, bedankt dat je mijn presentatie mooi vond. Wil je me alsjeblieft niet meer 'Barber de Computertovenaar' noemen waar het bestuur bij is? — Jen
+= Prince Adebayo
+> Prins Adebayo
+= Business proposal: $40,000,000
+> Zakelijk voorstel: $40.000.000
+= Dear Friend, I am a prince with a large fortune trapped in a bank. Kindly send your bank details and a small fee of £2,000.
+> Beste vriend, ik ben een prins met een groot fortuin dat vastzit bij een bank. Stuur mij vriendelijk uw bankgegevens en een kleine vergoeding van £2.000.
+= Please read: do NOT click links
+> Lees dit: klik NIET op links
+= Douglas. I'm begging you. Do not click links in emails. Do not download yachts. I have switched on security training mode. — Moss
+> Douglas. Ik smeek je. Klik niet op links in e-mails. Download geen jachten. Ik heb de beveiligingstraining aangezet. — Moss
+= You've WON a YACHT!!!
+> Je hebt een JACHT GEWONNEN!!!
+= Congratulations Douglas!!! Download your_yacht.exe to claim your FREE yacht today!!!
+> Gefeliciteerd Douglas!!! Download your_yacht.exe en claim vandaag nog je GRATIS jacht!!!
+= Mail · Inbox
+> Mail · Inbox
+= Mail · Security training mode
+> Mail · Beveiligingstraining
+= MossMail security training: mark every email as
+> Beveiligingstraining van MossMail: markeer elke e-mail als
+= Legit
+> Echt
+= Phishing
+> Phishing
+= or
+> of
+= to unlock the inbox. Tip: look closely at the address after the @.
+> om de inbox te ontgrendelen. Tip: kijk goed naar het adres na de @.
+= (Moved to junk.)
+> (Verplaatst naar ongewenst.)
+= (Message locked until training is complete.)
+> (Bericht vergrendeld tot de training is afgerond.)
+= Check my answers
+> Controleer mijn antwoorden
+= Training passed. Inbox unlocked.
+> Training gehaald. Inbox ontgrendeld.
+~ ^Mark all (\d+) emails first\.$
+> Markeer eerst alle $1 e-mails.
+~ ^(\d+) of (\d+) correct\. Check each sender's domain, letter by letter\.$
+> $1 van de $2 goed. Controleer het domein van elke afzender, letter voor letter.
+
+# ---------- MossBackup ----------
+= Wed 11:47
+> wo 11:47
+= Thu 13:05
+> do 13:05
+= Fri 09:10
+> vr 09:10
+= Fri 14:32
+> vr 14:32
+= Sat 02:13
+> za 02:13
+= 1.9 MB
+> 1,9 MB
+= 2.1 MB
+> 2,1 MB
+= 2.4 MB
+> 2,4 MB
+= It's the old version. The filename was very clear about this.
+> Het is de oude versie. De bestandsnaam was daar heel duidelijk over.
+= It's last year's report. The Board will notice. Probably.
+> Het is het verslag van vorig jaar. Het bestuur zal het merken. Waarschijnlijk.
+= Page one is a full-page photo of Douglas. Not the approved version.
+> Pagina één is een paginagrote foto van Douglas. Niet de goedgekeurde versie.
+= It's completely empty. 0 KB means there's nothing in it.
+> Hij is helemaal leeg. 0 KB betekent dat er niets in staat.
+= It contains a 45-minute video of Douglas's yacht. The Board said NOT that one.
+> Er zit een video van 45 minuten van het jacht van Douglas in. Het bestuur zei NIET die.
+= ✓ Approved report restored and queued on the Fax-o-Matic.
+> ✓ Goedgekeurd verslag teruggezet en klaargezet op de Fax-o-Matic.
+= Deleted files found in the backup. Choose the version to restore.
+> Verwijderde bestanden gevonden in de back-up. Kies de versie die je wilt terugzetten.
+= Restore
+> Terugzetten
+= File
+> Bestand
+= Modified
+> Gewijzigd
+= Size
+> Grootte
+= Author
+> Auteur
+= Already restored and queued.
+> Al teruggezet en klaargezet.
+= Restored: Friday 14:32, 2.4 MB, one tasteful pie chart. It's queued on the fax machine.
+> Teruggezet: vrijdag 14:32, 2,4 MB, één smaakvol taartdiagram. Het staat klaar op het faxapparaat.
+= Is there a picture of me in it? …There should be a picture of me in it.
+> Staat er een foto van mij in? …Er zou een foto van mij in moeten staan.
+= You preview it. {what} You put it back.
+> Je bekijkt een voorbeeld. {what} Je legt het terug.
+
+# ---------- Internet ----------
+= Blocked by Privacy Mode
+> Geblokkeerd door de privacymodus
+= The browser is locked until the Board releases Privacy Mode.
+> De browser is vergrendeld tot het bestuur de privacymodus opheft.
+= Douglas's bookmarks
+> Bladwijzers van Douglas
+= yachts.com · more-yachts.com · how-to-turn-on-email.com · am-i-a-good-boss.quiz (result: yes)
+> yachts.com · more-yachts.com · how-to-turn-on-email.com · am-i-a-good-boss.quiz (uitslag: ja)
+
+# ---------- Denholm's safe and database ----------
+= fax paper, contracts, a photo of a horse
+> faxpapier, contracten, een foto van een paard
+= sold on eBay
+> verkocht op eBay
+= Tables: staff, safe.\nExample: SELECT name, role FROM staff WHERE floor = 'basement';
+> Tabellen: staff, safe.\nVoorbeeld: SELECT name, role FROM staff WHERE floor = 'basement';
+= Nice try, Little Bobby Tables. Denholm's database is read-only.
+> Leuk geprobeerd, kleine Bobby Tables. Denholms database is alleen-lezen.
+= ERROR: read-only database. Like Denholm, it does not change.
+> FOUT: alleen-lezen-database. Net als Denholm verandert hij niet.
+= SYNTAX ERROR. Try: SELECT column FROM table WHERE column = 'value'
+> SYNTAXFOUT. Probeer: SELECT kolom FROM tabel WHERE kolom = 'waarde'
+~ ^ERROR: there is no table called (.+)\. Try SHOW TABLES$
+> FOUT: er is geen tabel die $1 heet. Probeer SHOW TABLES
+~ ^ERROR: no column called (.+) in (\w+)\. Columns: (.+)$
+> FOUT: geen kolom $1 in $2. Kolommen: $3
+~ ^ERROR: no column called (.+) in (\w+)$
+> FOUT: geen kolom $1 in $2
+= Codes are hidden. Ask for one owner at a time: WHERE owner = '...'
+> Codes zijn verborgen. Vraag ze per eigenaar op: WHERE owner = '...'
+= The safe is open and nearly empty: some contracts and a photo of a horse. Denholm loved that horse.
+> De kluis is open en bijna leeg: wat contracten en een foto van een paard. Denholm was dol op dat paard.
+= Denholm's safe
+> Denholms kluis
+= DENHOLM-DB v1.0 (1987) · type HELP
+> DENHOLM-DB v1.0 (1987) · typ HELP
+= SQL query
+> SQL-query
+= Safe combination
+> Combinatie van de kluis
+= Open safe
+> Kluis openen
+= DENHOLM-DB v1.0. Property of Denholm Reynholm. Keep out, Douglas.\nType HELP to see the tables.
+> DENHOLM-DB v1.0. Eigendom van Denholm Reynholm. Afblijven, Douglas.\nTyp HELP om de tabellen te zien.
+= Clunk. The safe swings open: contracts, a photo of a horse, and the last ream of fax paper. You take the paper.
+> Klonk. De kluis zwaait open: contracten, een foto van een paard en het laatste pak faxpapier. Je neemt het papier mee.
+= 1966! The year England won the World Cup. Father never stopped talking about it. Or about that horse.
+> 1966! Het jaar dat Engeland het WK won. Vader bleef er maar over praten. En over dat paard.
+= 0000 was the code for Douglas's own safe. He sold it.
+> 0000 was de code van Douglas' eigen kluis. Die heeft hij verkocht.
+= The dial clicks, but the safe stays shut.
+> De draaiknop klikt, maar de kluis blijft dicht.
+
+# ---------- the fax machine ----------
+= Fax-o-Matic 3000 manual
+> Handleiding Fax-o-Matic 3000
+= Page 47 of 312: error codes
+> Pagina 47 van 312: foutcodes
+= Troubleshooting
+> Problemen oplossen
+= E-01 · PAPER JAM
+> E-01 · PAPIERSTORING
+= Open the cover and remove the jammed sheet. Do not photocopy your face at the Christmas party.
+> Open de klep en verwijder het vastgelopen vel. Kopieer niet je gezicht op het kerstfeest.
+= E-02 · NO PAPER
+> E-02 · GEEN PAPIER
+= Load paper. The machine needs paper to print replies and confirmations.
+> Plaats papier. Het apparaat heeft papier nodig om antwoorden en bevestigingen af te drukken.
+= E-03 · TONER LOW
+> E-03 · TONER BIJNA OP
+= Ignore. The toner has said this since 1998.
+> Negeren. Dat zegt de toner al sinds 1998.
+= E-04 · NO OUTSIDE LINE
+> E-04 · GEEN BUITENLIJN
+= Calls outside the building need a 9 first. Dial 9, then the full number.
+> Voor gesprekken buiten het gebouw draai je eerst een 9. Kies 9 en dan het volledige nummer.
+= E-05 · FAX IS SULKING
+> E-05 · FAX ZIT TE MOKKEN
+= Have you tried turning it off and on again?
+> Heb je al geprobeerd hem uit en weer aan te zetten?
+= The fax machine purrs contentedly. It has finally been useful.
+> Het faxapparaat spint tevreden. Eindelijk is het eens nuttig geweest.
+= Fax-o-Matic 3000
+> Fax-o-Matic 3000
+= Fax, copier and occasional paperweight
+> Fax, kopieerapparaat en af en toe presse-papier
+= Open cover
+> Klep openen
+= Load paper
+> Papier plaatsen
+= Send
+> Verzend
+= READY · 1 DOC IN MEMORY
+> GEREED · 1 DOC IN GEHEUGEN
+= READY · NO DOCUMENT
+> GEREED · GEEN DOCUMENT
+= Dial a number
+> Kies een nummer
+= You open the cover. Jammed inside is a crumpled photocopy of Douglas's face, from the Christmas party. You pull it out.
+> Je opent de klep. Er zit een verfrommelde kopie van het gezicht van Douglas vast, van het kerstfeest. Je trekt hem eruit.
+= You load Denholm's last ream of paper. The fax hums approvingly.
+> Je plaatst Denholms laatste pak papier. De fax zoemt goedkeurend.
+= The paper tray is empty. The fax needs paper to print the Board's reply.
+> De papierlade is leeg. De fax heeft papier nodig om het antwoord van het bestuur af te drukken.
+= The fax refuses. Check the manual for E-01.
+> De fax weigert. Zoek E-01 op in de handleiding.
+= The fax refuses. Check the manual for E-02.
+> De fax weigert. Zoek E-02 op in de handleiding.
+= NO DOCUMENT
+> GEEN DOCUMENT
+= There's nothing to send. Restore the report on Douglas's computer first.
+> Er is niets om te versturen. Zet eerst het verslag terug op de computer van Douglas.
+= NO NUMBER
+> GEEN NUMMER
+= Dial a number first.
+> Kies eerst een nummer.
+= Beep. Boop. E-04. What does the manual say?
+> Biep. Boep. E-04. Wat zegt de handleiding?
+= CANCELLED
+> GEANNULEERD
+= You were about to fax the emergency services. They have enough to deal with in this building.
+> Je stond op het punt de hulpdiensten te faxen. Die hebben al genoeg te stellen met dit gebouw.
+= NO ANSWER
+> GEEN ANTWOORD
+= Nobody answers. That isn't the Board's number.
+> Niemand neemt op. Dat is niet het nummer van het bestuur.
+= SENDING… PAGE 1/1
+> VERZENDEN… PAGINA 1/1
+= Connecting…
+> Verbinden…
+
+# ---------- start and end ----------
+= Top floor, 14:12. The lift opens onto thick red carpet and a cloud of expensive aftershave.
+> Bovenste verdieping, 14:12. De lift gaat open op dik rood tapijt en een wolk dure aftershave.
+= Ah! IT! Marvellous. Come in, come in. The internet's broken and my computer is making noises. Saucy noises.
+> Ah! IT! Schitterend. Kom binnen, kom binnen. Het internet is kapot en mijn computer maakt geluiden. Ondeugende geluiden.
+= As you step inside, the PC shrieks. Red lights flash. The blinds slam down. Behind you the doors lock: PRIVACY MODE · SECURITY BREACH DETECTED.
+> Als je binnenstapt, gilt de pc. Rode lampen flitsen. De jaloezieën knallen dicht. Achter je gaan de deuren op slot: PRIVACYMODUS · BEVEILIGINGSLEK GEDETECTEERD.
+= Oh, it does that. Whenever I visit certain websites. Yacht websites. Mostly.
+> O, dat doet hij wel vaker. Als ik bepaalde websites bezoek. Jachtwebsites. Meestal.
+= Hello? It's Moss. Privacy Mode only lifts when the Board says so. And today the Board only cares about one thing: the annual report, by 15:00.
+> Hallo? Met Moss. De privacymodus gaat pas uit als het bestuur dat zegt. En vandaag geeft het bestuur maar om één ding: het jaarverslag, vóór 15:00.
+= Which is on Douglas's computer. Which is full of viruses. Good luck. Don't let him touch anything.
+> Dat op de computer van Douglas staat. Die vol virussen zit. Succes. Laat hem nergens aankomen.
+= Locked in. Third time today.
+> Opgesloten. Voor de derde keer vandaag.
+= SCREEEEECH. Brrrrr. Ding! A reply slides out of the fax machine.
+> KRIIIIIEP. Brrrrr. Ding! Er schuift een antwoord uit het faxapparaat.
+= FROM THE BOARD: Report received at 14:58. Thank you. Privacy Mode released. P.S. Who added the yacht video?
+> VAN HET BESTUUR: Verslag ontvangen om 14:58. Dank u. Privacymodus opgeheven. P.S. Wie heeft die jachtvideo toegevoegd?
+= Clunk. The doors unlock and the blinds roll up. Afternoon light floods the office.
+> Klonk. De deuren gaan van het slot en de jaloezieën rollen op. Middaglicht stroomt het kantoor in.
+= Ha! Brilliant! You've saved the company. I'm promoting you. To… Head of Computers. Or Lord of the Internet. Your choice.
+> Ha! Briljant! Je hebt het bedrijf gered. Ik geef je promotie. Tot… Hoofd Computers. Of Heer van het Internet. Zeg het maar.
+= Now, before you go: could you have a quick look at my phone? It's making noises too.
+> Voor je gaat: wil je even naar mijn telefoon kijken? Die maakt ook geluiden.
+= Three escapes in one day. I'm putting you forward for Employee of the Month. I've never been Employee of the Month.
+> Drie ontsnappingen op één dag. Ik draag je voor als Werknemer van de Maand. Ik ben nooit Werknemer van de Maand geweest.
+= (no rows)
+> (geen rijen)

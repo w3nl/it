@@ -1,0 +1,351 @@
+# Dutch translation: Chapter 2, Jen's office (js/chapter2.js).
+# The acronyms on Jen's slides keep their real English meanings (that's what CPU, RAM… stand for in Dutch too).
+# Jen's door answer becomes INTERNET DING: the speaker notes show its ROT13, and the SmartLock accepts both languages.
+
+# ---------- hotspots ----------
+= A postcard of a roundabout under a grey sky: GREETINGS FROM SWINDON.
+> Een ansichtkaart van een rotonde onder een grijze lucht: GROETEN UIT SWINDON.
+= On the back: 'So proud of you and your big job in computers, love! Everyone here in Swindon, where you were born, says hello. — Mum xx'
+> Op de achterkant: 'Zo trots op je en je grote baan in de computers, lieverd! Iedereen hier in Swindon, waar je geboren bent, doet je de groeten. — Mama xx'
+= Jen's calendar is open at March. The 3rd is circled in red:
+> Jens kalender staat open op maart. De 3e is rood omcirkeld:
+= 'MY BIRTHDAY. Roy got me CROCS?!?! Hid the boardroom Wi-Fi card inside them. Never opening that box again.'
+> 'MIJN VERJAARDAG. Roy gaf me CROCS?!?! Het wifi-kaartje van de bestuurskamer erin verstopt. Die doos maak ik nooit meer open.'
+= Today's entry: 'BOARD MEETING 13:30. Topic: What is IT?? (find out what IT is)'
+> Vandaag: 'BESTUURSVERGADERING 13:30. Onderwerp: Wat is IT?? (uitzoeken wat IT is)'
+= A sticky note: 'Board mtg 13:30!!' On the back: 'Things to learn first: 1. What IT is. 2. What IT stands for. 3. Where IT is kept?'
+> Een geeltje: 'Bestuursverg. 13:30!!' Op de achterkant: 'Eerst leren: 1. Wat IT is. 2. Waar IT voor staat. 3. Waar IT bewaard wordt?'
+= Jen's CV, framed. Under 'Computer skills' it says: 'Lots of experience with computers.'
+> Jens cv, ingelijst. Onder 'Computervaardigheden' staat: 'Veel ervaring met computers.'
+= Someone has added in pencil, in very small letters: 'I can double-click.'
+> Iemand heeft er met potlood in heel kleine letters bij geschreven: 'Ik kan dubbelklikken.'
+= A basement window at pavement level, behind the railings. Legs stride past all day: suits, heels, and now and then a sausage dog on a lead.
+> Een kelderraam op stoephoogte, achter het hek. De hele dag lopen er benen langs: pakken, hakken en af en toe een teckel aan de lijn.
+= Jen has given some of the legs names. The dog is called Gary.
+> Jen heeft sommige benen een naam gegeven. De hond heet Gary.
+= KEEP CALM AND CALL IT. Underneath, in Jen's writing: 'IT = Roy and Moss? So IT stands for… Roy and Moss??'
+> KEEP CALM AND CALL IT. Daaronder, in Jens handschrift: 'IT = Roy en Moss? Dus IT staat voor… Roy en Moss??'
+= A pink desk lamp. The only light in the basement that isn't a screen or a fire.
+> Een roze bureaulamp. Het enige licht in de kelder dat geen scherm of brand is.
+= A photo of a young Jen hugging a very fluffy, very offended white cat.
+> Een foto van een jonge Jen die een heel pluizige, heel beledigde witte kat knuffelt.
+= Engraved on the frame: 'Me & Sir Purrcival, my first pet. Gone but never forgotten.'
+> Gegraveerd in de lijst: 'Ik & Sir Purrcival, mijn eerste huisdier. Weg, maar nooit vergeten.'
+= 'WORLD'S OKAYEST MANAGER'. A present from Roy. Jen uses it anyway, out of spite.
+> 'REDELIJK OKÉ MANAGER'. Een cadeautje van Roy. Jen gebruikt hem toch, uit wraak.
+= Crumpled drafts of slide one: 'IT = Important Typing?', 'IT = Interesting Things?', 'I.T. = I Tried'.
+> Verfrommelde versies van dia één: 'IT = Intens Typen?', 'IT = Interessante Toestanden?', 'I.T. = Ik Tobde'.
+= And a receipt for 'Computers for Dummies'. Returned. Unread.
+> En een bonnetje voor 'Computers voor Dummies'. Teruggebracht. Ongelezen.
+= A plastic plant. Jen still waters it every day. It's doing great.
+> Een plastic plant. Jen geeft hem nog elke dag water. Hij doet het geweldig.
+
+# ---------- shoe rack ----------
+= Red stilettos
+> Rode stiletto's
+= Red stilettos, size 38. Worn once, to a wedding. Never again.
+> Rode stiletto's, maat 38. Eén keer gedragen, op een bruiloft. Nooit meer.
+= Black boots
+> Zwarte laarzen
+= A note inside: 'Board meeting boots. POWERFUL.' She forgot to wear them today.
+> Er zit een briefje in: 'Laarzen voor de bestuursvergadering. KRACHTIG.' Ze is vergeten ze vandaag aan te trekken.
+= Gold sandals
+> Gouden sandalen
+= Gold sandals and a receipt longer than a CPU manual.
+> Gouden sandalen en een bonnetje dat langer is dan een CPU-handleiding.
+= Emergency heels
+> Noodhakken
+= Emergency heels and an emergency chocolate bar. Half eaten. Bite marks suggest Roy.
+> Noodhakken en een noodreep chocola. Half opgegeten. De tandafdrukken wijzen naar Roy.
+= Pink kitten heels
+> Roze kitten heels
+= Pink kitten heels. No kittens were involved.
+> Roze kitten heels. Er zijn geen kittens bij betrokken geweest.
+= Lime green · from Roy
+> Limoengroen · van Roy
+= Shoe rack
+> Schoenenrek
+= Jen's pride and joy
+> Jens trots en glorie
+= Every box except one says BELLADONNA. Jen clearly has a favourite designer.
+> Op elke doos op één na staat BELLADONNA. Jen heeft duidelijk een favoriete ontwerper.
+= Lime green Crocs, tag still on. Tucked inside the left one: a card labelled BOARDROOM WI-FI. You take it.
+> Limoengroene Crocs, het label zit er nog aan. In de linker zit een kaartje: WIFI BESTUURSKAMER. Je neemt het mee.
+= The Crocs. Still lime. Still green. Still never worn.
+> De Crocs. Nog steeds limoen. Nog steeds groen. Nog steeds nooit gedragen.
+
+# ---------- notepad ----------
+= Jen's notepad
+> Jens notitieblok
+= Copied off Moss's whiteboard
+> Overgenomen van het whiteboard van Moss
+= Moss's SECRET CODE (very secure!!) Swap every letter with its partner:
+> GEHEIME CODE van Moss (heel veilig!!) Verwissel elke letter met zijn partner:
+= Underneath: three doodled shoes, a heart, and "Roy + Moss = IT??"
+> Daaronder: drie getekende schoentjes, een hartje en "Roy + Moss = IT??"
+
+# ---------- SmartLock ----------
+= SmartLock
+> SmartLock
+= Reynholm SmartLock v1.0 · owner: J. Barber
+> Reynholm SmartLock v1.0 · eigenaar: J. Barber
+= TWO-FACTOR AUTHENTICATION ENABLED
+> TWEESTAPSVERIFICATIE INGESCHAKELD
+= 1. Owner's security answer
+> 1. Beveiligingsantwoord van de eigenaar
+= 2. One-time code, sent to the owner's devices
+> 2. Eenmalige code, gestuurd naar de apparaten van de eigenaar
+= Security question: What does IT stand for?
+> Beveiligingsvraag: Waar staat IT voor?
+= One-time code
+> Eenmalige code
+= Unlock
+> Ontgrendel
+= Answer the security question first.
+> Beantwoord eerst de beveiligingsvraag.
+= Ah. That's the right answer. But it isn't Jen's answer. The lock wants whatever Jen thought IT stood for when she set it.
+> Ah. Dat is het goede antwoord. Maar het is niet Jens antwoord. Het slot wil wat Jen dacht dat IT betekende toen ze het instelde.
+= INCORRECT. That is the correct answer. It is not the owner's answer.
+> ONJUIST. Dat is het juiste antwoord. Het is niet het antwoord van de eigenaar.
+= INCORRECT. That doesn't match the owner's answer.
+> ONJUIST. Dat komt niet overeen met het antwoord van de eigenaar.
+= ANSWER ACCEPTED. Now enter the one-time code sent to the owner.
+> ANTWOORD GEACCEPTEERD. Voer nu de eenmalige code in die naar de eigenaar is gestuurd.
+= ANSWER ACCEPTED. ONE-TIME CODE INVALID.
+> ANTWOORD GEACCEPTEERD. EENMALIGE CODE ONGELDIG.
+= ACCESS GRANTED. Have a lovely day, J. Barber.
+> TOEGANG VERLEEND. Nog een fijne dag, J. Barber.
+
+# ---------- slides ----------
+= What is IT?
+> Wat is IT?
+= A presentation by Jen Barber, Head of IT (Relationship Manager)
+> Een presentatie door Jen Barber, hoofd IT (Relationship Manager)
+= Computer Power Unit. (Or Cute Purple Underwear?? Check with Moss)
+> Computer Power Unit. (Of Chique Paars Ondergoed?? Even checken bij Moss)
+= The CPU is the computer's brain: it carries out the instructions of every program.
+> De CPU is het brein van de computer: hij voert de instructies van elk programma uit.
+= Really Angry Mouse. (When the mouse stops working.)
+> Really Angry Mouse. (Als de muis het niet meer doet.)
+= RAM is the computer's short-term memory. It forgets everything when you turn it off. And on again.
+> RAM is het kortetermijngeheugen van de computer. Het vergeet alles als je hem uitzet. En weer aan.
+= Universal Shoe Box. (It stores things!!)
+> Universal Shoe Box. (Je kunt er dingen in bewaren!!)
+= USB is the standard plug for connecting devices. It never fits the first time. Or the second.
+> USB is de standaardstekker om apparaten aan te sluiten. Hij past nooit in één keer. Of in twee.
+= How To Make Lasagne
+> Hoe Maak je Lasagne (How To Make Lasagne)
+= HTML is the language web pages are written in. Including this one.
+> HTML is de taal waarin webpagina's zijn geschreven. Ook deze.
+= Wireless Fidelity. (Moss says no, but it sounds right.)
+> Wireless Fidelity. (Moss zegt van niet, maar het klinkt goed.)
+= It doesn't stand for anything
+> Het staat nergens voor
+= Trick question! Wi-Fi is a made-up brand name, chosen because it rhymes with Hi-Fi. Moss was right.
+> Strikvraag! Wi-Fi is een verzonnen merknaam, gekozen omdat het rijmt op Hi-Fi. Moss had gelijk.
+= That's exactly what Jen wrote. Over the intercom, Moss sighs. Loudly.
+> Dat is precies wat Jen had opgeschreven. Over de intercom zucht Moss. Hoorbaar.
+= So what does IT stand for?
+> Dus waar staat IT voor?
+= IT stands for… (I'll wing it)
+> IT staat voor… (ik improviseer wel)
+= Intelligent Typing
+> Intelligent Typen
+= Information Technology
+> Information Technology (informatietechnologie)
+= Internet Thing
+> Internet Ding
+= IT means Information Technology: everything to do with computers, networks and data.
+> IT betekent Information Technology, informatietechnologie: alles wat met computers, netwerken en data te maken heeft.
+= That's Jen's version. The board deserves the real one. (Worth remembering, though.)
+> Dat is Jens versie. Het bestuur verdient de echte. (Wel goed om te onthouden.)
+= Over the intercom, Moss says: 'No.'
+> Over de intercom zegt Moss: 'Nee.'
+= That's even more wrong than Jen's version.
+> Dat is nog fouter dan Jens versie.
+= Somewhere in the building, Roy laughs and doesn't know why.
+> Ergens in het gebouw lacht Roy, en hij weet niet waarom.
+= Nope. Try again.
+> Nee. Probeer het nog eens.
+
+# ---------- the laptop ----------
+= Jen's laptop
+> Jens laptop
+= Logged in as Jen Barber
+> Ingelogd als Jen Barber
+= Locked
+> Vergrendeld
+= ← Desktop
+> ← Bureaublad
+= Password hint: "I'll never forget it!"
+> Wachtwoordhint: "Die vergeet ik nooit!"
+= Forgot password?
+> Wachtwoord vergeten?
+= Incorrect password. Hint: "I'll never forget it!" (She forgot it.)
+> Onjuist wachtwoord. Hint: "Die vergeet ik nooit!" (Ze is het vergeten.)
+= Incorrect password. Jen probably uses the reset link a lot.
+> Onjuist wachtwoord. Jen gebruikt de herstellink vast vaak.
+= Incorrect password. Maybe try 'Forgot password?'
+> Onjuist wachtwoord. Probeer misschien 'Wachtwoord vergeten?'
+= Reset your password
+> Wachtwoord herstellen
+= Answer your security questions, Jen.
+> Beantwoord je beveiligingsvragen, Jen.
+= Name of your first pet?
+> Naam van je eerste huisdier?
+= Your favourite shoe designer?
+> Je favoriete schoenontwerper?
+= Town where you were born?
+> Plaats waar je bent geboren?
+= Reset password
+> Wachtwoord herstellen
+= Back
+> Terug
+= Password reset to "password1". Logging in…
+> Wachtwoord hersteld naar "password1". Inloggen…
+= You reset Jen's password using her cat, her shoes and her home town? This is why you don't put your whole life on Friendface.
+> Je hebt Jens wachtwoord hersteld met haar kat, haar schoenen en haar geboorteplaats? Daarom zet je niet je hele leven op Friendface.
+= To be fair, she put it on her walls.
+> Eerlijk is eerlijk: ze heeft het op haar muren gezet.
+= {n} of 3 answers correct. The answers are somewhere in this office.
+> {n} van de 3 antwoorden goed. De antwoorden zijn ergens in dit kantoor te vinden.
+= Messages (1)
+> Berichten (1)
+= Messages
+> Berichten
+= Recycle Bin
+> Prullenbak
+= Solitaire
+> Patience
+= What is IT.pptx · SlideShow
+> What is IT.pptx · Diavoorstelling
+= INTERNET THING
+> INTERNET DING
+= Speaker notes:
+> Notities:
+= Roy told me what IT REALLY stands for!! I wrote it in Moss's secret code so nobody can steal it:
+> Roy heeft me verteld waar IT ECHT voor staat!! Ik heb het in de geheime code van Moss opgeschreven, zodat niemand het kan stelen:
+= . (It's my door answer too. Don't forget!!) — J
+> . (Het is ook mijn deurantwoord. Niet vergeten!!) — J
+= Jen's slides need fixing. Use the numbered buttons to move between slides.
+> Jens dia's moeten verbeterd worden. Gebruik de genummerde knoppen om tussen de dia's te wisselen.
+~ ^Slide (\d+)$
+> Dia $1
+= Present to boardroom ▶
+> Presenteer in de bestuurskamer ▶
+= All slides fixed. Jen might survive this meeting.
+> Alle dia's verbeterd. Misschien overleeft Jen deze vergadering.
+= Fixed. On to the next slide.
+> Verbeterd. Door naar de volgende dia.
+= Fix every slide first. The board can't see the lasagne slide.
+> Verbeter eerst alle dia's. Het bestuur mag de lasagnedia niet zien.
+= No connection. The boardroom projector is on its own Wi-Fi network.
+> Geen verbinding. De beamer in de bestuurskamer heeft een eigen wifi-netwerk.
+= Already on the big screen. Jen is presenting.
+> Staat al op het grote scherm. Jen is aan het presenteren.
+= Presenting…
+> Presenteren…
+= Sending "What is IT.pptx" to Boardroom-Projector
+> "What is IT.pptx" wordt naar Boardroom-Projector gestuurd
+= It's up! It's on the big screen! Okay, everyone: What is IT.
+> Hij staat erop! Op het grote scherm! Oké, allemaal: Wat is IT.
+= Wi-Fi doesn't stand for anything? Ha! Like my second marriage. Barber, this is marvellous.
+> Wi-Fi staat nergens voor? Ha! Net als mijn tweede huwelijk. Barber, dit is schitterend.
+= One question, though. What does IT actually stand for?
+> Eén vraagje nog. Waar staat IT eigenlijk voor?
+= It's… on the last slide! Information Technology. Obviously. I knew that. I've always known that.
+> Dat… staat op de laatste dia! Information Technology. Uiteraard. Dat wist ik. Dat heb ik altijd geweten.
+= Oh, and the SmartLock just sent me a code to let you out. It's synced to my laptop, in Messages. Bye!
+> O, en het SmartLock heeft me net een code gestuurd om je eruit te laten. Die staat gesynchroniseerd op mijn laptop, in Berichten. Doei!
+= The code is only half of it. The lock also wants Jen's own answer. The one she believed when she set it.
+> De code is maar de helft. Het slot wil ook Jens eigen antwoord. Het antwoord waar zij in geloofde toen ze het instelde.
+
+# ---------- Wi-Fi ----------
+= Open
+> Open
+= Connected… to a guest network that allows one web page per hour. The projector isn't on it. Disconnected.
+> Verbonden… met een gastnetwerk dat één webpagina per uur toestaat. De beamer zit er niet op. Verbinding verbroken.
+= FBI Surveillance Van #3
+> FBI Surveillance Van #3
+= Secured
+> Beveiligd
+= That's Roy's phone hotspot. It ran out of data in 2009.
+> Dat is de hotspot van Roys telefoon. Zijn data is op sinds 2009.
+= Moss's network. The password is the first 300 digits of pi. You decide not to.
+> Het netwerk van Moss. Het wachtwoord is de eerste 300 cijfers van pi. Je besluit het niet te doen.
+= Secured · WPA2
+> Beveiligd · WPA2
+= Wi-Fi settings
+> Wifi-instellingen
+= Connected to
+> Verbonden met
+= Not connected. Choose a network.
+> Niet verbonden. Kies een netwerk.
+= Connected
+> Verbonden
+= You try to join the FBI van. Outside the window, a pair of shiny black shoes stops walking. Better not.
+> Je probeert verbinding te maken met het FBI-busje. Buiten het raam blijft een paar glimmende zwarte schoenen staan. Beter van niet.
+= Already connected.
+> Al verbonden.
+= Network key
+> Netwerksleutel
+= Connect
+> Verbinden
+= Connected to Boardroom-Projector. Now present the slides.
+> Verbonden met Boardroom-Projector. Presenteer nu de dia's.
+= Wrong network key. Jen wrote it down somewhere she'd never look.
+> Verkeerde netwerksleutel. Jen heeft hem opgeschreven op een plek waar ze zelf nooit kijkt.
+
+# ---------- Messages ----------
+= Jen, I've installed your SmartLock. Please choose a security answer you'll actually remember. — Moss
+> Jen, ik heb je SmartLock geïnstalleerd. Kies alsjeblieft een beveiligingsantwoord dat je ook echt onthoudt. — Moss
+= Borrowed your stapler. And your biscuits. And, briefly, your chair.
+> Je nietmachine geleend. En je koekjes. En heel even je stoel.
+= Jen (note to self)
+> Jen (notitie aan mezelf)
+= Door answer is in the speaker notes on the LAST SLIDE!! In Moss's code!!
+> Het deurantwoord staat in de notities bij de LAATSTE DIA!! In de code van Moss!!
+= One-time code for J. Barber's office: 8086. Never share this code with anyone.
+> Eenmalige code voor het kantoor van J. Barber: 8086. Deel deze code nooit met iemand.
+= That's the code! Let yourself out. Don't touch my shoes.
+> Dat is de code! Laat jezelf eruit. Kom niet aan mijn schoenen.
+
+# ---------- Recycle Bin and Solitaire ----------
+= Computer skills: I can double-click. Sometimes I triple-click by accident.
+> Computervaardigheden: ik kan dubbelklikken. Soms klik ik per ongeluk drie keer.
+= For Jen: Crocs (she'll LOVE them). For Moss: a bigger calculator. For me: a new chair (Jen's).
+> Voor Jen: Crocs (die vindt ze GEWELDIG). Voor Moss: een grotere rekenmachine. Voor mij: een nieuwe stoel (die van Jen).
+= Slide 1: IT. Slide 2: ???. Slide 3: Any questions? (Please no questions.)
+> Dia 1: IT. Dia 2: ???. Dia 3: Nog vragen? (Liever geen vragen.)
+= Jen's best score: 0. She thinks it's a spreadsheet for cards.
+> Jens beste score: 0. Ze denkt dat het een spreadsheet voor kaarten is.
+
+# ---------- start and end ----------
+= Upstairs, 13:20. Moss is out of the cupboard. You head back down to the basement, rubber duck in your pocket.
+> Boven, 13:20. Moss is uit de kast. Je loopt terug naar de kelder, met het badeendje in je zak.
+= You! You're the new IT person? I'm Jen. Relationship Manager. Head of IT, basically. In here, quick.
+> Jij! Ben jij de nieuwe IT'er? Ik ben Jen. Relationship Manager. Hoofd IT, zeg maar. Kom binnen, snel.
+= I've got a board presentation in ten minutes. It's called 'What is IT?' It's nearly perfect. Just… check it. Make it a bit more correct. Then send it to the boardroom projector.
+> Ik moet over tien minuten presenteren voor het bestuur. Het heet 'What is IT?' Het is bijna perfect. Even… nakijken. Een beetje juister maken. En dan naar de beamer in de bestuurskamer sturen.
+= The laptop's on the desk. I've got to go and stall Douglas. Bye!
+> De laptop staat op het bureau. Ik moet Douglas aan het lijntje houden. Doei!
+= The door clicks shut. A small screen beside it lights up: REYNHOLM SMARTLOCK · TWO-FACTOR AUTHENTICATION.
+> De deur klikt dicht. Een klein schermpje ernaast licht op: REYNHOLM SMARTLOCK · TWEESTAPSVERIFICATIE.
+= Ah. I fitted that lock for Jen last week. She chose her own security question. And her own answer.
+> Ah. Dat slot heb ik vorige week voor Jen geïnstalleerd. Ze heeft zelf haar beveiligingsvraag gekozen. En haar eigen antwoord.
+= So to get out, you'll need to know what Jen thinks IT stands for. Which is a much harder question than what it actually stands for.
+> Dus om eruit te komen moet je weten waar IT volgens Jen voor staat. Dat is een veel moeilijkere vraag dan waar het echt voor staat.
+= Locked in. Again.
+> Opgesloten. Alweer.
+= The SmartLock beeps happily. The door swings open.
+> Het SmartLock piept vrolijk. De deur zwaait open.
+= It's me! The board LOVED it. Douglas wants a sequel: 'What is a Computer?'
+> Ik ben het! Het bestuur vond het GEWELDIG. Douglas wil een vervolg: 'Wat is een Computer?'
+= Barber! Splendid show. I've decided IT stands for 'Incredibly Talented'. Like me. Put it on the letterhead.
+> Barber! Prachtige show. Ik heb besloten dat IT staat voor 'Incredibly Talented', Ingenieus Talentvol. Net als ik. Zet het op het briefpapier.
+= Well done. Two escapes in one day. That's a department record.
+> Goed gedaan. Twee ontsnappingen op één dag. Dat is een afdelingsrecord.
+= Wi-Fi: Boardroom-Projector · 13:24
+> Wifi: Boardroom-Projector · 13:24
+= Wi-Fi: not connected · 13:24
+> Wifi: niet verbonden · 13:24

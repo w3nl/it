@@ -27,7 +27,7 @@ function useItem(item, hs){
   if(item==='card') return say(hs==='laptop' ? "Better to type the key into the Wi-Fi settings on the laptop." : "It's a Wi-Fi key. It belongs in the laptop's Wi-Fi settings, not there.");
   if(item==='duck'){ S.ach.duck = true; save();
     const st = stage_(); const lines = HINTS[st];
-    return say([['you',"You hold up the duck and explain the problem out loud, step by step…"], ['duck',"…"], ['you', "Wait. Saying it out loud helps. " + lines[0]]]); }
+    return say([['you',"You hold up the duck and explain the problem out loud, step by step…"], ['duck',"…"], ['you', tx('Wait. Saying it out loud helps. {hint}', { hint: tx(lines[0]) })]]); }
   if(item==='ext'){
     if(hs==='fire'){ sel = null; take('ext'); S.f.fireOut = true; save();
       chord([180,140,110],120);

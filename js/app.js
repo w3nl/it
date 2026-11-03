@@ -6,15 +6,15 @@ function chapterDone(){ return S.ch===6 ? !!S.f.out6 : S.ch===5 ? !!S.f.out5 : S
 function nextChapter(){ const f = {1:startCh2, 2:startCh3, 3:startCh4, 4:startCh5, 5:startCh6}[S.ch]; if(f) f(); }
 function exitLabels(){
   const done = chapterDone(), n = S.ch + 1;
-  const set = (sel, open, closed) => document.querySelectorAll(sel).forEach(h => { h.dataset.label = (done && S.ch < 6) ? open : closed; h.setAttribute('aria-label', h.dataset.label); });
-  set('#sc-office [data-hs="exit"]', `Exit: on to Chapter ${n}`, 'Exit door');
-  set('#sc-office [data-hs="jen"]', `Jen's office: on to Chapter ${n}`, "Jen's office");
-  set('#sc-jen [data-hs="jdoor"]', `Door: on to Chapter ${n}`, 'Office door');
-  set('#sc-doug [data-hs="ddoor"]', `Door: on to Chapter ${n}`, 'Office door');
-  set('#sc-lift [data-hs="lpanel"]', `Step out: on to Chapter ${n}`, 'Lift buttons');
-  set('#sc-dungeon [data-hs="firewall"]', `Way out: on to Chapter ${n}`, 'The Firewall');
+  const set = (sel, open, closed) => document.querySelectorAll(sel).forEach(h => { h.dataset.label = (done && S.ch < 6) ? tx(open, { n }) : closed; h.setAttribute('aria-label', h.dataset.label); });
+  set('#sc-office [data-hs="exit"]', 'Exit: on to Chapter {n}', 'Exit door');
+  set('#sc-office [data-hs="jen"]', "Jen's office: on to Chapter {n}", "Jen's office");
+  set('#sc-jen [data-hs="jdoor"]', 'Door: on to Chapter {n}', 'Office door');
+  set('#sc-doug [data-hs="ddoor"]', 'Door: on to Chapter {n}', 'Office door');
+  set('#sc-lift [data-hs="lpanel"]', 'Step out: on to Chapter {n}', 'Lift buttons');
+  set('#sc-dungeon [data-hs="firewall"]', 'Way out: on to Chapter {n}', 'The Firewall');
 }
-function refreshMenu(){ const fin = chapterDone(); $('#btn-cont').hidden = !S.started || (fin && S.ch >= 6); $('#btn-cont').textContent = fin ? `Continue to Chapter ${S.ch + 1}` : 'Continue'; $('#btn-ch1').hidden = !unlocked2(); $('#btn-ch2').hidden = !unlocked2(); $('#btn-ch3').hidden = !unlocked3(); $('#btn-ch4').hidden = !unlocked4(); $('#btn-ch5').hidden = !unlocked5(); $('#btn-ch6').hidden = !unlocked6(); $('#chapters').hidden = !unlocked2(); }
+function refreshMenu(){ const fin = chapterDone(); $('#btn-cont').hidden = !S.started || (fin && S.ch >= 6); $('#btn-cont').textContent = fin ? tx('Continue to Chapter {n}', { n: S.ch + 1 }) : 'Continue'; $('#btn-ch1').hidden = !unlocked2(); $('#btn-ch2').hidden = !unlocked2(); $('#btn-ch3').hidden = !unlocked3(); $('#btn-ch4').hidden = !unlocked4(); $('#btn-ch5').hidden = !unlocked5(); $('#btn-ch6').hidden = !unlocked6(); $('#chapters').hidden = !unlocked2(); }
 
 const CH_END = {
   1:['Lockdown lifted · Chapter 1 complete', "You're out", "Next: Jen's office. She has a board presentation in ten minutes and no idea what IT stands for.", 'Continue to Chapter 2'],
@@ -37,7 +37,7 @@ function showWin(){
   $('#btn-next').hidden = !next; $('#btn-next').textContent = next;
   $('#w-time').textContent = fmt(S.t); $('#w-hints').textContent = S.hints;
   $('#w-rank').textContent = S.hints===0 ? 'Elite' : S.hints<=2 ? 'Senior dev' : S.hints<=5 ? 'Junior dev' : 'Roy';
-  $('#w-ach').innerHTML = ACH.map(([k,l]) => `<span class="${S.ach[k]?'got':''}">${S.ach[k]?'✓ ':''}${l}</span>`).join('');
+  $('#w-ach').innerHTML = ACH.map(([k,l]) => `<span class="${S.ach[k]?'got':''}">${S.ach[k]?'✓ ':''}${tx(l)}</span>`).join('');
   $('#win').hidden = false;
 }
 
@@ -46,7 +46,7 @@ $('#btn-hint').onclick = () => {
   if(!$('#title').hidden || chapterDone()) return;
   const st = stage_(); const lv = S.hl[st] || 0; const arr = HINTS[st];
   S.hints++; S.hl[st] = lv + 1; save(); applyVisuals();
-  say([['sys', (lv>=arr.length-1 ? 'Big hint: ' : 'Hint: ') + arr[Math.min(lv, arr.length-1)]]]);
+  say([['sys', tx(lv>=arr.length-1 ? 'Big hint: {hint}' : 'Hint: {hint}', { hint: tx(arr[Math.min(lv, arr.length-1)]) })]]);
 };
 const rev = $('#btn-reveal');
 rev.onclick = () => { stage.classList.add('reveal'); setTimeout(()=>stage.classList.remove('reveal'), 1600); };
@@ -70,7 +70,6 @@ function win(){
   say([["sys","The lock clunks. The door swings open onto the stairwell."],["moss","You did it! You're out! And with 1337 as well. That's literally elite."],["moss","Now, could you come and get me out of the stationery cupboard? …Hello?"]], () => {
     $('#w-time').textContent = fmt(S.t); $('#w-hints').textContent = S.hints;
     $('#w-rank').textContent = S.hints===0 ? 'Elite' : S.hints<=2 ? 'Senior dev' : S.hints<=5 ? 'Junior dev' : 'Roy';
-    $('#w-ach').innerHTML = ACH.map(([k,l]) => `<span class="${S.ach[k]?'got':''}">${S.ach[k]?'✓ ':''}${l}</span>`).join('');
     showWin();
   });
 }
@@ -89,7 +88,7 @@ $('#btn-new').onclick = startNew;
 $('#btn-cont').onclick = () => chapterDone() ? nextChapter() : cont();
 $('#btn-again').onclick = startNew;
 $('#btn-stay').onclick = () => { $('#win').hidden = true; exitLabels();
-  say(['sys', S.ch < 6 ? `Take your time. When you're ready, use the way out to go on to Chapter ${S.ch + 1}.` : "Take your time. The pier isn't going anywhere, and neither is Roy."]); };
+  say(['sys', S.ch < 6 ? tx("Take your time. When you're ready, use the way out to go on to Chapter {n}.", { n: S.ch + 1 }) : "Take your time. The pier isn't going anywhere, and neither is Roy."]); };
 $('#btn-next').onclick = () => S.ch===1 ? startCh2() : S.ch===2 ? startCh3() : S.ch===3 ? startCh4() : S.ch===4 ? startCh5() : startCh6();
 $('#btn-ch6').onclick = startCh6;
 $('#btn-ch1').onclick = startNew;
@@ -119,11 +118,33 @@ $('#btn-motion').onclick = () => {
   applyMotion();
   say([['sys', motionPref === 'on' ? 'Motion on: feet, boats and dragons move, even if your device asks for less motion.'
              : motionPref === 'off' ? 'Motion off: everything stands still. Even Douglas. Especially Douglas.'
-             : `Motion auto: following your device's setting, which is ${deviceReducesMotion() ? '"reduce motion", so things stand still' : 'full motion'}.`]]);
+             : tx("Motion auto: following your device's setting, which is {now}.", { now: tx(deviceReducesMotion() ? '"reduce motion", so things stand still' : 'full motion') })]]);
 };
 matchMedia('(prefers-reduced-motion: reduce)').addEventListener?.('change', applyMotion);
 
+/* ---------- language (js/i18n.js) ---------- */
+function showLang(){
+  const b = $('#btn-lang');
+  b.querySelectorAll('[data-l]').forEach(s => s.classList.toggle('on', s.dataset.l === LANG));
+  b.title = LANG === 'nl' ? 'Taal: Nederlands. Switch to English.' : 'Language: English. Speel in het Nederlands.';
+  b.setAttribute('aria-label', b.title);
+}
+$('#btn-lang').onclick = async () => {
+  const to = LANG === 'nl' ? 'en' : 'nl';
+  if(!(await setLang(to))) return say([['sys', 'The Dutch text could not be loaded. Are you offline? Try again when you are connected.']]);
+  beep(700,.04);
+  if(!$('#title').hidden || !$('#win').hidden || !$('#dialog').hidden) return;
+  say([['sys', to === 'nl' ? 'Nederlands. Moss heeft alles vertaald. Ook de foutmeldingen. Vooral de foutmeldingen.' : 'English. UK English, Moss insists. With a u in "colour".']]);
+};
+onLangChange(() => {
+  closeModal(); showLang(); applyMotion(); renderInv(); applyVisuals(); refreshMenu();
+  document.title = tx('The Basement Lockdown');
+  if(!$('#win').hidden) showWin();
+  if(!$('#dialog').hidden && curLine){ clearInterval(typing); typing = null; full = tx(curLine[1]); $('#d-txt').textContent = full; }
+});
+
 function start(data){
+  showLang(); document.title = tx('The Basement Lockdown');
   setupRotate();
   applyMotion();
   buildDecor(); buildDecor3(); buildDecor4();

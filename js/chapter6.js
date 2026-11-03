@@ -51,19 +51,19 @@ const DOUG6_TALK = [
 ];
 
 /* --- 1. the logbook (ASCII) --- */
-const LOG_MSG = 'LOOK UNDER THE BELL';
+const LOG_MSG = 'LOOK UNDER THE BELL';   // in Dutch: KIJK ONDER DE BEL (lang/nl)
 function openLog(){
-  const nums = LOG_MSG.split('').map(c => c.charCodeAt(0)).join(' ');
+  const msg = tx(LOG_MSG), nums = msg.split('').map(c => c.charCodeAt(0)).join(' ');
   const table = [32,...Array.from({length:26},(_,i)=>65+i)].map(n => `<span><b>${n}</b>${n===32 ? '(space)' : String.fromCharCode(n)}</span>`).join('');
   openModal("Captain's logbook", 'The Douglas II · written by Moss', `<div class="logp">
     <div><b>Captain's log, Saturday.</b> Ignition key hidden for the game. Location recorded in ASCII, the way computers store letters, so Douglas can't read it.</div>
     <div class="nums">${nums}</div>
     <div style="font-size:13px">Inside the cover, a printed table: <i>ASCII, for sailors.</i></div><div class="ascii">${table}</div></div>
     <form class="dial" id="logf"><label for="login">Decoded message</label><input id="login" autocomplete="off" spellcheck="false" style="width:min(320px,100%);font-family:var(--f-mono);font-size:16px;letter-spacing:.04em"><button class="btn" type="submit">Check</button></form><div class="feedback" id="logfb"></div>`, () => {
-    if(S.f.logRead){ $('#login').value = LOG_MSG; $('#logfb').className = 'feedback good'; $('#logfb').textContent = 'Decoded: LOOK UNDER THE BELL.'; }
+    if(S.f.logRead){ $('#login').value = msg; $('#logfb').className = 'feedback good'; $('#logfb').textContent = 'Decoded: LOOK UNDER THE BELL.'; }
     $('#logf').onsubmit = e => { e.preventDefault(); const v = $('#login').value.toUpperCase().replace(/[^A-Z ]/g,'').replace(/\s+/g,' ').trim(), f = $('#logfb');
-      if(v===LOG_MSG){ S.f.logRead = true; save(); chord([523,659,784]); f.className = 'feedback good'; f.textContent = 'LOOK UNDER THE BELL. Of course. Where else would you hide a key on a boat?'; return; }
-      nope(); f.className = 'feedback bad'; f.textContent = v.startsWith('LOOK') ? 'A good start. Keep going: 32 is a space.' : 'Not quite. Look up each number in the table: 76 is L.'; };
+      if(v===msg || v===LOG_MSG){ S.f.logRead = true; save(); chord([523,659,784]); f.className = 'feedback good'; f.textContent = 'LOOK UNDER THE BELL. Of course. Where else would you hide a key on a boat?'; return; }
+      nope(); f.className = 'feedback bad'; f.textContent = v && msg.startsWith(v.split(' ')[0]) ? 'A good start. Keep going: 32 is a space.' : 'Not quite. Look up each number in the table: 76 is L.'; };
   });
 }
 
@@ -88,14 +88,14 @@ function openEngine(){
     };
     const flip = k => {
       if(S.f.engine) return f('Everything is running. The engine purrs. Roy whimpers.', 'good');
-      if(S.sys[k]){ return f(`${SYS[k][0]} is already on.`); }
+      if(S.sys[k]){ return f(tx('{sys} is already on.', { sys: tx(SYS[k][0]) })); }
       const missing = SYS[k][1].filter(d => d==='key' ? !S.f.keyIn : !S.sys[d]);
       if(missing.length){ S.sys = {}; save(); drawYacht(); nope(); draw();
-        return f(`npm ERR! ${SYS[k][0]} needs ${missing.map(d => d==='key' ? 'the ignition key' : SYS[d][0]).join(' and ')} first. The breaker trips and everything switches off.`, 'bad'); }
+        return f(tx('npm ERR! {sys} needs {deps} first. The breaker trips and everything switches off.', { sys: tx(SYS[k][0]), deps: missing.map(d => tx(d==='key' ? 'the ignition key' : SYS[d][0])).join(tx(' and ')) }), 'bad'); }
       S.sys[k] = true; save(); beep(500 + Object.keys(S.sys).length*80, .06); drawYacht(); draw();
       if(S.sys.prop){ S.f.engine = true; save(); applyVisuals(); chord([196,262,330,392],140); f('The engine rumbles to life. The propeller turns. You are no longer drifting; you are now going nowhere on purpose.', 'good');
         setTimeout(()=>{ closeModal(); say([['moss',"Dependencies resolved! Just like npm install. Except this time nothing broke. That's a first."],['roy',"Can we go back now?"]]); }, 1800); return; }
-      f(`${SYS[k][0]}: ON.`);
+      f(tx('{sys}: ON.', { sys: tx(SYS[k][0]) }));
     };
     draw();
   });
@@ -171,7 +171,7 @@ function openRadio(){
       nope(); const g = parityGrid(false);
       const rowOk = (g.d[r].reduce((a,b)=>a+b,0) + g.rowP[r]) % 2 === 0;
       const colOk = (g.d.reduce((a,row)=>a+row[c],0) + g.colP[c]) % 2 === 0;
-      f(rowOk && colOk ? `Row ${r+1} and column ${c+1} both have an even number of 1s. That bit is fine.` : rowOk ? `Row ${r+1} adds up fine, so the bad bit isn't in this row. Column ${c+1} looks suspicious, though.` : `Column ${c+1} adds up fine, so the bad bit isn't in this column. Row ${r+1} looks suspicious, though.`);
+      f(tx(rowOk && colOk ? 'Row {r} and column {c} both have an even number of 1s. That bit is fine.' : rowOk ? "Row {r} adds up fine, so the bad bit isn't in this row. Column {c} looks suspicious, though." : "Column {c} adds up fine, so the bad bit isn't in this column. Row {r} looks suspicious, though.", { r: r+1, c: c+1 }));
     };
     if(S.f.parity) f('Fixed. The 1s draw a 7. Berth 7.', 'good');
     draw();
@@ -219,7 +219,7 @@ function openAutopilot(){
         if(t[0]==='buoy') return stop('You clip a buoy. It goes ding. Nobody is impressed.');
         if(t[0]==='barrier') return stop('THE THAMES BARRIER. Moss screams. Autopilot emergency stop. Not that way!');
         if(t[0]==='berth'){
-          if(t[1]!=='7') return stop(`You dock at Berth ${t[1]}. A man on the pier shouts that it's his berth, and his yacht is bigger. Douglas is devastated. The harbour radio said which berth is yours.`);
+          if(t[1]!=='7') return stop(tx("You dock at Berth {n}. A man on the pier shouts that it's his berth, and his yacht is bigger. Douglas is devastated. The harbour radio said which berth is yours.", { n: t[1] }));
           if(!S.f.parity) return stop("You reach a berth, but you don't know if it's the right one. Check the harbour radio for your berth number first.");
           running = false; S.f.docked = true; save(); applyVisuals(); chord([392,523,659,784,1046],120); f('Docked at Berth 7! The mooring lines are thrown. Roy kisses the pier. Well, nearly.', 'good');
           setTimeout(()=>{ closeModal(); say([["sys","The Douglas II glides gently into Berth 7. Ropes are tied. The engine settles to a happy idle."],["moss","We're docked! Now we just need to get off. Which, ah, requires the smart gangway. Which is also part of the game."],["douglas","Another puzzle? Splendid! This is the best Saturday I've ever had."]], () => openCaptcha()); }, 1700); return;
@@ -265,9 +265,9 @@ function openCaptcha(){
     body.querySelectorAll('.ctile').forEach(b => b.onclick = () => { const i = +b.dataset.t; picked.has(i) ? picked.delete(i) : picked.add(i); b.classList.toggle('on', picked.has(i)); b.setAttribute('aria-pressed', picked.has(i)); beep(600,.02); });
     $('#cverify').onclick = () => { const f = $('#cfb');
       const wrong = [...picked].find(i => !TILES[i][2]);
-      if(wrong !== undefined){ nope(); f.className = 'feedback bad'; f.textContent = TILES[wrong][3] + ' Please try again.'; return; }
+      if(wrong !== undefined){ nope(); f.className = 'feedback bad'; f.textContent = tx('{why} Please try again.', { why: tx(TILES[wrong][3]) }); return; }
       const missed = TILES.filter((t,i) => t[2] && !picked.has(i)).length;
-      if(missed){ nope(); f.className = 'feedback bad'; f.textContent = `You missed ${missed} dragon${missed>1 ? 's' : ''}. ${missed===1 ? 'Look closely. Flags count. Lizards count. Douglas counts.' : 'Some dragons are less obvious than others.'}`; return; }
+      if(missed){ nope(); f.className = 'feedback bad'; f.textContent = tx(missed===1 ? 'You missed 1 dragon. {more}' : 'You missed {n} dragons. {more}', { n: missed, more: tx(missed===1 ? 'Look closely. Flags count. Lizards count. Douglas counts.' : 'Some dragons are less obvious than others.') }); return; }
       S.f.out6 = true; save(); applyVisuals(); chord([523,659,784,1046,1318],120); f.className = 'feedback good'; f.textContent = 'Verified: you are a human. Or a very well-informed robot. Gangway lowering.';
       setTimeout(()=>{ closeModal(); win6(); }, 1400);
     };

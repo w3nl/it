@@ -46,7 +46,7 @@ const TALK = [
 ];
 function openTalk(){
   openModal('Douglas Reynholm', 'CEO · charming · no help at all', `<div class="talk">${TALK.map(([q],k)=>`<button type="button" data-t="${k}">${q}</button>`).join('')}</div><div class="talk-row">${talkFace('Douglas')}<div class="talk-a" id="talk-a">"Ask me anything. I know everything. About most things."</div></div>`,
-  body => body.querySelectorAll('[data-t]').forEach(b => b.onclick = () => { beep(500,.03); $('#talk-a').textContent = '"' + TALK[+b.dataset.t][1]() + '"'; }));
+  body => body.querySelectorAll('[data-t]').forEach(b => b.onclick = () => { beep(500,.03); $('#talk-a').textContent = '"' + tx(TALK[+b.dataset.t][1]()) + '"'; }));
 }
 
 /* --- Douglas's computer --- */
@@ -96,9 +96,9 @@ function popScreen(L){
 function dDesk(L){
   const apps = [['tm','Task Manager'],['mail','Mail'],['bak','MossBackup'],['web','Internet']];
   L.innerHTML = `<div class="desk">${apps.map(([k,l])=>`<button class="ico" type="button" data-app="${k}" data-name="${l}">${DIC[k]}<span>${l}</span></button>`).join('')}</div>
-    <div class="taskbar"><span>Start</span><span>CPU ${S.f.cpu ? 7 : 100}% · Fax queue: ${S.f.report ? '1 document' : 'empty'}</span></div>`;
+    <div class="taskbar"><span>Start</span><span>${tx('CPU {cpu}% · Fax queue: {queue}', { cpu: S.f.cpu ? 7 : 100, queue: tx(S.f.report ? '1 document' : 'empty') })}</span></div>`;
   L.querySelectorAll('.ico').forEach(b => b.onclick = () => { const k = b.dataset.app;
-    if(k!=='tm' && k!=='web' && !S.f.cpu){ nope(); dfb(`${b.dataset.name} is frozen. The CPU is at 100%: something is hogging the computer.`, 'bad'); return; }
+    if(k!=='tm' && k!=='web' && !S.f.cpu){ nope(); dfb(tx('{app} is frozen. The CPU is at 100%: something is hogging the computer.', { app: tx(b.dataset.name) }), 'bad'); return; }
     dView = k; dfb(''); beep(700,.03); renderDPC(); });
 }
 const PROCS = [
@@ -180,7 +180,7 @@ function bakApp(L){
       S.f.report = true; save(); chord([523,659,784,1046]); renderDPC();
       setTimeout(()=>say([['you',"Restored: Friday 14:32, 2.4 MB, one tasteful pie chart. It's queued on the fax machine."],['douglas',"Is there a picture of me in it? …There should be a picture of me in it."]]), 200);
       return; }
-    nope(); $('#bmsg').textContent = 'You preview it. ' + b[4] + ' You put it back.'; });
+    nope(); $('#bmsg').textContent = tx('You preview it. {what} You put it back.', { what: tx(b[4]) }); });
 }
 function webApp(L){
   dFrame(L, 'Internet', `<div class="mail"><div class="ms">Blocked by Privacy Mode</div><p class="mb">The browser is locked until the Board releases Privacy Mode.</p></div>
@@ -212,7 +212,7 @@ function sqlRun(q){
   const single = tn==='safe' && wcol && wcol.toLowerCase()==='owner' && rows.length===1;
   const ci = t.cols.indexOf('code');
   const head = cols.join(' | ');
-  const lines = rows.map(r => cols.map(c => { const i = t.cols.indexOf(c); return (tn==='safe' && i===ci && (!single || r[0]==='Board')) ? '****' : r[i]; }).join(' | '));
+  const lines = rows.map(r => cols.map(c => { const i = t.cols.indexOf(c); return (tn==='safe' && i===ci && (!single || r[0]==='Board')) ? '****' : tx(r[i]); }).join(' | '));
   out(head + '\n' + '-'.repeat(Math.min(44, head.length)) + '\n' + (lines.join('\n') || '(no rows)'));
   if(tn==='safe' && cols.includes('code') && !single) out("Codes are hidden. Ask for one owner at a time: WHERE owner = '...'");
 }

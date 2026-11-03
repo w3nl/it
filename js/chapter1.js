@@ -104,7 +104,8 @@ const FILES = {
 };
 const NOTE_PLAIN = "Note to self: the server room door code is the answer to life, the universe and everything. Written in binary. Eight switches. Do not tell Roy.";
 const rot13 = s => s.replace(/[a-z]/gi, c => { const b = c <= 'Z' ? 65 : 97; return String.fromCharCode((c.charCodeAt(0)-b+13)%26+b); });
-FILES['note_to_self.rot13'] = rot13(NOTE_PLAIN);
+// The note is encoded in the player's language, so it decodes to something they can read
+Object.defineProperty(FILES, 'note_to_self.rot13', { get: () => rot13(tx(NOTE_PLAIN)), enumerable: true });
 const FORTUNES = ["There's no place like 127.0.0.1.","To understand recursion, you must first understand recursion.","It works on my machine.","99 little bugs in the code. Take one down, patch it around. 127 little bugs in the code.","A SQL query walks into a bar, sees two tables and asks: may I join you?","Why do programmers prefer dark mode? Because light attracts bugs."];
 function tprint(t, cls=''){ termBuf.push([t,cls]); const o = $('#tout'); if(o){ o.insertAdjacentHTML('beforeend', `<div class="line ${cls}"></div>`); o.lastElementChild.textContent = t; $('#scr').scrollTop = 1e9; } }
 let hist = [], hi = 0;
@@ -153,10 +154,10 @@ function runTr(cmd){
   }
   if(src.err) return tprint(src.err);
   const toks = trPart.match(/'[^']*'|"[^"]*"|\S+/g) || [];
-  if(toks[0] !== 'tr') return tprint(`${toks[0] || 'that'}: Moss's shell can only pipe into tr. (see: man tr)`);
+  if(toks[0] !== 'tr') return tprint(tx("{cmd}: Moss's shell can only pipe into tr. (see: man tr)", { cmd: toks[0] || 'that' }));
   if(toks.length < 3) return tprint("tr: it needs two sets of letters: what to replace, and what to replace it with. (see: man tr)");
   const out = trApply(src.text, toks[1], toks[2]);
-  if(/answer to life/i.test(out)) S.ach.tr = true, save();
+  if(/answer to life|antwoord op/i.test(out)) S.ach.tr = true, save();
   return tprint(out);
 }
 function run(raw){
@@ -184,7 +185,7 @@ function run(raw){
     case 'date': return tprint('Mon 12:58:00 GMT. (It is always 12:58 in the basement.)');
     case 'ping': return tprint(/internet/i.test(a) ? "PING the-internet: Request timed out.\nThe Internet appears to be in the server room. Under a glass dome." : `PING ${a||'nothing'}: 64 bytes from ${a||'nowhere'}: time=0.42ms. Pong.`);
     case 'fortune': return tprint(FORTUNES[Math.floor(Math.random()*FORTUNES.length)]);
-    case 'cowsay': { const t = a || 'Moo. Have you tried turning it off and on again?'; const bar = '-'.repeat(Math.min(t.length+2, 40));
+    case 'cowsay': { const t = a || tx('Moo. Have you tried turning it off and on again?'); const bar = '-'.repeat(Math.min(t.length+2, 40));
       return tprint(` ${bar}\n< ${t} >\n ${bar}\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||`); }
     case 'history': return tprint("  1  mail fire@emergency.services.gov.uk\n  2  \"Dear Sir/Madam, I am writing to inform you of a fire which has broken out at the premises of...\"\n  3  \"...123 Carrendon Road. Looking forward to hearing from you. All the best, Maurice Moss.\"\n  4  lockdown --engage --panic");
     case 'clear': termBuf = []; $('#tout').innerHTML=''; return;
@@ -194,10 +195,10 @@ function run(raw){
     case 'man':
       if(a==='tr') return tprint("TR(1)            Moss's Manual            TR(1)\n\ntr SET1 SET2 swaps every letter from SET1 for the letter in the same\nposition in SET2. A-Z means all the letters from A to Z.\n\nExample:\n  echo 'hello' | tr 'a-z' 'A-Z'      gives HELLO\n  cat file.txt | tr 'a-z' 'A-Z'      shouts a whole file\n\nROT13 swaps A-M with N-Z (and a-m with n-z). Can you build the\ntwo sets for that? — M.");
       if(a==='rot13') return tprint("ROT13: move every letter 13 places along the alphabet. Doing it twice\ngets you back where you started. No command needed: see man tr. — M.");
-      return tprint(`No manual entry for ${a||'that'}. Real nerds read the source. — M.`);
+      return tprint(tx('No manual entry for {page}. Real nerds read the source. — M.', { page: a || 'that' }));
     case 'hello': case 'hi': return tprint('Hello, IT. Have you tried turning it off and on again?');
     case 'lockdown': return tprint('lockdown: protocol already engaged. Override requires the exit PIN.');
-    case 'youtube': case 'tv': case 'netflix': return tprint("Moss's recommended viewing: The IT Crowd, on YouTube.\n" + 'https://www.youtube.com/show/VLPLQxUFrtzYaUlfC1e_wcoaUGC02HPVHSW4?sbp=QAE%253D' + "\nIt's a documentary, basically.");
+    case 'youtube': case 'tv': case 'netflix': return tprint("Moss's recommended viewing: The IT Crowd, on YouTube.\nhttps://www.youtube.com/show/VLPLQxUFrtzYaUlfC1e_wcoaUGC02HPVHSW4?sbp=QAE%253D\nIt's a documentary, basically.");
     case 'vim': case 'vi': return tprint("You've opened vim. You will never leave. (Just kidding. Moss disabled it for your own safety.)");
     case 'emacs': return tprint('emacs: a great operating system, lacking only a decent editor.');
     case 'exit()': case 'quit': return tprint('Try: exit');

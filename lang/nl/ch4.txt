@@ -1,0 +1,337 @@
+# Dutch translation: Chapter 4, the lift (js/chapter4.js). The Morse passphrase stays sudo.
+
+# ---------- Roy's backpack ----------
+= USB-A to Micro-USB
+> USB-A naar micro-USB
+= The flat end fits the port, but the small end won't go into the phone. Roy: 'That one's for my 2011 phone. Sentimental reasons.'
+> Het platte uiteinde past in de poort, maar het kleine eind gaat niet in de telefoon. Roy: 'Die is voor mijn telefoon uit 2011. Sentimentele waarde.'
+= USB-A to Lightning
+> USB-A naar Lightning
+= The flat end fits the port, but the thin end won't go into the phone's oval port. Douglas: 'Is that the yacht charger?'
+> Het platte uiteinde past in de poort, maar het dunne eind gaat niet in de ovale poort van de telefoon. Douglas: 'Is dat de oplader van het jacht?'
+= USB-C to USB-C
+> USB-C naar USB-C
+= The oval end fits the phone perfectly. The other end is also oval, and the lift's port is flat and rectangular. So close.
+> Het ovale uiteinde past perfect in de telefoon. Het andere eind is ook ovaal, en de poort van de lift is plat en rechthoekig. Zo dichtbij.
+= USB-A to USB-C
+> USB-A naar USB-C
+= Serial cable (RS-232), 1987
+> Seriële kabel (RS-232), 1987
+= You try to plug a 1987 serial cable into a smartphone. The phone looks at you with pity. The label says 'MOSS'S. DO NOT LEND TO ROY.'
+> Je probeert een seriële kabel uit 1987 in een smartphone te steken. De telefoon kijkt je meewarig aan. Op het label staat 'VAN MOSS. NIET UITLENEN AAN ROY.'
+= Every cable ever made. Not organised. Never organised.
+> Elke kabel die ooit gemaakt is. Niet geordend. Nooit geordend.
+= In your inventory
+> In je inventaris
+= Take this one
+> Neem deze
+= You can carry one cable at a time. Roy's rule. He's never followed it.
+> Je kunt één kabel tegelijk meenemen. Regel van Roy. Hij heeft zich er zelf nooit aan gehouden.
+= You take the {cable}. Select it in your inventory, then click where you want to plug it in.
+> Je neemt de kabel {cable}. Kies hem in je inventaris en klik dan waar je hem in wilt steken.
+
+# ---------- talking to Roy ----------
+= Roy
+> Roy
+= Back from lunch · holding a sandwich
+> Terug van de lunch · met een broodje in zijn hand
+= "Don't look at me, I'm on my lunch. Technically. Spiritually."
+> "Kijk mij niet aan, ik heb lunchpauze. Technisch gezien. Spiritueel gezien."
+= You're back from lunch!
+> Je bent terug van de lunch!
+= I've been at lunch since 12:58. It was a big lunch. There was a queue. Then there was a second lunch.
+> Ik zit al sinds 12:58 aan de lunch. Het was een grote lunch. Er was een rij. En toen was er een tweede lunch.
+= Have you got a charging cable?
+> Heb je een oplaadkabel?
+= Have I got a cable? I've got every cable ever made, in this bag. Not organised. Never organised. Help yourself.
+> Of ik een kabel heb? Ik heb elke kabel die ooit gemaakt is, in deze tas. Niet geordend. Nooit geordend. Pak maar.
+= How do people choose a pattern lock?
+> Hoe kiezen mensen een patroonslot?
+= Most people just draw a letter. Their initial, usually. And they leave greasy fingerprints all over the screen. Tilt it to the light and you can see the whole thing. Not that I've ever done that.
+> De meeste mensen tekenen gewoon een letter. Meestal hun voorletter. En ze laten vette vingerafdrukken op het hele scherm achter. Houd hem schuin in het licht en je ziet het hele patroon. Niet dat ik dat ooit heb gedaan.
+= Why is there no signal in here?
+> Waarom is er hier geen bereik?
+= It's a lift. A metal box. A Faraday cage, Moss calls it. He's told me twice. With a diagram.
+> Het is een lift. Een metalen doos. Een kooi van Faraday, noemt Moss het. Hij heeft het me twee keer uitgelegd. Met een tekening.
+= Any idea how to fix all this?
+> Enig idee hoe we dit oplossen?
+= Hang on. It's stuck? It's actually stuck? Have you tried… turning it off and on again? The power button. On the side. Go on. This is my moment.
+> Wacht even. Hij hangt? Hij hangt echt? Heb je al geprobeerd… hem uit en weer aan te zetten? De aan/uit-knop. Aan de zijkant. Toe maar. Dit is mijn moment.
+= Have you tried turning it off and on again? No? Well, wait until it's properly broken. Then do that.
+> Heb je al geprobeerd hem uit en weer aan te zetten? Nee? Wacht dan maar tot hij echt kapot is. Dan doe je dat.
+
+# ---------- talking to Douglas ----------
+= CEO · owner of the lift, somehow
+> CEO · op de een of andere manier eigenaar van de lift
+= "Ask me anything. I own the building. And now the lift. Spiritually."
+> "Vraag maar raak. Het gebouw is van mij. En nu ook de lift. Spiritueel gezien."
+= What's wrong with your phone?
+> Wat is er mis met je telefoon?
+= It makes noises! Pings, dings, a little song about torches. It started when I downloaded a free torch. Free things are good things, aren't they?
+> Hij maakt geluiden! Pings, dings, een liedje over zaklampen. Het begon toen ik een gratis zaklamp downloadde. Gratis dingen zijn goede dingen, toch?
+= What's your unlock pattern?
+> Wat is je ontgrendelpatroon?
+= It's a letter. A very important letter. The best letter. It begins with D. And it ends with… also D.
+> Het is een letter. Een heel belangrijke letter. De beste letter. Hij begint met een D. En hij eindigt op… ook een D.
+= Why does your phone control the lift?
+> Waarom bestuurt je telefoon de lift?
+= I connected the whole building to my phone! Futuristic. Moss said it was the worst idea he'd ever heard, and he's heard Roy's ideas.
+> Ik heb het hele gebouw aan mijn telefoon gekoppeld! Futuristisch. Moss zei dat het het slechtste idee was dat hij ooit had gehoord, en hij heeft de ideeën van Roy gehoord.
+= Where's the Bluetooth pairing code?
+> Waar is de bluetooth-koppelcode?
+= On the little service screen. The lift man installed it facing the mirror. For elegance, I think.
+> Op het servicescherm. De liftmonteur heeft het naar de spiegel gericht geïnstalleerd. Voor de elegantie, denk ik.
+= Do you know the override passphrase?
+> Weet je het override-wachtwoord?
+= No idea. Moss set it up. Something nerdy. Ring him on the emergency phone: that's what it's for. Emergencies, and ringing Moss.
+> Geen idee. Moss heeft het ingesteld. Iets nerdy's. Bel hem met de noodtelefoon: daar is hij voor. Noodgevallen, en Moss bellen.
+
+# ---------- hotspots ----------
+= The display says B. Home sweet basement.
+> Op het display staat B. Kelder sweet kelder.
+= The display says 7½. You're stuck between the seventh floor and the eighth. The pan-pipes play on.
+> Op het display staat 7½. Je zit vast tussen de zevende en de achtste verdieping. De panfluit speelt door.
+= A pan-pipe version of the Reynholm Industries theme tune.
+> Een panfluitversie van de bedrijfstune van Reynholm Industries.
+= It has been playing the same eight bars since you got in. Roy is humming along. He hates that he's humming along.
+> Hij speelt al dezelfde acht maten sinds je instapte. Roy neuriet mee. Hij haat het dat hij meeneuriet.
+= The emergency hatch in the ceiling. In films, people climb out through these.
+> Het noodluik in het plafond. In films klimmen mensen hierdoor naar buiten.
+= In real life it's bolted from the outside. Films have lied to you about many things.
+> In het echt zit het aan de buitenkant op de grendel. Films hebben over veel dingen tegen je gelogen.
+= You press B. Nothing. You press it eleven more times, because that always helps.
+> Je drukt op B. Niets. Je drukt er nog elf keer op, want dat helpt altijd.
+= The yellow alarm button rings a bell somewhere. Nobody comes. The alarm is also controlled by Douglas's phone.
+> De gele alarmknop laat ergens een bel rinkelen. Er komt niemand. Het alarm wordt ook door de telefoon van Douglas bestuurd.
+= Douglas's phone is charging from the service port. The word 'SERVICE' is doing a lot of work here.
+> De telefoon van Douglas laadt op via de servicepoort. Het woord 'SERVICE' doet hier veel werk.
+= A service USB port, flat and rectangular, like the ones on old computers. USB-A, Moss would call it.
+> Een service-USB-poort, plat en rechthoekig, zoals op oude computers. USB-A, zou Moss zeggen.
+= It only fits one way round, and never the way you try first.
+> Hij past maar op één manier, en nooit op de manier die je als eerste probeert.
+
+# ---------- mirror, certificate, emergency phone ----------
+= Your reflection, with the service display behind you
+> Je spiegelbeeld, met het servicedisplay achter je
+= LIFT-03 · BLUETOOTH PAIRING
+> LIFT-03 · BLUETOOTH-KOPPELING
+= SERVICE DISPLAY · DO NOT FACE TOWARDS MIRROR
+> SERVICEDISPLAY · NIET NAAR DE SPIEGEL RICHTEN
+= The mirror
+> De spiegel
+= The service display is behind you, facing the glass
+> Het servicedisplay hangt achter je, gericht op het glas
+= You see the service display reflected in the mirror. You also see yourself. You look like someone who has been locked in four rooms today.
+> Je ziet het servicedisplay weerspiegeld in de spiegel. Je ziet jezelf ook. Je ziet eruit als iemand die vandaag in vier kamers opgesloten heeft gezeten.
+= Lift inspection certificate
+> Keuringscertificaat lift
+= Certificate of inspection
+> Keuringscertificaat
+= Next inspection: overdue. Notes: "Lift now controlled from the CEO's phone. Inspector has resigned."
+> Volgende keuring: te laat. Opmerkingen: "Lift wordt nu bestuurd via de telefoon van de CEO. Keurmeester heeft ontslag genomen."
+= Emergency signalling reference (Morse code)
+> Overzicht noodsignalen (morsecode)
+= A dot is a short flash. A dash is a long one. Letters are separated by a longer pause.
+> Een punt is een korte flits. Een streep is een lange. Tussen letters zit een langere pauze.
+= End of message. Moss: "Shall I send it again?"
+> Einde bericht. Moss: "Zal ik het nog een keer sturen?"
+= Emergency phone
+> Noodtelefoon
+= Connected to: the basement (Moss)
+> Verbonden met: de kelder (Moss)
+= Moss's lamp, flashing Morse code
+> De lamp van Moss, die morsecode knippert
+= Moss: "Hello, IT. Ah, you're in Douglas's lift. I can't say the override passphrase out loud: Douglas's app records this line. I'll blink it in Morse on my desk lamp. Watch the light."
+> Moss: "Hello, IT. Ah, je zit in de lift van Douglas. Ik kan het override-wachtwoord niet hardop zeggen: de app van Douglas neemt deze lijn op. Ik knipper het in morse met mijn bureaulamp. Let op het licht."
+= Watch closely…
+> Kijk goed…
+= Send it again
+> Nog een keer sturen
+
+# ---------- Douglas's phone ----------
+= DougPhone Pro Max Ultra Gold
+> DougPhone Pro Max Ultra Gold
+= Completely dead. At the bottom there's a small, oval charging port that fits either way up.
+> Helemaal leeg. Onderaan zit een kleine, ovale oplaadpoort waar de stekker allebei de kanten op in past.
+= Finishing update…
+> Update afronden…
+= 2 notifications
+> 2 meldingen
+= 847 notifications · mostly torches
+> 847 meldingen · vooral zaklampen
+= Hold it straight
+> Houd hem recht
+= Tilt it to the light
+> Houd hem schuin in het licht
+= Clear
+> Wissen
+= Pattern lock
+> Patroonslot
+= Tuesday
+> dinsdag
+= Draw the unlock pattern: tap the dots in order.
+> Teken het ontgrendelpatroon: tik de stippen op volgorde aan.
+= Unlocked! A D for Douglas. The smudges gave it away.
+> Ontgrendeld! Een D van Douglas. De vegen verraadden het.
+= You got in! How? …Fingerprints? On MY screen? Those are the fingerprints of a very busy man.
+> Je bent erin! Hoe? …Vingerafdrukken? Op MIJN scherm? Dat zijn de vingerafdrukken van een heel druk man.
+= Wrong pattern. Douglas: "It's a letter! The best letter!"
+> Verkeerd patroon. Douglas: "Het is een letter! De beste letter!"
+= You tilt the screen towards the ceiling light. Greasy smudge trails appear between some of the dots.
+> Je houdt het scherm schuin naar de plafondlamp. Tussen sommige stippen verschijnen vette vegen.
+= Settings
+> Instellingen
+= Smart Building
+> Smart Building
+= Yacht Tycoon
+> Yacht Tycoon
+= Camera
+> Camera
+= SUPERBRIGHT FLASHLIGHT FREE · now
+> SUPERBRIGHT FLASHLIGHT FREE · nu
+= DOUGLAS! You have won a FREE torch upgrade!! ♪ Torches, torches, wonderful torches ♪
+> DOUGLAS! Je hebt een GRATIS zaklampupgrade gewonnen!! ♪ Zaklampen, zaklampen, prachtige zaklampen ♪
+= Ding! Ping! The phone plays a little song about torches. These are the noises.
+> Ding! Ping! De telefoon speelt een liedje over zaklampen. Dat zijn de geluiden.
+= ‹ Home
+> ‹ Start
+= Douglas has spent £4,000 on virtual yacht polish. His virtual yacht is called 'Douglas II'. There is no Douglas I.
+> Douglas heeft £4.000 uitgegeven aan virtuele jachtpoets. Zijn virtuele jacht heet 'Douglas II'. Er is geen Douglas I.
+= 4 friends. Two are Douglas. One is the Friendface help bot. One is Jen, who has muted him.
+> 4 vrienden. Twee daarvan zijn Douglas. Eén is de helpbot van Friendface. Eén is Jen, die hem heeft gedempt.
+= The front camera opens. Douglas leans in and fills the screen. He looks pleased with what he sees.
+> De selfiecamera gaat aan. Douglas buigt zich naar voren en vult het hele scherm. Hij lijkt tevreden met wat hij ziet.
+= ALLOW SuperBright Flashlight to access your contacts, microphone, location, text messages and bank details? [ALLOW] [ALLOW]
+> SuperBright Flashlight TOESTAAN je contacten, microfoon, locatie, sms'jes en bankgegevens te gebruiken? [TOESTAAN] [TOESTAAN]
+= Microphone
+> Microfoon
+= Contacts
+> Contacten
+= Location
+> Locatie
+= SMS
+> Sms
+= Runs in background
+> Draait op de achtergrond
+= Storage
+> Opslag
+= Bluetooth
+> Bluetooth
+= Douglas grabs your arm: 'Not the yachts! I've only just bought the polish.' You leave it.
+> Douglas grijpt je arm: 'Niet de jachten! Ik heb net de poets gekocht.' Je laat hem staan.
+= Douglas: 'My four friends!' You leave it. It's barely using any battery anyway.
+> Douglas: 'Mijn vier vrienden!' Je laat hem staan. Hij gebruikt toch nauwelijks batterij.
+= You hover over Uninstall on Smart Building… and remember that it's the only thing that can open this lift.
+> Je hangt met je vinger boven Verwijderen bij Smart Building… en bedenkt dat dat het enige is wat deze lift open kan krijgen.
+= The Camera is a system app. And barely using any battery.
+> De camera is een systeemapp. En hij gebruikt nauwelijks batterij.
+= Settings · Battery & apps
+> Instellingen · Batterij & apps
+= Battery {pct}% · {state}
+> Batterij {pct}% · {state}
+= charging normally
+> laadt normaal op
+= charging, but something is draining it faster
+> laadt op, maar iets trekt hem sneller leeg
+= Uninstall
+> Verwijderen
+= Uninstalled. The pinging stops. The battery starts climbing. Silence, at last. Apart from the pan-pipes.
+> Verwijderd. Het gepiep stopt. De batterij begint te stijgen. Eindelijk stilte. Op de panfluit na.
+= It's gone quiet! What did you do?
+> Het is stil geworden! Wat heb je gedaan?
+= You downloaded a torch that wanted your microphone, your contacts and your bank details. A torch.
+> Je hebt een zaklamp gedownload die je microfoon, je contacten en je bankgegevens wilde. Een zaklamp.
+= It was free!
+> Hij was gratis!
+= Smart Building needs more battery to run. Battery: 4%. Something on this phone is draining it as fast as it charges.
+> Smart Building heeft meer batterij nodig. Batterij: 4%. Iets op deze telefoon trekt hem net zo snel leeg als hij oplaadt.
+= Pairing code
+> Koppelcode
+= LIFT-03 found nearby (Bluetooth)
+> LIFT-03 gevonden in de buurt (bluetooth)
+= Enter the 6-digit pairing code shown on the lift's service display.
+> Voer de 6-cijferige koppelcode in die op het servicedisplay van de lift staat.
+= Pair
+> Koppelen
+= Paired with LIFT-03.
+> Gekoppeld met LIFT-03.
+= Pairing failed. That's how it looks in the mirror… and mirrors flip things.
+> Koppelen mislukt. Zo ziet het eruit in de spiegel… en spiegels draaien dingen om.
+= Pairing failed. Wrong code.
+> Koppelen mislukt. Verkeerde code.
+= Override passphrase
+> Override-wachtwoord
+= Paired with LIFT-03 ✓
+> Gekoppeld met LIFT-03 ✓
+= Lift is in safety stop. Engineer override required.
+> Lift staat in veiligheidsstop. Override door monteur vereist.
+= Override
+> Override
+= Override accepted. Of course Moss chose 'sudo'.
+> Override geaccepteerd. Natuurlijk koos Moss 'sudo'.
+= Wrong passphrase. Watch the flashes again, and use the Morse table on the certificate.
+> Verkeerd wachtwoord. Kijk nog eens naar de flitsen en gebruik de morsetabel op het certificaat.
+= Wrong passphrase. Only Moss knows it. There is an emergency phone in this lift.
+> Verkeerd wachtwoord. Alleen Moss weet het. Er hangt een noodtelefoon in deze lift.
+= Override accepted ✓
+> Override geaccepteerd ✓
+= LIFT-03 is ready to move.
+> LIFT-03 is klaar om te rijden.
+= Release lift
+> Lift vrijgeven
+= 99%. Time remaining: about 4 years.
+> 99%. Resterende tijd: ongeveer 4 jaar.
+= Installing…
+> Installeren…
+= Update required
+> Update vereist
+= Installing Smart Building 2.0 (now with yachts). Do not turn off your phone.
+> Smart Building 2.0 wordt geïnstalleerd (nu met jachten). Zet je telefoon niet uit.
+= The update is stuck at 99%. Nothing moves. Not the bar, not the lift.
+> De update blijft hangen op 99%. Niets beweegt. De balk niet, de lift niet.
+= Why has it stopped? It was doing so well.
+> Waarom is hij gestopt? Het ging zo goed.
+= Oh. Oh, this is it. I've waited all day for this.
+> O. O, dit is het. Hier heb ik de hele dag op gewacht.
+= You hold the power button. Nothing. The phone is completely dead.
+> Je houdt de aan/uit-knop ingedrukt. Niets. De telefoon is helemaal leeg.
+= Power off?
+> Uitzetten?
+= An update is installing. Turning off your phone now may cause problems.
+> Er wordt een update geïnstalleerd. Als je je telefoon nu uitzet, kan dat problemen geven.
+= Power off
+> Uitzetten
+= Cancel
+> Annuleren
+= The screen goes black. Roy holds his breath. Now… on again?
+> Het scherm wordt zwart. Roy houdt zijn adem in. En nu… weer aan?
+= Click. Screen off. Click. Screen on. Nothing has changed. Douglas: 'Careful! That's the yacht button.'
+> Klik. Scherm uit. Klik. Scherm aan. Er is niets veranderd. Douglas: 'Voorzichtig! Dat is de jachtknop.'
+
+# ---------- start and end ----------
+= Top floor, 15:02. Douglas presses his phone into your hand. It is warm, slightly sticky and completely dead.
+> Bovenste verdieping, 15:02. Douglas drukt je zijn telefoon in de hand. Hij is warm, een beetje plakkerig en helemaal leeg.
+= It's been making noises all day. Pings. Dings. A little song about torches. Then it died. Fix it on the way down, would you? I'll come with you.
+> Hij maakt al de hele dag geluiden. Pings. Dings. Een liedje over zaklampen. Toen ging hij dood. Wil je hem op weg naar beneden even maken? Ik ga met je mee.
+= On the seventh floor, the lift doors open and a man holding a sandwich steps in.
+> Op de zevende verdieping gaan de liftdeuren open en stapt er een man met een broodje in.
+= Oh, hello. You must be the new temp. I'm Roy. I've been at lunch.
+> O, hallo. Jij bent vast de nieuwe uitzendkracht. Ik ben Roy. Ik was aan het lunchen.
+= Between the seventh and eighth floors, the lift jolts to a stop. The lights dim. Pan-pipe music starts.
+> Tussen de zevende en de achtste verdieping schokt de lift tot stilstand. De lampen dimmen. Er begint panfluitmuziek.
+= Ah. I connected the lift to my phone last week. Smart Building! Very futuristic.
+> Ah. Ik heb de lift vorige week aan mijn telefoon gekoppeld. Smart Building! Heel futuristisch.
+= So the lift is controlled by a phone. Which is dead. And we're in the lift.
+> Dus de lift wordt bestuurd door een telefoon. Die leeg is. En wij zitten in de lift.
+= Locked in. Fourth time today. At least this room moves. Normally.
+> Opgesloten. Voor de vierde keer vandaag. Deze kamer beweegt tenminste. Normaal gesproken.
+= DougPhone restarts. 'Update complete.' The lift shudders, thinks about it, and glides down. 6… 3… 1… G… B. Ding.
+> De DougPhone start opnieuw op. 'Update voltooid.' De lift trilt, denkt even na en zakt soepel naar beneden. 6… 3… 1… 0… B. Ding.
+= Did you just… turn it off and on again? That's my line. That's my whole job.
+> Heb je hem nou net… uit en weer aan gezet? Dat is mijn tekst. Dat is mijn hele baan.
+= Marvellous! The phone works, the lift works, and the torch song has stopped. I'll miss the torch song.
+> Schitterend! De telefoon werkt, de lift werkt en het zaklamplied is gestopt. Ik ga het zaklamplied missen.
+= You're back! I've made tea. And a certificate. It says 'Employee of the Day'. I laminated it.
+> Je bent terug! Ik heb thee gezet. En een oorkonde gemaakt. Er staat 'Werknemer van de Dag' op. Ik heb hem gelamineerd.
+= Wait, who's this? Are they IT? Brilliant. Quick question: what does IT stand for again?
+> Wacht, wie is dit? Is dit IT? Briljant. Snelle vraag: waar stond IT ook alweer voor?

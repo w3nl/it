@@ -1,0 +1,306 @@
+# Dutch translation: the rooms (scenes/*.svg): hotspot labels and the text drawn on walls and posters.
+# Drawn text has little room: keep translations about as long as the English.
+
+# ---------- Chapter 1: the basement ----------
+= The IT department basement
+> De kelder van de IT-afdeling
+= Emergency poster
+> Poster met alarmnummer
+= Clock
+> Klok
+= Roy's computer
+> Computer van Roy
+= Answering machine
+> Antwoordapparaat
+= Whiteboard
+> Whiteboard
+= Bookshelf
+> Boekenkast
+= Lava lamp
+> Lavalamp
+= Binary poster
+> Binaire poster
+= Moss's computer
+> Computer van Moss
+= Moss's mug
+> Mok van Moss
+= Rubber duck
+> Badeendje
+= Server room door
+> Deur van de serverruimte
+= Fire extinguisher
+> Brandblusser
+= EXIT
+> UITGANG
+= LOCKDOWN!
+> LOCKDOWN!
+= use keypad — M.
+> gebruik paneel — M.
+= FIRE
+> BRAND
+= NEW EMERGENCY
+> NIEUW
+= SERVICES NUMBER
+> ALARMNUMMER
+= easy to remember!
+> makkelijk te onthouden!
+= ROT13 = best cipher!!
+> ROT13 = beste code!!
+= TODO: return the Internet
+> TODO: internet terugbrengen
+= Relationship
+> Relationship
+= Manager
+> Manager
+= THERE ARE 10
+> ER ZIJN 10
+= TYPES OF PEOPLE
+> SOORTEN MENSEN
+= those who get binary
+> wie binair snapt
+= & those who don't
+> & wie niet
+= SERVER ROOM
+> SERVERRUIMTE
+= AUTHORISED NERDS ONLY
+> ALLEEN BEVOEGDE NERDS
+
+# ---------- Chapter 1: the server room ----------
+= The server room
+> De serverruimte
+= Back to the office
+> Terug naar het kantoor
+= Server rack
+> Serverrack
+= Rack display
+> Scherm van het rack
+= Sticky note
+> Geeltje
+= Breaker panel
+> Stoppenkast
+= Burning bin
+> Brandende prullenbak
+= The Internet
+> Het internet
+= Cables
+> Kabels
+= ← OFFICE
+> ← KANTOOR
+= HEX?
+> HEX?
+= read me Roy
+> lees mij Roy
+= BREAKER · LOGIC RESET
+> STOPPEN · LOGICA-RESET
+= THE INTERNET
+> HET INTERNET
+= DO NOT TOUCH
+> NIET AANRAKEN
+= NO SIGNAL
+> GEEN SIGNAAL
+
+# ---------- Chapter 2: Jen's office ----------
+= Postcard
+> Ansichtkaart
+= Calendar
+> Kalender
+= Framed CV
+> Ingelijst cv
+= Poster
+> Poster
+= Desk lamp
+> Bureaulamp
+= Jen's laptop
+> Jens laptop
+= Photo frame
+> Fotolijstje
+= Notepad
+> Notitieblok
+= Mug
+> Mok
+= Wastepaper bin
+> Prullenbak
+= Plant
+> Plant
+= Shoe rack
+> Schoenenrek
+= Greetings from
+> Groeten uit
+= MARCH
+> MAART
+= Board mtg
+> Bestuur
+= KEEP
+> KEEP
+= CALM
+> CALM
+= CALL IT
+> CALL IT
+
+# ---------- Chapter 3: Douglas's office ----------
+= Douglas Reynholm's office
+> Het kantoor van Douglas Reynholm
+= Privacy Mode panel
+> Paneel van de privacymodus
+= Trophies
+> Trofeeën
+= Nameplate
+> Naambordje
+= Gold telephone
+> Gouden telefoon
+= Glass of whisky
+> Glas whisky
+= Talk to Douglas
+> Praat met Douglas
+= Douglas's computer
+> Computer van Douglas
+= Fax machine
+> Faxapparaat
+= Fax manual
+> Handleiding van de fax
+= Fish tank
+> Aquarium
+= Drinks cabinet
+> Drankkast
+= Putting green
+> Putting green
+= DENHOLM · FOUNDER
+> DENHOLM · OPRICHTER
+= WORLD'S BEST
+> BESTE BAAS
+= BOSS
+> TER WERELD
+= D. REYNHOLM · CEO
+> D. REYNHOLM · CEO
+= PRIVACY
+> PRIVACY
+= MODE
+> MODUS
+= RELEASED
+> OPGEHEVEN
+
+# ---------- Chapter 4: the lift ----------
+= Inside the lift
+> In de lift
+= Mirror
+> Spiegel
+= Floor display
+> Verdiepingsdisplay
+= Speaker
+> Luidspreker
+= Ceiling hatch
+> Luik in het plafond
+= Inspection certificate
+> Keuringscertificaat
+= Service USB port
+> Service-USB-poort
+= Emergency phone
+> Noodtelefoon
+= Roy's backpack
+> Rugzak van Roy
+= Talk to Roy
+> Praat met Roy
+= SERVICE USB
+> SERVICE USB
+= EMERGENCY
+> NOOD
+
+# ---------- Chapter 5: the dungeon ----------
+= Moss's escape room: Dungeons and Datacenters
+> De escaperoom van Moss: Dungeons and Datacenters
+= Game Master poster
+> Poster van de spelleider
+= Potion shelf
+> Toverdrankenplank
+= Cardboard dragon
+> Kartonnen draak
+= Tower of Hard Drives
+> Toren van Harde Schijven
+= Regex scroll
+> Regex-rol
+= Rune cabinet
+> Runenkast
+= Treasure chest
+> Schatkist
+= Talk to Jen
+> Praat met Jen
+= Walkie-talkie (Moss)
+> Portofoon (Moss)
+= Barrel
+> Ton
+= Webcam
+> Webcam
+= Torch
+> Fakkel
+= Firewall admin panel
+> Beheerpaneel van de Firewall
+= THE FIREWALL
+> DE FIREWALL
+= ADMIN
+> BEHEER
+= Moss the Magnificent
+> Moss de Magnifieke
+= GAME MASTER
+> SPELLEIDER
+= DUNGEONS &
+> DUNGEONS &
+= DATACENTERS
+> DATACENTERS
+= OPEN
+> OPEN
+= READY
+> GEREED
+= LOCKED
+> DICHT
+= (empty)
+> (leeg)
+= DO NOT OPEN
+> NIET OPENEN
+
+# ---------- Chapter 6: the yacht ----------
+= The bridge of Douglas's yacht
+> De brug van het jacht van Douglas
+= Jen (on the front deck)
+> Jen (op het voordek)
+= Name plaque
+> Naambordje
+= Life ring
+> Reddingsboei
+= Ship's bell
+> Scheepsbel
+= Engine panel
+> Motorpaneel
+= Talk to Moss
+> Praat met Moss
+= Autopilot chart
+> Zeekaart automatische piloot
+= Logbook
+> Logboek
+= Roy (seasick)
+> Roy (zeeziek)
+= Harbour radio
+> Havenradio
+= HTTP poster
+> HTTP-poster
+= Inflatable dragon
+> Opblaasdraak
+= THAMES TOURS
+> THAMES TOURS
+= BERTH 7
+> LIGPLAATS 7
+= DOUGLAS II
+> DOUGLAS II
+= ENGINE ROOM
+> MACHINEKAMER
+= yacht.json
+> yacht.json
+= Ahoy!
+> Ahoi!
+= CH 16
+> KAN 16
+= 2xx all good
+> 2xx alles goed
+= 4xx your fault
+> 4xx jouw schuld
+= 5xx Moss's fault
+> 5xx Moss' schuld

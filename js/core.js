@@ -18,9 +18,9 @@ function applyMotion(){
   // SMIL animations inside the scenes (waving arms…) ignore CSS, so pause them by hand
   document.querySelectorAll('svg.scene').forEach(s => { try{ reducedMotion() ? s.pauseAnimations() : s.unpauseAnimations(); }catch(e){} });
   const b = document.getElementById('btn-motion');
-  if(b){ b.textContent = 'Motion ' + motionPref;
-    b.title = motionPref === 'auto' ? `Auto follows your device's "reduce motion" setting (now: ${deviceReducesMotion() ? 'reduced, so things stand still' : 'full motion'}). Click to change.`
-            : motionPref === 'on' ? 'Everything moves, whatever your device prefers. Click to change.' : 'Nothing moves. Click to change.'; }
+  if(b){ b.textContent = tx({ auto:'Motion auto', on:'Motion on', off:'Motion off' }[motionPref]);
+    b.title = motionPref === 'auto' ? tx(`Auto follows your device's "reduce motion" setting (now: {now}). Click to change.`, { now: tx(deviceReducesMotion() ? 'reduced, so things stand still' : 'full motion') })
+            : tx(motionPref === 'on' ? 'Everything moves, whatever your device prefers. Click to change.' : 'Nothing moves. Click to change.'); }
 }
 let soundOn = (() => { try{ return localStorage.getItem(KEY + '-sound') !== '0'; }catch(e){ return true; } })();
 
@@ -46,7 +46,7 @@ const chord = (arr, gap=90) => arr.forEach((f,i)=>setTimeout(()=>beep(f,.12,'squ
 
 /* ---------- dialogue ---------- */
 const WHO = { you:'You', moss:'Moss · intercom', sys:'Basement', machine:'Answering machine', duck:'Rubber duck', term:'Terminal', jen:'Jen · phone', douglas:'Douglas Reynholm', fax:'Fax-o-Matic 3000', roy:'Roy', dragon:'SMAUG-O-TRON 3000' };
-let queue = [], typing = null, full = '', onDone = null;
+let queue = [], typing = null, full = '', onDone = null, curLine = null;
 function say(lines, done){
   queue = (Array.isArray(lines) ? lines : [lines]).map(l => typeof l === 'string' ? ['you', l] : l);
   onDone = done || null;
@@ -65,7 +65,7 @@ function next(){
   clearInterval(typing); typing = null;
   const box = $('#dialog');
   if(!queue.length){ box.hidden = true; const d = onDone; onDone = null; d && d(); return; }
-  const [who, text] = queue.shift();
+  const [who, text] = curLine = queue.shift();
   box.hidden = false;
   box.className = 'dialog who-' + who;
   const face = faceFor(who), fe = $('#d-face');
@@ -73,8 +73,8 @@ function next(){
     if(fe.getAttribute('src') !== face){ fe.src = face; fe.classList.remove('face-in'); void fe.offsetWidth; fe.classList.add('face-in'); } }
   else fe.hidden = true;
   $('#d-who').textContent = (who==='jen' && S.ch===6) ? 'Jen · on deck' : (who==='moss' && S.ch===6) ? 'Moss' : (who==='jen' && S.ch===5) ? 'Jen' : (who==='moss' && S.ch===5) ? 'Moss · walkie-talkie' : who==='sys' ? (S.ch===6 ? 'The river' : S.ch===5 ? 'The dungeon' : S.ch===4 ? 'The lift' : S.ch===3 ? 'Top floor' : S.ch===2 ? "Jen's office" : 'Basement') : (WHO[who] || who);
-  const verb = matchMedia('(hover: none)').matches ? 'tap' : 'click'; $('#d-more').textContent = queue.length ? verb + ' ▸' : verb + ' ✕';
-  full = text; let i = 0; const el = $('#d-txt'); el.textContent = '';
+  $('#d-more').textContent = matchMedia('(hover: none)').matches ? (queue.length ? 'tap ▸' : 'tap ✕') : (queue.length ? 'click ▸' : 'click ✕');
+  full = tx(text); let i = 0; const el = $('#d-txt'); el.textContent = '';
   const reduce = reducedMotion();
   if(reduce){ el.textContent = full; return; }
   typing = setInterval(() => { i += 2; el.textContent = full.slice(0, i); if(i >= full.length){ clearInterval(typing); typing = null; } }, 16);
@@ -95,7 +95,7 @@ ITEMS.paper = { name:'Fax paper', desc:"Denholm's last ream of fax paper. 'For e
   svg:'<svg viewBox="0 0 44 44"><rect x="9" y="12" width="26" height="22" fill="#e9e4d8" transform="rotate(-6 22 23)"/><rect x="10" y="10" width="26" height="22" fill="#fff"/><path d="M14 16h18M14 21h18M14 26h12" stroke="#c9c2b2" stroke-width="2"/></svg>' };
 ITEMS.dphone = { name:"Douglas's phone", desc:"Warm, slightly sticky, and full of apps Douglas shouldn't have installed.",
   svg:'<svg viewBox="0 0 44 44"><rect x="13" y="4" width="18" height="36" rx="4" fill="#111" stroke="#c9a24a" stroke-width="2"/><rect x="15.5" y="8" width="13" height="26" rx="1.5" fill="#1e3a8a"/></svg>' };
-ITEMS.cable = { name:'Cable', get desc(){ return (CABLES[S.cable] || ['A cable'])[0] + ". From Roy's backpack."; },
+ITEMS.cable = { name:'Cable', get desc(){ return tx("{cable}. From Roy's backpack.", { cable: tx((CABLES[S.cable] || ['A cable'])[0]) }); },
   svg:'<svg viewBox="0 0 44 44"><rect x="4" y="17" width="10" height="8" rx="1" fill="#cfd4d8" stroke="#555"/><path d="M14 21 C22 8 24 36 32 21" stroke="#222" stroke-width="3" fill="none"/><rect x="32" y="18" width="9" height="6" rx="3" fill="#cfd4d8" stroke="#555"/></svg>' };
 ITEMS.usb = { name:'USB stick', desc:'Labelled SPELL.JS. Found inside the 250 GB hard drive.',
   svg:'<svg viewBox="0 0 44 44"><rect x="8" y="16" width="22" height="12" rx="3" fill="#5f3dc4"/><rect x="30" y="18" width="8" height="8" fill="#cfd4d8" stroke="#555"/><text x="19" y="25" text-anchor="middle" font-size="6" fill="#fff" font-family="monospace">.JS</text></svg>' };
@@ -111,12 +111,12 @@ function renderInv(){
     const id = S.inv[i];
     const b = document.createElement('button');
     b.type = 'button'; b.className = 'slot' + (id ? ' filled' : '') + (id && sel===id ? ' sel' : '');
-    if(id){ b.innerHTML = ITEMS[id].svg; b.title = ITEMS[id].name; b.setAttribute('aria-label', ITEMS[id].name);
+    if(id){ b.innerHTML = ITEMS[id].svg; b.title = ITEMS[id].name; b.setAttribute('aria-label', ITEMS[id].name);   // translated on the page by i18n.js
       b.onclick = () => { if(id==='dphone'){ sel = null; renderInv(); return openPhone(); } sel = sel===id ? null : id; beep(880,.04); renderInv(); };
     } else { b.disabled = true; b.setAttribute('aria-label','Empty slot'); }
     wrap.appendChild(b);
   }
-  $('#tray-hint').textContent = sel ? `${ITEMS[sel].name}: ${ITEMS[sel].desc} Click a spot to use it, or the item again to put it away.` : (matchMedia('(hover: none)').matches ? 'Select an item, then tap where you want to use it.' : 'Select an item, then click where you want to use it.');
+  $('#tray-hint').textContent = sel ? tx('{name}: {desc} Click a spot to use it, or the item again to put it away.', { name: tx(ITEMS[sel].name), desc: tx(ITEMS[sel].desc) }) : (matchMedia('(hover: none)').matches ? 'Select an item, then tap where you want to use it.' : 'Select an item, then click where you want to use it.');
   document.querySelectorAll('.hit').forEach(h => h.classList.toggle('item-cursor', !!sel));
 }
 function give(id){ if(!S.inv.includes(id)) S.inv.push(id); chord([523,659,784]); renderInv(); save(); }
@@ -222,7 +222,7 @@ stage.addEventListener('mousemove', e => {
   if(!h || !$('#title').hidden || !$('#win').hidden){ tip.hidden = true; return; }
   const r = stage.getBoundingClientRect();
   tip.hidden = false;
-  tip.textContent = sel ? `Use ${ITEMS[sel].name} on ${h.dataset.label}` : h.dataset.label;
+  tip.textContent = sel ? tx('Use {item} on {spot}', { item: tx(ITEMS[sel].name), spot: h.dataset.label }) : h.dataset.label;
   tip.style.left = Math.min(Math.max(e.clientX - r.left, 80), r.width-80) + 'px';
   tip.style.top = (e.clientY - r.top) + 'px';
 });

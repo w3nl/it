@@ -43,7 +43,7 @@ function openBag(){
     <div class="feedback" id="bagfb">You can carry one cable at a time. Roy's rule. He's never followed it.</div>`, body => {
     body.querySelectorAll('.cbl').forEach(b => b.onclick = () => { S.cable = b.dataset.c; if(!S.inv.includes('cable')) S.inv.push('cable'); save(); renderInv(); beep(500,.04);
       body.querySelectorAll('.cbl').forEach(x => { x.classList.toggle('on', x===b); x.querySelector('small').textContent = x===b ? 'In your inventory' : 'Take this one'; });
-      $('#bagfb').textContent = `You take the ${CABLES[S.cable][0]}. Select it in your inventory, then click where you want to plug it in.`; });
+      $('#bagfb').textContent = tx('You take the {cable}. Select it in your inventory, then click where you want to plug it in.', { cable: tx(CABLES[S.cable][0]) }); });
   });
 }
 
@@ -64,7 +64,7 @@ const DOUG_TALK = [
 ];
 function openTalkTo(name, sub, list, first){
   openModal(name, sub, `<div class="talk">${list.map(([q],k)=>`<button type="button" data-t="${k}">${q}</button>`).join('')}</div><div class="talk-row">${talkFace(name)}<div class="talk-a" id="talk-a">${first}</div></div>`,
-  body => body.querySelectorAll('[data-t]').forEach(b => b.onclick = () => { beep(500,.03); $('#talk-a').textContent = '"' + list[+b.dataset.t][1]() + '"'; }));
+  body => body.querySelectorAll('[data-t]').forEach(b => b.onclick = () => { beep(500,.03); $('#talk-a').textContent = '"' + tx(list[+b.dataset.t][1]()) + '"'; }));
 }
 
 Object.assign(H, {
@@ -200,7 +200,7 @@ const UNINSTALL_MSG = {
 function settingsApp(P){
   const rows = PSET.filter(r => r[0]!=='flash' || !S.f.spyGone);
   P.innerHTML = sbar() + `<div class="pbody">${ptop('Settings · Battery & apps')}
-    <div style="font-size:12px;opacity:.8">Battery ${battery()}% · ${S.f.spyGone ? 'charging normally' : 'charging, but something is draining it faster'}</div>
+    <div style="font-size:12px;opacity:.8">${tx('Battery {pct}% · {state}', { pct: battery(), state: tx(S.f.spyGone ? 'charging normally' : 'charging, but something is draining it faster') })}</div>
     ${rows.map(([id,name,pct,perms]) => `<div class="prow"><div class="ph"><span>${name}</span><span>${pct}%</span></div><div class="pbar"><i style="width:${pct}%"></i></div>
       <div class="perm">${perms.map(p => `<span class="${id==='flash' && p!=='Camera' ? 'warn' : ''}">${p}</span>`).join('')}</div>
       <div><button type="button" class="pb" data-un="${id}">Uninstall</button></div></div>`).join('')}</div>`;

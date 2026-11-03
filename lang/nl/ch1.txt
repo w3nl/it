@@ -1,0 +1,375 @@
+# Dutch translation: Chapter 1, the basement and the server room (js/chapter1.js).
+# Shell errors that real Unix prints in English (No such file or directory, command not found) stay English, like on a real computer.
+
+# ---------- hotspots ----------
+= A fire extinguisher. The label says MADE IN BRITAIN. That's… probably fine.
+> Een brandblusser. Op het etiket staat MADE IN BRITAIN. Dat is… vast prima.
+= You take it. You never know in this building.
+> Je neemt hem mee. Je weet maar nooit in dit gebouw.
+= NEW EMERGENCY SERVICES NUMBER: 0118 999 881 999 119 725… 3.
+> NIEUW ALARMNUMMER: 0118 999 881 999 119 725… 3.
+= Catchy. Completely unmemorable. Someone has written 'easy to remember!' underneath.
+> Pakkend. Volstrekt onthoudbaar. Niet. Iemand heeft eronder geschreven: 'makkelijk te onthouden!'
+= The clock says 12:58. It has said 12:58 since 2007. Nobody has filed a ticket.
+> De klok staat op 12:58. Dat doet hij al sinds 2007. Niemand heeft er een ticket voor aangemaakt.
+= Roy's computer. A game of Minesweeper, paused at the exact moment of disaster. 74 unread emails, all titled 'IT??'.
+> Roys computer. Een potje Mijnenveger, gepauzeerd op het exacte moment van de ramp. 74 ongelezen e-mails, allemaal met als onderwerp 'IT??'.
+= A sticky note on the bezel: 'At lunch. If phone rings: off and on again. — R.'
+> Een geeltje op de rand van het scherm: 'Lunch. Gaat de telefoon: uit en weer aan. — R.'
+= You have… three… saved messages. Beep.
+> U heeft… drie… opgeslagen berichten. Piep.
+= "Hello, IT. Have you tried turning it off and on again?" Beep.
+> "Hello, IT. Heeft u al geprobeerd hem uit en weer aan te zetten?" Piep.
+= "Hello, IT. Have you tried forcing an unexpected reboot?" Beep.
+> "Hello, IT. Heeft u al geprobeerd een onverwachte herstart te forceren?" Piep.
+= "Hello, IT… Yeah. Is it definitely plugged in? …Okay. Off and on again, then." Beep.
+> "Hello, IT… Ja. Zit de stekker er echt in? …Oké. Dan uit en weer aan." Piep.
+= Roy has clearly found his one tool and is sticking with it.
+> Roy heeft duidelijk zijn enige gereedschap gevonden, en daar blijft hij bij.
+= A lava lamp. Uptime: eleven years. Technically the most reliable hardware in the department.
+> Een lavalamp. Uptime: elf jaar. Technisch gezien de betrouwbaarste hardware van de afdeling.
+= A frosted door: J. BARBER, RELATIONSHIP MANAGER. Locked.
+> Een matglazen deur: J. BARBER, RELATIONSHIP MANAGER. Op slot.
+= A note taped to the glass: 'In a meeting. Do NOT let them in. Back once the lockdown is over. — Jen'
+> Een briefje op het glas: 'In vergadering. NIEMAND binnenlaten. Terug als de lockdown voorbij is. — Jen'
+= First things first: get out of the basement. Then Jen's office opens as Chapter 2.
+> Eerst het belangrijkste: ontsnap uit de kelder. Daarna gaat Jens kantoor open als hoofdstuk 2.
+= 'There are 10 types of people in the world: those who understand binary, and those who don't.' Moss has underlined 'binary' three times.
+> 'Er zijn 10 soorten mensen: mensen die binair begrijpen en mensen die dat niet doen.' Moss heeft 'binair' drie keer onderstreept.
+= Moss's mug: THERE'S NO PLACE LIKE 127.0.0.1
+> Moss' mok: THERE'S NO PLACE LIKE 127.0.0.1 (oost west, 127.0.0.1 best)
+= 127.0.0.1 is 'localhost': the address a computer uses to talk to itself. Home, basically. Geek for 'home sweet home'.
+> 127.0.0.1 is 'localhost': het adres waarmee een computer met zichzelf praat. Thuis, eigenlijk. Nerdtaal voor 'home sweet home'.
+= A rubber duck. Programmers explain their bugs to it out loud, and somehow that fixes them.
+> Een badeendje. Programmeurs leggen er hardop hun bugs aan uit, en op de een of andere manier lost dat ze op.
+= You take it. Use it on anything you're stuck on.
+> Je neemt hem mee. Gebruik hem op alles waar je op vastloopt.
+= The server room. It's cold, blue and humming. And on fire. Well, the bin is.
+> De serverruimte. Koud, blauw en zoemend. En in brand. Nou ja, de prullenbak.
+= Ah. You found the second fire. That one's from the first fire. Don't worry, it's contained. In the bin. Which is in front of the breaker panel.
+> Ah. Je hebt de tweede brand gevonden. Die komt van de eerste brand. Geen zorgen, hij is ingedamd. In de prullenbak. Die voor de stoppenkast staat.
+= Which you need. Sorry.
+> Die je nodig hebt. Sorry.
+= The display is dead. NO SIGNAL. The rack has no power. The breaker must have tripped in the fire.
+> Het scherm is dood. GEEN SIGNAAL. Het rack heeft geen stroom. De stop is vast gesprongen door de brand.
+= Moss's server rack, humming happily. It purrs like a cat, if the cat cost £40,000.
+> Moss' serverrack, vrolijk zoemend. Het spint als een kat, als die kat £40.000 had gekost.
+= The rack is silent. Every light is out. Somewhere there's a breaker that needs resetting.
+> Het rack is stil. Alle lampjes zijn uit. Ergens zit een stop die terug moet.
+= The breaker panel is right behind the burning bin.
+> De stoppenkast zit precies achter de brandende prullenbak.
+= You could reach it, if you didn't mind becoming part of the incident report.
+> Je kunt erbij, als je het niet erg vindt om onderdeel van het incidentrapport te worden.
+= A wastepaper bin, merrily on fire.
+> Een prullenbak, vrolijk in brand.
+= The top page curling in the flames is titled 'Fire Safety Procedures (v3, FINAL, final2).pdf'.
+> Het bovenste vel dat in de vlammen omkrult heet 'Brandveiligheidsprocedures (v3, DEFINITIEF, definitief2).pdf'.
+= Under a glass dome sits a small black box with a single red light.
+> Onder een glazen stolp staat een klein zwart kastje met één rood lampje.
+= The plaque: THE INTERNET. On loan from the Elders of the Internet. DO NOT TOUCH.
+> Het bordje: HET INTERNET. In bruikleen van de Oudsten van het Internet. NIET AANRAKEN.
+= Please don't touch the Internet. The Elders of the Internet would know. They always know.
+> Raak alsjeblieft het internet niet aan. De Oudsten van het Internet zouden het weten. Ze weten het altijd.
+= You tap the glass. Very gently.
+> Je tikt op het glas. Heel voorzichtig.
+= Somewhere in the world, a million cat videos buffer at once. Best to leave it alone.
+> Ergens op de wereld bufferen een miljoen kattenfilmpjes tegelijk. Laat het maar met rust.
+= A spaghetti of cables. Each one is labelled, helpfully, 'CABLE'.
+> Een spaghetti van kabels. Op elke kabel staat, heel behulpzaam, 'KABEL'.
+
+# ---------- Moss's PC ----------
+= Power button
+> Aan/uit-knop
+= MOSS-TOWER 486DX "do not touch"
+> MOSS-TOWER 486DX "niet aankomen"
+= Off. Moss would be furious. Turn it on again.
+> Uit. Moss zou woedend zijn. Zet hem weer aan.
+= Click. The screen goes dark. Now… on again?
+> Klik. Het scherm wordt zwart. En nu… weer aan?
+= MossOS has encountered a problem and needs to restart. Not that it can.
+> MossOS heeft een probleem ondervonden en moet opnieuw opstarten. Niet dat dat lukt.
+= STOP CODE:
+> STOPCODE:
+= (Problem Exists Between Keyboard And Chair)
+> (Probleem Bevindt zich tussen Toetsenbord en Stoel)
+= Press any key to continue
+> Druk op een toets om verder te gaan
+= You press a key. And another. Nothing. It's properly frozen. What would Roy say?
+> Je drukt op een toets. En nog een. Niets. Hij is echt vastgelopen. Wat zou Roy zeggen?
+= Password
+> Wachtwoord
+= Password:
+> Wachtwoord:
+= Password hint: "where the heart is"
+> Wachtwoordhint: "home is where the heart is"
+= So close. Geekier. Think of Moss's mug.
+> Bijna. Nerdier. Denk aan de mok van Moss.
+= Login incorrect.
+> Login incorrect.
+= Login incorrect. Moss passwords are always about home.
+> Login incorrect. Wachtwoorden van Moss gaan altijd over thuis.
+= Login incorrect. Have you looked at his desk?
+> Login incorrect. Heb je op zijn bureau gekeken?
+= Memory test: 640K OK (ought to be enough for anybody)
+> Geheugentest: 640K OK (zou genoeg moeten zijn voor iedereen)
+= Detecting coffee... not found
+> Koffie detecteren... niet gevonden
+= Mounting /dev/brain ............ OK
+> /dev/brein koppelen ............ OK
+= Loading MossOS 4.2 LTS
+> MossOS 4.2 LTS laden
+= Starting LOCKDOWN PROTOCOL v2.1 ... already running
+> LOCKDOWNPROTOCOL v2.1 starten ... draait al
+= It's booting. Have you tried turning it off and on again? Yes. Yes you have.
+> Hij start op. Heb je al geprobeerd hem uit en weer aan te zetten? Ja. Ja, dat heb je.
+
+# ---------- the terminal ----------
+= Terminal command
+> Terminalopdracht
+= Welcome to MossOS 4.2 LTS.
+> Welkom bij MossOS 4.2 LTS.
+= 1 new system message: LOCKDOWN ACTIVE.
+> 1 nieuw systeembericht: LOCKDOWN ACTIEF.
+= Type 'help' for a list of commands.
+> Typ 'help' voor een lijst met opdrachten.
+= MOSS'S COMPUTER.\nDo NOT touch. Especially you, Roy.\nIf you are reading this, you have touched it.
+> COMPUTER VAN MOSS.\nNIET aankomen. Vooral jij niet, Roy.\nAls je dit leest, heb je hem aangeraakt.
+= [12:41] Smoke detected (toast).\n[12:41] LOCKDOWN PROTOCOL v2.1 ENGAGED. Exit door sealed.\n[12:42] Exit override PIN moved to the server rack display, for safety.\n[12:42] WARNING: bin fire in server room. Breaker tripped. Rack offline.\n[12:43] Breaker reset = logic panel on server room wall.\n[12:43] Server room door code: see note_to_self.rot13
+> [12:41] Rook gedetecteerd (toast).\n[12:41] LOCKDOWNPROTOCOL v2.1 GEACTIVEERD. Nooduitgang verzegeld.\n[12:42] Noodcode van de uitgang verplaatst naar het scherm van het serverrack, voor de veiligheid.\n[12:42] WAARSCHUWING: prullenbakbrand in serverruimte. Stop gesprongen. Rack offline.\n[12:43] Stop terugzetten = logicapaneel op de muur van de serverruimte.\n[12:43] Deurcode serverruimte: zie note_to_self.rot13
+= - milk\n- new toaster (fewer flames)\n- new fire extinguisher (current one: 'Made in Britain')\n- return the Internet to the Elders by Friday
+> - melk\n- nieuwe broodrooster (minder vlammen)\n- nieuwe brandblusser (huidige: 'Made in Britain')\n- het internet vrijdag terugbrengen naar de Oudsten
+# The note in note_to_self.rot13 is ROT13 of this text, so it decodes to Dutch.
+= Note to self: the server room door code is the answer to life, the universe and everything. Written in binary. Eight switches. Do not tell Roy.
+> Notitie aan mezelf: de deurcode van de serverruimte is het antwoord op de ultieme vraag over het leven, het universum en alles. In binair. Acht schakelaars. Niet aan Roy vertellen.
+= There's no place like 127.0.0.1.
+> Oost west, 127.0.0.1 best.
+= To understand recursion, you must first understand recursion.
+> Om recursie te begrijpen, moet je eerst recursie begrijpen.
+= It works on my machine.
+> Op mijn machine werkt het.
+= 99 little bugs in the code. Take one down, patch it around. 127 little bugs in the code.
+> 99 kleine bugs in de code. Eentje eruit, patch erover. 127 kleine bugs in de code.
+= A SQL query walks into a bar, sees two tables and asks: may I join you?
+> Een SQL-query loopt een café in, ziet twee tafels en vraagt: mag ik joinen?
+= Why do programmers prefer dark mode? Because light attracts bugs.
+> Waarom houden programmeurs van dark mode? Omdat licht bugs aantrekt.
+= Moss's shell can only pipe from cat or echo. Try: cat note_to_self.rot13 | tr …
+> De shell van Moss kan alleen pipen vanuit cat of echo. Probeer: cat note_to_self.rot13 | tr …
+= tr: it needs something to translate. Feed it a file:\n  cat <file> | tr SET1 SET2      (see: man tr)
+> tr: hij heeft iets nodig om te vertalen. Geef hem een bestand:\n  cat <bestand> | tr SET1 SET2      (zie: man tr)
+= {cmd}: Moss's shell can only pipe into tr. (see: man tr)
+> {cmd}: de shell van Moss kan alleen naar tr pipen. (zie: man tr)
+= tr: it needs two sets of letters: what to replace, and what to replace it with. (see: man tr)
+> tr: hij heeft twee rijtjes letters nodig: wat je vervangt, en waardoor. (zie: man tr)
+= Okay.
+> Oké.
+= What? Make it yourself.
+> Wat? Maak het zelf.
+= Commands: ls, cat <file>, whoami, date, ping <host>, fortune, cowsay <text>, history, clear, exit\nText tools: echo <text>, tr (swap letters; see: man tr). Pipe them with |\n(Moss also knows some secret ones.)
+> Opdrachten: ls, cat <bestand>, whoami, date, ping <host>, fortune, cowsay <tekst>, history, clear, exit\nTeksttools: echo <tekst>, tr (letters verwisselen; zie: man tr). Koppel ze met |\n(Moss kent er ook een paar geheime.)
+= 'dir'? This isn't 1993. Try ls.
+> 'dir'? Het is geen 1993 meer. Probeer ls.
+= cat: missing file name. Try: cat readme.txt
+> cat: bestandsnaam ontbreekt. Probeer: cat readme.txt
+= 1. MOSS ......... 9 letters (CONUNDRUM)\n2. MOSS ......... 9 letters\n3. ROY .......... 2 letters ('UH')
+> 1. MOSS ......... 9 letters (RAADSELACHTIG)\n2. MOSS ......... 9 letters\n3. ROY .......... 2 letters ('EH')
+= rot13: command not found. Moss doesn't trust tools he didn't write himself.\nHe decodes with tr, which every Unix computer has. (see: man tr)\nOr do it by hand with the table on the whiteboard.
+> rot13: command not found. Moss vertrouwt geen tools die hij niet zelf heeft geschreven.\nHij ontcijfert met tr, dat op elke Unix-computer staat. (zie: man tr)\nOf doe het met de hand, met de tabel op het whiteboard.
+= Mon 12:58:00 GMT. (It is always 12:58 in the basement.)
+> ma 12:58:00 GMT. (In de kelder is het altijd 12:58.)
+= PING the-internet: Request timed out.\nThe Internet appears to be in the server room. Under a glass dome.
+> PING the-internet: Request timed out.\nHet internet lijkt in de serverruimte te staan. Onder een glazen stolp.
+= Moo. Have you tried turning it off and on again?
+> Boe. Heb je al geprobeerd hem uit en weer aan te zetten?
+= 1  mail fire@emergency.services.gov.uk\n  2  "Dear Sir/Madam, I am writing to inform you of a fire which has broken out at the premises of..."\n  3  "...123 Carrendon Road. Looking forward to hearing from you. All the best, Maurice Moss."\n  4  lockdown --engage --panic
+> 1  mail fire@emergency.services.gov.uk\n  2  "Geachte heer/mevrouw, hierbij wil ik u op de hoogte stellen van een brand die is uitgebroken in het pand op..."\n  3  "...Carrendon Road 123. Ik zie uw reactie met belangstelling tegemoet. Met vriendelijke groet, Maurice Moss."\n  4  lockdown --engage --panic
+= moss is not in the sudoers file. This incident will be reported.
+> moss is not in the sudoers file. Dit incident wordt gerapporteerd.
+= Nice try. Moss saw that coming in 2004.\nrm: refusing to delete the only working computer in the basement.
+> Leuk geprobeerd. Moss zag dat in 2004 al aankomen.\nrm: weigert de enige werkende computer in de kelder te wissen.
+= rm: Moss has write-protected everything. Including his feelings.
+> rm: Moss heeft alles tegen schrijven beveiligd. Ook zijn gevoelens.
+= TR(1)            Moss's Manual            TR(1)\n\ntr SET1 SET2 swaps every letter from SET1 for the letter in the same\nposition in SET2. A-Z means all the letters from A to Z.\n\nExample:\n  echo 'hello' | tr 'a-z' 'A-Z'      gives HELLO\n  cat file.txt | tr 'a-z' 'A-Z'      shouts a whole file\n\nROT13 swaps A-M with N-Z (and a-m with n-z). Can you build the\ntwo sets for that? — M.
+> TR(1)        Handleiding van Moss        TR(1)\n\ntr SET1 SET2 vervangt elke letter uit SET1 door de letter op dezelfde\nplek in SET2. A-Z betekent alle letters van A tot en met Z.\n\nVoorbeeld:\n  echo 'hallo' | tr 'a-z' 'A-Z'      geeft HALLO\n  cat file.txt | tr 'a-z' 'A-Z'      schreeuwt een heel bestand\n\nROT13 verwisselt A-M met N-Z (en a-m met n-z). Kun jij daar de\ntwee rijtjes voor bouwen? — M.
+= ROT13: move every letter 13 places along the alphabet. Doing it twice\ngets you back where you started. No command needed: see man tr. — M.
+> ROT13: schuif elke letter 13 plaatsen op in het alfabet. Twee keer doen\nbrengt je terug bij het begin. Geen aparte opdracht nodig: zie man tr. — M.
+= No manual entry for {page}. Real nerds read the source. — M.
+> Geen handleiding voor {page}. Echte nerds lezen de broncode. — M.
+= Hello, IT. Have you tried turning it off and on again?
+> Hello, IT. Heb je al geprobeerd hem uit en weer aan te zetten?
+= lockdown: protocol already engaged. Override requires the exit PIN.
+> lockdown: protocol al actief. Opheffen kan alleen met de noodcode van de uitgang.
+= Moss's recommended viewing: The IT Crowd, on YouTube.\nhttps://www.youtube.com/show/VLPLQxUFrtzYaUlfC1e_wcoaUGC02HPVHSW4?sbp=QAE%253D\nIt's a documentary, basically.
+> Moss raadt aan: The IT Crowd, op YouTube.\nhttps://www.youtube.com/show/VLPLQxUFrtzYaUlfC1e_wcoaUGC02HPVHSW4?sbp=QAE%253D\nHet is eigenlijk een documentaire.
+= You've opened vim. You will never leave. (Just kidding. Moss disabled it for your own safety.)
+> Je hebt vim geopend. Je komt er nooit meer uit. (Grapje. Moss heeft het voor je eigen veiligheid uitgezet.)
+= emacs: a great operating system, lacking only a decent editor.
+> emacs: een prachtig besturingssysteem, alleen een fatsoenlijke editor ontbreekt.
+= Try: exit
+> Probeer: exit
+
+# ---------- whiteboard ----------
+= Whiteboard
+> Whiteboard
+= Moss's handwriting, mostly
+> Vooral het handschrift van Moss
+= ROT13 — rotate every letter by 13. Do it twice and you're back where you started!! Genius!!
+> ROT13 — schuif elke letter 13 plaatsen op. Doe het twee keer en je bent terug bij af!! Geniaal!!
+= Too slow? Make the computer do it: man tr
+> Te langzaam? Laat de computer het doen: man tr
+= TODO:
+> TE DOEN:
+= 1. Return the Internet to the Elders
+> 1. Het internet terugbrengen naar de Oudsten
+= 2. Teach Roy binary
+> 2. Roy binair leren
+= (again)
+> (alweer)
+= 3. Buy toaster with fewer flames
+> 3. Broodrooster kopen met minder vlammen
+= Roy ≠ idiot
+> Roy ≠ idioot
+
+# ---------- bookshelf ----------
+= Bookshelf
+> Boekenkast
+= Click a spine to pull it out
+> Klik op een rug om het boek eruit te trekken
+= Lots of books. Some of them have even been read.
+> Heel veel boeken. Sommige zijn zelfs gelezen.
+= The Art of Computer Programming, Vol. 1
+> The Art of Computer Programming, deel 1
+= Pristine. Spine uncracked. Nobody has ever finished it. Not even Moss.
+> Smetteloos. De rug is nooit opengebroken. Niemand heeft het ooit uitgelezen. Zelfs Moss niet.
+= Networking for Dummies
+> Netwerken voor Dummies
+= Roy's. Bookmarked on page 3. It has been on page 3 for four years.
+> Van Roy. Bladwijzer op pagina 3. Die zit al vier jaar op pagina 3.
+= The Hitchhiker's Guide to the Galaxy
+> Het Transgalactisch Liftershandboek
+= The Joy of Regex
+> De vreugde van regex
+= You open it. Every page just says: ^$   …The joy is empty.
+> Je slaat het open. Op elke pagina staat alleen: ^$   …De vreugde is leeg.
+= Learn C++ in 21 Days
+> Leer C++ in 21 dagen
+= A note inside, in Moss's writing: 'Day 22. Still learning.'
+> Er zit een briefje in, in het handschrift van Moss: 'Dag 22. Nog steeds aan het leren.'
+= Countdown: Official Annual 1998
+> Countdown: Officieel Jaarboek 1998
+= Moss's favourite. Every puzzle is solved in pen and marked 'TOO EASY'.
+> Moss' favoriet. Elke puzzel is met pen opgelost en voorzien van 'TE MAKKELIJK'.
+= Wizards & Warlocks: Player's Handbook
+> Tovenaars & Heksenmeesters: Spelershandboek
+= A character sheet falls out: 'MOSS THE MAGNIFICENT. Level 14 Wizard. Charisma: 3.'
+> Er valt een karakterblad uit: 'MOSS DE MAGNIFIEKE. Tovenaar niveau 14. Charisma: 3.'
+= Friendface for the Lonely
+> Friendface voor eenzamen
+= A self-help book about social networks. The receipt is still in it. Unread.
+> Een zelfhulpboek over sociale netwerken. Het bonnetje zit er nog in. Ongelezen.
+= Dog-eared and well loved. Inside the cover, in big friendly letters: DON'T PANIC. And underneath, in Moss's writing: 'Answer to life, the universe & everything = 42'.
+> Ezelsoren en veel gelezen. Op de binnenkant van de kaft, in grote vriendelijke letters: GEEN PANIEK. En daaronder, in het handschrift van Moss: 'Antwoord op het leven, het universum en alles = 42'.
+
+# ---------- DIP switches ----------
+= Server room lock
+> Slot van de serverruimte
+= Eight DIP switches and a blinking lamp
+> Acht DIP-schakelaars en een knipperend lampje
+= Enter the answer · 8-bit
+> Voer het antwoord in · 8 bits
+~ ^Switch worth (\d+)$
+> Schakelaar met waarde $1
+= ON ↑ = 1
+> AAN ↑ = 1
+= OFF ↓ = 0
+> UIT ↓ = 0
+= 00101010 · ACCESS GRANTED
+> 00101010 · TOEGANG VERLEEND
+= Clunk. The server room door swings open. A wave of cold, blue air rolls out.
+> Klonk. De deur van de serverruimte zwaait open. Er rolt een golf koude, blauwe lucht naar buiten.
+= Did you just open the server room? With binary? I'm so proud. Don't tell Roy it was 42.
+> Heb je net de serverruimte geopend? Met binair? Ik ben zo trots. Vertel Roy niet dat het 42 was.
+
+# ---------- logic panel ----------
+~ ^Input ([A-D])$
+> Ingang $1
+= Logic circuit
+> Logisch circuit
+= POWER
+> STROOM
+= Breaker panel
+> Stoppenkast
+= Moss's "fun" reset circuit: light the lamp
+> Moss' "leuke" resetcircuit: laat het lampje branden
+= Toggle the inputs A–D. Lit wires carry a 1.
+> Zet de ingangen A–D aan of uit. Oplichtende draden geven een 1 door.
+= CLUNK. The breaker resets. Somewhere, a server sighs with relief.
+> KLONK. De stop springt terug. Ergens zucht een server opgelucht.
+= The rack wakes up: fans spin, lights blink, the display flickers to life.
+> Het rack wordt wakker: ventilatoren draaien, lampjes knipperen, het scherm flikkert aan.
+= Power's back? Lovely. The exit PIN should be on the rack display now. I stored it in hexadecimal. For security.
+> Is de stroom terug? Heerlijk. De noodcode staat nu op het scherm van het rack. Ik heb hem hexadecimaal opgeslagen. Voor de veiligheid.
+= Security through obscurity. Classic.
+> Beveiliging door onduidelijkheid. Klassiek.
+
+# ---------- rack display and hex note ----------
+= Rack display
+> Scherm van het rack
+= Status: online
+> Status: online
+= LOCKDOWN PROTOCOL v2.1 ........ ACTIVE
+> LOCKDOWNPROTOCOL v2.1 ......... ACTIEF
+= RACK POWER .................... OK
+> STROOM RACK ................... OK
+= EXIT OVERRIDE PIN: 0x539
+> NOODCODE UITGANG: 0x539
+= (Stored in hexadecimal for extra security. — M.)
+> (Hexadecimaal opgeslagen, voor extra veiligheid. — M.)
+= The exit keypad only has the digits 0 to 9.
+> Het toetsenpaneel bij de uitgang heeft alleen de cijfers 0 tot en met 9.
+= Sticky note
+> Geeltje
+= Stuck to the side of the rack
+> Op de zijkant van het rack geplakt
+= HEX for ROY (please read!!)
+> HEX voor ROY (lees dit alsjeblieft!!)
+= Hex counts 0–9, then
+> Hex telt 0–9, en dan
+= "0x" just means "this is hex".
+> "0x" betekent alleen "dit is hex".
+= Each position is worth 16× the one to its right:
+> Elke positie is 16× zoveel waard als die rechts ervan:
+= Example: 0x2A = 2×16 + 10 =
+> Voorbeeld: 0x2A = 2×16 + 10 =
+= It's not hard, Roy. — M.
+> Zo moeilijk is het niet, Roy. — M.
+
+# ---------- exit keypad ----------
+= Exit keypad
+> Toetsenpaneel uitgang
+= Lockdown protocol v2.1 · enter override PIN
+> Lockdownprotocol v2.1 · voer de noodcode in
+= Clear
+> Wissen
+= LOCKDOWN ACTIVE
+> LOCKDOWN ACTIEF
+= ACCESS DENIED
+> TOEGANG GEWEIGERD
+= DENIED. HAVE YOU TRIED TURNING IT OFF AND ON AGAIN?
+> GEWEIGERD. AL GEPROBEERD HEM UIT EN WEER AAN TE ZETTEN?
+= NOPE. PIN IS 4 DIGITS. DECIMAL ONES.
+> NEE. DE CODE HEEFT 4 CIJFERS. DECIMALE.
+= DENIED. THIS INCIDENT WILL BE REPORTED.
+> GEWEIGERD. DIT INCIDENT WORDT GERAPPORTEERD.
+= OVERRIDE ACCEPTED · WELCOME, ELITE ONE
+> NOODCODE GEACCEPTEERD · WELKOM, ELITE ENE
+= 1234? THAT'S THE KIND OF CODE AN IDIOT HAS ON HIS LUGGAGE.
+> 1234? DAT IS HET SOORT CODE DAT EEN IDIOOT OP ZIJN KOFFER HEEFT.
+= 42 OPENED THE SERVER ROOM. THIS IS A DIFFERENT DOOR.
+> 42 OPENDE DE SERVERRUIMTE. DIT IS EEN ANDERE DEUR.
+= THAT'S STILL HEX. CONVERT IT TO DECIMAL.
+> DAT IS NOG STEEDS HEX. REKEN HET OM NAAR DECIMAAL.
+= THAT'S THE EMERGENCY NUMBER. WELL, THE START OF IT.
+> DAT IS HET ALARMNUMMER. NOU JA, HET BEGIN ERVAN.
+= TYPE SOMETHING FIRST.
+> TYP EERST IETS.

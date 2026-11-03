@@ -3,15 +3,17 @@ const { expect } = require('@playwright/test');
 
 const KEY = 'hello-it-basement-v1';
 
-/** Start from a clean browser, optionally with a saved game and unlocked chapters (e.g. ['-ch2', '-ch3']). */
+/** Start from a clean browser, optionally with a saved game and unlocked chapters (e.g. ['-ch2', '-ch3']).
+    PW_LANG=nl runs the layout tests in Dutch (the playthroughs check English text, so they need English). */
 async function seed(page, state = null, unlocked = []) {
   await page.goto('/');
-  await page.evaluate(([KEY, state, unlocked]) => {
+  await page.evaluate(([KEY, state, unlocked, lang]) => {
     localStorage.clear();
     localStorage.setItem(KEY + '-norotate', '1');
+    if (lang) localStorage.setItem(KEY + '-lang', lang);
     unlocked.forEach(k => localStorage.setItem(KEY + k, '1'));
     if (state) localStorage.setItem(KEY, JSON.stringify({ v: 1, pc: 'bsod', inv: [], hl: {}, hints: 0, t: 0, ach: {}, started: true, f: {}, ...state }));
-  }, [KEY, state, unlocked]);
+  }, [KEY, state, unlocked, process.env.PW_LANG || '']);
   await page.reload();
 }
 
