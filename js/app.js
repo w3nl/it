@@ -36,11 +36,43 @@ function showWin(){
   $('#w-note').textContent = note;
   $('#btn-next').hidden = !next; $('#btn-next').textContent = next;
   $('#w-time').textContent = fmt(S.t); $('#w-hints').textContent = S.hints;
-  $('#w-rank').textContent = S.hints===0 ? 'Elite' : S.hints<=2 ? 'Senior dev' : S.hints<=5 ? 'Junior dev' : 'Roy';
+  $('#w-rank').textContent = rankFor(S.hints);
+  recordScore(S.ch, S.t, S.hints);
   $('#w-ach').innerHTML = ACH.map(([k,l]) => `<span class="${S.ach[k]?'got':''}">${S.ach[k]?'✓ ':''}${tx(l)}</span>`).join('');
   $('#win').hidden = false;
 }
 
+
+/* ---------- scores: each chapter's best result, kept across new games and chapters (KEY-scores) ---------- */
+const SCORES_KEY = KEY + '-scores';
+const CH_NAMES = ['The basement', "Jen's office", 'The executive floor', 'The lift', 'Dungeons & Datacenters', 'The yacht'];
+const rankFor = hints => hints===0 ? 'Elite' : hints<=2 ? 'Senior dev' : hints<=5 ? 'Junior dev' : 'Roy';
+let scoresMem = null;   // also works when the browser blocks storage (for this visit only)
+function getScores(){
+  if(!scoresMem){ try{ scoresMem = JSON.parse(localStorage.getItem(SCORES_KEY) || '{}') || {}; }catch(e){ scoresMem = {}; } }
+  return scoresMem;
+}
+/* Best time and fewest hints are kept separately: a faster run with more hints still improves the time. */
+function recordScore(ch, t, hints){
+  const all = getScores(), old = all[ch];
+  all[ch] = { t: old ? Math.min(old.t, t) : t, hints: old ? Math.min(old.hints, hints) : hints };
+  try{ localStorage.setItem(SCORES_KEY, JSON.stringify(all)); }catch(e){}
+}
+function openScores(){
+  const all = getScores(), open = [true, unlocked2(), unlocked3(), unlocked4(), unlocked5(), unlocked6()];
+  const done = CH_NAMES.map((_, i) => all[i + 1]).filter(Boolean);
+  const rows = CH_NAMES.map((n, i) => { const r = all[i + 1];
+    return `<tr class="${r ? '' : 'todo'}"><td><b>${i + 1}</b> ${n}</td>` + (r ? `<td>${fmt(r.t)}</td><td>${r.hints}</td><td>${rankFor(r.hints)}</td>` : `<td colspan="3">${open[i] ? 'Not finished yet' : 'Not unlocked yet'}</td>`) + '</tr>'; }).join('');
+  const sumT = done.reduce((s, r) => s + r.t, 0), sumH = done.reduce((s, r) => s + r.hints, 0);
+  const total = done.length ? `<tr class="total"><td>${tx('Total ({n} of 6)', { n: done.length })}</td><td>${fmt(sumT)}</td><td>${sumH}</td><td>${rankFor(Math.round(sumH / done.length))}</td></tr>` : '';
+  const got = ACH.filter(([k]) => S.ach[k]).length;
+  openModal('Scores', 'Your best result per chapter. A new game keeps them.', `
+    <table class="scores"><thead><tr><th>Chapter</th><th>Best time</th><th>Fewest hints</th><th>Rank</th></tr></thead><tbody>${rows}${total}</tbody></table>
+    ${done.length ? '' : '<div class="feedback">No chapter finished yet. Escape a room and your result appears here.</div>'}
+    <h4 class="scores-h">${tx('Achievements ({n} of {m})', { n: got, m: ACH.length })}</h4>
+    <div class="ach">${ACH.map(([k, l]) => `<span class="${S.ach[k] ? 'got' : ''}">${S.ach[k] ? '✓ ' : ''}${tx(l)}</span>`).join('')}</div>`);
+}
+$('#btn-scores').onclick = openScores;
 
 $('#btn-hint').onclick = () => {
   if(!$('#title').hidden || chapterDone()) return;
@@ -69,7 +101,7 @@ const ACH = [['internet','Touched the Internet'],['sandwich','sudo make me a san
 function win(){
   say([["sys","The lock clunks. The door swings open onto the stairwell."],["moss","You did it! You're out! And with 1337 as well. That's literally elite."],["moss","Now, could you come and get me out of the stationery cupboard? …Hello?"]], () => {
     $('#w-time').textContent = fmt(S.t); $('#w-hints').textContent = S.hints;
-    $('#w-rank').textContent = S.hints===0 ? 'Elite' : S.hints<=2 ? 'Senior dev' : S.hints<=5 ? 'Junior dev' : 'Roy';
+    $('#w-rank').textContent = rankFor(S.hints);
     showWin();
   });
 }

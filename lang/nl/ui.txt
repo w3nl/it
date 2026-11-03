@@ -442,3 +442,25 @@
 > Door naar hoofdstuk 5
 = Continue to Chapter 6
 > Door naar hoofdstuk 6
+
+# ---------- scores (title menu) ----------
+= Scores
+> Scores
+= Your best result per chapter. A new game keeps them.
+> Je beste resultaat per hoofdstuk. Een nieuw spel wist ze niet.
+= Chapter
+> Hoofdstuk
+= Best time
+> Beste tijd
+= Fewest hints
+> Minste hints
+= Not finished yet
+> Nog niet uitgespeeld
+= Not unlocked yet
+> Nog op slot
+= Total ({n} of 6)
+> Totaal ({n} van 6)
+= No chapter finished yet. Escape a room and your result appears here.
+> Nog geen hoofdstuk uitgespeeld. Ontsnap uit een kamer en je resultaat verschijnt hier.
+= Achievements ({n} of {m})
+> Prestaties ({n} van {m})

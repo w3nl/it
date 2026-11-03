@@ -106,3 +106,30 @@ test('computers stay as you left them when you close them, even after a reload',
   await reopen('dphone');
   await expect(page.locator('.ptop span')).toHaveText('Settings · Battery & apps');
 });
+
+test('the menu shows each chapter\'s best result, kept across new games', async ({ page }) => {
+  await seed(page);
+  await page.locator('#btn-scores').click();
+  await expect(page.locator('#m-title')).toHaveText('Scores');
+  await expect(page.locator('#m-body .feedback')).toContainText('No chapter finished yet');
+  await closeModal(page);
+
+  // finish Chapter 1 three times: the best time and the fewest hints are kept separately
+  const finish = async (t, hints) => {
+    await page.evaluate(([t, hints]) => { S.t = t; S.hints = hints; S.f.escaped = true; showWin(); }, [t, hints]);
+    await expect(page.locator('#w-rank')).toBeVisible();
+  };
+  await finish(83, 1);
+  await finish(200, 3);
+  await finish(60, 4);
+  await page.locator('#btn-new').evaluate(b => b.click());   // a new game must not wipe the scores
+  await page.reload();
+  await page.locator('#btn-scores').click();
+  const row = page.locator('.scores tbody tr').first();
+  await expect(row.locator('td').nth(1)).toHaveText('01:00');
+  await expect(row.locator('td').nth(2)).toHaveText('1');
+  await expect(row.locator('td').nth(3)).toHaveText('Senior dev');
+  await expect(page.locator('.scores tbody tr').nth(1)).toContainText('Not finished yet');
+  await expect(page.locator('.scores tr.total')).toContainText('Total (1 of 6)');
+  await expect(page.locator('.scores-h')).toContainText('Achievements (0 of');
+});

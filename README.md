@@ -51,6 +51,8 @@ After the first visit it also works offline. When you change the game, bump `CAC
 
 Progress is saved in your browser's `localStorage` after every step: the current chapter and room, solved puzzles, inventory, timer, hints, achievements, and which chapters are unlocked. Your language, sound and motion settings are saved too. Refresh and press **Continue** to carry on. Progress is per browser and per device.
 
+**Scores** on the title screen shows your best time, fewest hints and rank for every chapter you've finished, with the totals and your achievements. A new game keeps them.
+
 ## Have an idea?
 
 Open an issue with the **Idea** form. An AI agent investigates it and replies with a plan; once you approve it (label `ready-to-build`), another agent builds it and opens a pull request, which is reviewed and play-tested by more agents. See [docs/agent-workflow.md](docs/agent-workflow.md) for how it works and the one-time setup.

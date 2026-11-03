@@ -194,3 +194,12 @@ button.chip:hover{border-color:var(--amber);color:var(--amber)}
 .chip.lang{gap:4px}
 .chip.lang span{opacity:.45}
 .chip.lang span.on{opacity:1;color:var(--amber);font-weight:600}
+/* scores overview (app.js openScores) */
+.scores{width:100%;border-collapse:collapse;font-family:var(--f-mono);font-size:13px}
+.scores th{text-align:left;font-weight:600;color:var(--muted);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:6px 8px;border-bottom:1px solid var(--line)}
+.scores td{padding:8px;border-bottom:1px solid var(--line)}
+.scores td b{color:var(--amber);margin-right:6px}
+.scores tr.todo td{color:var(--muted)}
+.scores tr.total td{font-weight:600;color:var(--phosphor);border-bottom:none}
+.scores-h{margin:18px 0 8px;font-size:14px}
+@media (max-width:520px){.scores{font-size:11px}.scores th,.scores td{padding:6px 4px}.scores th{font-size:9px}}

@@ -1,6 +1,6 @@
 // Service worker for Hello, IT: makes the game installable and playable offline.
 // Bump CACHE when you change the game, so phones pick up the new version.
-const CACHE = 'hello-it-v12';
+const CACHE = 'hello-it-v13';
 const CORE = [
   './',
   './index.html',

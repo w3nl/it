@@ -39,6 +39,13 @@ test('every close-up fits on a phone without sideways scrolling', async ({ page 
     ['dungeon', 5, ['hanoi', 'potions', 'cabinet']],
     ['yacht', 6, ['logbook', 'engine', 'radio', 'poster6']],
   ];
+  // the scores overview from the title menu
+  await seed(page);
+  await expect(page.locator('#title')).not.toHaveClass(/loading/);
+  await page.evaluate(() => { recordScore(1, 754, 2); recordScore(5, 3599, 11); });
+  await page.locator('#btn-scores').tap();
+  expect(await page.locator('.panel').evaluate(e => e.scrollWidth <= e.clientWidth + 1), 'scores are wider than the screen').toBe(true);
+  await page.locator('#m-close').tap();
   for (const [scene, ch, spots] of rooms) {
     await seed(page, { ch, scene, f: { duckTaken: true, charged: true, engine: true, helm: true } });
     await page.locator('#btn-cont').tap();

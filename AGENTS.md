@@ -31,7 +31,7 @@ Context for AI agents and new contributors. The README covers what the game is a
 | `js/hints.js` | All hints (`HINTS`) and the `stageN()` functions that pick the current puzzle |
 | `js/ambience.js` | Generated ambient sound per room (Web Audio, no audio files): `ambKey()` decides what plays, `SOUNDSCAPES` builds each room |
 | `portraits/*.svg` | Character portraits for the dialogue strip and talk windows: `you`, `roy`, `moss`, `jen`, `douglas`, `douglas-captain`, `machine`, `duck`, `fax`, `dragon` |
-| `js/app.js` | Chapter management (`chapterDone`, `nextChapter`, `exitLabels`, `refreshMenu`), end screens (`CH_END`, `showWin`), buttons, timer, achievements (`ACH`), title menu, PWA install, `start()` |
+| `js/app.js` | Chapter management (`chapterDone`, `nextChapter`, `exitLabels`, `refreshMenu`), end screens (`CH_END`, `showWin`), scores (`recordScore`, `openScores`), buttons, timer, achievements (`ACH`), title menu, PWA install, `start()` |
 | `sw.js` | Service worker. **List every new file in `CORE` and bump `CACHE` on every change.** |
 | `manifest.webmanifest`, `icons/` | PWA manifest and icons (`icon.svg` is the source; PNGs are rendered from it) |
 | `tests/*.spec.js` | Playwright tests: one playthrough per chapter, plus progress, PWA, phone and fun checks |
@@ -67,6 +67,7 @@ Context for AI agents and new contributors. The README covers what the game is a
 - **Computers stay as you left them** when you close them, also after a reload: the screen they show (`S.lv` Jen's laptop, `S.dv` Douglas's computer, `S.pl` its pop-ups, `S.pv` Douglas's phone, `S.jl` Jen's lock screen), the terminal screens (`S.term` and `S.thist` for Moss, `S.sql` for Denholm's database), and half-typed input (`S.typed`, via `keepTyped(input, key)` / `clearTyped(key)` in `core.js`). Use `keepTyped` for new text fields on computers.
 - `save()` writes `S` to `localStorage['hello-it-basement-v1']` after every meaningful action.
 - **Chapter unlocks are separate keys:** `hello-it-basement-v1-ch2` … `-ch6` (value `'1'`), plus `unlockedN()` fallbacks based on `S.ch` (for browsers that block storage). `…-norotate` remembers that the phone rotate banner was dismissed, and `…-lang` the language (`en` or `nl`).
+- **Scores** (`…-scores`, `{ 1: { t, hints }, … }`) keep each chapter's best time and fewest hints, separately, across new games. `showWin()` records them with `recordScore()`; the **Scores** button on the title screen opens `openScores()` (`app.js`), with totals and all achievements. `rankFor(hints)` gives the rank.
 - Starting a chapter (`startChN()`) replaces `S` with `Object.assign(fresh(), { ach: S.ach })`. **Achievements carry over; everything else resets.**
 - Never assume `localStorage` works. Every access is wrapped in `try/catch`.
 
@@ -204,7 +205,7 @@ If you are one of those agents:
 ```bash
 npm install
 npx playwright install chromium   # first time only
-npm test                           # about 2 minutes: 27 tests, desktop + Pixel 7 (+ Firefox in CI)
+npm test                           # about 2 minutes: 28 tests, desktop + Pixel 7 (+ Firefox in CI)
 node tools/i18n-check.js           # English text that has no Dutch translation yet
 npm start                          # http://127.0.0.1:4173 to play locally
 ```
