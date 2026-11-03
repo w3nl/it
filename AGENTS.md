@@ -62,7 +62,7 @@ Context for AI agents and new contributors. The README covers what the game is a
 - Some scene parts are drawn or updated by JS (books, server rack, lift buttons, blinds, mirror digits, Hanoi and potions on the table…) in `buildDecor*()` / `draw*()` and `applyVisuals()`.
 
 ### State and saving
-- `S` is the whole save. `fresh()` gives a new one: `{ v:1, ch, scene, pc, f:{}, inv:[], hl:{}, hints, t, ach:{}, started }`. Chapters add their own fields (`sl`, `killed`, `mail`, `cable`, `hanoi`, `potions`, `sys`, `prog`…).
+- `S` is the whole save. `fresh()` gives a new one: `{ v:1, ch, scene, pc, f:{}, inv:[], hl:{}, hints, t, ach:{}, started }`. Chapters add their own fields (`sl`, `jl` (what's typed on Jen's locked laptop, kept when you close it), `killed`, `mail`, `cable`, `hanoi`, `potions`, `sys`, `prog`…).
 - `S.f` holds the per-chapter **flags** (see the solutions table for names).
 - `save()` writes `S` to `localStorage['hello-it-basement-v1']` after every meaningful action.
 - **Chapter unlocks are separate keys:** `hello-it-basement-v1-ch2` … `-ch6` (value `'1'`), plus `unlockedN()` fallbacks based on `S.ch` (for browsers that block storage). `…-norotate` remembers that the phone rotate banner was dismissed, and `…-lang` the language (`en` or `nl`).

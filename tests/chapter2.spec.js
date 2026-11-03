@@ -15,6 +15,15 @@ test("Chapter 2: Jen's office", async ({ page }) => {
   await page.locator('#q3').fill('Swindon');
   await page.locator('#rq button[type=submit]').click();
   await expect(page.locator('#rmsg')).toContainText('2 of 3');
+  // closing the laptop to look for the last answer keeps the screen, the answers and the check, even after a reload
+  await closeModal(page);
+  await page.reload();
+  await page.locator('#btn-cont').click();
+  await skip(page);
+  await hs(page, 'laptop');
+  await expect(page.locator('#q2')).toHaveValue('Belladonna');
+  await expect(page.locator('#q1')).toHaveValue('Fluffy');
+  await expect(page.locator('#rmsg')).toContainText('2 of 3');
   await page.locator('#q1').fill('Sir Purrcival');
   await page.locator('#rq button[type=submit]').click();
   await expect(page.locator('[data-app="slides"]')).toBeVisible({ timeout: 5_000 });

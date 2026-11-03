@@ -82,6 +82,9 @@ function openSmartLock(){
 
 /* --- Jen's laptop --- */
 let lapView = 'desk', curSlide = 0;
+/* The locked laptop remembers its screen ('lock' or 'reset') and what you typed, so closing it to go and look
+   for an answer doesn't wipe anything. Saved in S.jl until the laptop is unlocked. */
+const jlock = () => S.jl || (S.jl = { view: 'lock', pw: '', q1: '', q2: '', q3: '', checked: false });
 const IC = {
   slides:'<svg viewBox="0 0 44 44"><rect x="4" y="6" width="36" height="28" rx="3" fill="#fff"/><rect x="4" y="6" width="36" height="7" rx="3" fill="#d6336c"/><rect x="9" y="17" width="14" height="11" fill="#ffc9de"/><path d="M27 18h8M27 22h8M27 26h6" stroke="#999" stroke-width="2"/><path d="M22 34v5M16 39h12" stroke="#fff" stroke-width="2.5"/></svg>',
   wifi:'<svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="19" fill="#fff"/><path d="M10 20q12-10 24 0M14 25q8-6 16 0M18 30q4-3 8 0" stroke="#8a5cf6" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="22" cy="34" r="2.5" fill="#8a5cf6"/></svg>',
@@ -104,11 +107,11 @@ const SLIDES = [
 const WRONGS = ["Over the intercom, Moss says: 'No.'", "That's even more wrong than Jen's version.", "Somewhere in the building, Roy laughs and doesn't know why.", "Nope. Try again."];
 
 function openLaptop(){
-  openModal("Jen's laptop", S.f.lap ? 'Logged in as Jen Barber' : 'Locked', `<div class="laptop"><div class="lscr" id="lscr"></div><div class="lbase"></div></div>`, () => { lapView = 'desk'; renderLap(); });
+  openModal("Jen's laptop", S.f.lap ? 'Logged in as Jen Barber' : 'Locked', `<div class="laptop"><div class="lscr" id="lscr"></div><div class="lbase"></div></div>`, () => renderLap());
 }
 function renderLap(){
   const L = $('#lscr'); if(!L) return;
-  if(!S.f.lap) return lockScreen(L);
+  if(!S.f.lap) return jlock().view === 'reset' ? resetScreen(L) : lockScreen(L);
   ({ desk:desktop, slides:slidesApp, wifi:wifiApp, msgs:msgsApp, bin:binApp, sol:solApp })[lapView](L);
 }
 function appFrame(L, title, body){
@@ -117,16 +120,19 @@ function appFrame(L, title, body){
   return $('#abody');
 }
 function lockScreen(L){
+  const st = jlock(); st.view = 'lock'; save();
   L.innerHTML = `<div class="lock"><div class="avatar">${IC.shoe}</div><div style="font-size:20px;font-weight:700">Jen Barber</div>
     <form id="jl"><input id="jpw" type="password" placeholder="Password" aria-label="Password" autocomplete="off"></form>
     <div class="lmsg" id="jmsg">Password hint: "I'll never forget it!"</div>
     <button type="button" class="link" id="forgot">Forgot password?</button></div>`;
-  $('#jl').onsubmit = e => { e.preventDefault(); nope(); $('#jpw').value = '';
+  $('#jpw').value = st.pw; $('#jpw').oninput = e => { st.pw = e.target.value; save(); };
+  $('#jl').onsubmit = e => { e.preventDefault(); nope(); $('#jpw').value = st.pw = ''; save();
     $('#jmsg').textContent = ["Incorrect password. Hint: \"I'll never forget it!\" (She forgot it.)", "Incorrect password. Jen probably uses the reset link a lot.", "Incorrect password. Maybe try 'Forgot password?'"][Math.floor(Math.random()*3)]; };
   $('#forgot').onclick = () => { beep(700,.03); resetScreen(L); };
   setTimeout(()=>$('#jpw') && $('#jpw').focus(), 50);
 }
 function resetScreen(L){
+  const st = jlock(); st.view = 'reset'; save();
   L.innerHTML = `<div class="lock"><div style="font-size:18px;font-weight:700">Reset your password</div><div style="font-size:13px">Answer your security questions, Jen.</div>
     <form class="qs" id="rq">
       <label for="q1">Name of your first pet?</label><input id="q1" autocomplete="off" spellcheck="false">
@@ -135,10 +141,17 @@ function resetScreen(L){
       <button class="lbtn" type="submit" style="margin-top:6px">Reset password</button></form>
     <div class="lmsg" id="rmsg"></div><button type="button" class="link" id="rback">Back</button></div>`;
   $('#rback').onclick = () => lockScreen(L);
-  $('#rq').onsubmit = e => { e.preventDefault();
+  ['q1','q2','q3'].forEach(k => { const f = $('#' + k); f.value = st[k]; f.oninput = () => { st[k] = f.value; save(); }; });
+  // green or red borders for the answers, as after the last check
+  const mark = () => {
     const n = id => $(id).value.toLowerCase().replace(/[^a-z]/g,'');
     const ok = [n('#q1').includes('purrcival'), n('#q2').includes('belladonna'), n('#q3').includes('swindon')];
     ['#q1','#q2','#q3'].forEach((id,k) => $(id).style.borderColor = ok[k] ? '#2b8a3e' : ($(id).value ? '#e03131' : ''));
+    return ok;
+  };
+  if(st.checked){ const ok = mark(); $('#rmsg').textContent = tx('{n} of 3 answers correct. The answers are somewhere in this office.', { n: ok.filter(Boolean).length }); }
+  $('#rq').onsubmit = e => { e.preventDefault();
+    const ok = mark(); st.checked = true; save();
     if(ok.every(Boolean)){
       S.f.lap = true; save(); applyVisuals(); chord([523,659,784,1046]);
       $('#rmsg').textContent = 'Password reset to "password1". Logging in…';
@@ -146,7 +159,7 @@ function resetScreen(L){
         say([['moss',"You reset Jen's password using her cat, her shoes and her home town? This is why you don't put your whole life on Friendface."],['you',"To be fair, she put it on her walls."]]); }, 1100);
     } else { nope(); $('#rmsg').textContent = tx('{n} of 3 answers correct. The answers are somewhere in this office.', { n: ok.filter(Boolean).length }); }
   };
-  setTimeout(()=>$('#q1') && $('#q1').focus(), 50);
+  setTimeout(() => { const f = ['#q1','#q2','#q3'].map(id => $(id)).find(f => f && !f.value) || $('#q1'); f && f.focus(); }, 50);
 }
 function desktop(L){
   const newMsg = S.f.sent && !S.f.readCode;
@@ -245,7 +258,7 @@ function intro2(){
 }
 function startCh2(){
   S = Object.assign(fresh(), { ach: S.ach || {} }); S.ch = 2; S.scene = 'jen'; S.started = true; S.inv = ['duck']; S.f.duckTaken = true; S.sl = SLIDES.map((_,k)=>k===0 ? 1 : 0);
-  curSlide = 0; lapView = 'desk'; sel = null; setUnlocked2(); closeModal();
+  curSlide = 0; lapView = 'desk'; sel = null;   // S.jl (the lock screen's typing) is reset with the rest of S setUnlocked2(); closeModal();
   $('#title').hidden = true; $('#win').hidden = true; renderInv(); applyVisuals(); $('#timer').textContent = '00:00'; save(); intro2();
 }
 function win2(){
