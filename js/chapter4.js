@@ -132,7 +132,7 @@ const dotXY = i => [50 + (i%3)*100, 50 + Math.floor(i/3)*100];
 const battery = () => !S.f.charged ? 0 : !S.f.spyGone ? 4 : 63;
 function openPhone(){
   openModal("Douglas's phone", 'DougPhone Pro Max Ultra Gold', `<div class="phonewrap"><div class="phone"><button type="button" class="ppow" id="ppow" aria-label="Power button"></button><span class="ppow-l">POWER</span><div class="pscr" id="pscr"></div></div></div><div class="feedback" id="pfb"></div>`, () => {
-    pView = 'home'; pSeq = []; pTilt = false; if(pPower==='confirm') pPower = 'on';
+    pView = S.pv || 'home'; pSeq = []; pTilt = false; if(pPower==='confirm') pPower = 'on';
     $('#ppow').onclick = pressPower; renderPhone();
   });
 }
@@ -140,6 +140,7 @@ const pfb = (t, cls='') => { const e = $('#pfb'); if(e){ e.className = 'feedback
 function sbar(){ return `<div class="sbar"><span>15:07</span><span>${S.f.charged ? '⚡ ' : ''}${battery()}%</span></div>`; }
 function renderPhone(){
   const P = $('#pscr'); if(!P) return;
+  S.pv = pView; save();
   if(!S.f.charged){ P.innerHTML = `<div class="pcenter"><svg viewBox="0 0 60 30" width="70"><rect x="2" y="4" width="50" height="22" rx="4" fill="none" stroke="#c8262c" stroke-width="3"/><rect x="53" y="11" width="5" height="8" rx="1" fill="#c8262c"/></svg><div style="color:#c8262c;font-weight:700">0%</div></div>`;
     return pfb("Completely dead. At the bottom there's a small, oval charging port that fits either way up."); }
   if(pPower==='off'){ P.innerHTML = ''; return; }
@@ -217,6 +218,7 @@ function smartApp(P){
     P.innerHTML = head + `<div class="prow"><b>LIFT-03 found nearby (Bluetooth)</b>Enter the 6-digit pairing code shown on the lift's service display.</div>
       <form id="pairf" style="display:grid;gap:8px"><input class="pin" id="pairin" inputmode="numeric" maxlength="6" autocomplete="off" aria-label="Pairing code"><button class="pb go" type="submit">Pair</button></form><div class="pmsg" id="pmsg"></div></div>`;
     bindHome();
+    keepTyped($('#pairin'), 'pairin');
     $('#pairf').onsubmit = e => { e.preventDefault(); const v = $('#pairin').value.replace(/\D/g,'');
       if(v===PAIR){ S.f.paired = true; save(); chord([523,784]); renderPhone(); pfb('Paired with LIFT-03.', 'good'); return; }
       nope(); $('#pmsg').textContent = v===mirrorRead(PAIR) ? "Pairing failed. That's how it looks in the mirror… and mirrors flip things." : 'Pairing failed. Wrong code.'; };
@@ -225,6 +227,7 @@ function smartApp(P){
     P.innerHTML = head + `<div class="prow"><b>Paired with LIFT-03 ✓</b>Lift is in safety stop. Engineer override required.</div>
       <form id="passf" style="display:grid;gap:8px"><input class="pin" id="passin" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Override passphrase" aria-label="Override passphrase"><button class="pb go" type="submit">Override</button></form><div class="pmsg" id="pmsg"></div></div>`;
     bindHome();
+    keepTyped($('#passin'), 'passin');
     $('#passf').onsubmit = e => { e.preventDefault(); const v = $('#passin').value.trim().toLowerCase();
       if(v==='sudo'){ S.f.passOK = true; save(); chord([523,659,784]); renderPhone(); pfb("Override accepted. Of course Moss chose 'sudo'.", 'good'); return; }
       nope(); $('#pmsg').textContent = S.f.calledMoss ? 'Wrong passphrase. Watch the flashes again, and use the Morse table on the certificate.' : 'Wrong passphrase. Only Moss knows it. There is an emergency phone in this lift.'; };

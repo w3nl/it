@@ -46,7 +46,7 @@ const H = {
 
 
 /* ---------- puzzle: Moss's PC ---------- */
-let termBuf = [];
+const termLines = () => S.term || (S.term = []);   // the terminal's screen, saved with the game
 function openPC(){
   openModal("Moss's computer", "MossOS 4.2 · basement-01", `
     <div class="monitor"><div class="crt" id="crt"><div class="scr" id="scr"></div></div></div>
@@ -80,7 +80,8 @@ function renderPC(){
       <div class="line dim"> </div><div class="line dim">Password hint: "where the heart is"</div>
       <div class="line" id="pwmsg"></div>`;
     crt.onclick = () => $('#pw') && $('#pw').focus();
-    $('#lf').onsubmit = e => { e.preventDefault(); const v = $('#pw').value.trim().toLowerCase();
+    keepTyped($('#pw'), 'mosspw');
+    $('#lf').onsubmit = e => { clearTyped('mosspw'); e.preventDefault(); const v = $('#pw').value.trim().toLowerCase();
       if(['127.0.0.1','localhost','::1','home','127.1'].includes(v) && v!=='home'){ S.f.loggedIn = true; S.pc='term'; save(); chord([523,784,1046]); renderPC(); }
       else { const m = v==='home' ? "So close. Geekier. Think of Moss's mug." : ['Login incorrect.','Login incorrect. Moss passwords are always about home.','Login incorrect. Have you looked at his desk?'][Math.floor(Math.random()*3)];
         $('#pwmsg').textContent = m; $('#pw').value=''; beep(110,.2,'sawtooth',.04); } };
@@ -107,15 +108,18 @@ const rot13 = s => s.replace(/[a-z]/gi, c => { const b = c <= 'Z' ? 65 : 97; ret
 // The note is encoded in the player's language, so it decodes to something they can read
 Object.defineProperty(FILES, 'note_to_self.rot13', { get: () => rot13(tx(NOTE_PLAIN)), enumerable: true });
 const FORTUNES = ["There's no place like 127.0.0.1.","To understand recursion, you must first understand recursion.","It works on my machine.","99 little bugs in the code. Take one down, patch it around. 127 little bugs in the code.","A SQL query walks into a bar, sees two tables and asks: may I join you?","Why do programmers prefer dark mode? Because light attracts bugs."];
-function tprint(t, cls=''){ termBuf.push([t,cls]); const o = $('#tout'); if(o){ o.insertAdjacentHTML('beforeend', `<div class="line ${cls}"></div>`); o.lastElementChild.textContent = t; $('#scr').scrollTop = 1e9; } }
-let hist = [], hi = 0;
+function tprint(t, cls=''){ const lines = termLines(); lines.push([t,cls]); if(lines.length > 300) lines.splice(0, lines.length - 300); save(); const o = $('#tout'); if(o){ o.insertAdjacentHTML('beforeend', `<div class="line ${cls}"></div>`); o.lastElementChild.textContent = t; $('#scr').scrollTop = 1e9; } }
+const termHist = () => S.thist || (S.thist = []);   // commands for the up and down arrows
+let hi = 0;
 function renderTerm(){
   const scr = $('#scr');
   scr.innerHTML = `<div id="tout"></div><form id="tf"><span>moss@basement:~$</span><input id="tin" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Terminal command"></form>`;
-  if(!termBuf.length){ ["Welcome to MossOS 4.2 LTS.","1 new system message: LOCKDOWN ACTIVE.","Type 'help' for a list of commands."," "].forEach(l=>termBuf.push([l,''])); }
-  const o = $('#tout'); termBuf.forEach(([t,c]) => { o.insertAdjacentHTML('beforeend', `<div class="line ${c}"></div>`); o.lastElementChild.textContent = t; });
+  const lines = termLines(), hist = termHist(); hi = hist.length;
+  if(!lines.length){ ["Welcome to MossOS 4.2 LTS.","1 new system message: LOCKDOWN ACTIVE.","Type 'help' for a list of commands."," "].forEach(l=>lines.push([l,''])); }
+  const o = $('#tout'); lines.forEach(([t,c]) => { o.insertAdjacentHTML('beforeend', `<div class="line ${c}"></div>`); o.lastElementChild.textContent = t; });
   $('#crt').onclick = () => $('#tin').focus();
-  $('#tf').onsubmit = e => { e.preventDefault(); const v = $('#tin').value; $('#tin').value=''; if(v.trim()){ hist.push(v); } hi = hist.length; run(v); };
+  keepTyped($('#tin'), 'tin');
+  $('#tf').onsubmit = e => { e.preventDefault(); const v = $('#tin').value; $('#tin').value=''; clearTyped('tin'); if(v.trim()){ hist.push(v); } hi = hist.length; run(v); };
   $('#tin').onkeydown = e => { if(e.key==='ArrowUp'){ e.preventDefault(); if(hi>0){ hi--; $('#tin').value = hist[hi]; } } if(e.key==='ArrowDown'){ e.preventDefault(); if(hi<hist.length){ hi++; $('#tin').value = hist[hi]||''; } } };
   setTimeout(()=>$('#tin') && $('#tin').focus(), 50); scr.scrollTop = 1e9;
 }
@@ -188,7 +192,7 @@ function run(raw){
     case 'cowsay': { const t = a || tx('Moo. Have you tried turning it off and on again?'); const bar = '-'.repeat(Math.min(t.length+2, 40));
       return tprint(` ${bar}\n< ${t} >\n ${bar}\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||`); }
     case 'history': return tprint("  1  mail fire@emergency.services.gov.uk\n  2  \"Dear Sir/Madam, I am writing to inform you of a fire which has broken out at the premises of...\"\n  3  \"...123 Carrendon Road. Looking forward to hearing from you. All the best, Maurice Moss.\"\n  4  lockdown --engage --panic");
-    case 'clear': termBuf = []; $('#tout').innerHTML=''; return;
+    case 'clear': S.term = []; save(); $('#tout').innerHTML=''; return;
     case 'exit': case 'logout': return closeModal();
     case 'sudo': return tprint('moss is not in the sudoers file. This incident will be reported.');
     case 'rm': if(/-rf/.test(a)){ S.ach.rmrf = true; save(); return tprint("Nice try. Moss saw that coming in 2004.\nrm: refusing to delete the only working computer in the basement."); } return tprint('rm: Moss has write-protected everything. Including his feelings.');

@@ -107,10 +107,11 @@ const SLIDES = [
 const WRONGS = ["Over the intercom, Moss says: 'No.'", "That's even more wrong than Jen's version.", "Somewhere in the building, Roy laughs and doesn't know why.", "Nope. Try again."];
 
 function openLaptop(){
-  openModal("Jen's laptop", S.f.lap ? 'Logged in as Jen Barber' : 'Locked', `<div class="laptop"><div class="lscr" id="lscr"></div><div class="lbase"></div></div>`, () => renderLap());
+  openModal("Jen's laptop", S.f.lap ? 'Logged in as Jen Barber' : 'Locked', `<div class="laptop"><div class="lscr" id="lscr"></div><div class="lbase"></div></div>`, () => { lapView = S.lv || 'desk'; renderLap(); });
 }
 function renderLap(){
   const L = $('#lscr'); if(!L) return;
+  S.lv = lapView; save();
   if(!S.f.lap) return jlock().view === 'reset' ? resetScreen(L) : lockScreen(L);
   ({ desk:desktop, slides:slidesApp, wifi:wifiApp, msgs:msgsApp, bin:binApp, sol:solApp })[lapView](L);
 }
@@ -218,7 +219,7 @@ function wifiApp(L){
       if(S.f.wifi){ w.textContent = 'Already connected.'; return; }
       w.textContent = '';
       $('#wform').innerHTML = `<form id="wf" style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:4px 0"><input id="wkey" placeholder="Network key" autocomplete="off" spellcheck="false" aria-label="Network key"><button class="lbtn" type="submit">Connect</button></form>`;
-      $('#wkey').focus();
+      keepTyped($('#wkey'), 'wkey'); $('#wkey').focus();
       $('#wf').onsubmit = e => { e.preventDefault(); const v = $('#wkey').value.toUpperCase().replace(/[^A-Z0-9]/g,'');
         if(v==='SHOES4EVER'){ S.f.wifi = true; save(); chord([523,784]); renderLap(); const m = $('#wmsg'); if(m) m.textContent = 'Connected to Boardroom-Projector. Now present the slides.'; }
         else { nope(); $('#wmsg').textContent = "Wrong network key. Jen wrote it down somewhere she'd never look."; } };
@@ -258,7 +259,7 @@ function intro2(){
 }
 function startCh2(){
   S = Object.assign(fresh(), { ach: S.ach || {} }); S.ch = 2; S.scene = 'jen'; S.started = true; S.inv = ['duck']; S.f.duckTaken = true; S.sl = SLIDES.map((_,k)=>k===0 ? 1 : 0);
-  curSlide = 0; lapView = 'desk'; sel = null;   // S.jl (the lock screen's typing) is reset with the rest of S setUnlocked2(); closeModal();
+  curSlide = 0; lapView = 'desk'; sel = null; setUnlocked2(); closeModal();   // S.jl, S.lv and S.typed are reset with the rest of S
   $('#title').hidden = true; $('#win').hidden = true; renderInv(); applyVisuals(); $('#timer').textContent = '00:00'; save(); intro2();
 }
 function win2(){

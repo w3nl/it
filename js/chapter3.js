@@ -71,10 +71,11 @@ const DIC = {
   web:'<svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="17" fill="#fff"/><path d="M5 22h34M22 5q-9 17 0 34M22 5q9 17 0 34" stroke="#1971c2" stroke-width="2.5" fill="none"/></svg>'
 };
 function openDougPC(){
-  openModal("Douglas's computer", 'Reynholm Executive Edition', `<div class="laptop"><div class="lscr dpc" id="dscr"></div><div class="stand"></div></div><div class="feedback" id="dfb"></div>`, () => { dView = 'desk'; renderDPC(); });
+  openModal("Douglas's computer", 'Reynholm Executive Edition', `<div class="laptop"><div class="lscr dpc" id="dscr"></div><div class="stand"></div></div><div class="feedback" id="dfb"></div>`, () => { dView = S.dv || 'desk'; renderDPC(); });
 }
 function renderDPC(){
   const L = $('#dscr'); if(!L) return;
+  S.dv = dView; save();
   if(!S.f.pops) return popScreen(L);
   ({ desk:dDesk, tm:tmApp, mail:mailApp, bak:bakApp, web:webApp })[dView](L);
 }
@@ -84,11 +85,12 @@ function dFrame(L, title, body){
   return $('#abody2');
 }
 function popScreen(L){
-  if(!pops){ pops = [0,1,2,3,4,5,6,7].map(mkPop); popNext = 8; }
+  if(!pops){ pops = S.pl || [0,1,2,3,4,5,6,7].map(mkPop); popNext = S.pn || 8; }
+  S.pl = pops; S.pn = popNext; save();   // the pop-ups stay where they are, even after a reload
   L.innerHTML = pops.map((p,i)=>`<div class="pop" style="left:${p.x}%;top:${p.y}%;z-index:${i+1}"><div class="pt"><span>${p.t[0]}</span><button class="px" type="button" data-x="${i}" aria-label="Close ${p.t[0]}">✕</button></div><div class="pb">${p.t[1]}<br><button class="fake" type="button" data-f="${i}" style="background:${p.c}">${p.t[2]}</button></div></div>`).join('')
     + `<div class="taskbar" style="z-index:40"><span>Start</span><span>${pops.length} pop-ups · CPU 100%</span></div>`;
   L.querySelectorAll('[data-x]').forEach(b => b.onclick = () => { pops.splice(+b.dataset.x, 1); beep(800,.03);
-    if(!pops.length){ S.f.pops = true; pops = null; save(); applyVisuals(); chord([523,659,784]); renderDPC(); dfb('All pop-ups closed. The desktop is back, but everything is still crawling.', 'good'); return; }
+    if(!pops.length){ S.f.pops = true; pops = null; S.pl = null; save(); applyVisuals(); chord([523,659,784]); renderDPC(); dfb('All pop-ups closed. The desktop is back, but everything is still crawling.', 'good'); return; }
     renderDPC(); });
   L.querySelectorAll('[data-f]').forEach(b => b.onclick = () => { if(pops.length < 18) pops.push(mkPop(popNext++), mkPop(popNext++)); nope(); renderDPC();
     dfb("That wasn't a real close button. Two more pop-ups appear. Only the ✕ in the title bar really closes one.", 'bad'); });
@@ -192,9 +194,9 @@ const DB = {
   staff: { cols:['name','role','floor'], rows:[['Roy','IT','basement'],['Moss','IT','basement'],['Jen','Relationship Manager','basement'],['Douglas','CEO','top'],['Denholm','Founder','portrait']] },
   safe: { cols:['owner','code','contents'], rows:[['Denholm','1966','fax paper, contracts, a photo of a horse'],['Douglas','0000','sold on eBay'],['Board','????','ACCESS DENIED']] }
 };
-let sqlBuf = [];
+const sqlLines = () => S.sql || (S.sql = []);   // the database screen, saved with the game
 function sqlRun(q){
-  const out = t => sqlBuf.push(t);
+  const out = t => { const l = sqlLines(); l.push(t); if(l.length > 200) l.splice(0, l.length - 200); save(); };
   out('SQL> ' + q);
   const s = q.trim().replace(/;\s*$/,'').trim(); if(!s) return;
   if(/^help$/i.test(s)) return out("Tables: staff, safe.\nExample: SELECT name, role FROM staff WHERE floor = 'basement';");
@@ -220,10 +222,12 @@ function openSafe(){
   if(S.f.safeOpen) return say("The safe is open and nearly empty: some contracts and a photo of a horse. Denholm loved that horse.");
   openModal("Denholm's safe", 'DENHOLM-DB v1.0 (1987) · type HELP', `<div class="crt green" style="aspect-ratio:auto;height:280px"><div class="scr" id="sqlscr"><div id="sqlout"></div><form id="sqlf"><span>SQL&gt;</span><input id="sqlin" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="SQL query"></form></div></div>
     <form class="dial" id="dialf"><label for="dial">Safe combination</label><input id="dial" inputmode="numeric" maxlength="4" autocomplete="off"><button class="btn" type="submit">Open safe</button></form><div class="feedback" id="safefb"></div>`, () => {
+    const sqlBuf = sqlLines();
     if(!sqlBuf.length) sqlBuf.push("DENHOLM-DB v1.0. Property of Denholm Reynholm. Keep out, Douglas.\nType HELP to see the tables.");
     const draw = () => { const o = $('#sqlout'); if(!o) return; o.innerHTML = ''; sqlBuf.forEach(t => { const d = document.createElement('div'); d.className = 'line'; d.textContent = t; o.appendChild(d); }); $('#sqlscr').scrollTop = 1e9; };
     draw();
-    $('#sqlf').onsubmit = e => { e.preventDefault(); sqlRun($('#sqlin').value); $('#sqlin').value = ''; beep(1400,.015,'square',.02); draw(); };
+    keepTyped($('#sqlin'), 'sqlin'); keepTyped($('#dial'), 'dial');
+    $('#sqlf').onsubmit = e => { e.preventDefault(); sqlRun($('#sqlin').value); $('#sqlin').value = ''; clearTyped('sqlin'); beep(1400,.015,'square',.02); draw(); };
     $('#sqlscr').onclick = () => $('#sqlin').focus();
     $('#dialf').onsubmit = e => { e.preventDefault(); const v = $('#dial').value.trim(), f = $('#safefb');
       if(v==='1966'){ S.f.safeOpen = true; give('paper'); save(); applyVisuals(); chord([392,523,659,784]);
@@ -299,7 +303,7 @@ function intro3(){
 }
 function startCh3(){
   S = Object.assign(fresh(), { ach: S.ach || {} }); S.ch = 3; S.scene = 'doug'; S.started = true; S.inv = ['duck']; S.f.duckTaken = true;
-  pops = null; sqlBuf = []; dView = 'desk'; sel = null; setUnlocked3(); closeModal();
+  pops = null; dView = 'desk'; sel = null; setUnlocked3(); closeModal();
   $('#title').hidden = true; $('#win').hidden = true; renderInv(); applyVisuals(); $('#timer').textContent = '00:00'; save(); intro3();
 }
 function win3(){

@@ -81,7 +81,7 @@ function intro(){
        ["moss","And bad, because you're in it. The exit override PIN is somewhere in the system. Have a click around. Carefully. And please don't touch the Internet."],
        ["you","…The Internet?"]]);
 }
-function startNew(){ S = Object.assign(fresh(), { ach: S.ach || {} }); S.started = true; termBuf = []; sel = null; $('#title').hidden = true; $('#win').hidden = true; renderInv(); applyVisuals(); $('#timer').textContent = '00:00'; save(); intro(); }
+function startNew(){ S = Object.assign(fresh(), { ach: S.ach || {} }); S.started = true; sel = null; $('#title').hidden = true; $('#win').hidden = true; renderInv(); applyVisuals(); $('#timer').textContent = '00:00'; save(); intro(); }
 function cont(){ $('#title').hidden = true; S.started = true; renderInv(); applyVisuals(); $('#timer').textContent = fmt(S.t);
   say([["sys", S.scene==='yacht' ? "Back on the Douglas II. Roy is still holding the bucket." : S.scene==='dungeon' ? "Back in the dungeon. The dragon is still made of cardboard." : S.scene==='lift' ? "Back in the lift. The pan-pipes haven't stopped." : S.scene==='doug' ? "Back on the top floor. Douglas raises his whisky at you." : S.scene==='jen' ? "Back in Jen's office. The SmartLock blinks at you." : S.scene==='server' ? "Back in the server room. Still cold. Still humming." : "Back in the basement. The clock still says 12:58."]]); }
 $('#btn-new').onclick = startNew;

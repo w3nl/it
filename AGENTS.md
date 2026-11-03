@@ -62,8 +62,9 @@ Context for AI agents and new contributors. The README covers what the game is a
 - Some scene parts are drawn or updated by JS (books, server rack, lift buttons, blinds, mirror digits, Hanoi and potions on the table…) in `buildDecor*()` / `draw*()` and `applyVisuals()`.
 
 ### State and saving
-- `S` is the whole save. `fresh()` gives a new one: `{ v:1, ch, scene, pc, f:{}, inv:[], hl:{}, hints, t, ach:{}, started }`. Chapters add their own fields (`sl`, `jl` (what's typed on Jen's locked laptop, kept when you close it), `killed`, `mail`, `cable`, `hanoi`, `potions`, `sys`, `prog`…).
+- `S` is the whole save. `fresh()` gives a new one: `{ v:1, ch, scene, pc, f:{}, inv:[], hl:{}, hints, t, ach:{}, started }`. Chapters add their own fields (`sl`, `jl` (Jen's locked laptop), `killed`, `mail`, `cable`, `hanoi`, `potions`, `sys`, `prog`…).
 - `S.f` holds the per-chapter **flags** (see the solutions table for names).
+- **Computers stay as you left them** when you close them, also after a reload: the screen they show (`S.lv` Jen's laptop, `S.dv` Douglas's computer, `S.pl` its pop-ups, `S.pv` Douglas's phone, `S.jl` Jen's lock screen), the terminal screens (`S.term` and `S.thist` for Moss, `S.sql` for Denholm's database), and half-typed input (`S.typed`, via `keepTyped(input, key)` / `clearTyped(key)` in `core.js`). Use `keepTyped` for new text fields on computers.
 - `save()` writes `S` to `localStorage['hello-it-basement-v1']` after every meaningful action.
 - **Chapter unlocks are separate keys:** `hello-it-basement-v1-ch2` … `-ch6` (value `'1'`), plus `unlockedN()` fallbacks based on `S.ch` (for browsers that block storage). `…-norotate` remembers that the phone rotate banner was dismissed, and `…-lang` the language (`en` or `nl`).
 - Starting a chapter (`startChN()`) replaces `S` with `Object.assign(fresh(), { ach: S.ach })`. **Achievements carry over; everything else resets.**
@@ -203,7 +204,7 @@ If you are one of those agents:
 ```bash
 npm install
 npx playwright install chromium   # first time only
-npm test                           # about 2 minutes: 26 tests, desktop + Pixel 7 (+ Firefox in CI)
+npm test                           # about 2 minutes: 27 tests, desktop + Pixel 7 (+ Firefox in CI)
 node tools/i18n-check.js           # English text that has no Dutch translation yet
 npm start                          # http://127.0.0.1:4173 to play locally
 ```

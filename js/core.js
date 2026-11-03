@@ -119,6 +119,14 @@ function renderInv(){
   $('#tray-hint').textContent = sel ? tx('{name}: {desc} Click a spot to use it, or the item again to put it away.', { name: tx(ITEMS[sel].name), desc: tx(ITEMS[sel].desc) }) : (matchMedia('(hover: none)').matches ? 'Select an item, then tap where you want to use it.' : 'Select an item, then click where you want to use it.');
   document.querySelectorAll('.hit').forEach(h => h.classList.toggle('item-cursor', !!sel));
 }
+/* Computers keep what you typed when you close them (and after a reload): the value lives in S.typed[key]. */
+function keepTyped(el, key){
+  if(!el) return;
+  const typed = S.typed || (S.typed = {});
+  el.value = typed[key] || '';
+  el.addEventListener('input', () => { typed[key] = el.value; save(); });
+}
+function clearTyped(key){ if(S.typed && key in S.typed){ delete S.typed[key]; save(); } }
 function give(id){ if(!S.inv.includes(id)) S.inv.push(id); chord([523,659,784]); renderInv(); save(); }
 function take(id){ S.inv = S.inv.filter(x=>x!==id); if(sel===id) sel=null; renderInv(); save(); }
 

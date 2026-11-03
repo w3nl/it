@@ -38,8 +38,10 @@ test('Chapter 4: the lift', async ({ page }) => {
   await closeModal(page);
   await skip(page);
 
-  // Bluetooth pairing (mirror code) and Moss's Morse passphrase
+  // Bluetooth pairing (mirror code) and Moss's Morse passphrase; the phone reopens in Settings, where we left it
   await hs(page, 'dphone');
+  await expect(page.locator('.ptop span')).toHaveText('Settings · Battery & apps');
+  await page.locator('#phome').click();
   await page.locator('[data-app="smart"]').click();
   await page.locator('#pairin').fill('218205');
   await page.locator('#pairin').press('Enter');

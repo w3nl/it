@@ -1,5 +1,5 @@
 const { test, expect } = require('@playwright/test');
-const { KEY, seed, hs, skip } = require('./helpers');
+const { KEY, seed, hs, skip, closeModal } = require('./helpers');
 
 test('progress is saved and survives a refresh', async ({ page }) => {
   await seed(page);
@@ -58,4 +58,51 @@ test('the title screen lists every unlocked chapter', async ({ page }) => {
   await expect(page.locator('#btn-ch4')).toBeHidden();
   await page.locator('#btn-ch1').click();
   await expect(page.locator('#chap')).toHaveText('Chapter 1 · The Basement Lockdown');
+});
+
+test('computers stay as you left them when you close them, even after a reload', async ({ page }) => {
+  const reopen = async (spot) => { await closeModal(page); await page.reload(); await page.locator('#btn-cont').click(); await skip(page); await hs(page, spot); };
+
+  // Moss's terminal: the screen, the command history and a half-typed command
+  await seed(page, { pc: 'term', f: { loggedIn: true } });
+  await page.locator('#btn-cont').click();
+  await skip(page);
+  await hs(page, 'pc');
+  await page.locator('#tin').fill('ls');
+  await page.locator('#tin').press('Enter');
+  await page.locator('#tin').fill('cat read');
+  await reopen('pc');
+  await expect(page.locator('#tout')).toContainText('note_to_self.rot13');
+  await expect(page.locator('#tin')).toHaveValue('cat read');
+  await page.locator('#tin').fill('');
+  await page.locator('#tin').press('ArrowUp');
+  await expect(page.locator('#tin')).toHaveValue('ls');
+  await closeModal(page);
+
+  // Douglas's computer reopens in the same app, and Denholm's database keeps its screen
+  await seed(page, { ch: 3, scene: 'doug', inv: ['duck'], f: { duckTaken: true, pops: true, portrait: true } }, ['-ch2', '-ch3']);
+  await page.locator('#btn-cont').click();
+  await skip(page);
+  await hs(page, 'dpc');
+  await page.locator('[data-app="tm"]').click();
+  await reopen('dpc');
+  await expect(page.locator('.tm th').first()).toHaveText('Process');
+  await closeModal(page);
+  await hs(page, 'portrait');
+  await page.locator('#sqlin').fill('SHOW TABLES');
+  await page.locator('#sqlin').press('Enter');
+  await page.locator('#dial').fill('19');
+  await reopen('portrait');
+  await expect(page.locator('#sqlout')).toContainText('staff');
+  await expect(page.locator('#dial')).toHaveValue('19');
+  await closeModal(page);
+
+  // Douglas's phone reopens on the same app
+  await seed(page, { ch: 4, scene: 'lift', inv: ['duck', 'dphone'], f: { duckTaken: true, charged: true, unlocked: true } }, ['-ch2', '-ch3', '-ch4']);
+  await page.locator('#btn-cont').click();
+  await skip(page);
+  await hs(page, 'dphone');
+  await page.locator('[data-app="settings"]').click();
+  await reopen('dphone');
+  await expect(page.locator('.ptop span')).toHaveText('Settings · Battery & apps');
 });
