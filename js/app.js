@@ -191,8 +191,17 @@ function start(data){
 }
 /* ---------- installable app (PWA) ---------- */
 if('serviceWorker' in navigator && document.querySelector('link[rel="manifest"]') && /^https?:$/.test(location.protocol)){
+  navigator.serviceWorker.addEventListener('message', e => { if(e.data && e.data.type === 'version') swVersion(e.data.cache); });
   navigator.serviceWorker.register('sw.js').catch(() => {});
+  navigator.serviceWorker.ready.then(r => r.active && r.active.postMessage({ type: 'version?' })).catch(() => {});
 }
+/* The service worker serves a newer version than the code running on this page: offer a reload (the game is saved). */
+function swVersion(cache){
+  const n = +String(cache).replace(/\D/g, '');
+  if(n > GAME_VERSION) $('#update-bar').hidden = false;
+}
+$('#btn-update').onclick = () => { save(); location.reload(); };
+$('#version').textContent = 'v' + GAME_VERSION;
 let installEvt = null;
 window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); installEvt = e; $('#btn-install').hidden = false; });
 window.addEventListener('appinstalled', () => { installEvt = null; $('#btn-install').hidden = true; say(['moss', "Installed! The game now lives on your device. Like a very small, very nerdy lodger."]); });

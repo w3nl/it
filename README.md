@@ -45,7 +45,7 @@ The game is a Progressive Web App. Once it's hosted on GitHub Pages (Settings â†
 - **iPhone/iPad (Safari):** tap Share â†’ **Add to Home Screen**.
 - **Desktop (Chrome/Edge):** click the install icon in the address bar, or the game's **Install** button.
 
-After the first visit it also works offline. When you change the game, bump `CACHE` in `sw.js` so installed copies pick up the new version.
+After the first visit it also works offline. When a new version comes out while the game is open, a bar offers to reload; your progress is kept. The version number is at the bottom of the title screen. When you change the game, bump `CACHE` in `sw.js` and `GAME_VERSION` in `js/boot.js` (the same number) so installed copies pick up the new version.
 
 ## Saved progress
 

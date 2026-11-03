@@ -203,3 +203,7 @@ button.chip:hover{border-color:var(--amber);color:var(--amber)}
 .scores tr.total td{font-weight:600;color:var(--phosphor);border-bottom:none}
 .scores-h{margin:18px 0 8px;font-size:14px}
 @media (max-width:520px){.scores{font-size:11px}.scores th,.scores td{padding:6px 4px}.scores th{font-size:9px}}
+/* version number on the title screen, and the "new version" bar (app.js swVersion) */
+.overlay .version{position:absolute;right:12px;bottom:8px;font-family:var(--f-mono);font-size:11px;color:var(--muted);opacity:.7}
+.update-bar{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:30;display:flex;gap:12px;align-items:center;max-width:calc(100vw - 32px);
+  padding:10px 14px;background:var(--panel);border:1px solid var(--amber);border-radius:6px;font-size:14px;box-shadow:0 8px 30px rgba(0,0,0,.5)}

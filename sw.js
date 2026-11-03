@@ -1,6 +1,7 @@
 // Service worker for Hello, IT: makes the game installable and playable offline.
-// Bump CACHE when you change the game, so phones pick up the new version.
-const CACHE = 'hello-it-v14';
+// Bump CACHE when you change the game, so phones pick up the new version, and keep GAME_VERSION in js/boot.js
+// the same number (tests/pwa.spec.js checks). The page shows that number and offers a reload when a newer one arrives.
+const CACHE = 'hello-it-v15';
 const CORE = [
   './',
   './index.html',
@@ -59,11 +60,18 @@ const CORE = [
 ];
 
 self.addEventListener('install', event => {
-  event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(CORE)).then(() => self.skipWaiting()));
+  // cache: 'reload' skips the browser's HTTP cache, so the offline copy is the new version, not a 10-minute-old one
+  event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(CORE.map(u => new Request(u, { cache: 'reload' })))).then(() => self.skipWaiting()));
 });
 
 self.addEventListener('activate', event => {
-  event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim()));
+  event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())
+    .then(() => self.clients.matchAll({ type: 'window' })).then(pages => pages.forEach(p => p.postMessage({ type: 'version', cache: CACHE }))));
+});
+
+// An open page asks which version this service worker serves; it offers a reload when that is newer than itself.
+self.addEventListener('message', event => {
+  if (event.data && event.data.type === 'version?' && event.source) event.source.postMessage({ type: 'version', cache: CACHE });
 });
 
 self.addEventListener('fetch', event => {
@@ -73,14 +81,15 @@ self.addEventListener('fetch', event => {
 
   // The game page: try the network first so updates arrive, fall back to the cached copy offline.
   if (req.mode === 'navigate') {
-    event.respondWith(fetch(req).then(res => { const copy = res.clone(); caches.open(CACHE).then(c => c.put('./index.html', copy)); return res; })
+    // cache: 'no-cache' checks with the server every time (a cheap 304 when nothing changed) instead of reusing an old copy
+    event.respondWith(fetch(req.url, { cache: 'no-cache', credentials: 'same-origin' }).then(res => { const copy = res.clone(); caches.open(CACHE).then(c => c.put('./index.html', copy)); return res; })
       .catch(() => caches.match('./index.html')));
     return;
   }
 
   // The game's own files (scripts, styles, scenes): network first, so updates arrive together; cache when offline.
   if (url.origin === location.origin) {
-    event.respondWith(fetch(req).then(res => { if (res.ok) { const copy = res.clone(); caches.open(CACHE).then(c => c.put(req, copy)); } return res; })
+    event.respondWith(fetch(req, { cache: 'no-cache' }).then(res => { if (res.ok) { const copy = res.clone(); caches.open(CACHE).then(c => c.put(req, copy)); } return res; })
       .catch(() => caches.match(req)));
     return;
   }
