@@ -100,3 +100,13 @@ The project uses **Node.js 26** (see `.nvmrc`); with nvm, run `nvm use`. GitHub 
 - Douglas III? (Douglas is already looking at bigger yachts)
 - More puzzles: SQL, regex, stack traces, a patch panel
 - Character portraits and ambient sound
+
+## Licence and disclaimer
+
+*Hello, IT* is an unofficial, non-commercial fan project. It is not affiliated with, connected to or endorsed by Channel 4 or the makers of *The IT Crowd*.
+
+*The IT Crowd*, its characters, names and catchphrases belong to their respective owners. The game uses no footage, images, music or logos from the series: the drawings, sounds, code and text in this repository are original.
+
+The [GPL-3.0 licence](LICENSE) covers only this project's own code, art and text. It grants no rights to *The IT Crowd* itself.
+
+If you are a rights holder and would like something changed or removed, please [open an issue](https://github.com/w3nl/it/issues).
