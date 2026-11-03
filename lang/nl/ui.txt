@@ -86,6 +86,12 @@
 = ? Watch it on YouTube. Moss calls it research.
 # (the leading space is on purpose: the Dutch sentence goes on after the title)
 >  gezien? Kijk het op YouTube. Moss noemt het onderzoek.
+= Unofficial fan project
+> Onofficieel fanproject
+= Source code
+> Broncode
+= Licence (GPL-3.0)
+> Licentie (GPL-3.0)
 = Waiting for the next chapter? Watch the real IT department on YouTube.
 > Wachten op het volgende hoofdstuk? Kijk naar de echte IT-afdeling op YouTube.
 = ← swipe to look around →
