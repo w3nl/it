@@ -45,9 +45,20 @@
     <path class="flame" d="M914 596 q6 -20 14 -30 q2 16 10 18 q4 -10 10 -14 q2 18 -4 26z" fill="#fff2b0"/>
   </g>
   <g id="bin-out" style="display:none">
+    <!-- the fire is out: extinguisher foam on and around a scorched bin, and a last wisp of smoke -->
+    <g fill="#c9d0d5" stroke="#9aa4ab" stroke-width="2">
+      <path d="M828 704 q-4 -14 14 -16 q6 -12 22 -6 l128 0 q14 -8 24 4 q18 0 14 16 q-2 10 -16 10 h-170 q-14 0 -16 -8z"/>
+      <circle cx="1012" cy="694" r="7"/><circle cx="836" cy="694" r="6"/>
+    </g>
     <path d="M868 590 h120 l-12 110 h-96z" fill="#3c4148" stroke="#22262b" stroke-width="3"/>
-    <ellipse cx="928" cy="600" rx="70" ry="16" fill="#e9eef2" opacity=".85"/>
-    <ellipse cx="900" cy="690" rx="90" ry="14" fill="#e9eef2" opacity=".35"/>
+    <path d="M870 592 h116 l-2 18 h-112z" fill="#1d2024" opacity=".85"/>
+    <path d="M872 612 l6 40 l8 -28 l6 36 l4 -46z M954 612 l6 30 l6 -22 l8 26 l2 -34z" fill="#1d2024" opacity=".55"/>
+    <g fill="#e4e9ec" stroke="#aeb7be" stroke-width="2">
+      <path d="M906 600 q-4 22 6 26 q8 2 6 -12z"/><path d="M958 600 q2 30 10 32 q8 -2 2 -22z"/>
+      <circle cx="878" cy="592" r="12"/><circle cx="900" cy="584" r="15"/><circle cx="926" cy="580" r="17"/>
+      <circle cx="952" cy="584" r="15"/><circle cx="976" cy="592" r="12"/><circle cx="914" cy="570" r="10"/><circle cx="940" cy="568" r="11"/>
+    </g>
+    <path d="M930 556 q-10 -18 4 -32 q12 -12 2 -30" stroke="#b5bdc3" stroke-width="6" fill="none" stroke-linecap="round" opacity=".22"/>
   </g>
 
   <!-- the internet -->
