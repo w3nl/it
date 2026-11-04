@@ -130,7 +130,7 @@ $('#btn-ch5').onclick = startCh5;
 $('#btn-ch4').onclick = startCh4;
 $('#btn-ch3').onclick = startCh3;
 $('#btn-ch2').onclick = startCh2;
-$('#btn-menu').onclick = () => { closeModal(); $('#dialog').hidden = true; queue = []; $('#title').hidden = false; $('#win').hidden = true; refreshMenu(); };
+$('#btn-menu').onclick = () => { closeModal(); $('#dialog').hidden = true; queue = []; stopSpeaking(); $('#title').hidden = false; $('#win').hidden = true; refreshMenu(); };
 
 const ROT_LINES = [
   "This basement is wider than your phone. Roy says: turn it sideways. Moss says: exactly 90 degrees, please, not 89.",

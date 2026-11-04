@@ -1,9 +1,9 @@
 // Start-up: inserts the room drawings (scenes/*.svg) into the stage, then loads the game scripts in order.
 // Scenes are fetched, so the game must be served over http(s): GitHub Pages, `npm start`, or any static server.
-const GAME_VERSION = 17;   // shown on the title screen; the same number as CACHE in sw.js
+const GAME_VERSION = 18;   // shown on the title screen; the same number as CACHE in sw.js
 (async () => {
   const scenes = ['office', 'server', 'jen', 'doug', 'lift', 'dungeon', 'yacht'];
-  const scripts = ['i18n', 'core', 'chapter1', 'items', 'chapter2', 'chapter3', 'chapter4', 'chapter5', 'chapter6', 'hints', 'ambience', 'app'];
+  const scripts = ['i18n', 'core', 'chapter1', 'items', 'chapter2', 'chapter3', 'chapter4', 'chapter5', 'chapter6', 'hints', 'ambience', 'voice', 'app'];
   const title = document.getElementById('title');
   try {
     if (location.protocol === 'file:') throw new Error('file');
