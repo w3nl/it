@@ -35,6 +35,8 @@ Then open http://127.0.0.1:4173. Double-clicking `index.html` doesn't work, beca
 
 See [AGENTS.md](AGENTS.md) for how it all fits together.
 
+Want to build a game like this with another theme? [docs/escape-room-blueprint.md](docs/escape-room-blueprint.md) is the theme-independent recipe: architecture, puzzle design, languages, phones, the installable app, tests, agents and lessons learned, with a starting prompt.
+
 ## Tip: watch the series
 
 Never seen *The IT Crowd*? The game is full of references to it. Watch the series on YouTube first, or afterwards to spot all the jokes: [The IT Crowd on YouTube](https://www.youtube.com/show/VLPLQxUFrtzYaUlfC1e_wcoaUGC02HPVHSW4?sbp=QAE%253D).

@@ -42,6 +42,7 @@ Context for AI agents and new contributors. The README covers what the game is a
 | `.github/workflows/agent-*.yml`, `claude.yml` | The idea → plan → PR → review → playtest agents (see `docs/agent-workflow.md`) |
 | `.github/ISSUE_TEMPLATE/idea.yml` | The "Idea" issue form that starts the agents |
 | `tools/lift-panel.py` | Regenerates the lift's right-wall panel in perspective (`python3 tools/lift-panel.py`) |
+| `docs/escape-room-blueprint.md` | The theme-independent recipe for building another game like this one; keep it in step with lessons learned here |
 | `tools/i18n-check.js` | Lists English text without a Dutch translation, stale keys and conflicts (`node tools/i18n-check.js`) |
 
 ## How the code fits together
