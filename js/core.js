@@ -64,7 +64,7 @@ function talkFace(name){
 function next(){
   clearInterval(typing); typing = null;
   const box = $('#dialog');
-  if(!queue.length){ box.hidden = true; const d = onDone; onDone = null; d && d(); return; }
+  if(!queue.length){ box.hidden = true; if(typeof stopSpeaking === 'function') stopSpeaking(); const d = onDone; onDone = null; d && d(); return; }
   const [who, text] = curLine = queue.shift();
   box.hidden = false;
   box.className = 'dialog who-' + who;
@@ -74,7 +74,9 @@ function next(){
   else fe.hidden = true;
   $('#d-who').textContent = (who==='jen' && S.ch===6) ? 'Jen · on deck' : (who==='moss' && S.ch===6) ? 'Moss' : (who==='jen' && S.ch===5) ? 'Jen' : (who==='moss' && S.ch===5) ? 'Moss · walkie-talkie' : who==='sys' ? (S.ch===6 ? 'The river' : S.ch===5 ? 'The dungeon' : S.ch===4 ? 'The lift' : S.ch===3 ? 'Top floor' : S.ch===2 ? "Jen's office" : 'Basement') : (WHO[who] || who);
   $('#d-more').textContent = matchMedia('(hover: none)').matches ? (queue.length ? 'tap ▸' : 'tap ✕') : (queue.length ? 'click ▸' : 'click ✕');
-  full = tx(text); let i = 0; const el = $('#d-txt'); el.textContent = '';
+  full = tx(text); let i = 0;
+  const el = $('#d-txt'); el.textContent = '';
+  if(typeof speakLine === 'function') speakLine(who, full);   // optional voices (js/voice.js)
   const reduce = reducedMotion();
   if(reduce){ el.textContent = full; return; }
   typing = setInterval(() => { i += 2; el.textContent = full.slice(0, i); if(i >= full.length){ clearInterval(typing); typing = null; } }, 16);

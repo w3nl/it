@@ -478,3 +478,13 @@
 > Er staat een nieuwe versie van het spel klaar.
 = Reload
 > Herladen
+
+# ---------- voices (js/voice.js) ----------
+= Voices on
+> Stemmen aan
+= Voices off
+> Stemmen uit
+= Reads the dialogue aloud with the voices on your device.
+> Leest de gesprekken voor met de stemmen op je apparaat.
+= Voices on. I recorded mine in one take. Well, eleven takes. The cape rustled.
+> Stemmen aan. Ik heb de mijne in één keer opgenomen. Nou ja, in elf keer. De cape ritselde.

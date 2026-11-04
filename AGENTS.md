@@ -29,6 +29,7 @@ Context for AI agents and new contributors. The README covers what the game is a
 | `js/items.js` | `useItem()`: using inventory items on hotspots, for every chapter |
 | `js/chapter2.js` … `js/chapter6.js` | One file per chapter: hotspots, puzzles, intro, start and win |
 | `js/hints.js` | All hints (`HINTS`) and the `stageN()` functions that pick the current puzzle |
+| `js/voice.js` | Optional voices: reads each dialogue line aloud (Web Speech API); `speakLine()`, `VOICE_STYLE` per character, the Voices button |
 | `js/ambience.js` | Generated ambient sound per room (Web Audio, no audio files): `ambKey()` decides what plays, `SOUNDSCAPES` builds each room |
 | `portraits/*.svg` | Character portraits for the dialogue strip and talk windows: `you`, `roy`, `moss`, `jen`, `douglas`, `douglas-captain`, `machine`, `duck`, `fax`, `dragon` |
 | `js/app.js` | Chapter management (`chapterDone`, `nextChapter`, `exitLabels`, `refreshMenu`), end screens (`CH_END`, `showWin`), scores (`recordScore`, `openScores`), buttons, timer, achievements (`ACH`), title menu, PWA install, `start()` |
@@ -168,6 +169,7 @@ Context for AI agents and new contributors. The README covers what the game is a
   - Ambience is re-checked every 0.7 s by `ambUpdate()`: it compares `ambKey()` (room plus story state, e.g. `server+on+fire`, `doug+alarm`, `yacht+engine`) with what's playing and rebuilds only when it changes. To make a room's sound react to a puzzle, add the flag to its key in `ambKey()` and handle the modifier in its `SOUNDSCAPES` entry.
   - Browsers block audio until the first click or tap, so the AudioContext is resumed on `pointerdown`/`keydown`. The title screen and hidden tabs are silent.
   - Keep levels low: the soundscapes sit under the dialogue, around 0.01 to 0.07 gain per layer.
+- **Voices** (`js/voice.js`): off by default, saved as `hello-it-basement-v1-voice`. `next()` in `core.js` calls `speakLine(who, text)` with the translated line, so voices speak the current language (`en-GB` or `nl-NL`, picking a matching device voice). Each speaker has a pitch, rate and voice slot in `VOICE_STYLE`: a new speaker needs an entry there too. Symbols like ♪ and ✕ are stripped. The button is hidden in browsers without speech synthesis. Only dialogue is spoken, not close-ups. Tests replace `speechSynthesis` with a recorder (`tests/voice.spec.js`).
 - **CSS class names are global too.** A new class can clash with an existing one in another chapter's CSS (e.g. `.pop` is Douglas's pop-up window, so the portrait animation is `.face-in`). Search the `css/` folder before naming a class.
 - **Randomness:** the dragon's number and the rotate-banner quip are random. Tests must not depend on them (the dragon test does a real binary search).
 - **Text inside JS template strings** is HTML. Escape `<`, `&`, and quotes that clash with the surrounding string. Prefer typographic apostrophes (’) or double-quoted JS strings for dialogue.
@@ -208,7 +210,7 @@ If you are one of those agents:
 ```bash
 npm install
 npx playwright install chromium   # first time only
-npm test                           # about 2 minutes: 30 tests, desktop + Pixel 7 (+ Firefox in CI)
+npm test                           # about 2 minutes: 31 tests, desktop + Pixel 7 (+ Firefox in CI)
 node tools/i18n-check.js           # English text that has no Dutch translation yet
 npm start                          # http://127.0.0.1:4173 to play locally
 ```

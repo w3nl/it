@@ -8,6 +8,8 @@ You're the new IT temp. Roy is at lunch, Moss is stuck upstairs in the stationer
 
 The game speaks **UK English** and **Dutch** (Nederlands). Switch with the **EN · NL** button in the header; the game remembers your choice, and starts in Dutch when your browser is set to Dutch.
 
+Turn on **Voices** in the header to hear the dialogue read aloud, in English or Dutch, with a different voice for each character. It uses the voices built into your browser or device, so how they sound depends on what's installed.
+
 Play online at **https://w3nl.github.io/it/** (GitHub Pages: Settings → Pages → deploy from `main`).
 
 To play locally, serve the folder with any static web server. There's no build step. With Node.js:
